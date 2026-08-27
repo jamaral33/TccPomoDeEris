@@ -1,0 +1,99 @@
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\appsettings.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.staticwebassets.runtime.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.staticwebassets.endpoints.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.exe
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.deps.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.runtimeconfig.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.dll
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net9.0\Pomo De Eris.pdb
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.AssemblyInfoInputs.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.AssemblyInfo.cs
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.csproj.CoreCompileInputs.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.RazorAssemblyInfo.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.RazorAssemblyInfo.cs
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.sourcelink.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\scopedcss\bundle\Pomo De Eris.styles.css
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\scopedcss\projectbundle\Pomo De Eris.bundle.scp.css
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\a3h1vejylh-{0}-b9sayid5wm-b9sayid5wm.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\efjkdefrrk-{0}-61n19gt1b8-61n19gt1b8.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\wb7lx8r5lt-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\jedqefadzp-{0}-t1cqhe9u97-t1cqhe9u97.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\yo5sjgvoqb-{0}-c2jlpeoesf-c2jlpeoesf.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\cbzh3p5spq-{0}-sejl45xvog-sejl45xvog.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\8swn1pk3w7-{0}-aexeepp0ev-aexeepp0ev.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\lmrxsqanyz-{0}-xvp3kq03qx-xvp3kq03qx.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\zholobigvn-{0}-ausgxo2sd3-ausgxo2sd3.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\rkw54a23v1-{0}-22vffe00uq-22vffe00uq.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\qs0eeeeby2-{0}-cosvhxvwiu-cosvhxvwiu.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\o8ygpzpwd7-{0}-qesaa3a1fm-qesaa3a1fm.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\hj48t8ylj9-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\79rqj9pfu3-{0}-tmc1g35s3z-tmc1g35s3z.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\5r98qncfm4-{0}-fsbi9cje9m-fsbi9cje9m.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\a2etujhtj6-{0}-rxsg74s51o-rxsg74s51o.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\hbqgeyzrsu-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\9bv28uuhri-{0}-q9ht133ko3-q9ht133ko3.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\sayopmkavx-{0}-jd9uben2k1-jd9uben2k1.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\0crrn1qemm-{0}-gye83jo8yx-gye83jo8yx.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\ia6s9kkb67-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\5vx0s4veom-{0}-wl58j5mj3v-wl58j5mj3v.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\iqxueqg2ib-{0}-c2oey78nd0-c2oey78nd0.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\3qd5knp5g1-{0}-d4r6k3f320-d4r6k3f320.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\he4i5l3h0n-{0}-j5mq2jizvt-j5mq2jizvt.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\lgh3ztyjus-{0}-keugtjm085-keugtjm085.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\89vrcaldy5-{0}-nvvlpmu67g-nvvlpmu67g.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\21xcez05ho-{0}-zub09dkrxp-zub09dkrxp.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\639zqmecm3-{0}-pj5nd1wqec-pj5nd1wqec.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\f0snn8wrtt-{0}-43atpzeawx-43atpzeawx.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\1f9fq36f19-{0}-v0zj4ognzu-v0zj4ognzu.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\8yb7tz3r72-{0}-ynyaa8k90p-ynyaa8k90p.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\kgqfoiwgpn-{0}-hrwsygsryq-hrwsygsryq.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\izbq4nzx67-{0}-c63t5i9ira-c63t5i9ira.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\t1e2oicbs3-{0}-ft3s53vfgj-ft3s53vfgj.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\ks7vb0cnod-{0}-4094rpi4f9-4094rpi4f9.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\g3okupjxop-{0}-6pdc2jztkx-6pdc2jztkx.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\bxwzilf4xg-{0}-hd3gran6i8-hd3gran6i8.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\np3a2jopw7-{0}-iovd86k7lj-iovd86k7lj.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\2guir4gx79-{0}-ltid2c489k-ltid2c489k.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\qb0dqkwyie-{0}-kbrnm935zg-kbrnm935zg.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\so7eg7k1pn-{0}-8vyfqsqgz1-8vyfqsqgz1.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\gj2zsxod2y-{0}-y7v9cxd14o-y7v9cxd14o.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\o2uahjd132-{0}-u9q1upor1n-u9q1upor1n.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\br9oslpwtg-{0}-h1s4sie4z3-h1s4sie4z3.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\y4bsse8q0x-{0}-4d85u1mtcx-4d85u1mtcx.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\6qv7szprqt-{0}-0j3bgjxly4-0j3bgjxly4.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\ls18erhpaj-{0}-03hjc8e09r-03hjc8e09r.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\icydslk4du-{0}-48y08845bh-48y08845bh.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\ycdky8y6tx-{0}-356vix0kms-356vix0kms.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\426627fp1d-{0}-83jwlth58m-83jwlth58m.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\uq1gjo8s0i-{0}-mrlpezrjn3-mrlpezrjn3.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\gt194krx4c-{0}-worgj0nhwm-worgj0nhwm.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\nhf9dbq4b6-{0}-gk0pw8i4co-gk0pw8i4co.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\vu8w2twksx-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\ayo973ikbu-{0}-d6nrnj6jjx-d6nrnj6jjx.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\uq6ep24ym8-{0}-m9qm4tazc0-m9qm4tazc0.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\lnh6by9lz8-{0}-ttgo8qnofa-ttgo8qnofa.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\920um1gqc4-{0}-jjsuc0puko-jjsuc0puko.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\ywqizaxarj-{0}-9vr69e8ynj-9vr69e8ynj.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\qw97xrekwi-{0}-87fc7y1x7t-87fc7y1x7t.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\wbz5f4kpm8-{0}-mlv21k5csn-mlv21k5csn.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\eucijwfr8i-{0}-rdn6ltfcur-rdn6ltfcur.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\t3ldtgy4hz-{0}-rdn6ltfcur-rdn6ltfcur.gz
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\swae.build.ex.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.dll
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\refint\Pomo De Eris.dll
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.pdb
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\Pomo De Eris.genruntimeconfig.cache
+C:\Users\3MTEC\Desktop\tcc\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\ref\Pomo De Eris.dll

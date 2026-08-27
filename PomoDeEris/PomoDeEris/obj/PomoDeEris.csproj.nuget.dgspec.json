@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\3MTEC\\Desktop\\PomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {}
+    "C:\\Users\\3MTEC\\Desktop\\tcc\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {}
   },
   "projects": {
-    "C:\\Users\\3MTEC\\Desktop\\PomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {
+    "C:\\Users\\3MTEC\\Desktop\\tcc\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\3MTEC\\Desktop\\PomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+        "projectUniqueName": "C:\\Users\\3MTEC\\Desktop\\tcc\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
         "projectName": "PomoDeEris",
-        "projectPath": "C:\\Users\\3MTEC\\Desktop\\PomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+        "projectPath": "C:\\Users\\3MTEC\\Desktop\\tcc\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
         "packagesPath": "C:\\Users\\3MTEC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\3MTEC\\Desktop\\PomoDeEris\\PomoDeEris\\PomoDeEris\\obj\\",
+        "outputPath": "C:\\Users\\3MTEC\\Desktop\\tcc\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "net9.0": {
+            "framework": "net9.0",
             "targetAlias": "net9.0",
             "projectReferences": {}
           }
@@ -43,12 +44,13 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net9.0": {
+          "framework": "net9.0",
           "targetAlias": "net9.0",
           "imports": [
             "net461",
@@ -69,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
