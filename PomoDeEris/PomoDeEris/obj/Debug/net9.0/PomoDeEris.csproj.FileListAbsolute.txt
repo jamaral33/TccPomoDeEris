@@ -282,8 +282,6 @@ C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\lcgttsm0ae-{0}-9vr69e8ynj-9vr69e8ynj.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\li4pprzy9d-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\mmke7t64x4-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\npnp6g457i-{0}-rdn6ltfcur-rdn6ltfcur.gz
-C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\8b57299sms-{0}-rdn6ltfcur-rdn6ltfcur.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\staticwebassets.development.json
@@ -296,5 +294,10 @@ C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\ref\PomoDeEris.dll
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\wpbg0166j9-{0}-e5lxxq19jd-e5lxxq19jd.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\dr2lxjw238-{0}-ndr78c5g46-ndr78c5g46.gz
-C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\rqem8pee8z-{0}-oi5ipd66hb-oi5ipd66hb.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\jontpmmycl-{0}-kqyrhxcm7m-kqyrhxcm7m.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\rqem8pee8z-{0}-qwftx09mps-qwftx09mps.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\npnp6g457i-{0}-rb5dqfhmlu-rb5dqfhmlu.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\8b57299sms-{0}-rb5dqfhmlu-rb5dqfhmlu.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\16we8t1d8v-{0}-gmezlbt0fc-gmezlbt0fc.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\hdek4t1xci-{0}-2ot14aicyf-2ot14aicyf.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\fugpj818ad-{0}-yzv492t627-yzv492t627.gz

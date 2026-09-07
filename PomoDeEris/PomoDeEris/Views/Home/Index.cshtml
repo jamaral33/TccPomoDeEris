@@ -1,13 +1,230 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Painel de Administração";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @{
-        ViewData["Title"] = "Home";
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomo de Eris — Clínica Estética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true">
 </head>
 <body>
 
+<!-- BARRA SUPERIOR -->
+<div class="topbar">
+  <span>Unidade Jardins, São Paulo · Terça a Sábado, 9h às 19h</span>
+  <span>WhatsApp (11) 4002-8922</span>
+</div>
+
+<!-- CABEÇALHO -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <span class="logo__title">Pomo de Eris</span>
+    <span class="logo__subtitle">Clínica Estética</span>
+  </a>
+
+  <nav class="nav">
+    <a href="#tratamentos">Tratamentos</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#promocoes">Promoções</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="header__actions">
+    <button class="icon-btn" id="search-toggle" aria-label="Buscar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    </button>
+    <a href="@Url.Action("paginaDeLogin", "Home")" class="icon-btn" aria-label="Minha conta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    </a>
+    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__text">
+    <p class="hero__eyebrow">Desde sempre, a mais bela</p>
+    <h1 class="hero__title">Beleza que transforma,<br>cuidado que <span>conquista.</span></h1>
+    <p class="hero__desc">
+      Tratamentos estéticos faciais, corporais e injetáveis, escolhidos com critério clínico
+      e agendados em poucos cliques — para a beleza que só pertence a você.
+    </p>
+
+    <form class="hero__search" id="hero-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" placeholder="Buscar tratamento — ex: bronzeamento, manicure...">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="hero__cta">
+      <a href="#tratamentos" class="btn btn--primary">Ver tratamentos</a>
+      <a href="#contato" class="btn btn--outline">Agendar avaliação</a>
+    </div>
+
+    <div class="hero__stats">
+      <span>15 anos de experiência</span>
+      <span class="dot">•</span>
+      <span>+20.000 atendimentos</span>
+      <span class="dot">•</span>
+      <span>Profissionais certificados</span>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <img src="hero-image.jpg" alt="" class="hero__photo">
+    <div class="hero__badge">
+      <img src="apple-icon.png" alt="" class="hero__badge-icon">
+      <span class="hero__badge-text">Pomo de Eris</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOÇÃO -->
+<section class="promo" id="promocoes">
+  <div class="promo__icon">%</div>
+  <div class="promo__content">
+    <p class="promo__eyebrow">Promoção de inverno</p>
+    <h2 class="promo__title">20% off em tratamentos faciais</h2>
+    <p class="promo__desc">
+      Aproveite o inverno para renovar a pele: hidratação profunda, limpeza clínica
+      e protocolos faciais com condição especial por tempo limitado.
+    </p>
+    <a href="#tratamentos" class="btn btn--primary">Aproveitar oferta</a>
+  </div>
+  <div class="promo__countdown" id="countdown">
+    <div class="countdown__unit"><span id="cd-days">67</span><label>dias</label></div>
+    <div class="countdown__unit"><span id="cd-hours">02</span><label>horas</label></div>
+    <div class="countdown__unit"><span id="cd-min">06</span><label>min</label></div>
+    <div class="countdown__unit"><span id="cd-sec">48</span><label>seg</label></div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="features">
+  <div class="feature">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+    <div>
+      <h3>Profissionais certificados</h3>
+      <p>Equipe clínica com formação e atualização constante.</p>
+    </div>
+  </div>
+  <div class="feature">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+    <div>
+      <h3>Produtos originais</h3>
+      <p>Insumos importados e rastreáveis, sem atalhos.</p>
+    </div>
+  </div>
+  <div class="feature">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12s3.5-7 9-7 9 7 9 7-3.5 7-9 7-9-7-9-7z"/><circle cx="12" cy="12" r="3"/></svg>
+    <div>
+      <h3>Ambiente exclusivo</h3>
+      <p>Atendimento privado, discreto e sem pressa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section class="treatments" id="tratamentos">
+  <div class="section-head">
+    <h2>Tratamentos em destaque</h2>
+    <p class="section-head__italic">Cuidados que falam por si</p>
+    <p class="section-head__desc">
+      Selecionados pela nossa equipe clínica, com preços transparentes e agendamento em poucos cliques.
+    </p>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="todos">Todos</button>
+    <button class="filter-btn" data-filter="facial">Facial</button>
+    <button class="filter-btn" data-filter="corporal">Corporal</button>
+    <button class="filter-btn" data-filter="injetaveis">Injetáveis</button>
+    <button class="filter-btn" data-filter="relaxamento">Relaxamento</button>
+  </div>
+
+  <div class="treatment-grid" id="treatment-grid">
+    <!-- Os cartões são gerados via JavaScript a partir da hometratamentos.js -->
+  </div>
+</section>
+
+<!-- DEPOIMENTO -->
+<section class="testimonial">
+  <img src="testimonial-avatar.jpg" alt="" class="testimonial__avatar">
+  <blockquote>
+    "Marquei pelo site em poucos minutos e o atendimento foi exatamente como esperava:
+    cuidadoso, transparente e sem pressa. Saí de lá sentindo que o veredito, finalmente, era meu."
+  </blockquote>
+  <cite>— Camila R., cliente desde 2023</cite>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta" id="sobre">
+  <p class="final-cta__eyebrow">Pronta para começar?</p>
+  <h2 class="final-cta__title">O seu veredito de beleza<br>começa com uma conversa.</h2>
+  <a href="#contato" class="btn btn--dark">Agende agora</a>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="footer" id="contato">
+  <div class="footer__about">
+    <p class="footer__logo">Pomo de Eris</p>
+    <p>Clínica estética voltada a tratamentos faciais, corporais, massagens. Agendamento online simples e equipe clínica certificada.</p>
+  </div>
+  <div class="footer__col">
+    <h4>Atendimento</h4>
+    <a href="#">Como funciona</a>
+    <a href="#">Política de cancelamento</a>
+    <a href="#">Perguntas frequentes</a>
+    <a href="#">Trabalhe conosco</a>
+  </div>
+  <div class="footer__col">
+    <h4>Contato</h4>
+    <p>Rua dos Jardins, 482 — Jardins<br>São Paulo, SP</p>
+    <p>(11) 4002-8922<br>contato@pomodeeris.com.br</p>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Pomo de Eris. Todos os direitos reservados.</span>
+    <span><a href="#">Termos de uso</a> · <a href="#">Privacidade</a></span>
+  </div>
+</footer>
+
+<!-- PAINEL LATERAL DO CARRINHO -->
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-panel__header">
+    <h3>Resumo do agendamento</h3>
+    <button id="cart-close" aria-label="Fechar">✕</button>
+  </div>
+  <div class="cart-panel__body" id="cart-body">
+    <div class="cart-empty" id="cart-empty">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <p>Sua agenda está vazia.</p>
+      <span>Escolha um tratamento para começar.</span>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+  </div>
+  <div class="cart-panel__footer" id="cart-footer" hidden>
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cart-total-value">R$ 0</strong>
+    </div>
+    <a href="../carrinho/index.html" class="btn btn--primary" id="go-to-cart">Ir para o carrinho</a>
+  </div>
+</aside>
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<div class="toast" id="toast"></div>
+
+<script src="~/js/hometratamentos.js" asp-append-version="true"></script>
+<script src="~/js/home.js" asp-append-version="true"></script>
 </body>
 </html>
