@@ -1,0 +1,68 @@
+
+@{
+    ViewData["Title"] = "Seu carrinho";
+}
+@section Styles {
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/css/carrinhoDeCompra.css" asp-append-version="true">
+}
+
+<div class="cart-page">
+  <div class="cart-page__title">
+    <h1>Seu carrinho</h1>
+    <p>Revise os tratamentos escolhidos antes de confirmar seu agendamento.</p>
+  </div>
+
+  <div class="cart-layout">
+
+    <!-- LISTA DE ITENS -->
+    <section class="cart-list-card">
+      <ul class="cart-list" id="cart-list">
+        <!-- itens gerados via JavaScript -->
+      </ul>
+
+      <div class="cart-empty-state" id="cart-empty-state" hidden>
+        <p>Seu carrinho está vazio.</p>
+        <span>Volte para o site e escolha os tratamentos ideais para você.</span>
+      </div>
+
+      <a href="@Url.Action("Index", "Home")#tratamentos" class="btn btn--dark">Continuar escolhendo tratamentos</a>
+    </section>
+
+    <!-- RESUMO -->
+    <aside class="summary-card">
+      <h2>Resumo do pedido</h2>
+
+      <div class="summary-row">
+        <span id="summary-count">0 tratamentos</span>
+        <span id="summary-subtotal">R$ 0</span>
+      </div>
+      <div class="summary-row summary-row--discount">
+        <span>Descontos</span>
+        <span id="summary-discount">− R$ 0</span>
+      </div>
+      <div class="summary-row">
+        <span>Duração total</span>
+        <span id="summary-duration">0 min</span>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-total">
+        <span>Total</span>
+        <strong id="summary-total">R$ 0</strong>
+      </div>
+
+      <button class="btn btn--primary btn--block" id="confirm-btn">Confirmar agendamento</button>
+    </aside>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+@section Scripts {
+  <script src="~/js/carrinhoDeCompra.js" asp-append-version="true"></script>
+}

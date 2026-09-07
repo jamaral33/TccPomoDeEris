@@ -1,64 +1,47 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Pomo De Eris</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/PomoDeEris.styles.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
-    <style>
-            .nav
-            {
-                background-color: #F9D5D5
-            }
-            
-            header{
-                background-color:#F9D5D5
-            }
-            .container-fluid
-            {
-                background-color: #F9D5D5
-            }
-    </style>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 style= background-color: ##F9D5D5;">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pomo De Eris</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="topbar">
+        <span>Unidade Jardins, São Paulo · Terça a Sábado, 9h às 19h</span>
+        <span>WhatsApp (11) 4002-8922</span>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - PomoDeEris - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <header class="header">
+        <a asp-controller="Home" asp-action="Index" class="logo">
+            <span class="logo__title">Pomo de Eris</span>
+            <span class="logo__subtitle">Clínica Estética</span>
+        </a>
+        <nav class="nav">
+            <a href="@Url.Action("Index", "Home")#tratamentos">Tratamentos</a>
+            <a href="@Url.Action("Index", "Home")#categorias">Categorias</a>
+            <a href="@Url.Action("Index", "Home")#promocoes">Promoções</a>
+            <a href="@Url.Action("Index", "Home")#sobre">Sobre</a>
+            <a href="@Url.Action("Index", "Home")#contato">Contato</a>
+        </nav>
+        <div class="header__actions">
+            <button class="icon-btn" id="search-toggle" aria-label="Buscar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            </button>
+            <a asp-controller="Home" asp-action="paginaDeLogin" class="icon-btn" aria-label="Minha conta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </a>
+            <button class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

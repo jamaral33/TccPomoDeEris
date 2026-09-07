@@ -220,7 +220,6 @@ C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\scopedcss\bundle\PomoDeEris.styles.css
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\scopedcss\projectbundle\PomoDeEris.bundle.scp.css
-C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\xp0uo5tnql-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\qhhp18mukz-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\1a4uoq6s1b-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\2m87tia0w7-{0}-t1cqhe9u97-t1cqhe9u97.gz
@@ -300,4 +299,7 @@ C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\8b57299sms-{0}-rb5dqfhmlu-rb5dqfhmlu.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\16we8t1d8v-{0}-gmezlbt0fc-gmezlbt0fc.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\hdek4t1xci-{0}-2ot14aicyf-2ot14aicyf.gz
-C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\fugpj818ad-{0}-yzv492t627-yzv492t627.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\4d1n0oyk9z-{0}-gqq0c37t51-gqq0c37t51.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\qzo2fpwy1v-{0}-xcgp1jctr1-xcgp1jctr1.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\fugpj818ad-{0}-mn9e0x4fhp-mn9e0x4fhp.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\xp0uo5tnql-{0}-klgih03ax9-klgih03ax9.gz

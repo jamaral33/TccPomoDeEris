@@ -28,6 +28,11 @@ namespace PomoDeEris.Controllers
             return View();
         }
 
+        public IActionResult carrinhoDeCompra()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

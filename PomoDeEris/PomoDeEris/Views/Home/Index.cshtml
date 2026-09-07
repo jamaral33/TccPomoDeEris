@@ -1,54 +1,12 @@
 ﻿@{
-    Layout = null;
-    ViewData["Title"] = "Painel de Administração";
+    ViewData["Title"] = "Clínica Estética";
 }
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pomo de Eris — Clínica Estética</title>
+@section Styles {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true">
-</head>
-<body>
-
-<!-- BARRA SUPERIOR -->
-<div class="topbar">
-  <span>Unidade Jardins, São Paulo · Terça a Sábado, 9h às 19h</span>
-  <span>WhatsApp (11) 4002-8922</span>
-</div>
-
-<!-- CABEÇALHO -->
-<header class="header">
-  <a href="index.html" class="logo">
-    <span class="logo__title">Pomo de Eris</span>
-    <span class="logo__subtitle">Clínica Estética</span>
-  </a>
-
-  <nav class="nav">
-    <a href="#tratamentos">Tratamentos</a>
-    <a href="#categorias">Categorias</a>
-    <a href="#promocoes">Promoções</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
-  <div class="header__actions">
-    <button class="icon-btn" id="search-toggle" aria-label="Buscar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-    </button>
-    <a href="@Url.Action("paginaDeLogin", "Home")" class="icon-btn" aria-label="Minha conta">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-    </a>
-    <button class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg>
-      <span class="cart-count" id="cart-count">0</span>
-    </button>
-  </div>
-</header>
+}
 
 <!-- HERO -->
 <section class="hero">
@@ -81,11 +39,7 @@
   </div>
 
   <div class="hero__visual">
-    <img src="hero-image.jpg" alt="" class="hero__photo">
-    <div class="hero__badge">
-      <img src="apple-icon.png" alt="" class="hero__badge-icon">
-      <span class="hero__badge-text">Pomo de Eris</span>
-    </div>
+    <img src="~/images/logoPomoTransparente.png" alt="Pomo de Eris" class="hero__photo">
   </div>
 </section>
 
@@ -217,14 +171,14 @@
       <span>Total</span>
       <strong id="cart-total-value">R$ 0</strong>
     </div>
-    <a href="../carrinho/index.html" class="btn btn--primary" id="go-to-cart">Ir para o carrinho</a>
+    <a href="@Url.Action("carrinhoDeCompra", "Home")" class="btn btn--primary" id="go-to-cart">Ir para o carrinho</a>
   </div>
 </aside>
 <div class="cart-overlay" id="cart-overlay"></div>
 
 <div class="toast" id="toast"></div>
 
-<script src="~/js/hometratamentos.js" asp-append-version="true"></script>
-<script src="~/js/home.js" asp-append-version="true"></script>
-</body>
-</html>
+@section Scripts {
+  <script src="~/js/hometratamentos.js" asp-append-version="true"></script>
+  <script src="~/js/home.js" asp-append-version="true"></script>
+}
