@@ -1,0 +1,514 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Painel de Administração";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Pomo de Eris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/css/paginaAdm.css" asp-append-version="true">
+</head>
+<body>
+
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-brand">
+    <img id='Logo' src="~/images/logoPomoTransparente.png" alt="Pomo de Eris">
+    <div class="sb-brand-text">
+      <span class="name">Pomo de Eris</span>
+      <span class="tag">Painel de administração</span>
+    </div>
+  </div>
+
+  <nav class="sb-nav">
+    <span class="sb-section-label">Visão geral</span>
+    <button class="sb-item active" data-page="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="8" height="9" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="11" width="8" height="10" rx="2"/><rect x="3" y="15" width="8" height="6" rx="2"/></svg>
+      Dashboard
+    </button>
+
+    <span class="sb-section-label">Operação</span>
+    <button class="sb-item" data-page="packages">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 5v14M5 12h14"/></svg>
+      Adicionar pacote
+    </button>
+    <button class="sb-item" data-page="schedule">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 9h18"/></svg>
+      Cronogramas
+      <span class="sb-badge" id="pendingBadge">3</span>
+    </button>
+    <button class="sb-item" data-page="clients">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Histórico de clientes
+    </button>
+
+    <span class="sb-section-label">Configurações</span>
+    <button class="sb-item" data-page="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+      Configurações
+    </button>
+    <a href="index" class="sb-item" style="color:rgba(255,250,244,.7);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/></svg>
+      Ver site
+    </a>
+  </nav>
+
+  <div class="sb-footer">
+    <div class="sb-user">
+      <div class="sb-avatar">AL</div>
+      <div class="sb-user-info">
+        <div class="nm">Adriana Lima</div>
+        <div class="role">Administradora</div>
+      </div>
+      <button class="sb-logout" title="Sair">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- ===================== MAIN ===================== -->
+<div class="main" id="mainArea">
+  <header class="topbar">
+    <h1 class="topbar-title" id="topbarTitle">Dashboard</h1>
+    <div class="topbar-right">
+      <span class="tb-date" id="tbDate"></span>
+      <button class="tb-notif" id="tbNotif" aria-label="Notificações">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="tb-notif-dot"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================== DASHBOARD ================== -->
+  <div class="page active" id="page-dashboard">
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-top">
+          <div class="kpi-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 9h18"/></svg></div>
+          <span class="kpi-delta up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>+8%</span>
+        </div>
+        <h3>24</h3>
+        <p>Agendamentos hoje</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">
+          <div class="kpi-icon wine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <span class="kpi-delta up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>+14%</span>
+        </div>
+        <h3>R$ 38.420</h3>
+        <p>Receita do mês</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">
+          <div class="kpi-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <span class="kpi-delta up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>+6</span>
+        </div>
+        <h3>142</h3>
+        <p>Clientes este mês</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">
+          <div class="kpi-icon ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg></div>
+          <span class="kpi-delta down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>−2%</span>
+        </div>
+        <h3>4.87</h3>
+        <p>Nota média (NPS)</p>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-head">
+            <h3>Agendamentos de hoje</h3>
+            <button class="btn btn-ghost btn-sm" data-page="schedule">Ver todos</button>
+          </div>
+          <div class="card-body" style="padding:0;">
+            <table class="mini-table">
+              <thead><tr><th>Hora</th><th>Cliente</th><th>Tratamento</th><th>Profissional</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td class="fw600">09:00</td><td>Camila Rocha</td><td>Toxina Botulínica</td><td>Dra. Beatriz Lima</td><td><span class="status-pill confirmed">Confirmado</span></td></tr>
+                <tr><td class="fw600">09:30</td><td>Juliana Pires</td><td>Limpeza de Pele</td><td>Dra. Fernanda Costa</td><td><span class="status-pill confirmed">Confirmado</span></td></tr>
+                <tr><td class="fw600">10:30</td><td>Mariana Alves</td><td>Peeling de Diamante</td><td>Dra. Beatriz Lima</td><td><span class="status-pill pending">Pendente</span></td></tr>
+                <tr><td class="fw600">11:00</td><td>Sofia Tavares</td><td>Drenagem Linfática</td><td>Dr. Rafael Souza</td><td><span class="status-pill confirmed">Confirmado</span></td></tr>
+                <tr><td class="fw600">14:00</td><td>Renata Melo</td><td>Preenchimento Labial</td><td>Dra. Beatriz Lima</td><td><span class="status-pill pending">Pendente</span></td></tr>
+                <tr><td class="fw600">15:30</td><td>Ana Carvalho</td><td>Skinbooster</td><td>Dra. Fernanda Costa</td><td><span class="status-pill pending">Pendente</span></td></tr>
+                <tr><td class="fw600">16:00</td><td>Luciana Ferreira</td><td>Massagem Modeladora</td><td>Dr. Rafael Souza</td><td><span class="status-pill cancelled">Cancelado</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Pacotes mais agendados</h3></div>
+          <div class="card-body" style="padding:0;">
+            <table class="mini-table">
+              <thead><tr><th>Tratamento</th><th>Categoria</th><th>Agendamentos</th><th>Receita</th></tr></thead>
+              <tbody>
+                <tr><td class="fw600">Toxina Botulínica</td><td>Injetáveis</td><td>64</td><td class="color-green fw600">R$ 56.960</td></tr>
+                <tr><td class="fw600">Limpeza de Pele</td><td>Facial</td><td>58</td><td class="color-green fw600">R$ 16.240</td></tr>
+                <tr><td class="fw600">Preenchimento Labial</td><td>Injetáveis</td><td>41</td><td class="color-green fw600">R$ 49.200</td></tr>
+                <tr><td class="fw600">Peeling de Diamante</td><td>Facial</td><td>37</td><td class="color-green fw600">R$ 11.840</td></tr>
+                <tr><td class="fw600">Drenagem Linfática</td><td>Corporal</td><td>30</td><td class="color-green fw600">R$ 7.500</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-head"><h3>Calendário</h3></div>
+          <div class="card-body">
+            <div class="dash-cal-head">
+              <span class="dash-cal-month" id="dcalMonth"></span>
+              <div class="dash-cal-nav">
+                <button id="dcalPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+                <button id="dcalNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+            <div class="cal-wdays"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+            <div class="cal-days-mini" id="dcalDays"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Atividade recente</h3></div>
+          <div class="card-body" style="padding:14px 20px;">
+            <div class="activity-list">
+              <div class="activity-item">
+                <span class="activity-dot gold"></span>
+                <div class="activity-text">Novo agendamento: <strong>Camila Rocha</strong> — Toxina Botulínica<span class="time">há 12 minutos</span></div>
+              </div>
+              <div class="activity-item">
+                <span class="activity-dot wine"></span>
+                <div class="activity-text">Cancelamento: <strong>Luciana Ferreira</strong> — Massagem Modeladora<span class="time">há 38 minutos</span></div>
+              </div>
+              <div class="activity-item">
+                <span class="activity-dot green"></span>
+                <div class="activity-text">Pagamento confirmado: <strong>Sofia Tavares</strong> — R$ 250<span class="time">há 1 hora</span></div>
+              </div>
+              <div class="activity-item">
+                <span class="activity-dot gold"></span>
+                <div class="activity-text">Novo cliente: <strong>Renata Melo</strong> criou conta<span class="time">há 2 horas</span></div>
+              </div>
+              <div class="activity-item">
+                <span class="activity-dot green"></span>
+                <div class="activity-text">Avaliação 5★ de <strong>Ana Carvalho</strong> no Skinbooster<span class="time">ontem, 17h</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== ADICIONAR PACOTE ================== -->
+  <div class="page" id="page-packages">
+    <div class="sh">
+      <div><h2>Adicionar pacote</h2><p>Preencha os dados do novo tratamento. Ele ficará visível no site assim que for publicado.</p></div>
+      <button class="btn btn-ghost btn-sm" id="resetFormBtn">Limpar formulário</button>
+    </div>
+
+    <div class="pkg-form-grid">
+      <div>
+        <div class="form-card">
+          <div class="form-section">
+            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z"/></svg>Informações básicas</h4>
+            <div class="field">
+              <label for="pkgName">Nome do pacote <span class="req">*</span></label>
+              <input type="text" id="pkgName" placeholder="Ex: Limpeza de Pele Profunda">
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="pkgCat">Categoria <span class="req">*</span></label>
+                <select id="pkgCat">
+                  <option value="">Selecionar</option>
+                  <option>Facial</option>
+                  <option>Corporal</option>
+                  <option>Injetáveis</option>
+                  <option>Laser</option>
+                  <option>Bem-estar</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="pkgDur">Duração <span class="req">*</span></label>
+                <select id="pkgDur">
+                  <option value="">Selecionar</option>
+                  <option>20 minutos</option>
+                  <option>30 minutos</option>
+                  <option>40 minutos</option>
+                  <option>50 minutos</option>
+                  <option>60 minutos</option>
+                  <option>70 minutos</option>
+                  <option>90 minutos</option>
+                  <option>120 minutos</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="pkgDesc">Descrição <span class="req">*</span></label>
+              <textarea id="pkgDesc" rows="3" placeholder="Descreva o tratamento de forma clara e objetiva para as clientes."></textarea>
+              <p class="field-hint">Máximo 200 caracteres. Aparece no card do site.</p>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Preços</h4>
+            <div class="field-row">
+              <div class="field">
+                <label for="pkgPrice">Preço de venda (R$) <span class="req">*</span></label>
+                <input type="number" id="pkgPrice" placeholder="0,00" min="0" step="0.01">
+              </div>
+              <div class="field">
+                <label for="pkgPriceOld">Preço original / risco (R$)</label>
+                <input type="number" id="pkgPriceOld" placeholder="Deixe vazio se sem desconto" min="0" step="0.01">
+                <p class="field-hint">Só preencha se houver desconto ativo.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="pkgType">Tipo de preço</label>
+              <select id="pkgType">
+                <option>Preço fixo</option>
+                <option>A partir de (preço inicial)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Imagem do tratamento</h4>
+            <div class="upload-zone" id="uploadZone">
+              <input type="file" id="pkgImage" accept="image/*">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <p>Arraste uma imagem ou <strong>clique para selecionar</strong></p>
+              <span>PNG, JPG ou WEBP — máx. 4 MB · recomendado 800×600 px</span>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Visibilidade e opções</h4>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="label">Publicado no site</div>
+                <div class="hint">O pacote fica visível para as clientes ao ativar.</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="pkgPublished" checked>
+                <span class="toggle-track"></span>
+                <span class="toggle-thumb"></span>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="label">Tag "Mais procurado"</div>
+                <div class="hint">Destaca o card com um selo escuro.</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="pkgPopular">
+                <span class="toggle-track"></span>
+                <span class="toggle-thumb"></span>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="label">Incluir na promoção de inverno</div>
+                <div class="hint">Exibe a tag "Inverno −20%" no card.</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="pkgPromo">
+                <span class="toggle-track"></span>
+                <span class="toggle-thumb"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="preview-card">
+          <div class="preview-media" id="previewMedia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M9 10h.1M14.5 10h.1M9 15c1.2 1 1.8 1.5 3 1.5s1.8-.5 3-1.5"/></svg>
+            <span class="preview-cat" id="prevCat">Categoria</span>
+          </div>
+          <div class="preview-body">
+            <h4 id="prevName">Nome do pacote</h4>
+            <p class="desc-prev" id="prevDesc">A descrição aparecerá aqui conforme você digita.</p>
+            <p class="dur" id="prevDur">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+              — minutos
+            </p>
+          </div>
+          <div class="preview-footer">
+            <div>
+              <span class="preview-strike" id="prevStrike" style="display:none;"></span>
+              <span class="preview-price" id="prevPrice">R$ —</span>
+            </div>
+            <button class="btn btn-sm" style="background:var(--ink); color:var(--gold-p); border:none; font-size:12px; padding:9px 16px; border-radius:999px;">+ Agendar</button>
+          </div>
+        </div>
+        <p class="text-sm" style="text-align:center; margin-top:12px;">Pré-visualização do card</p>
+        <div style="margin-top:22px; display:flex; flex-direction:column; gap:10px;">
+          <button class="btn btn-gold" id="savePkgBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+            Publicar pacote
+          </button>
+          <button class="btn btn-ghost" id="saveDraftBtn">Salvar rascunho</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== CRONOGRAMAS ================== -->
+  <div class="page" id="page-schedule">
+    <div class="sh">
+      <div><h2>Cronogramas</h2><p>Visualize, confirme e gerencie todos os agendamentos.</p></div>
+      <button class="btn btn-gold btn-sm" id="exportSchedBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exportar CSV
+      </button>
+    </div>
+
+    <div class="sch-layout">
+      <div>
+        <div class="full-cal">
+          <div class="full-cal-head">
+            <span class="full-cal-month" id="fcalMonth"></span>
+            <div class="full-cal-nav">
+              <button id="fcalPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button id="fcalNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+          <div class="cal-wdays"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+          <div class="cal-days-mini" id="fcalDays"></div>
+          <div style="margin-top:18px; border-top:1px solid var(--line); padding-top:14px;">
+            <p style="font-size:12px; color:var(--ink-3); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.05em;">Legenda</p>
+            <div style="display:flex; flex-direction:column; gap:8px; font-size:12.5px; color:var(--ink-2);">
+              <span style="display:flex; align-items:center; gap:8px;"><span style="width:14px; height:14px; border-radius:50%; background:var(--ink); display:inline-block;"></span>Hoje</span>
+              <span style="display:flex; align-items:center; gap:8px;"><span style="width:8px; height:8px; border-radius:50%; background:var(--gold-d); display:inline-block;"></span>Possui agendamentos</span>
+              <span style="display:flex; align-items:center; gap:8px;"><span style="width:14px; height:14px; border-radius:50%; background:var(--gold); display:inline-block;"></span>Dia selecionado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sch-right">
+        <div class="day-strip" id="dayStrip"></div>
+
+        <div class="sch-filters">
+          <div class="search-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="text" id="schedSearch" placeholder="Buscar por cliente ou tratamento...">
+          </div>
+          <select class="filter-select" id="schedPro">
+            <option value="">Todos os profissionais</option>
+            <option>Dra. Beatriz Lima</option>
+            <option>Dra. Fernanda Costa</option>
+            <option>Dr. Rafael Souza</option>
+          </select>
+          <select class="filter-select" id="schedStatus">
+            <option value="">Todos os status</option>
+            <option>Confirmado</option>
+            <option>Pendente</option>
+            <option>Cancelado</option>
+            <option>Concluído</option>
+          </select>
+        </div>
+
+        <div class="appt-list" id="apptList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== CLIENTES ================== -->
+  <div class="page" id="page-clients">
+    <div class="sh">
+      <div><h2>Histórico de clientes</h2><p>Consulte o perfil e histórico completo de cada cliente.</p></div>
+      <button class="btn btn-gold btn-sm" id="exportClientsBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exportar
+      </button>
+    </div>
+
+    <div class="clients-toolbar">
+      <div class="search-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" id="clientSearch" placeholder="Buscar por nome, e-mail ou telefone...">
+      </div>
+      <select class="filter-select" id="clientFilter">
+        <option value="">Todos os clientes</option>
+        <option>Com agendamento ativo</option>
+        <option>Sem agendamentos recentes</option>
+        <option>Novos este mês</option>
+      </select>
+    </div>
+
+    <table class="client-table" id="clientTable">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Telefone</th>
+          <th>Último atend.</th>
+          <th>Total (R$)</th>
+          <th>Sessões</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="clientTbody"></tbody>
+    </table>
+  </div>
+
+  <!-- ================== CONFIGURAÇÕES ================== -->
+  <div class="page" id="page-settings">
+    <div class="sh"><div><h2>Configurações</h2><p>Ajustes da conta e da clínica.</p></div></div>
+    <div class="card" style="max-width:560px;">
+      <div class="card-body">
+        <p style="font-size:14px; color:var(--ink-2); line-height:1.6;">Esta seção está em desenvolvimento. Em breve você poderá configurar horários de funcionamento, integrações de pagamento, e-mails automáticos e permissões da equipe.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================== MODAL CLIENTE ================== -->
+<div class="modal-bg" id="clientModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalClientName">—</h3>
+      <button class="modal-close" id="modalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <h4>Dados de contato</h4>
+        <div class="modal-row">
+          <div class="modal-field"><label>E-mail</label><p id="mEmail">—</p></div>
+          <div class="modal-field"><label>Telefone</label><p id="mPhone">—</p></div>
+        </div>
+        <div class="modal-row">
+          <div class="modal-field"><label>Cliente desde</label><p id="mSince">—</p></div>
+          <div class="modal-field"><label>Total gasto</label><p id="mTotal" class="color-wine fw600">—</p></div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Histórico de atendimentos</h4>
+        <div class="hist-timeline" id="mTimeline"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 2.2 2.6 3.6 4.8 4.4-2.2.8-3.8 2.2-4.8 4.4-1-2.2-2.6-3.6-4.8-4.4C9.4 5.6 11 4.2 12 2Z"/></svg>
+  <span id="toastMsg"></span>
+</div>
+
+<script src="~/js/adminPage.js" asp-append-version="true"></script>
+</body>
+</html>

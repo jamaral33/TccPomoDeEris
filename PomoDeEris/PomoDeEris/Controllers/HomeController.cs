@@ -17,6 +17,10 @@ namespace PomoDeEris.Controllers
         {
             return View();
         }
+        public IActionResult paginaAdm()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
