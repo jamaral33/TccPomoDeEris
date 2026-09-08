@@ -301,5 +301,5 @@ C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\hdek4t1xci-{0}-2ot14aicyf-2ot14aicyf.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\4d1n0oyk9z-{0}-gqq0c37t51-gqq0c37t51.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\qzo2fpwy1v-{0}-xcgp1jctr1-xcgp1jctr1.gz
-C:\Users\jjv\Documents\pomo\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\fugpj818ad-{0}-mn9e0x4fhp-mn9e0x4fhp.gz
 C:\Users\jjv\Documents\pomo\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net9.0\compressed\xp0uo5tnql-{0}-klgih03ax9-klgih03ax9.gz
+C:\Users\jjv\Documents\pomo\TccPomoDeEris\pomodeeris\pomodeeris\obj\Debug\net9.0\compressed\fugpj818ad-{0}-s3l1gaajqq-s3l1gaajqq.gz
