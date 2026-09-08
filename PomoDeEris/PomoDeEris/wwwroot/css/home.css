@@ -324,14 +324,20 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
 
 /* TESTIMONIAL */
 .testimonial {
-  max-width: 680px;
-  margin: 0 auto 90px;
-  text-align: center;
-  padding: 0 32px;
+  max-width: 1040px;
+  min-height: 290px;
+  margin: 0 auto 100px;
+  padding: 48px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  background: #fff3f4;
 }
-.testimonial__avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; margin: 0 auto 22px; background: var(--pink-200); }
-.testimonial blockquote { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; line-height: 1.5; color: var(--dark); margin: 0 0 16px; }
-.testimonial cite { font-size: 0.82rem; color: var(--muted); font-style: normal; }
+.testimonial__avatar { width: 170px; height: 170px; flex: 0 0 170px; border-radius: 50%; object-fit: cover; background: var(--pink-200); }
+.testimonial__content { max-width: 580px; text-align: center; }
+.testimonial blockquote { font-family: var(--font-display); font-style: normal; font-size: 1.55rem; line-height: 1.25; color: var(--dark); margin: 0 0 30px; }
+.testimonial cite { font-size: 0.9rem; color: var(--muted); font-style: normal; text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* FINAL CTA */
 .final-cta {
@@ -463,6 +469,9 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; }
 }
 @media (max-width: 640px) {
   .topbar { flex-direction: column; gap: 4px; text-align: center; }
+  .testimonial { flex-direction: column; gap: 28px; padding: 44px 24px; }
+  .testimonial__avatar { width: 140px; height: 140px; flex-basis: 140px; }
+  .testimonial blockquote { font-size: 1.35rem; }
   .treatment-grid { grid-template-columns: 1fr; }
   .footer { grid-template-columns: 1fr; }
   .hero__title { font-size: 2.1rem; }
