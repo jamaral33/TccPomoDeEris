@@ -17,10 +17,25 @@ namespace PomoDeEris.Libraries.Criptografia
             return salt;
         }
 
-        public string hasharSenha(string senha, byte[] salt)
+        public string hasharSenha(string senha)
         {
+            byte[] salt = gerarSalt();
+
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2( // Hasha a senha
+                password: senha!, //senha que será hashada (! para o compilador entender que não é nulo e parar de dar o erro)
+                salt: salt, // salt
+                prf: KeyDerivationPrf.HMACSHA256, //O algoritmo usado para hashar
+                iterationCount: 10000, // Número de vezes que o PBKDF2 realiza o processo de derivação
+                numBytesRequested: 32) //Tamanho do resultado
+            );
 
 
+            string senhaBanco = $"{Convert.ToBase64String(salt)}.{hashed}"; //Coloca o salt no começo do hash para guardar
+
+            return senhaBanco;
+        }
+        public string hasharSenhaSalt(string senha, byte[] salt)
+        {
             string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2( // Hasha a senha
                 password: senha!, //senha que será hashada (! para o compilador entender que não é nulo e parar de dar o erro)
                 salt: salt, // salt

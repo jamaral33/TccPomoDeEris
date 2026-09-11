@@ -2,6 +2,7 @@
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
 using System.Data;
+using PomoDeEris.Libraries.Criptografia;
 
 namespace PomoDeEris.Repository
 {
@@ -28,13 +29,16 @@ namespace PomoDeEris.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("insert into tbCliente (Nome, Nascimento, Sexo, CPF, Telefone, Email, Senha, Situacao)" +
-                    "values (@Nome, @Nascimento, @Sexo, @CPF, @Telefone, @Email, @Senha, @Situacao)", conexao);
+                CriptografiaSenha criptografar = new CriptografiaSenha();
+                string senha = criptografar.hasharSenha(cliente.Senha!);
 
+                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_cliente(@CPF, @Nome, @Email, @Telefone, @Senha)", conexao);
+
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cliente.CPF;
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
                 cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
                 cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
-                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
+                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = senha;
  
                 cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -49,8 +53,8 @@ namespace PomoDeEris.Repository
         public Cliente Login(string Email, string Senha)
         {
             throw new NotImplementedException();
-        }
 
+        }
         public Cliente ObterCliente(int Id)
         {
             throw new NotImplementedException();

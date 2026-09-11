@@ -1,16 +1,20 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PomoDeEris.Models;
+using PomoDeEris.Repository;
+using PomoDeEris.Repository.Contract;
 
 namespace PomoDeEris.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IClienteRepository _clienteRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IClienteRepository clienteRepository)
         {
             _logger = logger;
+            _clienteRepository = clienteRepository;
         }
 
         public IActionResult Index()
@@ -29,10 +33,13 @@ namespace PomoDeEris.Controllers
         [HttpPost]
         public IActionResult Cadastro([FromForm] Cliente cliente)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) //Valida a model
             {
                 return View(cliente);
             }
+
+             _clienteRepository.Cadastrar(cliente);
+
             return RedirectToAction(nameof(Index));
         }
         public IActionResult paginaAdm()
