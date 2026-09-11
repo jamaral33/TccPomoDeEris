@@ -22,7 +22,19 @@ namespace PomoDeEris.Controllers
         {
             return View();
         }
-
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Cadastro([FromForm] Cliente cliente)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(cliente);
+            }
+            return RedirectToAction(nameof(Index));
+        }
         public IActionResult paginaAdm()
         {
             return View();

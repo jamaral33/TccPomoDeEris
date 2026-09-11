@@ -1,0 +1,147 @@
+@model Cliente
+@{
+    Layout = null;
+    ViewData["Title"] = "Cadastro";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomo de Eris — Entrar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/css/paginaDeLogin.css" asp-append-version="true">
+</head>
+<body>
+
+<div class="login-page">
+
+  <!-- LADO ESQUERDO -->
+  <aside class="login-side">
+    <div class="login-side__content">
+      <div class="brand">
+        <h1 class="brand__name">Pomo de Eris</h1>
+        <img id="logo" src="~/images/logoPomoTransparente.png" alt="" class="brand__icon">
+        
+      </div>
+
+      <blockquote class="brand__quote">
+        “Beleza que transforma,<br>Cuidado que conquista”
+      </blockquote>
+
+      <p class="brand__tagline">
+        Tratamentos estéticos personalizados, escolhidos e agendados em poucos cliques.
+      </p>
+    </div>
+
+    <footer class="login-side__footer">© 2026 Pomo de Eris · Clínica Estética</footer>
+  </aside>
+
+  <!-- LADO DIREITO -->
+  <main class="login-form-side">
+    <a href="../home/index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Voltar ao site
+    </a>
+
+    <div class="form-wrap">
+      <p class="form-eyebrow">Pomo de Eris</p>
+      <h2 class="form-title">Bem-vinda de volta</h2>
+      <p class="form-subtitle">Entre para gerenciar seus tratamentos e agendamentos.</p>
+
+      <form id="login-form" method="post" asp-action="Cadastro">
+
+        <div class="field">
+            <label asp-for="CPF"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <input asp-for="CPF" placeholder="000.000.000-00" autocomplete="off" class="field__input" />
+            </div>
+            <span asp-validation-for="CPF" class="field__error"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Nome"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                <input asp-for="Nome" placeholder="Seu nome completo" autocomplete="name" class="field__input" />
+            </div>
+            <span asp-validation-for="Nome" class="field__error"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Email"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M2 6l10 7 10-7" />
+                </svg>
+                <input asp-for="Email" type="email" placeholder="voce@email.com" autocomplete="email" class="field__input" />
+            </div>
+            <span asp-validation-for="Email" class="field__error"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Senha"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="11" width="18" height="10" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <input asp-for="Senha" placeholder="Digite sua senha" autocomplete="new-password" class="field__input" />
+            </div>
+            <span asp-validation-for="Senha" class="field__error"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Telefone"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9.1 10.6a16 16 0 0 0 4.3 4.3l1.17-1.16a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <input asp-for="Telefone" type="tel" placeholder="(11) 99999-9999" autocomplete="tel" class="field__input" />
+            </div>
+            <span asp-validation-for="Telefone" class="field__error"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary" id="submit-btn">Entrar</button>
+
+        <div class="divider"><span>ou</span></div>
+
+        <button type="button" class="btn btn--google" id="google-btn">
+          <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.6C29.7 34.9 27 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.2-4 5.6l6.6 5.6C40.9 36.9 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+          Continuar com Google
+        </button>
+
+        <p class="signup-hint">
+          Já tem uma conta?
+        </p>
+        <button type="button" class="btn btn--secondary" id="create-account-btn">Login</button>
+
+        <p class="legal">
+          Ao continuar, você concorda com nossos
+          <a href="#">Termos de uso</a> e <a href="#">Política de privacidade</a>.
+        </p>
+      </form>
+    </div>
+  </main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 {
     public class Cliente : Pessoa
     {
-        public string MetodoPagamento { get; set; }
+        public string? MetodoPagamento { get; set; }
     }
 }
     
