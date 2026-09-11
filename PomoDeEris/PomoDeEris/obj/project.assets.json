@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jjv\\.nuget\\packages\\": {},
+    "C:\\Users\\gustavo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jjv\\Documents\\pomo\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+      "projectUniqueName": "C:\\Users\\gustavo\\Documents\\escola\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
       "projectName": "PomoDeEris",
-      "projectPath": "C:\\Users\\jjv\\Documents\\pomo\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
-      "packagesPath": "C:\\Users\\jjv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jjv\\Documents\\pomo\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\obj\\",
+      "projectPath": "C:\\Users\\gustavo\\Documents\\escola\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+      "packagesPath": "C:\\Users\\gustavo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gustavo\\Documents\\escola\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jjv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -52,7 +52,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -77,7 +77,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
