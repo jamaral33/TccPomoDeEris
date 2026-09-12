@@ -6,16 +6,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pomo de Eris — Entrar</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="~/css/paginaDeLogin.css" asp-append-version="true">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomo de Eris — Cadastrar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/paginaDeLogin.css" asp-append-version="true">
 </head>
-<body>
 
+<body>
 <div class="login-page">
 
   <!-- LADO ESQUERDO -->
@@ -24,7 +24,6 @@
       <div class="brand">
         <h1 class="brand__name">Pomo de Eris</h1>
         <img id="logo" src="~/images/logoPomoTransparente.png" alt="" class="brand__icon">
-        
       </div>
 
       <blockquote class="brand__quote">
@@ -41,14 +40,14 @@
 
   <!-- LADO DIREITO -->
   <main class="login-form-side">
-    <a href="../home/index.html" class="back-link">
+    <a asp-action="Index" asp-controller="Home" class="back-link">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       Voltar ao site
     </a>
 
     <div class="form-wrap">
       <p class="form-eyebrow">Pomo de Eris</p>
-      <h2 class="form-title">Bem-vinda de volta</h2>
+      <h2 class="form-title">Cadastre-se</h2>
       <p class="form-subtitle">Entre para gerenciar seus tratamentos e agendamentos.</p>
 
       <form id="login-form" method="post" asp-action="Cadastro">
@@ -112,7 +111,7 @@
             <span asp-validation-for="Telefone" class="field__error"></span>
         </div>
 
-        <button type="submit" class="btn btn--primary" id="submit-btn">Entrar</button>
+        <button type="submit" class="btn btn--primary" id="submit-btn">Cadastrar</button>
 
         <div class="divider"><span>ou</span></div>
 
@@ -121,10 +120,8 @@
           Continuar com Google
         </button>
 
-        <p class="signup-hint">
-          Já tem uma conta?
-        </p>
-        <button type="button" class="btn btn--secondary" id="create-account-btn">Login</button>
+        <p class="signup-hint">Já tem uma conta?</p>
+         <a class="btn btn--secondary" id="create-account-btn" asp-action="paginaDeLogin" asp-controller="Home">Login</a>
 
         <p class="legal">
           Ao continuar, você concorda com nossos
@@ -138,10 +135,9 @@
 
 <div class="toast" id="toast"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

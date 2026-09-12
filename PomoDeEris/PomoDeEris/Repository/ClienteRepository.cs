@@ -52,7 +52,44 @@ namespace PomoDeEris.Repository
 
         public Cliente Login(string Email, string Senha)
         {
-            throw new NotImplementedException();
+            CriptografiaSenha criptografar = new CriptografiaSenha();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("call sp_selecionar_clienteEmail(@Email)", conexao);
+
+                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = Email;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {
+                    cliente.Id = Convert.ToInt32(dr["idCliente"]);
+                    cliente.Nome = Convert.ToString(dr["Nome"]);
+                    cliente.CPF = Convert.ToString(dr["CPF"]);
+                    cliente.Telefone = Convert.ToString(dr["Telefone"]);
+                    cliente.Email = Convert.ToString(dr["Email"]);
+                    cliente.Senha = Convert.ToString(dr["Senha"]);
+                }
+                byte[] salt = Convert.FromBase64String(cliente.Senha.Split('.', 2)[0]);
+
+                if(cliente.CPF != null && cliente.Senha == criptografar.hasharSenhaSalt(Senha, salt))
+                {
+                    return cliente;
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
 
         }
         public Cliente ObterCliente(int Id)
