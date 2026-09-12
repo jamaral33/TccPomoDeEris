@@ -12,57 +12,57 @@ build_property.EntryPointFilePath =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PomoDeEris
 build_property.RootNamespace = PomoDeEris
-build_property.ProjectDir = C:\Users\gustavo\Documents\escola\TccPomoDeEris\PomoDeEris\PomoDeEris\
+build_property.ProjectDir = C:\Users\jjv\Desktop\TccPomoDeEris\pomodeeris\pomodeeris\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\gustavo\Documents\escola\TccPomoDeEris\PomoDeEris\PomoDeEris
+build_property.MSBuildProjectDirectory = C:\Users\jjv\Desktop\TccPomoDeEris\pomodeeris\pomodeeris
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Home/Cadastro.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Home/Cadastro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWRhc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Home/carrinhoDeCompra.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Home/carrinhoDeCompra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjYXJyaW5ob0RlQ29tcHJhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Home/Index.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Home/paginaAdm.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Home/paginaAdm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwYWdpbmFBZG0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Home/paginaDeLogin.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Home/paginaDeLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwYWdpbmFEZUxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Home/Privacy.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Shared/Error.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/_ViewImports.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/_ViewStart.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gustavo/Documents/escola/TccPomoDeEris/PomoDeEris/PomoDeEris/Views/Shared/_Layout.cshtml]
+[C:/Users/jjv/Desktop/TccPomoDeEris/pomodeeris/pomodeeris/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vuaz5ikzl7
