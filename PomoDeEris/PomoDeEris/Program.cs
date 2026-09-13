@@ -28,6 +28,9 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 
 });
+builder.Services.AddMvc().AddSessionStateTempDataProvider();
+builder.Services.AddScoped<PomoDeEris.Libraries.Sessao.Sessao>();
+
 
 var app = builder.Build();
 
@@ -41,6 +44,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

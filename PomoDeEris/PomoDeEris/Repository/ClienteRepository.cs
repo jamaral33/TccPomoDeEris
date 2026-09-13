@@ -78,9 +78,14 @@ namespace PomoDeEris.Repository
                     cliente.Email = Convert.ToString(dr["Email"]);
                     cliente.Senha = Convert.ToString(dr["Senha"]);
                 }
+                if(cliente.CPF == null)
+                {
+                    return null;
+                }
+
                 byte[] salt = Convert.FromBase64String(cliente.Senha.Split('.', 2)[0]);
 
-                if(cliente.CPF != null && cliente.Senha == criptografar.hasharSenhaSalt(Senha, salt))
+                if(cliente.Senha == criptografar.hasharSenhaSalt(Senha, salt))
                 {
                     return cliente;
 

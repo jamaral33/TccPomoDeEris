@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS dbPomodeEris;
+/*DROP DATABASE IF EXISTS dbPomodeEris;
 
 CREATE DATABASE dbPomodeEris;
 USE dbPomodeEris;
@@ -87,7 +87,6 @@ CREATE TABLE tbConsulta
     FOREIGN KEY (Matricula)
     REFERENCES tbFuncionario(Matricula)
 );
-
 CREATE TABLE tbPacoteConsulta
 (
     idConsulta INT,
@@ -157,7 +156,39 @@ BEGIN
     WHERE c.idCliente = vIdCliente;
 END $$
 
+CREATE PROCEDURE sp_selecionar_clienteLogin(vEmail varchar(50), vSenha varchar(70))
+BEGIN
+    SELECT 
+        c.idCliente,
+        c.CPF,
+        p.Nome,
+        p.Email,
+        p.Telefone,
+        p.Senha
+    FROM tbCliente c
+    JOIN tbPessoa p
+        ON c.CPF = p.CPF
+    WHERE c.idCliente = vIdCliente;
+END $$
 
+DELIMITER $$
+
+CREATE PROCEDURE sp_selecionar_clienteEmail(vEmail varchar(50))
+BEGIN
+    SELECT 
+        c.idCliente,
+        c.CPF,
+        p.Nome,
+        p.Email,
+        p.Telefone,
+        p.Senha
+    FROM tbCliente c
+    JOIN tbPessoa p
+        ON c.CPF = p.CPF
+    WHERE p.Email = vEmail;
+END $$
+
+call sp_selecionar_clienteEmail('teste@teste.com');
 -- FUNCIONÁRIO
 
 CREATE PROCEDURE sp_cadastrar_funcionario(

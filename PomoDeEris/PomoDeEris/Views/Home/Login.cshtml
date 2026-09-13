@@ -1,3 +1,5 @@
+@model LoginClienteViewModel;
+
 @{
     Layout = null;
     ViewData["Title"] = "Painel de Administração";
@@ -50,27 +52,30 @@
       <h2 class="form-title">Bem-vinda de volta</h2>
       <p class="form-subtitle">Entre para gerenciar seus tratamentos e agendamentos.</p>
 
-      <form id="login-form" novalidate>
-
+     <form id="login-form" method="post" asp-action="Login">
+         <p>@ViewData["MSG_E"]</p>  <!--estilizar dps-->
         <div class="field">
-          <label for="email">E-mail</label>
-          <div class="field__control">
-            <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
-            <input type="email" id="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
-          </div>
-          <span class="field__error" id="email-error"></span>
+            <label asp-for="Email"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M2 6l10 7 10-7" />
+                </svg>
+                <input asp-for="Email" type="email" placeholder="voce@email.com" autocomplete="email" class="field__input" />
+            </div>
+            <span asp-validation-for="Email" class="field__error"></span>
         </div>
 
         <div class="field">
-          <label for="password">Senha</label>
-          <div class="field__control">
-            <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-            <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
-            <button type="button" class="field__toggle" id="toggle-password" aria-label="Mostrar senha">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </div>
-          <span class="field__error" id="password-error"></span>
+            <label asp-for="Senha"></label>
+            <div class="field__control">
+                <svg class="field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="11" width="18" height="10" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <input asp-for="Senha" placeholder="Digite sua senha" autocomplete="new-password" class="field__input" type="password"/>
+            </div>
+            <span asp-validation-for="Senha" class="field__error"></span>
         </div>
 
         <div class="field-row">
@@ -108,5 +113,8 @@
 <div class="toast" id="toast"></div>
 
 <script src="~/js/paginaDeLogin.js" asp-append-version="true"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>
