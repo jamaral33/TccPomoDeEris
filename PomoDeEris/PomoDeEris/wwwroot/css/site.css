@@ -46,14 +46,26 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 0 max(20px, calc((100% - 776px) / 2));
   min-height: 56px;
   background: #fbe3df;
   position: sticky;
   top: 0;
   z-index: 30;
 }
-.logo { display: flex; flex-direction: column; text-decoration: none; line-height: 1.1; }
+.header-conteudo {
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.1;
+}
 .logo__title { font-family: "Cormorant Garamond", serif; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; font-size: 1.35rem; color: #5c2438; white-space: nowrap; }
 .logo__subtitle { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #cc8f28; }
 .nav { display: flex; gap: 23px; align-items: center; }
