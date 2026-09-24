@@ -51,7 +51,8 @@ CREATE TABLE tbPacote
     idPacote INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(50) NOT NULL,
     Descricao VARCHAR(150) NOT NULL,
-    Valor DECIMAL(7,2) NOT NULL
+    Valor DECIMAL(7,2) NOT NULL,
+    Imagem varchar(255) NOT NULL
 );
 
 CREATE TABLE tbServicosPacote

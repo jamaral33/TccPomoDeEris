@@ -1,6 +1,8 @@
 wwwroot\css\carrinhoDeCompra.css
+wwwroot\css\home.css
 wwwroot\css\paginaAdm.css
 wwwroot\css\paginaDeLogin.css
+wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\bronzeamento.png
 wwwroot\images\fotoDaCliente.png
@@ -76,5 +78,3 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\home.css
-wwwroot\css\site.css
