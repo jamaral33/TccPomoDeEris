@@ -1,4 +1,4 @@
-/*DROP DATABASE IF EXISTS dbPomodeEris;
+/* DROP DATABASE IF EXISTS dbPomodeEris;
 
 CREATE DATABASE dbPomodeEris;
 USE dbPomodeEris;
@@ -12,7 +12,8 @@ CREATE TABLE tbPessoa
     Nome VARCHAR(100) NOT NULL,
     Email VARCHAR(50) NOT NULL,
     Telefone CHAR(11) NOT NULL,
-    Senha VARCHAR(70) NOT NULL
+    Senha VARCHAR(70) NOT NULL,
+    Situacao varchar(70) NOT NULL
 );
 
 CREATE TABLE tbCliente
@@ -131,11 +132,12 @@ CREATE PROCEDURE sp_cadastrar_cliente(
     vNome VARCHAR(100),
     vEmail VARCHAR(50),
     vTelefone CHAR(11),
-    vSenha VARCHAR(70)
+    vSenha VARCHAR(70),
+    vSituacao varchar(70)
 )
 BEGIN
     INSERT INTO tbPessoa
-    VALUES (vCPF, vNome, vEmail, vTelefone, vSenha);
+    VALUES (vCPF, vNome, vEmail, vTelefone, vSenha, vSituacao);
     
     INSERT INTO tbCliente(CPF)
     VALUES(vCPF);
@@ -165,7 +167,8 @@ BEGIN
         p.Nome,
         p.Email,
         p.Telefone,
-        p.Senha
+        p.Senha,
+        p.Situacao
     FROM tbCliente c
     JOIN tbPessoa p
         ON c.CPF = p.CPF
@@ -182,7 +185,8 @@ BEGIN
         p.Nome,
         p.Email,
         p.Telefone,
-        p.Senha
+        p.Senha,
+        p.Situacao
     FROM tbCliente c
     JOIN tbPessoa p
         ON c.CPF = p.CPF
@@ -196,13 +200,14 @@ CREATE PROCEDURE sp_cadastrar_funcionario(
     vCPF CHAR(11), 
     vNome VARCHAR(100),
     vEmail VARCHAR(50),
+    vSituacao varchar(70),
     vTelefone CHAR(11),
     vSenha VARCHAR(70),
     vFuncao VARCHAR(50)
 )
 BEGIN
     INSERT INTO tbPessoa
-    VALUES (vCPF, vNome, vEmail, vTelefone, vSenha);
+    VALUES (vCPF, vNome, vEmail, vTelefone, vSenha, vSituacao);
 
     INSERT INTO tbFuncionario(CPF, Funcao)
     VALUES (vCPF, vFuncao);
@@ -254,11 +259,12 @@ END $$
 CREATE PROCEDURE sp_cadastrar_pacote(
     vNome VARCHAR(50),
     vDescricao VARCHAR(150),
-    vValor DECIMAL(7,2)
+    vValor DECIMAL(7,2),
+    vImagem varchar(255)
 )
 BEGIN
-    INSERT INTO tbPacote (Nome, Descricao, Valor)
-    VALUES (vNome, vDescricao, vValor);
+    INSERT INTO tbPacote (Nome, Descricao, Valor, Imagem)
+    VALUES (vNome, vDescricao, vValor, vImagem);
 END $$
 
 
@@ -451,7 +457,8 @@ CALL sp_cadastrar_cliente(
     'Nilson',
     'nilson@email.com',
     '11987654321',
-    '123456'
+    '123456',
+    "Ativo"
 );
 
 CALL sp_selecionar_cliente(1);
@@ -463,6 +470,7 @@ CALL sp_cadastrar_funcionario(
     '98765432100',
     'Maria Silva',
     'maria@email.com',
+    'Ativo',
     '11999998888',
     'senha123',
     'Recepcionista'
@@ -486,7 +494,8 @@ CALL sp_selecionar_servico(1);
 CALL sp_cadastrar_pacote(
     'Pacote Facial',
     'Pacote completo de cuidados faciais',
-    250.00
+    250.00,
+    "wwwroot/Imagens/Teste.png"
 );
 
 CALL sp_selecionar_pacote(1);

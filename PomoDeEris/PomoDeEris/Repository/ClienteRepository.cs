@@ -3,6 +3,7 @@ using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
 using System.Data;
 using PomoDeEris.Libraries.Criptografia;
+using PomoDeEris.Models.Constants;
 
 namespace PomoDeEris.Repository
 {
@@ -26,20 +27,23 @@ namespace PomoDeEris.Repository
 
         public void Cadastrar(Cliente cliente)
         {
+            var situacao = PessoaSituacaoConstant.Ativo;
+
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
                 CriptografiaSenha criptografar = new CriptografiaSenha();
                 string senha = criptografar.hasharSenha(cliente.Senha!);
 
-                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_cliente(@CPF, @Nome, @Email, @Telefone, @Senha)", conexao);
+                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_cliente(@CPF, @Nome, @Email, @Telefone, @Senha, @Situacao)", conexao); // ADD SITUACAO DPS
 
                 cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cliente.CPF;
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
                 cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
                 cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
                 cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = senha;
- 
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = situacao;
+
                 cmd.ExecuteNonQuery();
                 conexao.Close();
             }
@@ -77,8 +81,10 @@ namespace PomoDeEris.Repository
                     cliente.Telefone = Convert.ToString(dr["Telefone"]);
                     cliente.Email = Convert.ToString(dr["Email"]);
                     cliente.Senha = Convert.ToString(dr["Senha"]);
+                    cliente.Situacao = Convert.ToString(dr["Situacao"]);
+
                 }
-                if(cliente.CPF == null)
+                if (cliente.CPF == null)
                 {
                     return null;
                 }

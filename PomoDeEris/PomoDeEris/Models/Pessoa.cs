@@ -34,6 +34,8 @@ namespace PomoDeEris.Models
         [RegularExpression(@"^\d{11}$", ErrorMessage = "O telefone deve conter apenas números e ter  11 dígitos")]
         public string? Telefone { get; set; }
 
+        public string? Situacao {get; set; }
+
 
 
 

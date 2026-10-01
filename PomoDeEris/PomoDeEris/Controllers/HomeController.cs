@@ -26,43 +26,6 @@ namespace PomoDeEris.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Login([FromForm] LoginClienteViewModel cliente)
-        {
-            Cliente clienteDB = _clienteRepository.Login(cliente.Email, cliente.Senha);
-            if (clienteDB!=null && clienteDB.Email != null && clienteDB.Senha != null)
-            {
-                _loginCliente.Login(clienteDB);
-                return new RedirectResult(Url.Action(nameof(Index)));
-            }
-            else
-            {
-                //ERRO NA SESSAO
-                ViewData["MSG_E"] = "Usuário não localizado, por favor verifique o email e senha digitado";
-                return View();
-            }
-        }
-        public IActionResult Cadastro()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Cadastro([FromForm] Cliente cliente)
-        {
-            if (!ModelState.IsValid) //Valida a model
-            {
-                return View(cliente);
-            }
-
-             _clienteRepository.Cadastrar(cliente);
-
-            return RedirectToAction(nameof(Index));
-        }
         public IActionResult paginaAdm()
         {
             return View();
