@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject PomoDeEris.Libraries.Login.LoginCliente LoginCliente
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
@@ -6,6 +8,8 @@
     <title>@ViewData["Title"] - Pomo De Eris</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/home.css" asp-append-version="true">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
+
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
@@ -24,7 +28,6 @@
         </a>
         <nav class="nav">
             <a href="@Url.Action("Index", "Home")#tratamentos">Tratamentos</a>
-            <a href="@Url.Action("Index", "Home")#categorias">Categorias</a>
             <a href="@Url.Action("Index", "Home")#promocoes">Promoções</a>
             <a href="@Url.Action("Index", "Home")#sobre">Sobre</a>
             <a href="@Url.Action("Index", "Home")#contato">Contato</a>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1kikqWJGUMg=",
+  "dgSpecHash": "5C7L+RHYq38=",
   "success": true,
-  "projectFilePath": "C:\\Users\\3MTEC\\Documents\\Nova pasta\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+  "projectFilePath": "C:\\Users\\3MTEC\\Desktop\\610\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\3MTEC\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\3MTEC\\.nuget\\packages\\google.protobuf\\3.35.0\\google.protobuf.3.35.0.nupkg.sha512",
