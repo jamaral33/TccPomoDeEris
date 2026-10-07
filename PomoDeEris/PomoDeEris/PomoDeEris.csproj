@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Libraries\Carrinho\" />
     <Folder Include="Models\ViewModel\" />
     <Folder Include="Areas\" />
   </ItemGroup>

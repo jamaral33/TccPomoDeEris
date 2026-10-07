@@ -492,12 +492,29 @@ CALL sp_selecionar_servico(1);
 -- PACOTE
 
 CALL sp_cadastrar_pacote(
-    'Pacote Facial',
-    'Pacote completo de cuidados faciais',
+    'Pacote Manicure',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit sollicitudin cursus.' ,
     250.00,
-    "wwwroot/Imagens/Teste.png"
+    "/images/manicure.png"
 );
-
+CALL sp_cadastrar_pacote(
+    'Pacote de pelos faciais',
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    100.00,
+    "/images/pelosFaciais.png"
+);
+CALL sp_cadastrar_pacote(
+    'Pacote HidroRelaxamento',
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    250.00,
+    "/images/hidroRelaxamento.png"
+);
+CALL sp_cadastrar_pacote(
+    'Pacote Massagem Relaxante',
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    250.00,
+    "/images/massagem-relaxante.png"
+);
 CALL sp_selecionar_pacote(1);
 
 
