@@ -12,6 +12,7 @@ builder.Services.AddHttpContextAccessor();
 
 //Adicionar interface como serviço
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IPacoteRepository, PacoteRepository>();
 builder.Services.AddScoped<PomoDeEris.Libraries.Sessao.Sessao>();
 builder.Services.AddScoped<LoginCliente>();
 

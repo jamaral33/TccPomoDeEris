@@ -12,18 +12,21 @@ namespace PomoDeEris.Controllers
         private readonly ILogger<HomeController> _logger;
         private IClienteRepository _clienteRepository;
         private LoginCliente _loginCliente;
+        private IPacoteRepository _pacoteRepository;
 
 
-        public HomeController(ILogger<HomeController> logger, IClienteRepository clienteRepository, LoginCliente loginCliente)
+
+        public HomeController(ILogger<HomeController> logger, IClienteRepository clienteRepository, LoginCliente loginCliente, IPacoteRepository pacoteRepository)
         {
             _logger = logger;
             _clienteRepository = clienteRepository;
             _loginCliente = loginCliente;
+            _pacoteRepository = pacoteRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_pacoteRepository.ObterTodosPacotes());
         }
 
         public IActionResult paginaAdm()

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<PomoDeEris.Models.Pacote>
+
+@{
     ViewData["Title"] = "Clínica Estética";
 }
 @section Styles {
@@ -109,7 +111,30 @@
 
   <div class="treatment-grid" id="treatment-grid">
     <!-- Os cartões são gerados via JavaScript a partir da hometratamentos.js -->
-  </div>
+        @foreach(var item in Model)
+        {
+        <article class="treatment-card" data-id="massagem-relaxante">
+                <div class="treatment-card__image-wrap">
+                  <img src="/images/massagem-relaxante.png" alt="Pacote Massagem Relaxante">
+                  <span class="treatment-card__badge">Inverno −20%</span>
+                </div>
+                <div class="treatment-card__body">
+                  <h3 class="treatment-card__name">@item.Nome</h3>
+                  <p class="treatment-card__desc">Higienização completa com extração e máscara calmante para uma pele renovada.</p>
+                  <span class="treatment-card__duration">⏱ 60 min</span>
+                  <div class="treatment-card__footer">
+                    <div class="treatment-card__price-wrap">
+                      <span class="treatment-card__price-label"></span>
+                      <span class="treatment-card__price">
+                        <span class="treatment-card__old-price">R$ 350</span>R$ 280
+                      </span>
+                    </div>
+                    <button class="add-btn" data-id="massagem-relaxante">+ Agendar</button>
+                  </div>
+                </div>
+            </article>
+        }
+    </div>
 </section>
 
 <!-- DEPOIMENTO -->
