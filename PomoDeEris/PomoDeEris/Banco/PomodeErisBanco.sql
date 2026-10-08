@@ -515,6 +515,18 @@ CALL sp_cadastrar_pacote(
     250.00,
     "/images/massagem-relaxante.png"
 );
+CALL sp_cadastrar_pacote(
+    'Pacote Bronzeamento',
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    550.50,
+    "/images/bronzeamento.png"
+);
+CALL sp_cadastrar_pacote(
+    'Pacote MicroPigmentação',
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    550.50,
+    "/images/pigmentacao.png"
+);
 CALL sp_selecionar_pacote(1);
 
 

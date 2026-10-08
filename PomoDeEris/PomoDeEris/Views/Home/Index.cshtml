@@ -128,7 +128,13 @@
                        R$ @item.Valor
                       </span>
                     </div>
-                    <button class="add-btn" data-id="massagem-relaxante">+ Agendar</button>
+                    @using(Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
+                    {
+
+                    <input type="hidden" name="id" value=@item.IdPacote />
+                    <button class="add-btn" type="submit">+ Agendar</button>
+
+                    }
                   </div>
                 </div>
             </article>
