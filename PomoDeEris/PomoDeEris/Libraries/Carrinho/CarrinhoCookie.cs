@@ -96,5 +96,11 @@ namespace PomoDeEris.Libraries.Carrinho
         {
             _cookie.Remover(Key);
         }
+        public int ContarItens()
+        {
+            var Lista = Consultar();
+            return Lista.Count;
+        }
+
     }
 }

@@ -110,6 +110,7 @@
   </div>
 
   <div class="treatment-grid" id="treatment-grid">
+       <!-- Gera os pacotes a partir do banco -->
         @foreach(var item in Model)
         {
         <article class="treatment-card" data-id="massagem-relaxante">
@@ -128,7 +129,7 @@
                        R$ @item.Valor
                       </span>
                     </div>
-                    @using(Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
+                    @using(Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post))
                     {
 
                     <input type="hidden" name="id" value=@item.IdPacote />

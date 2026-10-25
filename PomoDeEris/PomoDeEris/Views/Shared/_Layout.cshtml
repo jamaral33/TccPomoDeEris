@@ -1,4 +1,5 @@
 ﻿@inject PomoDeEris.Libraries.Login.LoginCliente LoginCliente
+@inject PomoDeEris.Libraries.Carrinho.CarrinhoCookie CarrinhoCookie
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -39,10 +40,10 @@
             <a asp-controller="Cliente" asp-action="Login" class="icon-btn" aria-label="Minha conta">
                 <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
             </a>
-            <button class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
+            <a asp-controller="Carrinho" asp-action="Index" class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
                 <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg>
-                <span class="cart-count" id="cart-count">0</span>
-            </button>
+                <span class="cart-count" id="cart-count">@CarrinhoCookie.ContarItens()</span>
+            </a>
         </div>
         </div>
       

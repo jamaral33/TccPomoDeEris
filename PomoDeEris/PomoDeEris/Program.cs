@@ -15,7 +15,8 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IPacoteRepository, PacoteRepository>();
 builder.Services.AddScoped<PomoDeEris.Libraries.Sessao.Sessao>();
 builder.Services.AddScoped<LoginCliente>();
-
+builder.Services.AddScoped<PomoDeEris.Libraries.Cookie.Cookie>();
+builder.Services.AddScoped<PomoDeEris.Libraries.Carrinho.CarrinhoCookie>();
 
 // Corrigir problema com TEMPDATA
 builder.Services.AddDistributedMemoryCache();
@@ -29,9 +30,15 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 
 });
+
 builder.Services.AddMvc().AddSessionStateTempDataProvider();
 builder.Services.AddScoped<PomoDeEris.Libraries.Sessao.Sessao>();
 
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+});
 
 var app = builder.Build();
 

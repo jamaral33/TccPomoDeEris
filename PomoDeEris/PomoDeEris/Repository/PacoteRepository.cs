@@ -17,7 +17,30 @@ namespace PomoDeEris.Repository
         }
         public Pacote ObterPacote(int Id)
         {
-            throw new NotImplementedException();
+            using(var conexao = new MySqlConnection(_conexaoMySQL)) 
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("CALL sp_selecionar_pacote(@idPacote)", conexao);
+                cmd.Parameters.Add("@idPacote", MySqlDbType.Int32).Value = Id;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Pacote pacote = new Pacote();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    pacote.Nome = (String)(dr["Nome"]);
+                    pacote.IdPacote = Id;
+                    pacote.Descricao = (String)(dr["Descricao"]);
+                    pacote.Imagem = (String)(dr["Imagem"]);
+                    pacote.Valor = Convert.ToDouble(dr["Valor"]);
+
+
+                }
+                return pacote;
+            }
         }
 
         public IEnumerable<Pacote> ObterTodosPacotes()

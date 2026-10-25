@@ -17,7 +17,7 @@ namespace PomoDeEris.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_carrinhoCookie.Consultar());
         }
 
         [HttpPost]
@@ -47,6 +47,15 @@ namespace PomoDeEris.Controllers
             }
             return View();
         }
+        [HttpPost]
+        public IActionResult RemoverPacote(int id)
+        {
+            Pacote pacote = _pacoteRepository.ObterPacote(id);
 
+            _carrinhoCookie.Remover(pacote);
+
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }

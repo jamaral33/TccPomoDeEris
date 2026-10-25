@@ -1,6 +1,9 @@
+@model List<Pacote>
 
 @{
     ViewData["Title"] = "Seu carrinho";
+    var total = Model.Sum(item => item.Valor);
+    var tempoTotal = Model.Count * 60;
 }
 @section Styles {
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +23,25 @@
     <!-- LISTA DE ITENS -->
     <section class="cart-list-card">
       <ul class="cart-list" id="cart-list">
-      </ul>
+            @foreach(var item in Model)
+            {
+                <li class="cart-list-item">
+                    <img src="@item.Imagem" alt="" class="cart-list-item__thumb">
+                    <div class="cart-list-item__info">
+                        <p class="cart-list-item__name">@item.Nome</p>
+                        <span class="cart-list-item__duration">60 min</span>
+                    </div>
+                    <div class="cart-list-item__price">
+                        @item.Valor
+                    </div>
+                        @using (Html.BeginForm("RemoverPacote", "Carrinho", FormMethod.Post))
+                        {
+                            <input type="hidden" name="id" value=@item.IdPacote />
+                            <button class="cart-list-item__remove" aria-label="Remover item" type="submit">✕</button>
+                        }
+                    </li>
+                }
+        </ul>
 
       <div class="cart-empty-state" id="cart-empty-state" hidden>
         <p>Seu carrinho está vazio.</p>
@@ -35,8 +56,8 @@
       <h2>Resumo do pedido</h2>
 
       <div class="summary-row">
-        <span id="summary-count">0 tratamentos</span>
-        <span id="summary-subtotal">R$ 0</span>
+        <span id="summary-count">@Model.Count tratamentos</span>
+        <span id="summary-subtotal">R$ @total</span>
       </div>
       <div class="summary-row summary-row--discount">
         <span>Descontos</span>
@@ -44,7 +65,7 @@
       </div>
       <div class="summary-row">
         <span>Duração total</span>
-        <span id="summary-duration">0 min</span>
+        <span id="summary-duration">@tempoTotal min</span>
       </div>
 
       <div class="summary-divider"></div>
