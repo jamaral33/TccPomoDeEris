@@ -1,0 +1,67 @@
+﻿<head>
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js" defer></script>
+    <script src="~/js/calendario.js" defer> </script>
+    <link rel="stylesheet" href="~/css/atendimento.css" />
+</head>
+<section class="agendamento-wrapper">
+
+    <header class="agendamento-titulo">
+        <span class="agendamento-subtitulo">AGENDE SEU HORÁRIO</span>
+        <h1>Selecione a data e o horário</h1>
+        <p>Escolha o dia que preferir e depois o horário disponível para o seu atendimento.</p>
+    </header>
+
+    <form asp-controller="Agendamento" asp-action="Agendar" method="post"
+    id="formularioAgendamento">
+
+        <input type="hidden" name="Data" id="dataSelecionada" />
+
+        <div class="agendamento-conteudo">
+
+            <section class="cartao-calendario">
+                <div id="calendario"></div>
+            </section>
+
+            <section class="cartao-horarios">
+
+                <div class="horarios-cabecalho">
+                    <div class="icone-relogio">&#9719;</div>
+                    <div>
+                        <h2>Horários disponíveis</h2>
+                        <p id="textoData">Selecione uma data no calendário</p>
+                    </div>
+                </div>
+
+                <div class="horarios-grade" id="listaHorarios">
+
+                    @for (int hora = 9; hora <= 18; hora++)
+                    {
+                        string horario = $"{hora:D2}:00";
+
+                        <label class="opcao-horario">
+                            <input type="radio"
+                                   name="Horario"
+                                   value="@horario"
+                                   required />
+
+                            <span>@horario</span>
+                        </label>
+                    }
+
+                </div>
+
+                <button type="submit" class="botao-confirmar">
+                    Confirmar agendamento
+                    <span aria-hidden="true">&#8594;</span>
+                </button>
+
+            </section>
+
+        </div>
+    </form>
+
+</section>
+<style>
+
+</style>

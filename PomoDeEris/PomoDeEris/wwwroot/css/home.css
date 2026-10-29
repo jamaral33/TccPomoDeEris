@@ -1,21 +1,23 @@
 :root {
-  --pink-100: #fbe3df;
-  --pink-200: #f6cec8;
-  --cream: #fdf6ee;
-  --wine-900: #5c2438;
-  --wine-700: #7a3049;
-  --gold-500: #dfa23a;
-  --gold-600: #cc8f28;
-  --dark: #241713;
-  --ink: #3a2a2e;
-  --muted: #8d7c7e;
-  --line: #ece2de;
-  --radius-s: 10px;
-  --radius-m: 16px;
-  --radius-l: 28px;
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Inter", sans-serif;
-  --max-width: 1180px;
+    --pink-100: #fbe3df;
+    --pink-200: #f6cec8;
+    --cream: #fdf6ee;
+    --wine-900: #5c2438;
+    --wine-700: #7a3049;
+    --gold-500: #dfa23a;
+    --gold-600: #cc8f28;
+    --dark: #241713;
+    --ink: #3a2a2e;
+    --muted: #8d7c7e;
+    --line: #ece2de;
+    --radius-s: 10px;
+    --radius-m: 16px;
+    --radius-l: 28px;
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
+    --max-width: 1180px;
+    --cor-fundo-calendario: #FFF8F6;
+    --cor-borda-calendario: #F2D4D0;
 }
 
 

@@ -1,0 +1,223 @@
+﻿:root {
+    --cor-fundo: #FFF5F4;
+    --cor-fundo-cartao: #FFF8F6;
+    --cor-fundo-secundario: #FBE4E1;
+    --cor-marrom-escuro: #2D1914;
+    --cor-marrom: #4A2B23;
+    --cor-rosa: #C66B78;
+    --cor-rosa-claro: #F5D8D5;
+    --cor-rosa-medio: #E8A9AB;
+    --cor-dourado: #C69A62;
+    --cor-texto: #38221D;
+    --cor-texto-secundario: #8D6A62;
+    --cor-texto-claro: #FFF8F6;
+    --cor-borda: #F2D4D0;
+    --cor-borda-escura: #DCA6A4;
+    --cor-indisponivel: #D8C9C7;
+    --sombra-cartao: 0 8px 24px rgba(74, 43, 35, 0.08);
+}
+
+/* Página */
+
+.pagina-agendamento {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 45px 24px 55px;
+    min-height: 590px;
+    font-family: Arial, sans-serif;
+}
+
+.agendamento-wrapper {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.agendamento-titulo {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.agendamento-subtitulo {
+    color: var(--cor-rosa);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.agendamento-titulo h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.agendamento-titulo p {
+    color: var(--cor-texto-secundario);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Layout dos cartões */
+
+.agendamento-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.cartao-calendario,
+.cartao-horarios {
+    background: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--sombra-cartao);
+    min-width: 0;
+}
+
+/* Calendário Vanilla Calendar Pro */
+
+#calendario {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Cabeçalho dos horários */
+
+.horarios-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.icone-relogio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--cor-fundo-secundario);
+    color: var(--cor-rosa);
+    font-size: 27px;
+}
+
+.horarios-cabecalho h2 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 5px;
+}
+
+.horarios-cabecalho p {
+    color: var(--cor-texto-secundario);
+    font-size: 12px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+/* Grade de horários */
+
+.horarios-grade {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.opcao-horario {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    min-width: 0;
+}
+
+    .opcao-horario input {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+
+    .opcao-horario span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 42px;
+        padding: 8px 4px;
+        border: 1px solid var(--cor-borda-escura);
+        border-radius: 8px;
+        background: var(--cor-fundo-cartao);
+        color: var(--cor-texto);
+        font-size: 13px;
+        transition: 0.2s;
+    }
+
+    .opcao-horario:hover span {
+        background: var(--cor-rosa-claro);
+    }
+
+    .opcao-horario input:checked + span {
+        background: var(--cor-rosa);
+        border-color: var(--cor-rosa);
+        color: var(--cor-texto-claro);
+    }
+
+    .opcao-horario input:focus-visible + span {
+        outline: 2px solid var(--cor-marrom);
+        outline-offset: 3px;
+    }
+
+/* Botão */
+
+.botao-confirmar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cor-rosa);
+    color: var(--cor-texto-claro);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .botao-confirmar:hover {
+        background: var(--cor-marrom);
+    }
+
+/* Celulares e tablets */
+
+@media (max-width: 760px) {
+    .pagina-agendamento {
+        padding: 32px 16px;
+    }
+
+    .agendamento-conteudo {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .cartao-calendario,
+    .cartao-horarios {
+        padding: 20px 16px;
+    }
+
+    .agendamento-titulo h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    .horarios-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

@@ -1,4 +1,4 @@
-/* DROP DATABASE IF EXISTS dbPomodeEris;
+DROP DATABASE IF EXISTS dbPomodeEris;
 
 CREATE DATABASE dbPomodeEris;
 USE dbPomodeEris;
@@ -77,8 +77,7 @@ CREATE TABLE tbConsulta
 (
     idConsulta INT PRIMARY KEY AUTO_INCREMENT,
     idCliente INT NOT NULL,
-    Matricula INT NOT NULL,
-    dataHoraConsulta DATETIME NOT NULL,
+    Matricula INT,
     Situacao CHAR(1) NOT NULL,
     
     CONSTRAINT fk_tbConsulta_idCliente_tbCliente
@@ -88,6 +87,16 @@ CREATE TABLE tbConsulta
     CONSTRAINT fk_tbConsulta_Matricula_tbFuncionario
     FOREIGN KEY (Matricula)
     REFERENCES tbFuncionario(Matricula)
+);
+
+CREATE TABLE tbAgenda(
+	tipo varchar(50),
+	idConsulta INT,
+    DiaHorario datetime,
+    
+   CONSTRAINT fk_tbAgenda_idConsulta
+    FOREIGN KEY (idConsulta)
+    REFERENCES tbConsulta(idConsulta)
 );
 CREATE TABLE tbPacoteConsulta
 (
@@ -312,20 +321,17 @@ END $$
 CREATE PROCEDURE sp_cadastrar_consulta(
     vIdCliente INT,
     vMatricula INT,
-    vDataHoraConsulta DATETIME,
     vSituacao CHAR(1)
 )
 BEGIN
     INSERT INTO tbConsulta (
         idCliente,
         Matricula,
-        dataHoraConsulta,
         Situacao
     )
     VALUES (
         vIdCliente,
         vMatricula,
-        vDataHoraConsulta,
         vSituacao
     );
 END $$
@@ -336,7 +342,6 @@ BEGIN
         c.idConsulta,
         c.idCliente,
         c.Matricula,
-        c.dataHoraConsulta,
         c.Situacao,
 
         cl.CPF AS CPF_Cliente,

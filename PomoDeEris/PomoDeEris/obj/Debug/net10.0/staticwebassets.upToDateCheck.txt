@@ -1,3 +1,4 @@
+wwwroot\css\atendimento.css
 wwwroot\css\carrinhoDeCompra.css
 wwwroot\css\home.css
 wwwroot\css\paginaAdm.css
@@ -13,6 +14,7 @@ wwwroot\images\massagem-relaxante.png
 wwwroot\images\pelosFaciais.png
 wwwroot\images\pigmentacao.png
 wwwroot\js\adminPage.js
+wwwroot\js\calendario.js
 wwwroot\js\paginaDeLogin.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -143,3 +145,5 @@ C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\www
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\paginaAdm.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\home.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\carrinhoDeCompra.css
+C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\calendario.js
+C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\atendimento.css
