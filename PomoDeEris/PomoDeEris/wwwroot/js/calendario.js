@@ -1,65 +1,43 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
-    // Destructure the Calendar constructor
-    const { Calendar } = window.VanillaCalendarPro;
 
     const campoData = document.querySelector('#dataSelecionada');
+    const campoHorario = document.querySelector('#horarioCompleto');
     const formulario = document.querySelector('#formularioAgendamento');
+
+    const { Calendar } = window.VanillaCalendarPro;
 
     const calendario = new Calendar('#calendario', {
         locale: 'pt-BR',
         firstWeekday: 0,
-
         selectionDatesMode: 'single',
+        disableWeekdays: [0, 1],
+        disableDatesPast: true,
         selectedTheme: 'light',
 
-        // Domingo e sábado indisponíveis
-        disableWeekdays: [0, 1],
-
-        // Impede a seleção de datas anteriores a hoje
-        disableDatesPast: true,
-
-        //Quando o usuario clica na data
         onClickDate(self) {
-            const data = self.context.selectedDates[0]; // pega a data
+            campoData.value = self.context.selectedDates[0] || ''; // preenche o campo com a data
 
-            if (!data) return;
-
-            campoData.value = data;
-
-            // Evita interpretar a data como UTC e alterar o dia
-            
-
-            carregarHorarios(data);
+            document.querySelectorAll('input[name="Horario"]').forEach(input => {
+                input.checked = false;
+            }); // reseta os horarios dps que clica na data
         }
     });
 
     calendario.init();
 
-    async function carregarHorarios(data) {
-        // Posteriormente desabilitar datas
-
-        document.querySelectorAll(
-            'input[name="Horario"]'
-        ).forEach(input => {
-            input.checked = false;
-            input.disabled = false;
-        });
-    }
-
     formulario.addEventListener('submit', event => {
-        if (!campoData.value) {
+
+        const selecionado = document.querySelector('input[name="Horario"]:checked');
+
+        if (!campoData.value || !selecionado) {
             event.preventDefault();
-            alert('Selecione uma data para o agendamento.');
+            alert('Selecione uma data e um horário.');
             return;
         }
 
-        const horarioSelecionado = document.querySelector(
-            'input[name="Horario"]:checked'
-        );
+        campoHorario.value = `${campoData.value}T${selecionado.value}:00`;
 
-        if (!horarioSelecionado) {
-            event.preventDefault();
-            alert('Selecione um horário para continuar.');
-        }
+        console.log('Data e horário enviados:', campoHorario.value);
     });
+
 });

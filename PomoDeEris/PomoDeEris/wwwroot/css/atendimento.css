@@ -134,41 +134,41 @@
     min-width: 0;
 }
 
-    .opcao-horario input {
-        position: absolute;
-        opacity: 0;
-        width: 1px;
-        height: 1px;
-    }
+.opcao-horario input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
 
-    .opcao-horario span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 42px;
-        padding: 8px 4px;
-        border: 1px solid var(--cor-borda-escura);
-        border-radius: 8px;
-        background: var(--cor-fundo-cartao);
-        color: var(--cor-texto);
-        font-size: 13px;
-        transition: 0.2s;
-    }
+.opcao-horario span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 42px;
+    padding: 8px 4px;
+    border: 1px solid var(--cor-borda-escura);
+    border-radius: 8px;
+    background: var(--cor-fundo-cartao);
+    color: var(--cor-texto);
+    font-size: 13px;
+    transition: 0.2s;
+}
 
-    .opcao-horario:hover span {
-        background: var(--cor-rosa-claro);
-    }
+.opcao-horario:hover span {
+    background: var(--cor-rosa-claro);
+}
 
-    .opcao-horario input:checked + span {
-        background: var(--cor-rosa);
-        border-color: var(--cor-rosa);
-        color: var(--cor-texto-claro);
-    }
+.opcao-horario input:checked + span {
+    background: var(--cor-rosa);
+    border-color: var(--cor-rosa);
+    color: var(--cor-texto-claro);
+}
 
-    .opcao-horario input:focus-visible + span {
-        outline: 2px solid var(--cor-marrom);
-        outline-offset: 3px;
-    }
+.opcao-horario input:focus-visible + span {
+    outline: 2px solid var(--cor-marrom);
+    outline-offset: 3px;
+}
 
 /* Botão */
 

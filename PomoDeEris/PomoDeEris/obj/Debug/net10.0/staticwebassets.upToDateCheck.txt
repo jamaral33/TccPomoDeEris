@@ -1,6 +1,5 @@
-wwwroot\css\atendimento.css
 wwwroot\css\carrinhoDeCompra.css
-wwwroot\css\home.css
+wwwroot\css\atendimento.css
 wwwroot\css\paginaAdm.css
 wwwroot\css\paginaDeLogin.css
 wwwroot\css\site.css
@@ -14,7 +13,6 @@ wwwroot\images\massagem-relaxante.png
 wwwroot\images\pelosFaciais.png
 wwwroot\images\pigmentacao.png
 wwwroot\js\adminPage.js
-wwwroot\js\calendario.js
 wwwroot\js\paginaDeLogin.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -77,6 +75,8 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\js\calendario.js
+wwwroot\css\home.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\LICENSE.txt
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.min.js

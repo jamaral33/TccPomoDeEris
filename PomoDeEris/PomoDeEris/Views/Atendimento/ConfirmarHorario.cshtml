@@ -12,10 +12,9 @@
         <p>Escolha o dia que preferir e depois o horário disponível para o seu atendimento.</p>
     </header>
 
-    <form asp-controller="Agendamento" asp-action="Agendar" method="post"
-    id="formularioAgendamento">
-
-        <input type="hidden" name="Data" id="dataSelecionada" />
+    <form asp-controller="Atendimento" asp-action="Agendar" method="post" id="formularioAgendamento">
+        <input type="hidden" id="horarioCompleto" name="horario" />
+        <input type="hidden" id="dataSelecionada" />
 
         <div class="agendamento-conteudo">
 
@@ -35,19 +34,55 @@
 
                 <div class="horarios-grade" id="listaHorarios">
 
-                    @for (int hora = 9; hora <= 18; hora++)
-                    {
-                        string horario = $"{hora:D2}:00";
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="09:00" required />
+                        <span>09:00</span>
+                    </label>
 
-                        <label class="opcao-horario">
-                            <input type="radio"
-                                   name="Horario"
-                                   value="@horario"
-                                   required />
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="10:00" />
+                        <span>10:00</span>
+                    </label>
 
-                            <span>@horario</span>
-                        </label>
-                    }
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="11:00" />
+                        <span>11:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="12:00" />
+                        <span>12:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="13:00" />
+                        <span>13:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="14:00" />
+                        <span>14:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="15:00" />
+                        <span>15:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="16:00" />
+                        <span>16:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="17:00" />
+                        <span>17:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="Horario" value="18:00" />
+                        <span>18:00</span>
+                    </label>
 
                 </div>
 

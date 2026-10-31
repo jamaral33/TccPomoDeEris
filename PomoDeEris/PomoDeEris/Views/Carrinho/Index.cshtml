@@ -30,9 +30,10 @@
                     <div class="cart-list-item__info">
                         <p class="cart-list-item__name">@item.Nome</p>
                         <span class="cart-list-item__duration">60 min</span>
-                    </div>
+                         <p class="cart-list-item__name">@item.Quantidade</p>
+                        </div>
                     <div class="cart-list-item__price">
-                        @item.Valor
+                        R$ @item.Valor
                     </div>
                         @using (Html.BeginForm("RemoverPacote", "Carrinho", FormMethod.Post))
                         {
@@ -72,10 +73,10 @@
 
       <div class="summary-total">
         <span>Total</span>
-        <strong id="summary-total">R$ 0</strong>
+        <strong id="summary-total">R$ @total</strong>
       </div>
 
-      <button class="btn btn--primary btn--block" id="confirm-btn">Confirmar agendamento</button>
+    <a asp-action="ConfirmarHorario" asp-controller="Atendimento" class="btn btn--primary btn--block" id="confirm-btn">Confirmar agendamento</a>
     </aside>
 
   </div>

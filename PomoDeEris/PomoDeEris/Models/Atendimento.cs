@@ -15,8 +15,7 @@ namespace PomoDeEris.Models
         public Cliente cliente { get; set; }
 
         public Funcionario funcionario { get; set; }
-
-        [Required]
+        
         public AtendimentoSituacaoConstant situacao { get; set; }
     }
 }

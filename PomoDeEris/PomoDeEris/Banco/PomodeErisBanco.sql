@@ -78,7 +78,7 @@ CREATE TABLE tbConsulta
     idConsulta INT PRIMARY KEY AUTO_INCREMENT,
     idCliente INT NOT NULL,
     Matricula INT,
-    Situacao CHAR(1) NOT NULL,
+    Situacao varchar(50) NOT NULL,
     
     CONSTRAINT fk_tbConsulta_idCliente_tbCliente
     FOREIGN KEY (idCliente)
@@ -90,6 +90,7 @@ CREATE TABLE tbConsulta
 );
 
 CREATE TABLE tbAgenda(
+	idAgenda INT PRIMARY KEY AUTO_INCREMENT,
 	tipo varchar(50),
 	idConsulta INT,
     DiaHorario datetime,
@@ -283,7 +284,8 @@ BEGIN
         p.idPacote,
         p.Nome,
         p.Descricao,
-        p.Valor
+        p.Valor,
+        p.Imagem
     FROM tbPacote p
     WHERE p.idPacote = vIdPacote;
 END $$
@@ -318,23 +320,39 @@ END $$
 
 -- CONSULTA
 
+DELIMITER $$
 CREATE PROCEDURE sp_cadastrar_consulta(
-    vIdCliente INT,
-    vMatricula INT,
-    vSituacao CHAR(1)
+	vIdCliente INT,
+    vHorario DATETIME
 )
+select * from tbconsulta;
+call sp_selecionar_pacote_consulta(2)
+select * from tbagenda;
 BEGIN
-    INSERT INTO tbConsulta (
-        idCliente,
-        Matricula,
-        Situacao
+	INSERT INTO tbConsulta (
+	idCliente,
+	Situacao
     )
     VALUES (
-        vIdCliente,
-        vMatricula,
-        vSituacao
+    	vIdCliente,
+        "Agendado"
     );
+    
+    INSERT INTO tbAgenda(
+		tipo,
+        DiaHorario
+	)
+    VALUES(
+		"Horario",
+        vHorario
+    );
+    SET @idConsulta = LAST_INSERT_ID();
+    
 END $$
+
+
+
+
 
 CREATE PROCEDURE sp_selecionar_consulta(vIdConsulta INT)
 BEGIN
