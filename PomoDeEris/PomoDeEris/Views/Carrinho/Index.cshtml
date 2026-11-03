@@ -2,7 +2,11 @@
 
 @{
     ViewData["Title"] = "Seu carrinho";
-    var total = Model.Sum(item => item.Valor);
+    Double total = 0;
+    foreach(var pacote in Model)
+    {
+        total += pacote.Valor * pacote.Quantidade;
+    }
     var tempoTotal = Model.Count * 60;
 }
 @section Styles {

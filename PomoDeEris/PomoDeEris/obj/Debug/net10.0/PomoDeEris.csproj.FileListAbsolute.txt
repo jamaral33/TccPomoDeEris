@@ -42,14 +42,9 @@ C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\sco
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\bundle\PomoDeEris.styles.css
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\projectbundle\PomoDeEris.bundle.scp.css
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-n8zidv0kid-n8zidv0kid.gz
-C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-63vmc4lfye-63vmc4lfye.gz
-C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-hfyje9774l-hfyje9774l.gz
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\rqem8pee8z-{0}-pqsburx8nl-pqsburx8nl.gz
-C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-1tfwqmo24p-1tfwqmo24p.gz
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qhhp18mukz-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\wpbg0166j9-{0}-e5lxxq19jd-e5lxxq19jd.gz
-C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\4d1n0oyk9z-{0}-vvi7fck1ha-vvi7fck1ha.gz
-C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\16we8t1d8v-{0}-0pdt64bnky-0pdt64bnky.gz
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\jontpmmycl-{0}-naj4zcpxz5-naj4zcpxz5.gz
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\1a4uoq6s1b-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\3mtec\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\2m87tia0w7-{0}-t1cqhe9u97-t1cqhe9u97.gz
@@ -252,3 +247,10 @@ C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-jbnnow8es9-jbnnow8es9.gz
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-9a344zag4y-9a344zag4y.gz
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-w911dsfttt-w911dsfttt.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-9a344zag4y-9a344zag4y.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-5zpxgv1iwf-5zpxgv1iwf.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-w911dsfttt-w911dsfttt.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-5ssfb3pg2i-5ssfb3pg2i.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-jbnnow8es9-jbnnow8es9.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\74l4qcouax-{0}-eu7dj86be9-eu7dj86be9.gz
+C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-ey8bbdgvc4-ey8bbdgvc4.gz

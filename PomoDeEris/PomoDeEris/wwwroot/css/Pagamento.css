@@ -1,0 +1,66 @@
+﻿:root {
+    --fb: 'Jost',sans-serif;
+}
+main{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.formasPagamento{
+    display: flex;
+    flex-direction: row;
+
+}
+.containerPagamento img {
+    width: 40px;
+    height: 40px;
+    margin-right: 30px;
+}
+
+.containerPagamento{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 75px;
+    background-color: #ffffff;
+    border: 2px solid #D4D4D4;
+    border-radius: 10px;
+    font-family: var(--fb);
+    margin-right: 50px;
+}
+
+.textoPagamentoContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-family: var(--fb);
+}
+
+.textoPagamentoContainer h2 {
+    font-family: var(--fb);
+}
+.textoPagamentoContainer h3 {
+    font-family: var(--fb);
+    font-weight: 400;
+}
+
+#infoPagamento {
+    background-color: #ffffff;
+    border: 2px solid #D4D4D4;
+    border-radius: 10px;
+    width: 1000px;
+    height: 700px;
+    font-family: var(--fb);
+    font-size: 15px;
+}
+.campoContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.campoContainer{
+    font-weight: 500;
+}

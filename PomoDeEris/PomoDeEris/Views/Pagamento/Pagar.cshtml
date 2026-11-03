@@ -1,0 +1,39 @@
+﻿@section Styles {
+	<link rel="stylesheet" href="~/css/Pagamento.css" asp-append-version="true">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+}
+<main>
+	<h1>Finalizar Compra</h1>
+
+	<div class="formasPagamento">
+		<button class="containerPagamento">
+			<img src="~/images/pixIcone.png" />
+			<div class="textoPagamentoContainer">
+				<h2 class="">Pix</h2>
+				<h3 class="">Pagamento à vista</h3>
+			</div>
+		</button>
+		<button class="containerPagamento">
+			<img src="~/images/cartaoIcone.svg" />
+			<div class="textoPagamentoContainer">
+				<h2 class="">Cartão de Crédito</h2>
+				<h3 class="">12x Sem juros</h3>
+			</div>
+		</button>
+		<button class="containerPagamento">
+			<img src="~/images/cartaoIcone.svg" />
+			<div class="textoPagamentoContainer">
+				<h2 class="">Cartão de Débito</h2>
+				<h3 class="">Pagamento à vista</h3>
+			</div>
+		</button>
+	</div>
+
+	<form id="infoPagamento">
+		<div class="campoContainer">
+			<label>Número do Cartão:</label>
+			<input type="text" placeholder="0000 0000 0000 0000" />
+		</div>
+	</form>
+</main>
