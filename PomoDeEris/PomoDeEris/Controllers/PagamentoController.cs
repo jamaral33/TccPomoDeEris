@@ -10,10 +10,12 @@ namespace PomoDeEris.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Pagar(Atendimento atendimento)
+        public IActionResult Pagar(DateTime horario)
         {
-            return View();
+            return View(horario);
         }
+
+
 
     }
 }

@@ -1,39 +1,209 @@
-﻿@section Styles {
+﻿@model DateTime
+@inject PomoDeEris.Libraries.Carrinho.CarrinhoCookie carrinhoCookie;
+@{
+    List<Pacote> carrinho = carrinhoCookie.Consultar();
+
+    Double total = 0;
+    foreach (var pacote in carrinho)
+    {
+        total += pacote.Valor * pacote.Quantidade;
+    }
+    var tempoTotal = carrinho.Count * 60;
+}
+@section Styles {
 	<link rel="stylesheet" href="~/css/Pagamento.css" asp-append-version="true">
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 }
-<main>
-	<h1>Finalizar Compra</h1>
+@section Scripts {
+    <script src="~/js/pagamento.js" asp-append-version="true"></script>
+}
+<main class="container">
+    <div class="conteudo-wrapper">
 
-	<div class="formasPagamento">
-		<button class="containerPagamento">
-			<img src="~/images/pixIcone.png" />
-			<div class="textoPagamentoContainer">
-				<h2 class="">Pix</h2>
-				<h3 class="">Pagamento à vista</h3>
-			</div>
-		</button>
-		<button class="containerPagamento">
-			<img src="~/images/cartaoIcone.svg" />
-			<div class="textoPagamentoContainer">
-				<h2 class="">Cartão de Crédito</h2>
-				<h3 class="">12x Sem juros</h3>
-			</div>
-		</button>
-		<button class="containerPagamento">
-			<img src="~/images/cartaoIcone.svg" />
-			<div class="textoPagamentoContainer">
-				<h2 class="">Cartão de Débito</h2>
-				<h3 class="">Pagamento à vista</h3>
-			</div>
-		</button>
-	</div>
+        <section class="area-pagamento">
+            <h1 class="titulo-pagina">Finalizar compra</h1>
 
-	<form id="infoPagamento">
-		<div class="campoContainer">
-			<label>Número do Cartão:</label>
-			<input type="text" placeholder="0000 0000 0000 0000" />
-		</div>
-	</form>
+            <form class="formulario-pagamento" id="formPagamento" asp-controller="Atendimento" asp-action="Agendar">
+
+                <input type="hidden" name="horario" value="@Model"/>
+                <!-- Métodos de pagamento -->
+                <div class="opcoes-pagamento">
+
+                    <button type="button" class="opcao-pagamento" id="botaoPix">
+                        <img src="~/images/pixIcone.png" class="icone-pagamento"/>
+                        <span class="texto-opcao">
+                            <strong>Pix</strong>
+                            <small>Pagamento à vista</small>
+                        </span>
+                    </button>
+
+                    <button type="button" class="opcao-pagamento ativo" id="botaoCredito">
+                        <img src="~/images/cartaoIcone.png" class="icone-pagamento" />
+                        <span class="texto-opcao">
+                            <strong>Cartão de Crédito</strong>
+                            <small>12x Sem juros</small>
+                        </span>
+                    </button>
+
+                    <button type="button" class="opcao-pagamento" id="botaoDebito">
+                        <img src="~/images/cartaoIcone.png" class="icone-pagamento" />
+                        <span class="texto-opcao">
+                            <strong>Cartão de Débito</strong>
+                            <small>Pagamento à vista</small>
+                        </span>
+                    </button>
+
+                </div>
+
+                <!-- Pagamento com cartão de crédito -->
+                <div class="painel-pagamento" id="painelCartao">
+
+                    <div class="campo">
+                        <label for="numeroCartao">Número do cartão:</label>
+                        <input type="text" id="numeroCartao" name="numeroCartao" placeholder="0000 0000 0000 0000">
+                    </div>
+
+                    <div class="campo">
+                        <label for="nomeCartao">Nome impresso no cartão:</label>
+                        <input type="text"  id="nomeCartao" name="nomeCartao" placeholder="NOME COMPLETO">
+                    </div>
+
+                    <div class="campos-duplos">
+
+                        <div class="campo">
+                            <label for="validade">Validade:</label>
+                            <input type="text" id="validade" name="validade" placeholder="MM/AA">
+                        </div>
+
+                        <div class="campo">
+                            <label for="cvv">Código de segurança:</label>
+                            <input type="password" id="cvv"name="cvv" placeholder="CVV">
+                        </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <label for="parcelamento">Parcelamento:</label>
+                        <select id="parcelamento" name="parcelamento">
+                            <option value="1">1x De R$@total</option>
+                            <option value="2">2x De R$@total / 2</option>
+                            <option value="3">3x De R$@total / 3</option>
+                            <option value="6">6x De R$@total / 6</option>
+                            <option value="12">12x De R$@total /12 </option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="botao-finalizar">
+                        Pagar
+                    </button>
+
+                </div>
+
+                <!-- Pagamento via Pix -->
+                <div class="painel-pagamento painel-pix oculto"
+                        id="painelPix">
+
+                    <div class="pix-wrapper">
+
+                        <div class="qr-code">
+                            <img src="~/images/pixQr.png" />
+                        </div>
+
+                        <div class="instrucoes-pix">
+
+                            <ol class="lista-instrucoes">
+                                <li>1. Abra o aplicativo do seu banco</li>
+                                <li>2. Escolha pagar com Pix</li>
+                                <li>3. Escaneie o QR Code ao lado</li>
+                            </ol>
+
+                            <div class="codigo-pix">
+                                <span>Ou use Pix Copia e Cola</span>
+                            </div>
+
+                            <button type="button"
+                                    class="botao-copiar"
+                                    id="botaoCopiar">
+                                 Copiar código Pix
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Pagamento via cartão de débito -->
+                <div class="painel-pagamento oculto" id="painelDebito">
+
+                    <div class="campo">
+                        <label for="numeroDebito">Número do cartão:</label>
+                        <input type="text" id="numeroDebito" placeholder="0000 0000 0000 0000">
+                    </div>
+
+                    <div class="campo">
+                        <label for="nomeDebito">Nome impresso no cartão:</label>
+                        <input type="text" id="nomeDebito" placeholder="NOME COMPLETO">
+                    </div>
+
+                    <div class="campos-duplos">
+                        <div class="campo">
+                            <label for="validadeDebito">Validade:</label>
+                            <input type="text" id="validadeDebito" placeholder="MM/AA">
+                        </div>
+
+                        <div class="campo">
+                            <label for="cvvDebito">Código de segurança:</label>
+                            <input type="password" id="cvvDebito" placeholder="CVV">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="botao-finalizar">
+                        Pagar
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Resumo do pedido -->
+        <aside class="resumo-pedido">
+
+            <h2>Resumo do pedido:</h2>
+
+            <div class="resumo-conteudo">
+
+                <strong class="quantidade-pacotes">6 Pacotes:</strong>
+
+                <ul class="lista-pacotes">
+                    @foreach(Pacote pacote in carrinho)
+                    {
+                        <li>
+                            <span>@pacote.Nome</span>
+                            <span>R$@pacote.Valor</span>
+                        </li>
+                    }
+                </ul>
+
+                <div class="resumo-total">
+
+                    <div class="linha-resumo">
+                        <span>Total:</span>
+                        <strong>R$@total</strong>
+                    </div>
+
+                    <div class="linha-resumo">
+                        <span>Duração:</span>
+                        <strong>@tempoTotal min</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
 </main>
