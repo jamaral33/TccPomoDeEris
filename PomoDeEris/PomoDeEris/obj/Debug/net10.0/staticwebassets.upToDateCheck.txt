@@ -1,4 +1,3 @@
-wwwroot\css\atendimento.css
 wwwroot\css\carrinhoDeCompra.css
 wwwroot\css\home.css
 wwwroot\css\Pagamento.css
@@ -20,6 +19,7 @@ wwwroot\images\pixIcone.png
 wwwroot\images\pixQr.png
 wwwroot\js\adminPage.js
 wwwroot\js\calendario.js
+wwwroot\js\pagamento.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -81,8 +81,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\js\pagamento.js
-C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\atendimento.css
+wwwroot\css\atendimento.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\carrinhoDeCompra.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\home.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\Pagamento.css
@@ -93,6 +92,7 @@ C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\www
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\images\cartaoIcone.svg
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\adminPage.js
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\calendario.js
+C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\pagamento.js
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\site.js
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -153,4 +153,4 @@ C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\www
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.min.js
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\LICENSE.txt
-C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\pagamento.js
+C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\atendimento.css

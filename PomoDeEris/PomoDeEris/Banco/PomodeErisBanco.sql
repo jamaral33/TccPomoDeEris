@@ -321,37 +321,35 @@ END $$
 -- CONSULTA
 
 DELIMITER $$
+
 CREATE PROCEDURE sp_cadastrar_consulta(
-	vIdCliente INT,
+    vIdCliente INT,
     vHorario DATETIME
 )
-select * from tbconsulta;
-call sp_selecionar_pacote_consulta(2)
-select * from tbagenda;
 BEGIN
-	INSERT INTO tbConsulta (
-	idCliente,
-	Situacao
+    INSERT INTO tbConsulta (
+        idCliente,
+        Situacao
     )
     VALUES (
-    	vIdCliente,
-        "Agendado"
+        vIdCliente,
+        'Agendado'
     );
-    
+
+    SET @idConsulta = LAST_INSERT_ID();
+
     INSERT INTO tbAgenda(
-		tipo,
+        tipo,
+        idConsulta,
         DiaHorario
-	)
+    )
     VALUES(
-		"Horario",
+        'horario',
+        @idConsulta,
         vHorario
     );
-    SET @idConsulta = LAST_INSERT_ID();
-    
+
 END $$
-
-
-
 
 
 CREATE PROCEDURE sp_selecionar_consulta(vIdConsulta INT)
@@ -564,13 +562,6 @@ CALL sp_selecionar_servicos_pacote(1);
 
 
 -- CONSULTA
-
-CALL sp_cadastrar_consulta(
-    1,
-    1,
-    '2026-08-25 14:30:00',
-    'A'
-);
 
 CALL sp_selecionar_consulta(1);
 

@@ -243,8 +243,6 @@ C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-5zpxgv1iwf-5zpxgv1iwf.gz
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-jbnnow8es9-jbnnow8es9.gz
-C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-9a344zag4y-9a344zag4y.gz
-C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-w911dsfttt-w911dsfttt.gz
 C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-9a344zag4y-9a344zag4y.gz
 C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-5zpxgv1iwf-5zpxgv1iwf.gz
 C:\Users\3MTEC\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-w911dsfttt-w911dsfttt.gz
@@ -256,3 +254,5 @@ C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\74l4qcouax-{0}-eu7dj86be9-eu7dj86be9.gz
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-ewsmbye8sr-ewsmbye8sr.gz
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\elikpcflif-{0}-f4efn38tt9-f4efn38tt9.gz
+C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-lipj5kj2y7-lipj5kj2y7.gz
+C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-30meprsw2w-30meprsw2w.gz

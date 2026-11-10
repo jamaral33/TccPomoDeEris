@@ -37,8 +37,8 @@ namespace PomoDeEris.Controllers
                 return RedirectToAction("Index", "Carrinho");
             }
             //VERIFICAR SE O CARRINHO N ESTÁ VAZIO E O USUARIO LOGADO !!!!
-
-            return View();
+            var dias = _atendimentoRepository.ObterDiasBloqueados();
+            return View(dias);
         }
         [HttpPost]
         public IActionResult Agendar(DateTime horario)
@@ -57,6 +57,14 @@ namespace PomoDeEris.Controllers
         public IActionResult Detalhes(int id)
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult ObterHorarios(DateTime data)
+        {
+            var horarios = _atendimentoRepository.ObterHorariosBloqueados(data);
+
+            return Json(horarios.Select(h => h.ToString("HH:mm")));
         }
     }
 }

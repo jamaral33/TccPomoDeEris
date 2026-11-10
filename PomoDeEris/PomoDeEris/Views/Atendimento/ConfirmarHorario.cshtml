@@ -1,9 +1,23 @@
-﻿<head>
+﻿@model List<DateTime>
+
+@section Styles {
     <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js" defer></script>
-    <script src="~/js/calendario.js" defer> </script>
+
     <link rel="stylesheet" href="~/css/atendimento.css" />
-</head>
+}
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js" defer></script>
+    <script src="~/js/calendario.js" defer asp-append-version="true"> </script>
+    <script>
+        const diasBloqueados = @Html.Raw(
+                System.Text.Json.JsonSerializer.Serialize(
+                    Model.Select(d => d.ToString("yyyy-MM-dd"))
+                )
+            );
+        // Transforma em um json as datas bloqueadas para que o javascript possa ler e bloquear no calendário
+    </script>
+}
+
 <section class="agendamento-wrapper">
 
     <header class="agendamento-titulo">

@@ -13,5 +13,9 @@ namespace PomoDeEris.Repository.Contract
         Atendimento ObterAtendimento(int Id);
 
         IEnumerable<Atendimento> ObterTodosAtendimentos();
+
+        List<DateTime> ObterDiasBloqueados();
+
+        List<DateTime> ObterHorariosBloqueados(DateTime data);
     }
 }

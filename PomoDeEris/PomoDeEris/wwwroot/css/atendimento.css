@@ -190,34 +190,19 @@
     transition: background 0.2s;
 }
 
-    .botao-confirmar:hover {
-        background: var(--cor-marrom);
-    }
-
-/* Celulares e tablets */
-
-@media (max-width: 760px) {
-    .pagina-agendamento {
-        padding: 32px 16px;
-    }
-
-    .agendamento-conteudo {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .cartao-calendario,
-    .cartao-horarios {
-        padding: 20px 16px;
-    }
-
-    .agendamento-titulo h1 {
-        font-size: 30px;
-    }
+.botao-confirmar:hover {
+    background: var(--cor-marrom);
 }
 
-@media (max-width: 380px) {
-    .horarios-grade {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.indisponivel {
+    text-decoration: line-through;
+}
+.indisponivel :hover {
+
+}
+.indisponivel:hover span {
+    background: var(--cor-fundo-cartao); 
+}
+.indisponivel span {
+    border: solid 1px var(--cor-indisponivel);
 }
