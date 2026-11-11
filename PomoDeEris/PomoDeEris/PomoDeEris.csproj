@@ -7,12 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Colaborador\Controllers\" />
     <Folder Include="Areas\Colaborador\Data\" />
     <Folder Include="Areas\Colaborador\Models\" />
     <Folder Include="Areas\Colaborador\Views\" />
     <Folder Include="Models\ViewModel\" />
-    <Folder Include="Areas\" />
   </ItemGroup>
 
   <ItemGroup>
