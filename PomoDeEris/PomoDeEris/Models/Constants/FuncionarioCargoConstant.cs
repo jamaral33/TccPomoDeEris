@@ -2,7 +2,7 @@
 {
     public class FuncionarioCargoConstant
     {
-        const string Administrador = "Administrador";
-        const string Colaborador = "Colaborador";
+        public const string Administrador = "Administrador";
+        public const string Comum = "Comum";
     }
 }

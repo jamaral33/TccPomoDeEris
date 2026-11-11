@@ -6,6 +6,6 @@ namespace PomoDeEris.Models
     public class Funcionario : Pessoa
     {
         [Required]
-        public FuncionarioCargoConstant cargo { get; set; }
+        public string cargo { get; set; }
     }
 }

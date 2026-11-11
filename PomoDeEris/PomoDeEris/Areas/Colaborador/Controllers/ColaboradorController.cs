@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PomoDeEris.Models;
 
 namespace PomoDeEris.Areas.Colaborador.Controllers
 {
@@ -8,5 +9,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         {
             return View();
         }
+
+       
     }
 }

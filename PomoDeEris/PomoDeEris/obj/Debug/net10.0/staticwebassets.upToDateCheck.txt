@@ -17,10 +17,8 @@ wwwroot\images\massagem-relaxante.png
 wwwroot\images\pelosFaciais.png
 wwwroot\images\pigmentacao.png
 wwwroot\images\pixIcone.png
-wwwroot\images\pixQr.png
 wwwroot\js\adminPage.js
 wwwroot\js\calendario.js
-wwwroot\js\pagamento.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -82,6 +80,8 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\js\pagamento.js
+wwwroot\images\pixQr.png
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\LICENSE.txt
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.min.js
 C:\Users\gustavo\Documents\escola\asssss\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.js
