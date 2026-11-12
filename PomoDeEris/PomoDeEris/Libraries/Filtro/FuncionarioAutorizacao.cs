@@ -24,7 +24,7 @@ namespace PomoDeEris.Libraries.Filtro
             }
             else
             {
-                if (colaborador.cargo == FuncionarioCargoConstant.Comum && _tipoColaboradorAutorizado == FuncionarioCargoConstant.Administrador)
+                if (colaborador.Cargo == FuncionarioCargoConstant.Comum && _tipoColaboradorAutorizado == FuncionarioCargoConstant.Administrador)
                 {
                     context.Result = new ForbidResult();
                 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gustavo\\Documents\\escola\\asssss\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {}
+    "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gustavo\\Documents\\escola\\asssss\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {
+    "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gustavo\\Documents\\escola\\asssss\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+        "projectUniqueName": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
         "projectName": "PomoDeEris",
-        "projectPath": "C:\\Users\\gustavo\\Documents\\escola\\asssss\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
+        "projectPath": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\PomoDeEris.csproj",
         "packagesPath": "C:\\Users\\gustavo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gustavo\\Documents\\escola\\asssss\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\obj\\",
+        "outputPath": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

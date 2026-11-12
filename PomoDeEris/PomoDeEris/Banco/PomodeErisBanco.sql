@@ -204,7 +204,26 @@ BEGIN
 END $$
 
 call sp_selecionar_clienteEmail('teste@teste.com');
+
+
 -- FUNCIONÁRIO
+DELIMITER $$
+CREATE PROCEDURE sp_selecionar_funcionarioEmail(vEmail varchar(50))
+BEGIN
+    SELECT 
+        f.Matricula,
+        f.CPF,
+        f.Funcao,
+        p.Nome,
+        p.Email,
+        p.Telefone,
+        p.Senha,
+        p.Situacao
+    FROM tbfuncionario f
+    JOIN tbPessoa p
+        ON c.CPF = p.CPF
+    WHERE p.Email = vEmail;
+END $$
 
 CREATE PROCEDURE sp_cadastrar_funcionario(
     vCPF CHAR(11), 
@@ -222,7 +241,6 @@ BEGIN
     INSERT INTO tbFuncionario(CPF, Funcao)
     VALUES (vCPF, vFuncao);
 END $$
-
 
 CREATE PROCEDURE sp_selecionar_funcionario(vMatricula INT)
 BEGIN
@@ -495,6 +513,16 @@ CALL sp_cadastrar_funcionario(
     '11999998888',
     'senha123',
     'Recepcionista'
+);
+
+CALL sp_cadastrar_funcionario(
+    '12345678901',                                                         
+    'Teste Testilson',                                                        
+    'teste@teste.com',                                              
+    'Ativo',                                                              
+    '11999998888',                                                    
+    'gwgwa8bw7c9eEmT3fctiuQ==.RS/Wl7XSoIUA7uqk7JMpZXVtfoy4BzGw3dejhb869nU=', 
+    'Atendente'                                                            
 );
 
 CALL sp_selecionar_funcionario(1);
