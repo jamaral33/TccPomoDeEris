@@ -14,8 +14,10 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IPacoteRepository, PacoteRepository>();
 builder.Services.AddScoped<IAtendimentoRepository, AtendimentoRepository>();
+builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 builder.Services.AddScoped<PomoDeEris.Libraries.Sessao.Sessao>();
 builder.Services.AddScoped<LoginCliente>();
+builder.Services.AddScoped<LoginFuncionario>();
 builder.Services.AddScoped<PomoDeEris.Libraries.Cookie.Cookie>();
 builder.Services.AddScoped<PomoDeEris.Libraries.Carrinho.CarrinhoCookie>();
 
@@ -56,10 +58,11 @@ app.UseStaticFiles();
 app.UseSession();
 
 app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 app.Run();

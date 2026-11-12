@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Colaborador\Data\" />
-    <Folder Include="Areas\Colaborador\Models\" />
     <Folder Include="Models\ViewModel\" />
   </ItemGroup>
 
