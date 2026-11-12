@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PomoDeEris")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+105017d67b92f7b3b1d0ca46057697c862249c90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d81ac78b9b9da9f5625e72658c5e3b0cec049b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PomoDeEris")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PomoDeEris")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

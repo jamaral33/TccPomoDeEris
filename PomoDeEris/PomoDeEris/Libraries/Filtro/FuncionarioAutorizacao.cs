@@ -20,7 +20,7 @@ namespace PomoDeEris.Libraries.Filtro
             Models.Funcionario colaborador = _loginFuncionario.GetFuncionario();
             if (colaborador == null)
             {
-                context.Result = new RedirectToActionResult("Login", "Colaborador", null);
+                context.Result = new RedirectToActionResult("Login", "Funcionario", null);
             }
             else
             {
