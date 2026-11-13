@@ -96,39 +96,39 @@
 
 
 <!-- TRATAMENTOS -->
-<section class="treatments" id="tratamentos">
-  <div class="section-head">
+<section class="tratamentos" id="tratamentos">
+  <div class="secao-topo">
     <h2>Tratamentos em destaque</h2>
-    <p class="section-head__italic">Cuidados que falam por si</p>
-    <p class="section-head__desc">
+    <p class="secao-subtitulo">Cuidados que falam por si</p>
+    <p class="secao-descricao">
       Selecionados pela nossa equipe clínica, com preços transparentes e agendamento em poucos cliques.
     </p>
   </div>
 
-  <div class="filters" id="filters">
-    <button class="filter-btn active" data-filter="todos">Todos</button>
-    <button class="filter-btn" data-filter="facial">Facial</button>
-    <button class="filter-btn" data-filter="corporal">Corporal</button>
-    <button class="filter-btn" data-filter="relaxamento">Relaxamento</button>
+  <div class="filtros" id="filters">
+    <button class="btn-filtro active" data-filter="todos">Todos</button>
+    <button class="btn-filtro" data-filter="facial">Facial</button>
+    <button class="btn-filtro" data-filter="corporal">Corporal</button>
+    <button class="btn-filtro" data-filter="relaxamento">Relaxamento</button>
   </div>
 
-  <div class="treatment-grid" id="treatment-grid">
+  <div class="grade-tratamentos" id="treatment-grid">
        <!-- Gera os pacotes a partir do banco -->
         @foreach(var item in Model)
         {
-        <article class="treatment-card" data-id="massagem-relaxante">
-                <div class="treatment-card__image-wrap">
+        <article class="cartao-tratamento" data-id="massagem-relaxante">
+                <div class="cartao-imagem">
                   <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
-                  <span class="treatment-card__badge">Inverno −20%</span>
+                  <span class="cartao-selo">Inverno −20%</span>
                 </div>
-                <div class="treatment-card__body">
-                  <h3 class="treatment-card__name">@item.Nome</h3>
-                  <p class="treatment-card__desc">@item.Descricao</p>
-                  <span class="treatment-card__duration">⏱ 60 min</span>
-                  <div class="treatment-card__footer">
-                    <div class="treatment-card__price-wrap">
-                      <span class="treatment-card__price-label"></span>
-                      <span class="treatment-card__price">
+                <div class="cartao-corpo">
+                  <h3 class="cartao-nome">@item.Nome</h3>
+                  <p class="cartao-descricao">@item.Descricao</p>
+                  <span class="cartao-duracao">⏱ 60 min</span>
+                  <div class="cartao-rodape">
+                    <div class="cartao-preco-area">
+                      <span class="cartao-preco-rotulo"></span>
+                      <span class="cartao-preco">
                        R$ @item.Valor
                       </span>
                     </div>
@@ -136,7 +136,7 @@
                     {
 
                     <input type="hidden" name="id" value=@item.IdPacote />
-                    <button class="add-btn" type="submit">+ Agendar</button>
+                    <button class="btn-agendar" type="submit">+ Agendar</button>
 
                     }
                   </div>
@@ -145,6 +145,7 @@
         }
     </div>
 </section>
+
 
 <!-- DEPOIMENTO -->
 <section class="testimonial">
