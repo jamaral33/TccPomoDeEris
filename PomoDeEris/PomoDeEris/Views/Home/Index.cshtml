@@ -159,7 +159,7 @@
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- FINAL -->
 <section class="chamada-final" id="sobre">
   <p class="chamada-final-subtitulo">Pronta para começar?</p>
   <h2 class="chamada-final-titulo">O seu veredito de beleza<br>começa com uma conversa.</h2>
@@ -171,27 +171,27 @@
 
 
 <!-- PAINEL LATERAL DO CARRINHO -->
-<aside class="cart-panel" id="cart-panel">
-  <div class="cart-panel__header">
+<aside class="painel-carrinho" id="cart-panel">
+  <div class="painel-topo">
     <h3>Resumo do agendamento</h3>
     <button id="cart-close" aria-label="Fechar">✕</button>
   </div>
-  <div class="cart-panel__body" id="cart-body">
-    <div class="cart-empty" id="cart-empty">
+  <div class="painel-corpo" id="cart-body">
+    <div class="carrinho-vazio" id="cart-empty">
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
       <p>Sua agenda está vazia.</p>
       <span>Escolha um tratamento para começar.</span>
     </div>
-    <ul class="cart-items" id="cart-items"></ul>
+    <ul class="itens-carrinho" id="cart-items"></ul>
   </div>
-  <div class="cart-panel__footer" id="cart-footer" hidden>
-    <div class="cart-total">
+  <div class="painel-rodape" id="cart-footer" hidden>
+    <div class="carrinho-total">
       <span>Total</span>
       <strong id="cart-total-value">R$ 0</strong>
     </div>
-    <a href="@Url.Action("carrinhoDeCompra", "Home")" class="btn btn--primary" id="go-to-cart">Ir para o carrinho</a>
+    <a href="@Url.Action("carrinhoDeCompra", "Home")" class="btn btn-principal" id="go-to-cart">Ir para o carrinho</a>
   </div>
 </aside>
-<div class="cart-overlay" id="cart-overlay"></div>
+<div class="carrinho-fundo" id="cart-overlay"></div>
 
 <div class="toast" id="toast"></div>
