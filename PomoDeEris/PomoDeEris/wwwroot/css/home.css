@@ -203,18 +203,19 @@ h1, h2, h3 {
 .contagem-unidade label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: #cbb9ab; }
 
 
-/* FEATURES */
-.features {
-  max-width: var(--max-width);
+/* FUNCIONALIDADES ADICIONAIS PRO SITE */
+.diferenciais {
+  max-width: var(--largura-max);
   margin: 64px auto;
   padding: 0 32px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
-.feature { display: flex; gap: 16px; align-items: flex-start; color: var(--gold-600); }
-.feature h3 { font-family: var(--font-body); font-size: 0.98rem; color: var(--dark); margin-bottom: 4px; }
-.feature p { font-size: 0.84rem; color: var(--muted); margin: 0; line-height: 1.5; }
+.diferencial { display: flex; gap: 16px; align-items: flex-start; color: var(--dourado-escuro); }
+.diferencial h3 { font-family: var(--fonte-texto); font-size: 0.98rem; color: var(--escuro); margin-bottom: 4px; }
+.diferencial p { font-size: 0.84rem; color: var(--cinza); margin: 0; line-height: 1.5; }
+
 
 /* TREATMENTS */
 .treatments { max-width: var(--max-width); margin: 40px auto 90px; padding: 0 32px; }
