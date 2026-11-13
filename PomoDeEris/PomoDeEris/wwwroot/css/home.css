@@ -164,11 +164,12 @@ h1, h2, h3 {
 .banner-selo-texto { font-family: var(--fonte-titulo); font-weight: 600; color: var(--vinho-escuro); letter-spacing: 0.05em; }
 
 /* PROMO */
-.promo {
+/* PROMO */
+.promocao {
   max-width: 840px;
   margin: 18px auto 0;
-  background: var(--dark);
-  border-radius: var(--radius-l);
+  background: var(--escuro);
+  border-radius: var(--raio-g);
   color: #f4e9dd;
   padding: 36px;
   display: grid;
@@ -176,30 +177,31 @@ h1, h2, h3 {
   gap: 36px;
   align-items: center;
 }
-.promo__icon {
+.promocao-icone {
   width: 56px; height: 56px;
   border-radius: 50%;
   border: 1px solid rgba(240,220,190,0.4);
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
+  font-family: var(--fonte-titulo);
   font-size: 1.4rem;
-  color: var(--gold-500);
+  color: var(--dourado);
 }
-.promo__eyebrow { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; color: var(--gold-500); margin: 0 0 8px; font-weight: 600; }
-.promo__title { font-size: 1.7rem; font-style: italic; font-weight: 500; margin-bottom: 10px; }
-.promo__desc { font-size: 0.88rem; line-height: 1.6; color: #d8c9bc; max-width: 480px; margin-bottom: 20px; }
+.promocao-chamada { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; color: var(--dourado); margin: 0 0 8px; font-weight: 600; }
+.promocao-titulo { font-size: 1.7rem; font-style: italic; font-weight: 500; margin-bottom: 10px; }
+.promocao-descricao { font-size: 0.88rem; line-height: 1.6; color: #d8c9bc; max-width: 480px; margin-bottom: 20px; }
 
-.promo__countdown { display: flex; gap: 14px; }
-.countdown__unit {
+.promocao-contagem { display: flex; gap: 14px; }
+.contagem-unidade {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-s);
+  border-radius: var(--raio-p);
   padding: 12px 14px;
   text-align: center;
   min-width: 58px;
 }
-.countdown__unit span { display: block; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; }
-.countdown__unit label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: #cbb9ab; }
+.contagem-unidade span { display: block; font-family: var(--fonte-titulo); font-size: 1.5rem; font-weight: 600; }
+.contagem-unidade label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: #cbb9ab; }
+
 
 /* FEATURES */
 .features {
