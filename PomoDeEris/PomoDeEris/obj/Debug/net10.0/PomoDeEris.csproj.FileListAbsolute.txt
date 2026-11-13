@@ -431,7 +431,6 @@ C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scope
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-30meprsw2w-30meprsw2w.gz
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-n8zidv0kid-n8zidv0kid.gz
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-jbnnow8es9-jbnnow8es9.gz
-C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-ewsmbye8sr-ewsmbye8sr.gz
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-5ssfb3pg2i-5ssfb3pg2i.gz
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\rqem8pee8z-{0}-pqsburx8nl-pqsburx8nl.gz
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-5zpxgv1iwf-5zpxgv1iwf.gz
@@ -507,10 +506,10 @@ C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\stati
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.csproj.Up2Date
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.dll
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\refint\PomoDeEris.dll
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.pdb
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
+C:\Users\jjv\Desktop\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-gq1cfw2e5l-gq1cfw2e5l.gz
