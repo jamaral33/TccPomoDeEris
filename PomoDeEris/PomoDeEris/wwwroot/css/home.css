@@ -218,63 +218,63 @@ h1, h2, h3 {
 
 
 /* TREATMENTS */
-.treatments { max-width: var(--max-width); margin: 40px auto 90px; padding: 0 32px; }
-.section-head { text-align: center; max-width: 560px; margin: 0 auto 32px; }
-.section-head h2 { font-size: 1.9rem; color: var(--dark); font-weight: 600; }
-.section-head__italic { font-family: var(--font-display); font-style: italic; font-size: 1.2rem; color: var(--wine-700); margin: 4px 0 12px; }
-.section-head__desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+.tratamentos { max-width: var(--largura-max); margin: 40px auto 90px; padding: 0 32px; }
+.secao-topo { text-align: center; max-width: 560px; margin: 0 auto 32px; }
+.secao-topo h2 { font-size: 1.9rem; color: var(--escuro); font-weight: 600; }
+.secao-subtitulo { font-family: var(--fonte-titulo); font-style: italic; font-size: 1.2rem; color: var(--vinho); margin: 4px 0 12px; }
+.secao-descricao { font-size: 0.88rem; color: var(--cinza); line-height: 1.6; }
 
-.filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
-.filter-btn {
+.filtros { display: flex; justify-content: center; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
+.btn-filtro {
   padding: 9px 20px;
   border-radius: 999px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--linha);
   background: #fff;
   font-size: 0.84rem;
   font-weight: 500;
   cursor: pointer;
-  color: var(--ink);
+  color: var(--texto);
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.filter-btn:hover { border-color: var(--gold-500); }
-.filter-btn.active { background: var(--dark); color: #fff; border-color: var(--dark); }
+.btn-filtro:hover { border-color: var(--dourado); }
+.btn-filtro.active { background: var(--escuro); color: #fff; border-color: var(--escuro); }
 
-.treatment-grid {
+.grade-tratamentos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
-.treatment-card {
+.cartao-tratamento {
   background: #fff;
-  border-radius: var(--radius-m);
+  border-radius: var(--raio-m);
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--linha);
   display: flex;
   flex-direction: column;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.treatment-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(92,36,56,0.1); }
-.treatment-card__image-wrap { position: relative; aspect-ratio: 2.45 / 1; background: var(--pink-100); }
-.treatment-card__image-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.treatment-card__badge {
+.cartao-tratamento:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(92,36,56,0.1); }
+.cartao-imagem { position: relative; aspect-ratio: 2.45 / 1; background: var(--rosa-claro); }
+.cartao-imagem img { width: 100%; height: 100%; object-fit: cover; }
+.cartao-selo {
   position: absolute; top: 12px; left: 12px;
-  background: var(--gold-600); color: #fff;
+  background: var(--dourado-escuro); color: #fff;
   font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
   padding: 5px 10px; border-radius: 999px;
 }
-.treatment-card__body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
-.treatment-card__name { font-family: var(--font-body); font-weight: 700; font-size: 1rem; color: var(--dark); margin-bottom: 6px; }
-.treatment-card__desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-bottom: 14px; flex: 1; }
-.treatment-card__duration { font-size: 0.76rem; color: var(--muted); display: flex; align-items: center; gap: 6px; margin-bottom: 14px; }
+.cartao-corpo { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+.cartao-nome { font-family: var(--fonte-texto); font-weight: 700; font-size: 1rem; color: var(--escuro); margin-bottom: 6px; }
+.cartao-descricao { font-size: 0.82rem; color: var(--cinza); line-height: 1.5; margin-bottom: 14px; flex: 1; }
+.cartao-duracao { font-size: 0.76rem; color: var(--cinza); display: flex; align-items: center; gap: 6px; margin-bottom: 14px; }
 
-.treatment-card__footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.treatment-card__price-wrap { display: flex; flex-direction: column; }
-.treatment-card__price-label { font-size: 0.65rem; text-transform: uppercase; color: var(--muted); letter-spacing: 0.06em; }
-.treatment-card__price { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--dark); }
-.treatment-card__old-price { font-size: 0.75rem; color: var(--muted); text-decoration: line-through; margin-right: 6px; }
+.cartao-rodape { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.cartao-preco-area { display: flex; flex-direction: column; }
+.cartao-preco-rotulo { font-size: 0.65rem; text-transform: uppercase; color: var(--cinza); letter-spacing: 0.06em; }
+.cartao-preco { font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.15rem; color: var(--escuro); }
+.cartao-preco-antigo { font-size: 0.75rem; color: var(--cinza); text-decoration: line-through; margin-right: 6px; }
 
-.add-btn {
-  background: var(--dark);
+.btn-agendar {
+  background: var(--escuro);
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -286,11 +286,11 @@ h1, h2, h3 {
   transition: background 0.15s ease;
   display: flex; align-items: center; gap: 6px;
 }
-.add-btn:hover { background: var(--wine-900); }
-.add-btn.added { background: var(--gold-600); }
+.btn-agendar:hover { background: var(--vinho-escuro); }
+.btn-agendar.added { background: var(--dourado-escuro); }
 
 /* TESTIMONIAL */
-.testimonial {
+.depoimento {
   max-width: 1040px;
   min-height: 290px;
   margin: 0 auto 100px;
@@ -301,10 +301,11 @@ h1, h2, h3 {
   gap: 64px;
   background: #fff3f4;
 }
-.testimonial__avatar { width: 170px; height: 170px; flex: 0 0 170px; border-radius: 50%; object-fit: cover; background: var(--pink-200); }
-.testimonial__content { max-width: 580px; text-align: center; }
-.testimonial blockquote { font-family: var(--font-display); font-style: normal; font-size: 1.55rem; line-height: 1.25; color: var(--dark); margin: 0 0 30px; }
-.testimonial cite { font-size: 0.9rem; color: var(--muted); font-style: normal; text-transform: uppercase; letter-spacing: 0.05em; }
+.depoimento-foto { width: 170px; height: 170px; flex: 0 0 170px; border-radius: 50%; object-fit: cover; background: var(--rosa-medio); }
+.depoimento-conteudo { max-width: 580px; text-align: center; }
+.depoimento blockquote { font-family: var(--fonte-titulo); font-style: normal; font-size: 1.55rem; line-height: 1.25; color: var(--escuro); margin: 0 0 30px; }
+.depoimento cite { font-size: 0.9rem; color: var(--cinza); font-style: normal; text-transform: uppercase; letter-spacing: 0.05em; }
+
 
 /* FINAL CTA */
 .final-cta {
