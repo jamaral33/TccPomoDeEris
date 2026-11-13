@@ -241,13 +241,12 @@ img { max-width: 100%; display: block; }
 .btn-principal:hover { filter: brightness(1.06); }
 .btn-largo { width: 100%; }
 
-
 /* TOAST */
 .toast {
   position: fixed;
   bottom: 28px; left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: var(--dark);
+  background: var(--escuro);
   color: #fff;
   padding: 12px 22px;
   border-radius: 999px;
@@ -258,6 +257,7 @@ img { max-width: 100%; display: block; }
   z-index: 200;
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
 
 @media (max-width: 820px) {
   .cart-layout { grid-template-columns: 1fr; }
