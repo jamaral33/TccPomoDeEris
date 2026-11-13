@@ -169,55 +169,55 @@ img { max-width: 100%; display: block; }
 
 
 /* RESUMO */
-.summary-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-l);
+.resumo-carrinho {
+  background: var(--cartao);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-g);
   padding: 28px;
   position: sticky;
   top: 24px;
 }
-.summary-card h2 {
-  font-family: var(--font-body);
+.resumo-carrinho h2 {
+  font-family: var(--fonte-texto);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--muted);
+  color: var(--cinza);
   margin: 0 0 20px;
 }
 
-.summary-row {
+.resumo-linha {
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
   margin-bottom: 12px;
-  color: var(--ink);
+  color: var(--texto);
 }
-.summary-row--discount span:last-child { color: var(--discount); }
+.resumo-linha-desconto span:last-child { color: var(--desconto); }
 
-.summary-divider {
+.resumo-divisoria {
   height: 1px;
-  background: var(--line);
+  background: var(--linha);
   margin: 16px 0;
 }
 
-.summary-total {
+.resumo-valor-total {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 22px;
 }
-.summary-total span {
+.resumo-valor-total span {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: var(--cinza);
   font-weight: 700;
 }
-.summary-total strong {
-  font-family: var(--font-display);
+.resumo-valor-total strong {
+  font-family: var(--fonte-titulo);
   font-size: 1.7rem;
-  color: var(--dark);
+  color: var(--escuro);
 }
 
 .btn {
@@ -235,11 +235,12 @@ img { max-width: 100%; display: block; }
   transition: filter 0.15s ease, transform 0.1s ease;
 }
 .btn:active { transform: translateY(1px); }
-.btn--dark { background: var(--dark); color: #fff; }
-.btn--dark:hover { filter: brightness(1.2); }
-.btn--primary { background: linear-gradient(180deg, #eab04a, var(--gold-600)); color: #3a2a10; }
-.btn--primary:hover { filter: brightness(1.06); }
-.btn--block { width: 100%; }
+.btn-escuro { background: var(--escuro); color: #fff; }
+.btn-escuro:hover { filter: brightness(1.2); }
+.btn-principal { background: linear-gradient(180deg, #eab04a, var(--dourado-escuro)); color: #3a2a10; }
+.btn-principal:hover { filter: brightness(1.06); }
+.btn-largo { width: 100%; }
+
 
 /* TOAST */
 .toast {
