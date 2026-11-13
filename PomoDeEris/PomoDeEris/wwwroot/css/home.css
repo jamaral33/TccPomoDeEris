@@ -77,8 +77,8 @@ h1, h2, h3 {
 
 
 
-/* HERO */
-.hero {
+/* BANNER DO SITE */
+.banner {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 54px;
@@ -87,53 +87,53 @@ h1, h2, h3 {
   margin: 0 auto;
   align-items: center;
 }
-.hero__eyebrow {
+.banner-chamada {
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-600);
+  color: var(--dourado-escuro);
   font-weight: 600;
   margin: 0 0 18px;
 }
-.hero__title {
-  font-family: var(--font-body);
+.banner-titulo {
+  font-family: var(--fonte-texto);
   font-size: 2.35rem;
   line-height: 1.15;
-  color: var(--dark);
+  color: var(--escuro);
   font-weight: 700;
   margin-bottom: 18px;
 }
-.hero__title span { color: var(--wine-700); }
-.hero__desc { font-size: 0.78rem; line-height: 1.65; color: var(--muted); max-width: 390px; margin-bottom: 20px; }
+.banner-titulo span { color: var(--vinho); }
+.banner-descricao { font-size: 0.78rem; line-height: 1.65; color: var(--cinza); max-width: 390px; margin-bottom: 20px; }
 
-.hero__search {
+.banner-busca {
   display: flex;
   align-items: center;
   gap: 10px;
   background: #fff;
-  border: 1px solid var(--line);
+  border: 1px solid var(--linha);
   border-radius: 999px;
   padding: 8px 8px 8px 20px;
   max-width: 390px;
   margin-bottom: 18px;
 }
-.hero__search svg { color: var(--muted); flex-shrink: 0; }
-.hero__search input { border: none; outline: none; flex: 1; font-size: 0.88rem; font-family: var(--font-body); min-width: 0; }
-.hero__search button {
-  background: var(--dark); color: #fff; border: none;
+.banner-busca svg { color: var(--cinza); flex-shrink: 0; }
+.banner-busca input { border: none; outline: none; flex: 1; font-size: 0.88rem; font-family: var(--fonte-texto); min-width: 0; }
+.banner-busca button {
+  background: var(--escuro); color: #fff; border: none;
   padding: 9px 18px; border-radius: 999px; font-size: 0.72rem; font-weight: 600; cursor: pointer;
 }
-.hero__search button:hover { filter: brightness(1.2); }
+.banner-busca button:hover { filter: brightness(1.2); }
 
-.hero__cta { display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
-.hero__cta .btn--outline { background: var(--dark); color: #fff; border-color: var(--dark); }
-.hero__cta .btn--outline:hover { background: var(--wine-900); }
+.banner-botoes { display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+.banner-botoes .btn-contorno { background: var(--escuro); color: #fff; border-color: var(--escuro); }
+.banner-botoes .btn-contorno:hover { background: var(--vinho-escuro); }
 
-.hero__stats { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.62rem; color: var(--muted); }
-.hero__stats .dot { color: var(--gold-500); }
+.banner-numeros { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.62rem; color: var(--cinza); }
+.banner-numeros .ponto { color: var(--dourado); }
 
-.hero__visual { position: relative; display: flex; justify-content: center; }
-.hero__logo-frame {
+.banner-imagem { position: relative; display: flex; justify-content: center; }
+.banner-moldura {
   width: 360px;
   height: 360px;
   border-radius: 50%;
@@ -144,13 +144,13 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
 }
-.hero__photo {
+.banner-logo {
   width: 72%;
   height: auto;
   max-width: 100%;
   object-fit: contain;
 }
-.hero__badge {
+.banner-selo {
   position: absolute;
   bottom: -24px; left: 50%;
   transform: translateX(-50%);
@@ -160,8 +160,8 @@ h1, h2, h3 {
   display: flex; align-items: center; gap: 10px;
   box-shadow: 0 12px 30px rgba(92,36,56,0.15);
 }
-.hero__badge-icon { width: 26px; height: 26px; object-fit: contain; }
-.hero__badge-text { font-family: var(--font-display); font-weight: 600; color: var(--wine-900); letter-spacing: 0.05em; }
+.banner-selo-icone { width: 26px; height: 26px; object-fit: contain; }
+.banner-selo-texto { font-family: var(--fonte-titulo); font-weight: 600; color: var(--vinho-escuro); letter-spacing: 0.05em; }
 
 /* PROMO */
 .promo {
