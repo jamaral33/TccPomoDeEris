@@ -1,26 +1,26 @@
 :root {
-  --cream: #f7efe3;
-  --card: #fffdf9;
-  --dark: #241713;
-  --ink: #3a2a2e;
-  --muted: #9a8a80;
-  --line: #e9ddcd;
-  --gold-500: #dfa23a;
-  --gold-600: #cc8f28;
-  --wine-900: #7a2436;
-  --discount: #b5502f;
-  --radius-m: 16px;
-  --radius-l: 22px;
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Inter", sans-serif;
+  --creme: #f7efe3;
+  --cartao: #fffdf9;
+  --escuro: #241713;
+  --texto: #3a2a2e;
+  --cinza: #9a8a80;
+  --linha: #e9ddcd;
+  --dourado: #dfa23a;
+  --dourado-escuro: #cc8f28;
+  --vinho-escuro: #7a2436;
+  --desconto: #b5502f;
+  --raio-m: 16px;
+  --raio-g: 22px;
+  --fonte-titulo: "Cormorant Garamond", serif;
+  --fonte-texto: "Inter", sans-serif;
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  background: var(--cream);
-  font-family: var(--font-body);
-  color: var(--ink);
+  background: var(--creme);
+  font-family: var(--fonte-texto);
+  color: var(--texto);
   min-height: 100vh;
 }
 img { max-width: 100%; display: block; }
@@ -32,59 +32,60 @@ img { max-width: 100%; display: block; }
   padding: 26px 48px;
 }
 .page-header .logo {
-  font-family: var(--font-display);
+  font-family: var(--fonte-titulo);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 1.1rem;
-  color: var(--wine-900);
+  color: var(--vinho-escuro);
   text-decoration: none;
 }
-.back-link {
+.link-voltar {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  color: var(--ink);
+  color: var(--texto);
   text-decoration: none;
-  border: 1px solid var(--line);
+  border: 1px solid var(--linha);
   padding: 8px 16px;
   border-radius: 999px;
   background: #fff;
   transition: background 0.15s ease;
 }
-.back-link:hover { background: var(--cream); }
+.link-voltar:hover { background: var(--creme); }
 
-.cart-page {
+.pagina-carrinho {
   max-width: 1080px;
   margin: 0 auto;
   padding: 20px 48px 80px;
 }
 
-.cart-page__title {
+.carrinho-titulo {
   text-align: center;
   margin-bottom: 44px;
 }
-.cart-page__title h1 {
-  font-family: var(--font-display);
+.carrinho-titulo h1 {
+  font-family: var(--fonte-titulo);
   font-style: italic;
   font-weight: 600;
   font-size: 2.4rem;
   margin: 0 0 10px;
-  color: var(--dark);
+  color: var(--escuro);
 }
-.cart-page__title p {
+.carrinho-titulo p {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: var(--cinza);
   margin: 0;
 }
 
-.cart-layout {
+.carrinho-conteudo {
   display: grid;
   grid-template-columns: 1.65fr 1fr;
   gap: 28px;
   align-items: start;
 }
+
 
 /* LISTA */
 .cart-list-card {
