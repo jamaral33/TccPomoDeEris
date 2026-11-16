@@ -55,3 +55,39 @@
 
       <a href="@Url.Action("Index", "Home")#tratamentos" class="btn btn-escuro">Continuar escolhendo tratamentos</a>
     </section>
+
+    <!-- RESUMO -->
+    <aside class="resumo-carrinho">
+      <h2>Resumo do pedido</h2>
+
+      <div class="resumo-linha">
+        <span id="summary-count">@Model.Count tratamentos</span>
+        <span id="summary-subtotal">R$ @total</span>
+      </div>
+      <div class="resumo-linha resumo-linha-desconto">
+        <span>Descontos</span>
+        <span id="summary-discount">− R$ 0</span>
+      </div>
+      <div class="resumo-linha">
+        <span>Duração total</span>
+        <span id="summary-duration">@tempoTotal min</span>
+      </div>
+
+      <div class="resumo-divisoria"></div>
+
+      <div class="resumo-valor-total">
+        <span>Total</span>
+        <strong id="summary-total">R$ @total</strong>
+      </div>
+
+    <a asp-action="ConfirmarHorario" asp-controller="Atendimento" class="btn btn-principal btn-largo" id="confirm-btn">Confirmar agendamento</a>
+    </aside>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+@section Scripts {
+  <script src="~/js/carrinhoDeCompra.js" asp-append-version="true"></script>
+}
