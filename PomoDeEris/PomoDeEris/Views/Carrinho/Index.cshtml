@@ -16,78 +16,42 @@
 <link rel="stylesheet" href="~/css/carrinhoDeCompra.css" asp-append-version="true">
 }
 
-<div class="cart-page">
-  <div class="cart-page__title">
+<div class="pagina-carrinho">
+  <div class="carrinho-titulo">
     <h1>Seu carrinho</h1>
     <p>Revise os tratamentos escolhidos antes de confirmar seu agendamento.</p>
   </div>
 
-  <div class="cart-layout">
+  <div class="carrinho-conteudo">
 
     <!-- LISTA DE ITENS -->
-    <section class="cart-list-card">
-      <ul class="cart-list" id="cart-list">
+    <section class="caixa-lista">
+      <ul class="lista-carrinho" id="cart-list">
             @foreach(var item in Model)
             {
-                <li class="cart-list-item">
-                    <img src="@item.Imagem" alt="" class="cart-list-item__thumb">
-                    <div class="cart-list-item__info">
-                        <p class="cart-list-item__name">@item.Nome</p>
-                        <span class="cart-list-item__duration">60 min</span>
-                         <p class="cart-list-item__name">@item.Quantidade</p>
+                <li class="item-carrinho">
+                    <img src="@item.Imagem" alt="" class="item-imagem">
+                    <div class="item-info">
+                        <p class="item-nome">@item.Nome</p>
+                        <span class="item-duracao">60 min</span>
+                         <p class="item-nome">@item.Quantidade</p>
                         </div>
-                    <div class="cart-list-item__price">
+                    <div class="item-preco">
                         R$ @item.Valor
                     </div>
                         @using (Html.BeginForm("RemoverPacote", "Carrinho", FormMethod.Post))
                         {
                             <input type="hidden" name="id" value=@item.IdPacote />
-                            <button class="cart-list-item__remove" aria-label="Remover item" type="submit">✕</button>
+                            <button class="item-remover" aria-label="Remover item" type="submit">✕</button>
                         }
                     </li>
                 }
         </ul>
 
-      <div class="cart-empty-state" id="cart-empty-state" hidden>
+      <div class="lista-vazia" id="cart-empty-state" hidden>
         <p>Seu carrinho está vazio.</p>
         <span>Volte para o site e escolha os tratamentos ideais para você.</span>
       </div>
 
-      <a href="@Url.Action("Index", "Home")#tratamentos" class="btn btn--dark">Continuar escolhendo tratamentos</a>
+      <a href="@Url.Action("Index", "Home")#tratamentos" class="btn btn-escuro">Continuar escolhendo tratamentos</a>
     </section>
-
-    <!-- RESUMO -->
-    <aside class="summary-card">
-      <h2>Resumo do pedido</h2>
-
-      <div class="summary-row">
-        <span id="summary-count">@Model.Count tratamentos</span>
-        <span id="summary-subtotal">R$ @total</span>
-      </div>
-      <div class="summary-row summary-row--discount">
-        <span>Descontos</span>
-        <span id="summary-discount">− R$ 0</span>
-      </div>
-      <div class="summary-row">
-        <span>Duração total</span>
-        <span id="summary-duration">@tempoTotal min</span>
-      </div>
-
-      <div class="summary-divider"></div>
-
-      <div class="summary-total">
-        <span>Total</span>
-        <strong id="summary-total">R$ @total</strong>
-      </div>
-
-    <a asp-action="ConfirmarHorario" asp-controller="Atendimento" class="btn btn--primary btn--block" id="confirm-btn">Confirmar agendamento</a>
-    </aside>
-
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-
-@section Scripts {
-  <script src="~/js/carrinhoDeCompra.js" asp-append-version="true"></script>
-}
