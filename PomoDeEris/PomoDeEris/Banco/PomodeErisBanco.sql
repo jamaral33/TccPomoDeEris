@@ -221,7 +221,7 @@ BEGIN
         p.Situacao
     FROM tbfuncionario f
     JOIN tbPessoa p
-        ON c.CPF = p.CPF
+        ON f.CPF = p.CPF
     WHERE p.Email = vEmail;
 END $$
 
@@ -462,26 +462,6 @@ BEGIN
 END $$
 
 
-CREATE PROCEDURE sp_selecionar_pagamento(vIdPagamento INT)
-BEGIN
-    SELECT 
-        pg.idPagamento,
-        pg.idConsulta,
-        pg.Valor,
-        pg.Metodo,
-        pg.Situacao,
-
-        c.idCliente,
-        c.Matricula,
-        c.dataHoraConsulta,
-        c.Situacao AS Situacao_Consulta
-
-    FROM tbPagamento pg
-    JOIN tbConsulta c
-        ON pg.idConsulta = c.idConsulta
-    WHERE pg.idPagamento = vIdPagamento;
-END $$
-
 
 DELIMITER ;
 
@@ -593,25 +573,49 @@ CALL sp_selecionar_servicos_pacote(1);
 
 CALL sp_selecionar_consulta(1);
 
+CALL sp_cadastrar_consulta(
+    1,
+    '2026-11-20 14:00:00'
+);
 
--- PACOTE DA CONSULTA
+-- Recuperar ID da consulta recém-criada
+SET @idConsulta = LAST_INSERT_ID();
 
+-- 2. Cadastrar pacotes da consulta
 CALL sp_cadastrar_pacote_consulta(
     1,
     1,
+    2
+);
+
+CALL sp_cadastrar_pacote_consulta(
+    1,
+    3,
     1
 );
 
-CALL sp_selecionar_pacote_consulta(1);
+-- 3. Calcular valor total dos pacotes
+SELECT SUM(p.Valor * pc.Quantidade)
+INTO @valorTotal
+FROM tbPacoteConsulta pc
+INNER JOIN tbPacote p
+    ON pc.idPacote = p.idPacote
+WHERE pc.idConsulta = @idConsulta;
 
-
--- PAGAMENTO
-
+-- 4. Cadastrar pagamento
 CALL sp_cadastrar_pagamento(
-    1,
-    250.00,
-    'PIX',
+    @idConsulta,
+    @valorTotal,
+    'Pix',
     'Pago'
 );
+SELECT * FROM tbConsulta
+WHERE idConsulta = @idConsulta;
 
-CALL sp_selecionar_pagamento(1);
+SELECT * FROM tbAgenda
+WHERE idConsulta = @idConsulta;
+
+CALL sp_selecionar_pacote_consulta(@idConsulta);
+
+SELECT * FROM tbPagamento
+WHERE idConsulta = @idConsulta;

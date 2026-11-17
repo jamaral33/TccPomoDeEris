@@ -41,7 +41,7 @@ namespace PomoDeEris.Controllers
             return View(dias);
         }
         [HttpPost]
-        public IActionResult Agendar(DateTime horario)
+        public IActionResult Agendar(DateTime horario, string FormaPagamento)
         {
             Atendimento atendimento = new Atendimento()
             {
