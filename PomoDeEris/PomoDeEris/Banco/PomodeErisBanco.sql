@@ -79,6 +79,7 @@ CREATE TABLE tbConsulta
     idCliente INT NOT NULL,
     Matricula INT,
     Situacao varchar(50) NOT NULL,
+    dataCadastro DATETIME DEFAULT current_timestamp,
     
     CONSTRAINT fk_tbConsulta_idCliente_tbCliente
     FOREIGN KEY (idCliente)
@@ -369,7 +370,13 @@ BEGIN
 
 END $$
 
-
+CREATE PROCEDURE sp_selecionar_quantidade_consultas_hoje()
+BEGIN
+    SELECT COUNT(*) AS quantidade 
+    FROM tbConsulta 
+    WHERE DATE(dataCadastro) = CURRENT_DATE();
+END $$
+    
 CREATE PROCEDURE sp_selecionar_consulta(vIdConsulta INT)
 BEGIN
     SELECT 
