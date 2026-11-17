@@ -122,3 +122,44 @@ body {
             color: var(--vinho-escuro);
         }
 
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--vinho-escuro);
+    position: relative;
+    text-decoration: none;
+}
+
+    .icon-btn:hover {
+        color: var(--dourado-escuro);
+    }
+
+.cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--dourado-escuro);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
