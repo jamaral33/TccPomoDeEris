@@ -254,3 +254,7 @@ body {
 #calendar{
     width: 500px;
 }
+
+@media (max-width: 980px) { .nav { display: none; } }
+@media (max-width: 640px) { .topbar { flex-direction: column; gap: 4px; text-align: center; } }
+
