@@ -54,10 +54,10 @@ namespace PomoDeEris.Repository
                 }
 
                 MySqlCommand cmdPagamento = new MySqlCommand("CALL sp_cadastrar_pagamento(@idConsulta, @Valor, @Metodo, @Situacao)", conexao);
-                cmd.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = idConsulta;
-                cmd.Parameters.Add("@Valor", MySqlDbType.Decimal).Value = pagamento.Valor;
-                cmd.Parameters.Add("@Metodo", MySqlDbType.VarChar).Value = pagamento.Metodo;
-                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = pagamento.Status;
+                cmdPagamento.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = idConsulta;
+                cmdPagamento.Parameters.Add("@Valor", MySqlDbType.Decimal).Value = pagamento.Valor;
+                cmdPagamento.Parameters.Add("@Metodo", MySqlDbType.VarChar).Value = pagamento.Metodo;
+                cmdPagamento.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = pagamento.Status;
 
                 cmdPagamento.ExecuteNonQuery();
 
