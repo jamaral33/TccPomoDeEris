@@ -31,3 +31,44 @@ body {
 }
 
 /* Header compartilhado das paginas do site */
+
+/* TOPBAR */
+.topbar {
+    background: var(--escuro);
+    color: #f0e3d8;
+    font-size: 0.58rem;
+    display: flex;
+    min-height: 25px;
+    align-items: center;
+}
+
+.topbar-conteudo {
+    width: 950px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 25px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 56px;
+    background: var(--rosa-claro);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+
+.header-conteudo {
+    width: 950px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
