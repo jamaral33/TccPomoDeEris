@@ -17,3 +17,21 @@
   --fonte-titulo: "Cormorant Garamond", serif;
   --fonte-texto: "Inter", sans-serif;
 }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-texto);
+  color: var(--texto);
+}
+
+
+
+.pagina-login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
