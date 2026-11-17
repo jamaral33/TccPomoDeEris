@@ -91,3 +91,36 @@ html, body {
   font-size: 0.75rem;
   color: rgba(92, 36, 56, 0.55);
 }
+
+/* ---------- LADO DIREITO ---------- */
+.lado-direito {
+  background: var(--creme);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 48px;
+  position: relative;
+}
+
+.link-voltar {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--texto);
+  text-decoration: none;
+  border: 1px solid var(--linha);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+.link-voltar:hover { background: var(--rosa-claro); }
+
+.caixa-formulario {
+  width: 100%;
+  max-width: 360px;
+}
