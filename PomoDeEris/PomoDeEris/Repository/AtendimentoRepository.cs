@@ -25,7 +25,7 @@ namespace PomoDeEris.Repository
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(Atendimento atendimento)
+        public void Cadastrar(Atendimento atendimento, Pagamento pagamento)
         {
             List<Pacote> pacotesConsulta = _carrinhoCookie.Consultar();
             using (var conexao = new MySqlConnection(_conexaoMySQL))
@@ -52,6 +52,14 @@ namespace PomoDeEris.Repository
 
                     cmd2.ExecuteNonQuery();
                 }
+
+                MySqlCommand cmdPagamento = new MySqlCommand("CALL sp_cadastrar_pagamento(@idConsulta, @Valor, @Metodo, @Situacao)", conexao);
+                cmd.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = idConsulta;
+                cmd.Parameters.Add("@Valor", MySqlDbType.Decimal).Value = pagamento.Valor;
+                cmd.Parameters.Add("@Metodo", MySqlDbType.VarChar).Value = pagamento.Metodo;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = pagamento.Status;
+
+                cmdPagamento.ExecuteNonQuery();
 
                 _carrinhoCookie.RemoverTodos();
 

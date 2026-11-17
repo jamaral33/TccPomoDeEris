@@ -22,7 +22,6 @@ namespace PomoDeEris.Controllers
         [HttpGet]
         public IActionResult Pagar(DateTime horario)
         {
-            var cliente = _loginCliente.GetCliente();
             return View(horario);
         }
 

@@ -54,13 +54,22 @@ namespace PomoDeEris.Controllers
                 dataHora = horario,
                 cliente = _loginCliente.GetCliente()
             };
+
             double total = 0;
             foreach (var pacote in _carrinhoCookie.Consultar())
             {
                 total += pacote.Valor * pacote.Quantidade;
             }
 
-            _atendimentoRepository.Cadastrar(atendimento);
+            Pagamento pagamento = new Pagamento()
+            {
+                Metodo = FormaPagamento,
+                Valor = total,
+                Status = "Pago"
+            };
+
+
+            _atendimentoRepository.Cadastrar(atendimento, pagamento);
             return RedirectToAction("Index", "Home");
         }
 

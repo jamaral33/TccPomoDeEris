@@ -30,29 +30,48 @@
                 <!-- Métodos de pagamento -->
                 <div class="opcoes-pagamento">
 
-                    <button type="button" class="opcao-pagamento" id="botaoPix">
-                        <img src="~/images/pixIcone.png" class="icone-pagamento"/>
+                    <label class="opcao-pagamento" for="botaoPix">
+                        <input type="radio"
+                               id="botaoPix"
+                               name="formaPagamento"
+                               value="Pix">
+
+                        <img src="~/images/pixIcone.png" class="icone-pagamento" />
+
                         <span class="texto-opcao">
                             <strong>Pix</strong>
                             <small>Pagamento à vista</small>
                         </span>
-                    </button>
+                    </label>
 
-                    <button type="button" class="opcao-pagamento ativo" id="botaoCredito">
+                    <label class="opcao-pagamento ativo" for="botaoCredito">
+                        <input type="radio"
+                               id="botaoCredito"
+                               name="formaPagamento"
+                               value="Credito"
+                               checked>
+
                         <img src="~/images/cartaoIcone.png" class="icone-pagamento" />
+
                         <span class="texto-opcao">
                             <strong>Cartão de Crédito</strong>
                             <small>12x Sem juros</small>
                         </span>
-                    </button>
+                    </label>
 
-                    <button type="button" class="opcao-pagamento" id="botaoDebito">
+                    <label class="opcao-pagamento" for="botaoDebito">
+                        <input type="radio"
+                               id="botaoDebito"
+                               name="formaPagamento"
+                               value="Debito">
+
                         <img src="~/images/cartaoIcone.png" class="icone-pagamento" />
+
                         <span class="texto-opcao">
                             <strong>Cartão de Débito</strong>
                             <small>Pagamento à vista</small>
                         </span>
-                    </button>
+                    </label>
 
                 </div>
 

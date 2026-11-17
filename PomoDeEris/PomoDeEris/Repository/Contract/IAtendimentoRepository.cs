@@ -5,7 +5,7 @@ namespace PomoDeEris.Repository.Contract
     public interface IAtendimentoRepository
     {
 
-        void Cadastrar(Atendimento atendimento);
+        void Cadastrar(Atendimento atendimento, Pagamento pagamento);
         void Atualizar(Atendimento atendimento);
 
         void Excluir(Atendimento atendimento);
