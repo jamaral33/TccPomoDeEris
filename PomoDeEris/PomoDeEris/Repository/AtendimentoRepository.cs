@@ -148,7 +148,6 @@ namespace PomoDeEris.Repository
                     quantidade = Convert.ToInt32(resultado);
                 }
 
-                cmd.Dispose();
             }
 
             return quantidade;

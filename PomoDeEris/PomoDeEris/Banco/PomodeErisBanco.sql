@@ -468,10 +468,21 @@ BEGIN
     );
 END $$
 
+DELIMITER $$
 
+CREATE PROCEDURE sp_selecionar_receita_mes()
+BEGIN
+    SELECT 
+        COALESCE(SUM(p.Valor), 0) AS Receita
+    FROM tbPagamento p
+    JOIN tbConsulta c
+        ON p.idConsulta = c.idConsulta
+    WHERE MONTH(c.dataCadastro) = MONTH(CURRENT_DATE())
+      AND YEAR(c.dataCadastro) = YEAR(CURRENT_DATE());
+END $$
 
 DELIMITER ;
-
+call sp_selecionar_receita_mes();
 
 -- TESTES
 
