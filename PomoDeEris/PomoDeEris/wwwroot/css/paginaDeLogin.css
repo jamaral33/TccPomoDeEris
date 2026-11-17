@@ -309,3 +309,32 @@ html, body {
 .termos a { color: var(--vinho); text-decoration: none; }
 .termos a:hover { text-decoration: underline; }
 
+/* notificação visual da tela */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--texto);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 20;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .pagina-login { grid-template-columns: 1fr; }
+  .lado-esquerdo { padding: 48px 24px; min-height: 320px; }
+  .lado-esquerdo-rodape { position: static; margin-top: 32px; }
+  .lado-direito { padding: 72px 24px 48px; }
+  .link-voltar { top: 16px; right: 16px; }
+}
