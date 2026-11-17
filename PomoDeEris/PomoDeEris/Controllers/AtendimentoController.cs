@@ -48,6 +48,18 @@ namespace PomoDeEris.Controllers
                 dataHora = horario,
                 cliente = _loginCliente.GetCliente()
             };
+            double total = 0;
+            foreach (var pacote in _carrinhoCookie.Consultar())
+            {
+                total += pacote.Valor * pacote.Quantidade;
+            }
+
+            Pagamento pagamento = new Pagamento()
+            {
+                Metodo = FormaPagamento,
+                Valor = total,
+                Status = "Pendente"
+            };
 
             _atendimentoRepository.Cadastrar(atendimento);
             return RedirectToAction("Index", "Home");

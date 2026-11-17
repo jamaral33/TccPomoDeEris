@@ -2,12 +2,12 @@
 {
     public class Pagamento
     {
-        private int IdPagamento { get; set; }
+        public int IdPagamento { get; set; }
 
-        private string Metodo { get; set; }
+        public string Metodo { get; set; }
 
-        private double Valor { get; set; }
+        public double Valor { get; set; }
 
-        private string Status { get; set; }
+        public string Status { get; set; }
     }
 }
