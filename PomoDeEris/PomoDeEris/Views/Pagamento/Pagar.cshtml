@@ -24,7 +24,7 @@
         <section class="area-pagamento">
             <h1 class="titulo-pagina">Finalizar compra</h1>
 
-            <form class="formulario-pagamento" id="formPagamento" asp-controller="Atendimento" asp-action="Agendar">
+            <form method="post" class="formulario-pagamento" id="formPagamento" asp-controller="Atendimento" asp-action="Agendar">
 
                 <input type="hidden" name="horario" value="@Model"/>
                 <!-- Métodos de pagamento -->

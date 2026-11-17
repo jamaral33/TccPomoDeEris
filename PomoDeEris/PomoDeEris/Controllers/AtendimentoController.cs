@@ -28,7 +28,7 @@ namespace PomoDeEris.Controllers
         [HttpGet]
         public IActionResult ConfirmarHorario()
         {
-            if(_loginCliente.GetCliente() == null)
+            if (_loginCliente.GetCliente() == null)
             {
                 return RedirectToAction("Cadastro", "Cliente");
             }
@@ -43,6 +43,12 @@ namespace PomoDeEris.Controllers
         [HttpPost]
         public IActionResult Agendar(DateTime horario, string FormaPagamento)
         {
+            Cliente cliente = new Cliente();
+            if (_loginCliente.GetCliente() != null)
+            {
+                cliente = _loginCliente.GetCliente();
+
+            }
             Atendimento atendimento = new Atendimento()
             {
                 dataHora = horario,
@@ -53,13 +59,6 @@ namespace PomoDeEris.Controllers
             {
                 total += pacote.Valor * pacote.Quantidade;
             }
-
-            Pagamento pagamento = new Pagamento()
-            {
-                Metodo = FormaPagamento,
-                Valor = total,
-                Status = "Pendente"
-            };
 
             _atendimentoRepository.Cadastrar(atendimento);
             return RedirectToAction("Index", "Home");
