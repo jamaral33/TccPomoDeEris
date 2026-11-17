@@ -2,5 +2,6 @@
 {
     public class DashBoardViewModel
     {
+        public int quantidadeConsultasHoje { get; set; }
     }
 }

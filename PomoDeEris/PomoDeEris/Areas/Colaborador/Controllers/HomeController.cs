@@ -1,15 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PomoDeEris.Areas.Colaborador.Models;
+using PomoDeEris.Libraries.Carrinho;
 using PomoDeEris.Libraries.Filtro;
+using PomoDeEris.Libraries.Login;
+using PomoDeEris.Repository.Contract;
 
 namespace PomoDeEris.Areas.Colaborador.Controllers
 {
     [Area("Colaborador")]
     public class HomeController : Controller
     {
+        private IAtendimentoRepository _atendimentoRepository;
+
+        public HomeController(IAtendimentoRepository atendimentoRepository)
+        {
+            _atendimentoRepository = atendimentoRepository;
+        }
+
         [ColaboradorAutorizacaoAttribute]
         public IActionResult Index()
         {
-            return View();
+            DashBoardViewModel dashinfo = new DashBoardViewModel()
+            {
+                quantidadeConsultasHoje = _atendimentoRepository.quantidadeConsultaHoje()
+            };
+            return View(dashinfo);
         }
     }
 }

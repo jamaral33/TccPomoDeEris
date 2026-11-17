@@ -129,5 +129,29 @@ namespace PomoDeEris.Repository
         {
             throw new NotImplementedException();
         }
+
+        public int quantidadeConsultaHoje()
+        {
+            var quantidade = 0;
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "CALL sp_selecionar_quantidade_consultas_hoje()", conexao);
+
+                var resultado = cmd.ExecuteScalar();
+
+                if (resultado != null && resultado != DBNull.Value)
+                {
+                    quantidade = Convert.ToInt32(resultado);
+                }
+
+                cmd.Dispose();
+            }
+
+            return quantidade;
+        }
     }
 }
