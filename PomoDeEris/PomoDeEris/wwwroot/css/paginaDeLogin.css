@@ -35,3 +35,59 @@ html, body {
   grid-template-columns: 1fr 1fr;
 }
 
+
+/* ---------- LADO ESQUERDO ---------- */
+.lado-esquerdo {
+  background: linear-gradient(155deg, var(--rosa-claro) 0%, var(--rosa-forte) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 64px 48px;
+  position: relative;
+}
+
+.lado-esquerdo-conteudo {
+  max-width: 380px;
+}
+
+.marca-logo {
+  width: 300px;
+  height: 160px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+}
+
+.marca-nome {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 1.7rem;
+  color: var(--vinho-escuro);
+  margin: 0 0 40px;
+  text-transform: uppercase;
+}
+
+.marca-frase {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 1.75rem;
+  line-height: 1.35;
+  color: var(--vinho-escuro);
+  margin: 0 0 24px;
+}
+
+.marca-slogan {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--vinho);
+  margin: 0;
+}
+
+.lado-esquerdo-rodape {
+  position: absolute;
+  bottom: 32px;
+  font-size: 0.75rem;
+  color: rgba(92, 36, 56, 0.55);
+}
