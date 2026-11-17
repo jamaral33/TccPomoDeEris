@@ -1,0 +1,19 @@
+:root {
+  --rosa-claro: #fbe3df;
+  --rosa-medio: #f6cec8;
+  --rosa-forte: #f0b9b1;
+  --vinho-escuro: #5c2438;
+  --vinho: #7a3049;
+  --dourado: #dfa23a;
+  --dourado-escuro: #cc8f28;
+  --creme: #fffaf6;
+  --texto: #3a2a2e;
+  --cinza: #9a8b8d;
+  --linha: #ece2e0;
+  --erro: #c0392b;
+  --raio-p: 8px;
+  --raio-m: 12px;
+  --raio-g: 24px;
+  --fonte-titulo: "Cormorant Garamond", serif;
+  --fonte-texto: "Inter", sans-serif;
+}
