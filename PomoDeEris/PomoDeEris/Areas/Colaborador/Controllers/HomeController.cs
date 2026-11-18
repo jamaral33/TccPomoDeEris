@@ -20,17 +20,19 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         [ColaboradorAutorizacaoAttribute]
         public IActionResult Index()
         {
+
             DashBoardViewModel dashinfo = new DashBoardViewModel()
             {
                 quantidadeConsultasHoje = _atendimentoRepository.quantidadeConsultaHoje(),
                 faturamentoDia = _atendimentoRepository.receitaDia(),
                 faturamentoMes = _atendimentoRepository.receitaMes(),
-                clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje()
+                clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje(),
                 
+                testeAtendimento = _atendimentoRepository.ObterAtendimento(1)
+
 
             };
 
-            var Atendimento = _atendimentoRepository.ObterAtendimento(1);
             return View(dashinfo);
         }
     }

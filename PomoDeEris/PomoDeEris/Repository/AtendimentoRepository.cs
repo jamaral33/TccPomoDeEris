@@ -111,7 +111,7 @@ namespace PomoDeEris.Repository
                     if (dr["Matricula"] != DBNull.Value)
                     {
                         atendimento.funcionario.Matricula = Convert.ToInt32(dr["Matricula"]);
-                        atendimento.funcionario.Cargo = dr["FuncaoFuncionario"] != DBNull.Value ? dr["FuncaoFuncionario"].ToString() : string.Empty;
+                        atendimento.funcionario.Cargo = dr["Funcao"] != DBNull.Value ? dr["Funcao"].ToString() : string.Empty;
                         atendimento.funcionario.CPF = dr["CPF_Funcionario"] != DBNull.Value ? dr["CPF_Funcionario"].ToString() : string.Empty;
                         atendimento.funcionario.Nome = dr["NomeFuncionario"] != DBNull.Value ? dr["NomeFuncionario"].ToString() : string.Empty;
                         atendimento.funcionario.Email = dr["EmailFuncionario"] != DBNull.Value ? dr["EmailFuncionario"].ToString() : string.Empty;
