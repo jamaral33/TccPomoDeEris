@@ -444,6 +444,35 @@ BEGIN
     LIMIT 7;
 END $$
 
+CREATE PROCEDURE sp_selecionar_consultas_dia(vDia DATE)
+BEGIN
+    SELECT 
+        c.idConsulta,
+        c.Situacao AS SituacaoConsulta,
+        c.dataCadastro AS DataCadastroConsulta,
+        
+        a.DiaHorario,
+        
+        cl.idCliente,
+        cl.dataCadastro AS DataCadastroCliente,
+        
+        p.CPF,
+        p.Nome,
+        p.Email,
+        p.Telefone,
+        p.Situacao AS SituacaoPessoa
+        
+    FROM tbConsulta c
+    LEFT JOIN tbAgenda a 
+        ON c.idConsulta = a.idConsulta
+    JOIN tbCliente cl 
+        ON c.idCliente = cl.idCliente
+    JOIN tbPessoa p 
+        ON cl.CPF = p.CPF
+	WHERE DATE(vDia) = DATE(a.DiaHorario)
+    ORDER BY c.idConsulta DESC;
+END $$
+
 -- PACOTE DA CONSULTA
 
 CREATE PROCEDURE sp_cadastrar_pacote_consulta(

@@ -1,4 +1,6 @@
-﻿namespace PomoDeEris.Areas.Colaborador.Models
+﻿using PomoDeEris.Models;
+
+namespace PomoDeEris.Areas.Colaborador.Models
 {
     public class DashBoardViewModel
     {
@@ -8,6 +10,8 @@
         public double faturamentoMes { get; set; }
 
         public double clientesCadastradosHoje { get; set; }
+
+        public List<Atendimento> atendimentos { get; set; }
 
 
     }
