@@ -413,6 +413,36 @@ BEGIN
     WHERE c.idConsulta = vIdConsulta;
 END $$
 
+DELIMITER $$
+
+CREATE PROCEDURE sp_selecionar_ultimas_7_consultas()
+BEGIN
+    SELECT 
+        c.idConsulta,
+        c.Situacao AS SituacaoConsulta,
+        c.dataCadastro AS DataCadastroConsulta,
+        
+        a.DiaHorario,
+        
+        cl.idCliente,
+        cl.dataCadastro AS DataCadastroCliente,
+        
+        p.CPF,
+        p.Nome,
+        p.Email,
+        p.Telefone,
+        p.Situacao AS SituacaoPessoa
+        
+    FROM tbConsulta c
+    LEFT JOIN tbAgenda a 
+        ON c.idConsulta = a.idConsulta
+    JOIN tbCliente cl 
+        ON c.idCliente = cl.idCliente
+    JOIN tbPessoa p 
+        ON cl.CPF = p.CPF
+    ORDER BY c.idConsulta DESC
+    LIMIT 7;
+END $$
 
 -- PACOTE DA CONSULTA
 

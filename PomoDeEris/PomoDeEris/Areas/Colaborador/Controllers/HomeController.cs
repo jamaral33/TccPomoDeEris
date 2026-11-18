@@ -27,6 +27,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 faturamentoMes = _atendimentoRepository.receitaMes(),
                 clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje()
                 
+
             };
             return View(dashinfo);
         }
