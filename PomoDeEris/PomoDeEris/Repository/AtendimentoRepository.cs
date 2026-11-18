@@ -67,10 +67,6 @@ namespace PomoDeEris.Repository
             }
         }
 
-        public int cadastrosHoje()
-        {
-            throw new NotImplementedException();
-        }
 
         public void Excluir(Atendimento atendimento)
         {
@@ -160,12 +156,71 @@ namespace PomoDeEris.Repository
 
         public double receitaDia()
         {
-            throw new NotImplementedException();
+            double receita = 0;
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "CALL sp_selecionar_receita_dia()", conexao);
+
+                var resultado = cmd.ExecuteScalar();
+
+                if (resultado != null && resultado != DBNull.Value)
+                {
+                    receita = Convert.ToDouble(resultado);
+                }
+
+            }
+
+            return receita;
         }
 
         public double receitaMes()
         {
-            throw new NotImplementedException();
+            double receita = 0;
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "CALL sp_selecionar_receita_mes()", conexao);
+
+                var resultado = cmd.ExecuteScalar();
+
+                if (resultado != null && resultado != DBNull.Value)
+                {
+                    receita = Convert.ToDouble(resultado);
+                }
+
+            }
+
+            return receita;
+        }
+
+        public int cadastrosHoje()
+        {
+            int cadastros = 0;
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "CALL sp_selecionar_quantidade_clientes_hoje()", conexao);
+
+                var resultado = cmd.ExecuteScalar();
+
+                if (resultado != null && resultado != DBNull.Value)
+                {
+                    cadastros = Convert.ToInt32(resultado);
+                }
+
+            }
+
+            return cadastros;
         }
     }
 }
