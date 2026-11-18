@@ -383,37 +383,46 @@ BEGIN
     WHERE DATE(dataCadastro) = CURRENT_DATE();
 END $$
     
-CREATE PROCEDURE sp_selecionar_consulta(vIdConsulta INT)
+CREATE PROCEDURE sp_selecionar_informacoes_consulta(vIdConsulta int)
 BEGIN
-    SELECT 
-        c.idConsulta,
-        c.idCliente,
-        c.Matricula,
-        c.Situacao,
-
-        cl.CPF AS CPF_Cliente,
-
-        pf.CPF AS CPF_Funcionario
-
+	SELECT
+		c.idConsulta,
+        c.Situacao AS SituacaoConsulta,
+        c.dataCadastro AS DataCadastroConsulta,
+        
+        a.DiaHorario,
+        
+        cl.idCliente,
+        cl.dataCadastro AS DataCadastroCliente,
+        
+        p.CPF,
+        p.Nome,
+        p.Email,
+        p.Telefone,
+        p.Situacao AS SituacaoPessoa,
+        
+		pf.CPF AS CPF_Funcionario,
+        pf.Nome AS Funcionario,
+        
+        pg.Valor AS valor,
+        pg.Situacao AS pagamentoSituacao
 
     FROM tbConsulta c
-
-    JOIN tbCliente cl
+	LEFT JOIN tbAgenda a 
+        ON c.idConsulta = a.idConsulta
+    LEFT JOIN tbCliente cl 
         ON c.idCliente = cl.idCliente
-
-    JOIN tbPessoa pc
-        ON cl.CPF = pc.CPF
-
-    JOIN tbFuncionario f
+    LEFT JOIN tbPessoa p 
+        ON cl.CPF = p.CPF    
+	LEFT JOIN tbFuncionario f
         ON c.Matricula = f.Matricula
-
-    JOIN tbPessoa pf
+    LEFT JOIN tbPessoa pf
         ON f.CPF = pf.CPF
-
-    WHERE c.idConsulta = vIdConsulta;
+	LEFT JOIN tbPagamento pg
+		ON pg.idConsulta = c.idConsulta
+	WHERE c.idConsulta = vidConsulta;
 END $$
 
-DELIMITER $$
 
 CREATE PROCEDURE sp_selecionar_ultimas_7_consultas()
 BEGIN
@@ -472,6 +481,63 @@ BEGIN
 	WHERE DATE(vDia) = DATE(a.DiaHorario)
     ORDER BY c.idConsulta DESC;
 END $$
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS sp_selecionar_consulta $$
+
+CREATE PROCEDURE sp_selecionar_consulta(vIdConsulta INT)
+BEGIN
+    SELECT 
+        -- Dados da Consulta
+        c.idConsulta,
+        c.Situacao AS SituacaoConsulta,
+        c.dataCadastro AS DataCadastroConsulta,
+        
+        -- Dados da Agenda
+        a.idAgenda,
+        a.tipo AS TipoAgenda,
+        a.DiaHorario,
+        
+        -- Dados do Cliente
+        cl.idCliente,
+        cl.dataCadastro AS DataCadastroCliente,
+        pc.CPF AS CPF_Cliente,
+        pc.Nome AS NomeCliente,
+        pc.Email AS EmailCliente,
+        pc.Telefone AS TelefoneCliente,
+        pc.Situacao AS SituacaoCliente,
+        
+        -- Dados do Funcionário (Profissional)
+        f.Matricula,
+        f.Funcao AS FuncaoFuncionario,
+        pf.CPF AS CPF_Funcionario,
+        pf.Nome AS NomeFuncionario,
+        pf.Email AS EmailFuncionario,
+        pf.Telefone AS TelefoneFuncionario,
+        
+        -- Dados do Pagamento
+        pg.idPagamento,
+        pg.Valor AS ValorPagamento,
+        pg.Metodo AS MetodoPagamento,
+        pg.Situacao AS SituacaoPagamento
+
+    FROM tbConsulta c
+    LEFT JOIN tbAgenda a 
+        ON c.idConsulta = a.idConsulta
+    INNER JOIN tbCliente cl 
+        ON c.idCliente = cl.idCliente
+    INNER JOIN tbPessoa pc 
+        ON cl.CPF = pc.CPF
+    LEFT JOIN tbFuncionario f 
+        ON c.Matricula = f.Matricula
+    LEFT JOIN tbPessoa pf 
+        ON f.CPF = pf.CPF
+    LEFT JOIN tbPagamento pg 
+        ON c.idConsulta = pg.idConsulta
+    WHERE c.idConsulta = vIdConsulta;
+END $$
+
 
 -- PACOTE DA CONSULTA
 
