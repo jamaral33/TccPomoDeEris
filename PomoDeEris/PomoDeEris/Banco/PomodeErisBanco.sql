@@ -205,6 +205,11 @@ BEGIN
     WHERE p.Email = vEmail;
 END $$
 
+CREATE PROCEDURE sp_selecionar_quantidade_clientes_hoje()
+BEGIN
+	SELECT COUNT(*) AS quantidadeClientesHoje FROM tbCliente WHERE DATE(DataCadastro) = DATE(CURRENT_TIMESTAMP)
+END
+
 call sp_selecionar_clienteEmail('teste@teste.com');
 
 
