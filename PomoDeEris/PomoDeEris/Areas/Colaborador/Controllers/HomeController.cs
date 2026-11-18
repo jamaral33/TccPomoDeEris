@@ -22,7 +22,11 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         {
             DashBoardViewModel dashinfo = new DashBoardViewModel()
             {
-                quantidadeConsultasHoje = _atendimentoRepository.quantidadeConsultaHoje()
+                quantidadeConsultasHoje = _atendimentoRepository.quantidadeConsultaHoje(),
+                faturamentoDia = _atendimentoRepository.receitaDia(),
+                faturamentoMes = _atendimentoRepository.receitaMes(),
+                clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje()
+                
             };
             return View(dashinfo);
         }

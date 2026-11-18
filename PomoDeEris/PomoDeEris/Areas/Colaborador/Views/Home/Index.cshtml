@@ -93,7 +93,6 @@
       <div class="kpi">
         <div class="kpi-top">
           <div class="kpi-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 9h18"/></svg></div>
-          <span class="kpi-delta up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>+8%</span>
         </div>
         <h3>@Model.quantidadeConsultasHoje</h3>
         <p>Agendamentos hoje</p>
@@ -101,26 +100,23 @@
       <div class="kpi">
         <div class="kpi-top">
           <div class="kpi-icon wine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <span class="kpi-delta up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>+14%</span>
         </div>
-        <h3>R$ 38.420</h3>
-        <p>Receita do mês</p>
+        <h3>R$ @Model.faturamentoDia</h3>
+        <p>Receita do dia</p>
       </div>
+        <div class="kpi">
+            <div class="kpi-top">
+                <div class="kpi-icon wine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg></div>
+            </div>
+            <h3>R$ @Model.faturamentoMes</h3>
+            <p>Receita do mês</p>
+        </div>
       <div class="kpi">
         <div class="kpi-top">
           <div class="kpi-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <span class="kpi-delta up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>+6</span>
         </div>
-        <h3>142</h3>
-        <p>Clientes este mês</p>
-      </div>
-      <div class="kpi">
-        <div class="kpi-top">
-          <div class="kpi-icon ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg></div>
-          <span class="kpi-delta down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>−2%</span>
-        </div>
-        <h3>4.87</h3>
-        <p>Nota média (NPS)</p>
+        <h3>@Model.clientesCadastradosHoje</h3>
+        <p>Clientes cadastrados este mês</p>
       </div>
     </div>
 
