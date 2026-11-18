@@ -382,7 +382,6 @@ BEGIN
     FROM tbConsulta 
     WHERE DATE(dataCadastro) = CURRENT_DATE();
 END $$
-    
 CREATE PROCEDURE sp_selecionar_informacoes_consulta(vIdConsulta int)
 BEGIN
 	SELECT
@@ -395,17 +394,25 @@ BEGIN
         cl.idCliente,
         cl.dataCadastro AS DataCadastroCliente,
         
-        p.CPF,
-        p.Nome,
-        p.Email,
-        p.Telefone,
-        p.Situacao AS SituacaoPessoa,
+        p.CPF AS CPF_Cliente,
+        p.Nome AS  NomeCliente,
+        p.Email AS  EmailCliente,
+        p.Telefone AS TelefoneCliente,
+        p.Situacao AS SituacaoCliente,
         
-		pf.CPF AS CPF_Funcionario,
-        pf.Nome AS Funcionario,
         
-        pg.Valor AS valor,
-        pg.Situacao AS pagamentoSituacao
+        f.Matricula,
+        f.Funcao,
+        pf.CPF AS CPF_Funcionario,
+        pf.Nome AS  NomeFuncionario,
+        pf.Email AS  EmailFuncionario,
+        pf.Telefone AS TelefoneFuncionario,
+        pf.Situacao AS SituacaoFuncionario,
+        
+        pg.idPagamento,
+        pg.Valor AS ValorPagamento,
+        pg.Metodo AS MetodoPagamento,
+        pg.Situacao AS SituacaoPagamento
 
     FROM tbConsulta c
 	LEFT JOIN tbAgenda a 
@@ -454,7 +461,7 @@ BEGIN
 END $$
 
 CREATE PROCEDURE sp_selecionar_consultas_dia(vDia DATE)
-BEGIN
+BEGIN		
     SELECT 
         c.idConsulta,
         c.Situacao AS SituacaoConsulta,

@@ -29,6 +29,8 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 
 
             };
+
+            var Atendimento = _atendimentoRepository.ObterAtendimento(1);
             return View(dashinfo);
         }
     }

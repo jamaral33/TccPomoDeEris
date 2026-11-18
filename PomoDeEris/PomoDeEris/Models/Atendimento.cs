@@ -10,6 +10,7 @@ namespace PomoDeEris.Models
 
         [Required]
         public DateTime dataHora { get; set; }
+        public DateTime dataCompra { get; set; }
 
         [Required]
         public Cliente cliente { get; set; }
@@ -19,5 +20,7 @@ namespace PomoDeEris.Models
         public string situacao { get; set; }
 
         public List<Pacote> pacotesAtendimento { get; set; }
+
+        public Pagamento pagamento { get; set; }
     }
 }

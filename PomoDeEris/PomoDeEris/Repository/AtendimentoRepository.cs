@@ -78,9 +78,13 @@ namespace PomoDeEris.Repository
         {
             Atendimento atendimento = new Atendimento();
             List<Pacote> pacotesAtendimento = new List<Pacote>();
+            atendimento.cliente = new Cliente();
+            atendimento.funcionario = new Funcionario();
+            atendimento.pagamento = new Pagamento();
 
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
+                conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(@"CALL sp_selecionar_informacoes_consulta(@idConsulta)", conexao);
                 cmd.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = Id;
 
@@ -93,12 +97,40 @@ namespace PomoDeEris.Repository
                 {
                     atendimento.idConsulta = Id;
                     atendimento.situacao = (String)(dr["SituacaoConsulta"]);
-                    pacote.Imagem = (String)(dr["Imagem"]);
-                    pacote.Valor = Convert.ToDouble(dr["Valor"]);
+                    atendimento.dataHora = Convert.ToDateTime((dr["DiaHorario"]));
+                    atendimento.dataCompra = Convert.ToDateTime((dr["DataCadastroConsulta"]));
+                    atendimento.cliente.Id = Convert.ToInt32(dr["idCliente"]);
 
+                    atendimento.cliente.CPF = dr["CPF_Cliente"] != DBNull.Value ? dr["CPF_Cliente"].ToString() : string.Empty;
+                    atendimento.cliente.Nome = dr["NomeCliente"] != DBNull.Value ? dr["NomeCliente"].ToString() : string.Empty;
+                    atendimento.cliente.Email = dr["EmailCliente"] != DBNull.Value ? dr["EmailCliente"].ToString() : string.Empty;
+                    atendimento.cliente.Telefone = dr["TelefoneCliente"] != DBNull.Value ? dr["TelefoneCliente"].ToString() : string.Empty;
+                    atendimento.cliente.Situacao = dr["SituacaoCliente"] != DBNull.Value ? dr["SituacaoCliente"].ToString() : string.Empty;
+                    atendimento.cliente.dataCadastro = Convert.ToDateTime(dr["DataCadastroCliente"]);
 
+                    if (dr["Matricula"] != DBNull.Value)
+                    {
+                        atendimento.funcionario.Matricula = Convert.ToInt32(dr["Matricula"]);
+                        atendimento.funcionario.Cargo = dr["FuncaoFuncionario"] != DBNull.Value ? dr["FuncaoFuncionario"].ToString() : string.Empty;
+                        atendimento.funcionario.CPF = dr["CPF_Funcionario"] != DBNull.Value ? dr["CPF_Funcionario"].ToString() : string.Empty;
+                        atendimento.funcionario.Nome = dr["NomeFuncionario"] != DBNull.Value ? dr["NomeFuncionario"].ToString() : string.Empty;
+                        atendimento.funcionario.Email = dr["EmailFuncionario"] != DBNull.Value ? dr["EmailFuncionario"].ToString() : string.Empty;
+                        atendimento.funcionario.Telefone = dr["TelefoneFuncionario"] != DBNull.Value ? dr["TelefoneFuncionario"].ToString() : string.Empty;
+                        atendimento.funcionario.Situacao = dr["SituacaoFuncionario"] != DBNull.Value ? dr["SituacaoFuncionario"].ToString() : string.Empty;
+
+                    }
+
+                    if (dr["idPagamento"] != DBNull.Value)
+                    {
+                        atendimento.pagamento.IdPagamento = Convert.ToInt32(dr["idPagamento"]);
+                        atendimento.pagamento.Valor = dr["ValorPagamento"] != DBNull.Value ? Convert.ToDouble(dr["ValorPagamento"]) : 0.0;
+                        atendimento.pagamento.Metodo = dr["MetodoPagamento"] != DBNull.Value ? dr["MetodoPagamento"].ToString() : string.Empty;
+                        atendimento.pagamento.Status = dr["SituacaoPagamento"] != DBNull.Value ? dr["SituacaoPagamento"].ToString() : string.Empty;
+                    }
                 }
             }
+
+            return atendimento;
 
         }
         public List<DateTime> ObterDiasBloqueados()
