@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using PomoDeEris.Libraries.Carrinho;
 using PomoDeEris.Libraries.Criptografia;
@@ -75,9 +76,31 @@ namespace PomoDeEris.Repository
 
         public Atendimento ObterAtendimento(int Id)
         {
-            throw new NotImplementedException();
-        }
+            Atendimento atendimento = new Atendimento();
+            List<Pacote> pacotesAtendimento = new List<Pacote>();
 
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                MySqlCommand cmd = new MySqlCommand(@"CALL sp_selecionar_informacoes_consulta(@idConsulta)", conexao);
+                cmd.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = Id;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Pacote pacote = new Pacote();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    atendimento.idConsulta = Id;
+                    atendimento.situacao = (String)(dr["SituacaoConsulta"]);
+                    pacote.Imagem = (String)(dr["Imagem"]);
+                    pacote.Valor = Convert.ToDouble(dr["Valor"]);
+
+
+                }
+            }
+
+        }
         public List<DateTime> ObterDiasBloqueados()
         {
             List<DateTime> dias = new List<DateTime>();

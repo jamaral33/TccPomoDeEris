@@ -16,7 +16,7 @@ namespace PomoDeEris.Models
 
         public Funcionario funcionario { get; set; }
         
-        public AtendimentoSituacaoConstant situacao { get; set; }
+        public string situacao { get; set; }
 
         public List<Pacote> pacotesAtendimento { get; set; }
     }
