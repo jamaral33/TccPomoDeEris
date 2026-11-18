@@ -67,6 +67,11 @@ namespace PomoDeEris.Repository
             }
         }
 
+        public int cadastrosHoje()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Excluir(Atendimento atendimento)
         {
             throw new NotImplementedException();
@@ -151,6 +156,16 @@ namespace PomoDeEris.Repository
             }
 
             return quantidade;
+        }
+
+        public double receitaDia()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double receitaMes()
+        {
+            throw new NotImplementedException();
         }
     }
 }

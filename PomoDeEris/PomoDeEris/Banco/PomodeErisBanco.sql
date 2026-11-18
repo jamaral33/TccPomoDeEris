@@ -20,6 +20,7 @@ CREATE TABLE tbCliente
 (
     idCliente INT PRIMARY KEY AUTO_INCREMENT,
     CPF CHAR(11) NOT NULL, 
+    dataCadastro DATETIME DEFAULT current_timestamp,
     
     CONSTRAINT fk_tbCliente_CPF_tbPessoa
     FOREIGN KEY (CPF)
@@ -481,8 +482,19 @@ BEGIN
       AND YEAR(c.dataCadastro) = YEAR(CURRENT_DATE());
 END $$
 
+CREATE PROCEDURE sp_selecionar_receita_dia()
+BEGIN
+    SELECT 
+        COALESCE(SUM(p.Valor), 0) AS Receita
+    FROM tbPagamento p
+    JOIN tbConsulta c
+        ON p.idConsulta = c.idConsulta
+    WHERE DAY(c.dataCadastro) = DAY(CURRENT_DATE()) AND
+	   MONTH(c.dataCadastro) = MONTH(CURRENT_DATE())
+      AND YEAR(c.dataCadastro) = YEAR(CURRENT_DATE());
+END $$
+
 DELIMITER ;
-call sp_selecionar_receita_mes();
 
 -- TESTES
 
