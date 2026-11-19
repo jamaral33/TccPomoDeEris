@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using PomoDeEris.Libraries.Carrinho;
@@ -210,7 +211,7 @@ namespace PomoDeEris.Repository
             return horarios;
         }
 
-        public IEnumerable<Atendimento> ObterTodosAtendimentos()
+        public List<Atendimento> ObterTodosAtendimentos()
         {
             throw new NotImplementedException();
         }

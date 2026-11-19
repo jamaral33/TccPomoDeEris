@@ -462,31 +462,10 @@ END $$
 
 CREATE PROCEDURE sp_selecionar_consultas_dia(vDia DATE)
 BEGIN		
-    SELECT 
-        c.idConsulta,
-        c.Situacao AS SituacaoConsulta,
-        c.dataCadastro AS DataCadastroConsulta,
-        
-        a.DiaHorario,
-        
-        cl.idCliente,
-        cl.dataCadastro AS DataCadastroCliente,
-        
-        p.CPF,
-        p.Nome,
-        p.Email,
-        p.Telefone,
-        p.Situacao AS SituacaoPessoa
-        
-    FROM tbConsulta c
-    LEFT JOIN tbAgenda a 
-        ON c.idConsulta = a.idConsulta
-    JOIN tbCliente cl 
-        ON c.idCliente = cl.idCliente
-    JOIN tbPessoa p 
-        ON cl.CPF = p.CPF
-	WHERE DATE(vDia) = DATE(a.DiaHorario)
-    ORDER BY c.idConsulta DESC;
+    SELECT c.idConsulta FROM 
+    tbConsulta c
+    JOIN tbAgenda a
+    WHERE DATE(vDia) = DATE(a.DiaHorario);
 END $$
 
 DELIMITER $$
@@ -506,7 +485,7 @@ BEGIN
         a.tipo AS TipoAgenda,
         a.DiaHorario,
         
-        -- Dados do Cliente
+        -- Cliente
         cl.idCliente,
         cl.dataCadastro AS DataCadastroCliente,
         pc.CPF AS CPF_Cliente,
@@ -515,7 +494,7 @@ BEGIN
         pc.Telefone AS TelefoneCliente,
         pc.Situacao AS SituacaoCliente,
         
-        -- Dados do Funcionário (Profissional)
+        -- Funcionário
         f.Matricula,
         f.Funcao AS FuncaoFuncionario,
         pf.CPF AS CPF_Funcionario,
@@ -523,7 +502,7 @@ BEGIN
         pf.Email AS EmailFuncionario,
         pf.Telefone AS TelefoneFuncionario,
         
-        -- Dados do Pagamento
+        -- Pagamento
         pg.idPagamento,
         pg.Valor AS ValorPagamento,
         pg.Metodo AS MetodoPagamento,
@@ -575,7 +554,8 @@ BEGIN
         pc.Quantidade,
         p.Nome,
         p.Descricao,
-        p.Valor
+        p.Valor,
+        p.Imagem
     FROM tbPacoteConsulta pc
     JOIN tbPacote p
         ON pc.idPacote = p.idPacote
