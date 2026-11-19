@@ -77,10 +77,11 @@ namespace PomoDeEris.Repository
         public Atendimento ObterAtendimento(int Id)
         {
             Atendimento atendimento = new Atendimento();
-            List<Pacote> pacotesAtendimento = new List<Pacote>();
+
             atendimento.cliente = new Cliente();
             atendimento.funcionario = new Funcionario();
             atendimento.pagamento = new Pagamento();
+            atendimento.pacotesAtendimento = new List<Pacote>();
 
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -88,7 +89,6 @@ namespace PomoDeEris.Repository
                 MySqlCommand cmd = new MySqlCommand(@"CALL sp_selecionar_informacoes_consulta(@idConsulta)", conexao);
                 cmd.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = Id;
 
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
 
                 Pacote pacote = new Pacote();
@@ -127,6 +127,35 @@ namespace PomoDeEris.Repository
                         atendimento.pagamento.Metodo = dr["MetodoPagamento"] != DBNull.Value ? dr["MetodoPagamento"].ToString() : string.Empty;
                         atendimento.pagamento.Status = dr["SituacaoPagamento"] != DBNull.Value ? dr["SituacaoPagamento"].ToString() : string.Empty;
                     }
+
+
+                }
+                using (var conexao2 = new MySqlConnection(_conexaoMySQL))
+                {
+                    conexao2.Open();
+                    MySqlCommand cmdPacotes = new MySqlCommand("call sp_selecionar_pacote_consulta(@idConsulta) ", conexao2);
+                    cmdPacotes.Parameters.Add("@idConsulta", MySqlDbType.Int32).Value = Id;
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmdPacotes);
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+                    conexao.Close();
+                    foreach (DataRow datarow in dt.Rows)
+                    {
+                        atendimento.pacotesAtendimento.Add(
+                             new Pacote
+                             {
+                                 IdPacote = Convert.ToInt32(datarow["idPacote"]),
+                                 Nome = (String)(datarow["Nome"]),
+                                 Descricao = (String)(datarow["Descricao"]),
+                                 Imagem = (String)(datarow["Imagem"]),
+                                 Valor = Convert.ToDouble(datarow["Valor"]),
+                                 Quantidade = Convert.ToInt32(datarow["Quantidade"])
+
+                             });
+                    }
+                    conexao.Close();
                 }
             }
 
