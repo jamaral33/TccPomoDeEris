@@ -328,5 +328,19 @@ namespace PomoDeEris.Repository
 
             return ids;
         }
+
+        public List<Atendimento> ObterAtendimentosDia(DateTime data)
+        {
+            List<int> ids = ObterIdsConsultasDia(data);
+            List<Atendimento> atendimentos = new List<Atendimento>();
+
+            foreach (var id in ids) 
+            {
+                atendimentos.Add(ObterAtendimento(id));
+            }
+
+            return atendimentos;
+
+        }
     }
 }

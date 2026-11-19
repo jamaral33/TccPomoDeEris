@@ -18,6 +18,8 @@ namespace PomoDeEris.Repository.Contract
 
         List<DateTime> ObterHorariosBloqueados(DateTime data);
 
+        List<Atendimento> ObterAtendimentosDia(DateTime data);
+
         List<int> ObterIdsConsultasDia(DateTime data);
 
         int quantidadeConsultaHoje();
