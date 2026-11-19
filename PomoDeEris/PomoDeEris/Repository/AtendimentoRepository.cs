@@ -6,6 +6,7 @@ using PomoDeEris.Libraries.Carrinho;
 using PomoDeEris.Libraries.Criptografia;
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PomoDeEris.Repository
 {
@@ -306,6 +307,26 @@ namespace PomoDeEris.Repository
             }
 
             return cadastros;
+        }
+
+        public List<int> ObterIdsConsultasDia(DateTime data)
+        {
+            List<int> ids = new List<int>();
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(@"call sp_selecionar_consultas_dia(@Dia)", conexao);
+
+                cmd.Parameters.Add("@Dia", MySqlDbType.DateTime).Value = data.Date;
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                        ids.Add(reader.GetInt32("IdCliente"));
+                }
+
+            }
+
+            return ids;
         }
     }
 }
