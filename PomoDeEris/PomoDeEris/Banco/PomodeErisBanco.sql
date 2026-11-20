@@ -342,6 +342,28 @@ BEGIN
     WHERE sp.idPacote = vIdPacote;
 END $$
 
+CREATE PROCEDURE sp_selecionar_vendas_pacotes()
+BEGIN
+    SELECT
+        p.idPacote,
+        p.Nome AS NomePacote,
+
+        COALESCE(SUM(pc.Quantidade), 0) AS Vendas,
+
+        COALESCE(SUM(pc.Quantidade * p.Valor), 0) AS Receita
+
+    FROM tbPacote p
+
+    LEFT JOIN tbPacoteConsulta pc
+        ON p.idPacote = pc.idPacote
+
+    GROUP BY
+        p.idPacote,
+        p.Nome
+
+    ORDER BY Receita DESC;
+
+END $$
 
 -- CONSULTA
 
@@ -471,8 +493,6 @@ BEGIN
 END $$
 
 DELIMITER $$
-
-DROP PROCEDURE IF EXISTS sp_selecionar_consulta $$
 
 CREATE PROCEDURE sp_selecionar_consulta(vIdConsulta INT)
 BEGIN

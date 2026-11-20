@@ -13,6 +13,7 @@ namespace PomoDeEris.Areas.Colaborador.Models
 
         public List<Atendimento> atendimentos { get; set; }
 
-        public Atendimento testeAtendimento { get; set; }
+        public List<VendaPacote> vendasPacote { get; set; }
+
     }
 }

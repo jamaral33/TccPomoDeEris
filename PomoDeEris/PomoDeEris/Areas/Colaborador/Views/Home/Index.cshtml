@@ -133,7 +133,7 @@
               <tbody>
                  @foreach(var atendimento in Model.atendimentos)
                 {
-                <tr><td class="fw600">@atendimento.dataHora</td><td>@atendimento.cliente.Nome</td><td>@atendimento.pacotesAtendimento[0].Nome...</td><td>@atendimento.funcionario.Nome</td><td><span class="status-pill confirmed">@atendimento.situacao</span></td></tr>
+                <tr><td class="fw600">@atendimento.dataHora.Hour</td><td>@atendimento.cliente.Nome</td><td>@atendimento.pacotesAtendimento[0].Nome...</td><td>@atendimento.funcionario.Nome</td><td><span class="status-pill confirmed">@atendimento.situacao</span></td></tr>
                  }
 
               </tbody>
@@ -145,13 +145,12 @@
           <div class="card-head"><h3>Pacotes mais agendados</h3></div>
           <div class="card-body" style="padding:0;">
             <table class="mini-table">
-              <thead><tr><th>Tratamento</th><th>Categoria</th><th>Agendamentos</th><th>Receita</th></tr></thead>
+              <thead><tr><th>Tratamento</th><th>Agendamentos</th><th>Receita</th></tr></thead>
               <tbody>
-                <tr><td class="fw600">Toxina Botulínica</td><td>Injetáveis</td><td>64</td><td class="color-green fw600">R$ 56.960</td></tr>
-                <tr><td class="fw600">Limpeza de Pele</td><td>Facial</td><td>58</td><td class="color-green fw600">R$ 16.240</td></tr>
-                <tr><td class="fw600">Preenchimento Labial</td><td>Injetáveis</td><td>41</td><td class="color-green fw600">R$ 49.200</td></tr>
-                <tr><td class="fw600">Peeling de Diamante</td><td>Facial</td><td>37</td><td class="color-green fw600">R$ 11.840</td></tr>
-                <tr><td class="fw600">Drenagem Linfática</td><td>Corporal</td><td>30</td><td class="color-green fw600">R$ 7.500</td></tr>
+                @foreach(var pacote in Model.vendasPacote)
+                {
+                    <tr><td class="fw600">@pacote.NomePacote</td><td>@pacote.Vendas</td><td class="color-green fw600">R$ @pacote.Receita</td></tr>
+                }
               </tbody>
             </table>
           </div>

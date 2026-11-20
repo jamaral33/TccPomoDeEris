@@ -29,8 +29,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje(),
                 
                 atendimentos = _atendimentoRepository.ObterAtendimentosDia(DateTime.Now),
-
-                testeAtendimento = _atendimentoRepository.ObterAtendimento(1)
+                vendasPacote = _atendimentoRepository.ObterVendasPacotes()
 
 
             };
