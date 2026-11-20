@@ -2,6 +2,7 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
+using PomoDeEris.Areas.Colaborador.Models;
 using PomoDeEris.Libraries.Carrinho;
 using PomoDeEris.Libraries.Criptografia;
 using PomoDeEris.Models;
@@ -341,6 +342,34 @@ namespace PomoDeEris.Repository
 
             return atendimentos;
 
+        }
+
+        public List<VendaPacote> ObterVendasPacotes()
+        {
+            List<VendaPacote> vendas = new List<VendaPacote>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("CALL sp_selecionar_vendas_pacotes()", conexao);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        vendas.Add(new VendaPacote
+                        {
+                            IdPacote = Convert.ToInt32(reader["idPacote"]),
+                            NomePacote = (string)reader["NomePacote"],
+                            Vendas = Convert.ToInt32(reader["Vendas"]),
+                            Receita = Convert.ToDouble(reader["Receita"])
+                        });
+                    }
+                }
+            }
+
+            return vendas;
         }
     }
 }

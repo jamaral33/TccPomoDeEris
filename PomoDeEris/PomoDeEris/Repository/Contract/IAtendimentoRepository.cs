@@ -1,5 +1,5 @@
 ﻿using PomoDeEris.Models;
-
+using PomoDeEris.Areas.Colaborador.Models;
 namespace PomoDeEris.Repository.Contract
 {
     public interface IAtendimentoRepository
@@ -21,6 +21,8 @@ namespace PomoDeEris.Repository.Contract
         List<Atendimento> ObterAtendimentosDia(DateTime data);
 
         List<int> ObterIdsConsultasDia(DateTime data);
+
+        List<VendaPacote> ObterVendasPacotes();
 
         int quantidadeConsultaHoje();
 
