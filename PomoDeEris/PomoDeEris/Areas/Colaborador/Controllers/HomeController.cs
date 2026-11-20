@@ -18,8 +18,14 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         }
 
         [ColaboradorAutorizacaoAttribute]
-        public IActionResult Index()
+        public IActionResult Index(DateTime? data)
         {
+            if(data == null)
+            {
+                data = DateTime.Today;
+            }
+
+            ViewBag.DataSelecionada = data.Value.ToString("yyyy-MM-dd");
 
             DashBoardViewModel dashinfo = new DashBoardViewModel()
             {
@@ -28,7 +34,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 faturamentoMes = _atendimentoRepository.ReceitaMes(),
                 clientesCadastradosHoje = _atendimentoRepository.CadastrosHoje(),
                 atividadesRecentes = _atendimentoRepository.ObterAtividadeRecente(),
-                atendimentos = _atendimentoRepository.ObterAtendimentosDia(DateTime.Now),
+                atendimentos = _atendimentoRepository.ObterAtendimentosDia(data.Value),
                 vendasPacote = _atendimentoRepository.ObterVendasPacotes()
 
 
