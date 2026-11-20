@@ -59,6 +59,14 @@ namespace PomoDeEris.Controllers
 
             _clienteRepository.Cadastrar(cliente);
 
+            Cliente clienteDB = _clienteRepository.Login(cliente.Email, cliente.Senha);
+
+            if (clienteDB != null && clienteDB.Email != null && clienteDB.Senha != null)
+            {
+                _loginCliente.Login(clienteDB);
+                return RedirectToAction("Index", "Home");
+            }
+
             return RedirectToAction("Index", "Home");
         }
     }
