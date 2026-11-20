@@ -23,11 +23,11 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
 
             DashBoardViewModel dashinfo = new DashBoardViewModel()
             {
-                quantidadeConsultasHoje = _atendimentoRepository.quantidadeConsultaHoje(),
-                faturamentoDia = _atendimentoRepository.receitaDia(),
-                faturamentoMes = _atendimentoRepository.receitaMes(),
-                clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje(),
-                
+                quantidadeConsultasHoje = _atendimentoRepository.QuantidadeConsultaHoje(),
+                faturamentoDia = _atendimentoRepository.ReceitaDia(),
+                faturamentoMes = _atendimentoRepository.ReceitaMes(),
+                clientesCadastradosHoje = _atendimentoRepository.CadastrosHoje(),
+                atividadesRecentes = _atendimentoRepository.ObterAtividadeRecente(),
                 atendimentos = _atendimentoRepository.ObterAtendimentosDia(DateTime.Now),
                 vendasPacote = _atendimentoRepository.ObterVendasPacotes()
 

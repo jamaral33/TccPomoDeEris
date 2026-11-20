@@ -25,12 +25,12 @@ namespace PomoDeEris.Repository.Contract
         List<VendaPacote> ObterVendasPacotes();
         List<AtividadeRecente> ObterAtividadeRecente();
 
-        int quantidadeConsultaHoje();
+        int QuantidadeConsultaHoje();
 
-        double receitaMes();
-        double receitaDia();
+        double ReceitaMes();
+        double ReceitaDia();
 
-        int cadastrosHoje();
+        int CadastrosHoje();
 
 
     }

@@ -218,7 +218,7 @@ namespace PomoDeEris.Repository
             throw new NotImplementedException();
         }
 
-        public int quantidadeConsultaHoje()
+        public int QuantidadeConsultaHoje()
         {
             var quantidade = 0;
 
@@ -241,7 +241,7 @@ namespace PomoDeEris.Repository
             return quantidade;
         }
 
-        public double receitaDia()
+        public double ReceitaDia()
         {
             double receita = 0;
 
@@ -264,7 +264,7 @@ namespace PomoDeEris.Repository
             return receita;
         }
 
-        public double receitaMes()
+        public double ReceitaMes()
         {
             double receita = 0;
 
@@ -287,7 +287,7 @@ namespace PomoDeEris.Repository
             return receita;
         }
 
-        public int cadastrosHoje()
+        public int CadastrosHoje()
         {
             int cadastros = 0;
 
@@ -384,13 +384,20 @@ namespace PomoDeEris.Repository
                 {
                     while (reader.Read())
                     {
-                        atividadeRecente.Add(new AtividadeRecente
+                        AtividadeRecente atividade = new AtividadeRecente
                         {
-                            Tipo = (string)reader["Tipo"],
-                            NomeCliente = (string)reader["NomeCliente"],
-                            QuantidadePacotes = Convert.ToInt32(reader["QuantidadePacotes"]),
+                            Tipo = reader["Tipo"].ToString(),
+                            NomeCliente = reader["NomeCliente"].ToString(),
                             DataEvento = Convert.ToDateTime(reader["DataEvento"])
-                        });
+                        };
+
+                        if (reader["QuantidadePacotes"] != DBNull.Value)
+                        {
+                            atividade.QuantidadePacotes =
+                                Convert.ToInt32(reader["QuantidadePacotes"]);
+                        }
+
+                        atividadeRecente.Add(atividade);
                     }
                 }
                 conexao.Close();

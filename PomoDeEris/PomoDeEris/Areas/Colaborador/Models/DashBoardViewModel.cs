@@ -15,5 +15,7 @@ namespace PomoDeEris.Areas.Colaborador.Models
 
         public List<VendaPacote> vendasPacote { get; set; }
 
+        public List<AtividadeRecente> atividadesRecentes { get; set; }
+
     }
 }

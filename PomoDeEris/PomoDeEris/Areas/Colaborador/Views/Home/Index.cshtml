@@ -177,26 +177,46 @@
           <div class="card-head"><h3>Atividade recente</h3></div>
           <div class="card-body" style="padding:14px 20px;">
             <div class="activity-list">
-              <div class="activity-item">
-                <span class="activity-dot gold"></span>
-                <div class="activity-text">Novo agendamento: <strong>Camila Rocha</strong> — Toxina Botulínica<span class="time">há 12 minutos</span></div>
-              </div>
-              <div class="activity-item">
-                <span class="activity-dot wine"></span>
-                <div class="activity-text">Cancelamento: <strong>Luciana Ferreira</strong> — Massagem Modeladora<span class="time">há 38 minutos</span></div>
-              </div>
-              <div class="activity-item">
-                <span class="activity-dot green"></span>
-                <div class="activity-text">Pagamento confirmado: <strong>Sofia Tavares</strong> — R$ 250<span class="time">há 1 hora</span></div>
-              </div>
-              <div class="activity-item">
-                <span class="activity-dot gold"></span>
-                <div class="activity-text">Novo cliente: <strong>Renata Melo</strong> criou conta<span class="time">há 2 horas</span></div>
-              </div>
-              <div class="activity-item">
-                <span class="activity-dot green"></span>
-                <div class="activity-text">Avaliação 5★ de <strong>Ana Carvalho</strong> no Skinbooster<span class="time">ontem, 17h</span></div>
-              </div>
+                                @foreach (var atividade in Model.atividadesRecentes)
+                                {
+                                    <div class="activity-item">
+                                        <span class="activity-dot gold"></span>
+                                        <div class="activity-text">
+                                                @if(atividade.Tipo == "novoAtendimento")
+                                                {
+                                                    <text>Novo agendamento: @atividade.NomeCliente comprou @atividade.QuantidadePacotes pacotes</text>
+                                                }
+                                                else if(atividade.Tipo == "novoCliente")
+                                                {
+                                                    <text>Novo Cliente: @atividade.NomeCliente se Cadastrou</text>
+                                                }
+                                                <span class="time">
+                                                    @{
+                                                        var diferenca = DateTime.Now - atividade.DataEvento;
+                                                    }
+
+                                                    @if (diferenca.TotalMinutes < 1)
+                                                    {
+                                                        <text>agora</text>
+                                                    }
+                                                    else if (diferenca.TotalMinutes < 60)
+                                                    {
+                                                        <text>há @((int)diferenca.TotalMinutes) minutos</text>
+                                                    }
+                                                    else if (diferenca.TotalHours < 24)
+                                                    {
+                                                        <text>há @((int)diferenca.TotalHours) horas</text>
+                                                    }
+                                                    else
+                                                    {
+                                                        <text>@atividade.DataEvento.ToString("dd/MM/yyyy HH:mm")</text>
+                                                    }
+                                                </span>    
+                                        </div>
+                                    </div>
+                                }
+                                
+             
             </div>
           </div>
         </div>
