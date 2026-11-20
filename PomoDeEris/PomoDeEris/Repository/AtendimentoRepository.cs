@@ -98,7 +98,7 @@ namespace PomoDeEris.Repository
                 while (dr.Read())
                 {
                     atendimento.idConsulta = Id;
-                    atendimento.situacao = (String)(dr["SituacaoConsulta"]);
+                    atendimento.situacao = (string)(dr["SituacaoConsulta"]);
                     atendimento.dataHora = Convert.ToDateTime((dr["DiaHorario"]));
                     atendimento.dataCompra = Convert.ToDateTime((dr["DataCadastroConsulta"]));
                     atendimento.cliente.Id = Convert.ToInt32(dr["idCliente"]);
@@ -149,9 +149,9 @@ namespace PomoDeEris.Repository
                              new Pacote
                              {
                                  IdPacote = Convert.ToInt32(datarow["idPacote"]),
-                                 Nome = (String)(datarow["Nome"]),
-                                 Descricao = (String)(datarow["Descricao"]),
-                                 Imagem = (String)(datarow["Imagem"]),
+                                 Nome = (string)(datarow["Nome"]),
+                                 Descricao = (string)(datarow["Descricao"]),
+                                 Imagem = (string)(datarow["Imagem"]),
                                  Valor = Convert.ToDouble(datarow["Valor"]),
                                  Quantidade = Convert.ToInt32(datarow["Quantidade"])
 
@@ -321,7 +321,7 @@ namespace PomoDeEris.Repository
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
-                        ids.Add(reader.GetInt32("IdCliente"));
+                        ids.Add(reader.GetInt32("IdConsulta"));
                 }
 
             }

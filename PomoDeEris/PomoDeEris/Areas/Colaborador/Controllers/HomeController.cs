@@ -28,7 +28,8 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 faturamentoMes = _atendimentoRepository.receitaMes(),
                 clientesCadastradosHoje = _atendimentoRepository.cadastrosHoje(),
                 
-                atendimentos = _atendimentoRepository.ObterTodosAtendimentos(),
+                atendimentos = _atendimentoRepository.ObterAtendimentosDia(DateTime.Now),
+
                 testeAtendimento = _atendimentoRepository.ObterAtendimento(1)
 
 

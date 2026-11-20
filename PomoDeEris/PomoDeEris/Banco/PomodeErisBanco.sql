@@ -462,10 +462,12 @@ END $$
 
 CREATE PROCEDURE sp_selecionar_consultas_dia(vDia DATE)
 BEGIN		
-    SELECT c.idConsulta FROM 
+    SELECT distinct c.idConsulta FROM 
     tbConsulta c
-    JOIN tbAgenda a
-    WHERE DATE(vDia) = DATE(a.DiaHorario);
+    INNER JOIN tbAgenda a
+    ON c.idConsulta = a.idConsulta
+    WHERE vDia = DATE(a.DiaHorario)
+	  AND a.tipo = 'horario';
 END $$
 
 DELIMITER $$

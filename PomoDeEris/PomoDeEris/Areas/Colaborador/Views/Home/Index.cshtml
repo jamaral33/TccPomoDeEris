@@ -131,13 +131,11 @@
             <table class="mini-table">
               <thead><tr><th>Hora</th><th>Cliente</th><th>Tratamento</th><th>Profissional</th><th>Status</th></tr></thead>
               <tbody>
-                <tr><td class="fw600">@Model.testeAtendimento.dataHora.Hour</td><td>@Model.testeAtendimento.cliente.Nome</td><td>@Model.testeAtendimento.pacotesAtendimento[0].Nome</td><td>@Model.testeAtendimento.funcionario.Nome</td><td><span class="status-pill confirmed">@Model.testeAtendimento.situacao</span></td></tr>
-                <tr><td class="fw600">09:30</td><td>Juliana Pires</td><td>Limpeza de Pele</td><td>Dra. Fernanda Costa</td><td><span class="status-pill confirmed">Confirmado</span></td></tr>
-                <tr><td class="fw600">10:30</td><td>Mariana Alves</td><td>Peeling de Diamante</td><td>Dra. Beatriz Lima</td><td><span class="status-pill pending">Pendente</span></td></tr>
-                <tr><td class="fw600">11:00</td><td>Sofia Tavares</td><td>Drenagem Linfática</td><td>Dr. Rafael Souza</td><td><span class="status-pill confirmed">Confirmado</span></td></tr>
-                <tr><td class="fw600">14:00</td><td>Renata Melo</td><td>Preenchimento Labial</td><td>Dra. Beatriz Lima</td><td><span class="status-pill pending">Pendente</span></td></tr>
-                <tr><td class="fw600">15:30</td><td>Ana Carvalho</td><td>Skinbooster</td><td>Dra. Fernanda Costa</td><td><span class="status-pill pending">Pendente</span></td></tr>
-                <tr><td class="fw600">16:00</td><td>Luciana Ferreira</td><td>Massagem Modeladora</td><td>Dr. Rafael Souza</td><td><span class="status-pill cancelled">Cancelado</span></td></tr>
+                 @foreach(var atendimento in Model.atendimentos)
+                {
+                <tr><td class="fw600">@atendimento.dataHora</td><td>@atendimento.cliente.Nome</td><td>@atendimento.pacotesAtendimento[0].Nome...</td><td>@atendimento.funcionario.Nome</td><td><span class="status-pill confirmed">@atendimento.situacao</span></td></tr>
+                 }
+
               </tbody>
             </table>
           </div>
