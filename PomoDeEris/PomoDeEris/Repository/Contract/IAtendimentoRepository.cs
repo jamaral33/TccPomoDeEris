@@ -23,6 +23,7 @@ namespace PomoDeEris.Repository.Contract
         List<int> ObterIdsConsultasDia(DateTime data);
 
         List<VendaPacote> ObterVendasPacotes();
+        List<AtividadeRecente> ObterAtividadeRecente();
 
         int quantidadeConsultaHoje();
 

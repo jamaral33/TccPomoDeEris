@@ -371,5 +371,32 @@ namespace PomoDeEris.Repository
 
             return vendas;
         }
+
+        public List<AtividadeRecente> ObterAtividadeRecente()
+        {
+            List<AtividadeRecente> atividadeRecente = new List<AtividadeRecente>();
+
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("CALL sp_atividade_recente(5)", conexao);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        atividadeRecente.Add(new AtividadeRecente
+                        {
+                            Tipo = (string)reader["Tipo"],
+                            NomeCliente = (string)reader["NomeCliente"],
+                            QuantidadePacotes = Convert.ToInt32(reader["QuantidadePacotes"]),
+                            DataEvento = Convert.ToDateTime(reader["DataEvento"])
+                        });
+                    }
+                }
+                conexao.Close();
+            }
+            return atividadeRecente;
+
+        }
     }
 }

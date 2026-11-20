@@ -489,7 +489,45 @@ BEGIN
     INNER JOIN tbAgenda a
     ON c.idConsulta = a.idConsulta
     WHERE vDia = DATE(a.DiaHorario)
-	  AND a.tipo = 'horario';
+	  AND a.tipo = 'horario'
+      AND c.Situacao != "Cancelado";
+END $$
+
+CREATE PROCEDURE sp_atividade_recente(vLimite INT)
+BEGIN
+    SELECT * FROM (
+        SELECT 
+            'novoCliente' AS Tipo,
+            p.Nome AS NomeCliente,
+            NULL AS QuantidadePacotes,
+            c.dataCadastro AS DataEvento
+        FROM tbCliente c
+        INNER JOIN tbPessoa p
+            ON c.CPF = p.CPF
+        WHERE c.dataCadastro IS NOT NULL
+
+        UNION ALL -- Junta as duas querys
+
+        SELECT 
+            'novoAtendimento' AS Tipo,
+            p.Nome AS NomeCliente,
+            COALESCE(SUM(pc.Quantidade), 0) AS QuantidadePacotes,
+            cons.dataCadastro AS DataEvento
+        FROM tbConsulta cons
+        INNER JOIN tbCliente cli
+            ON cons.idCliente = cli.idCliente
+        INNER JOIN tbPessoa p
+            ON cli.CPF = p.CPF
+        LEFT JOIN tbPacoteConsulta pc
+            ON cons.idConsulta = pc.idConsulta
+        WHERE cons.dataCadastro IS NOT NULL
+        GROUP BY
+            cons.idConsulta,
+            p.Nome,
+            cons.dataCadastro
+    ) AS Atividades
+    ORDER BY DataEvento DESC
+    LIMIT vLimite;
 END $$
 
 DELIMITER $$
