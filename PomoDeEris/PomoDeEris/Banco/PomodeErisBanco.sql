@@ -288,6 +288,11 @@ BEGIN
     WHERE s.idServico = vIdServico;
 END $$
 
+CREATE PROCEDURE sp_selecionar_servicos()
+BEGIN
+	SELECT * FROM tbservico
+END
+
 
 -- PACOTE
 
@@ -491,6 +496,7 @@ BEGIN
     WHERE vDia = DATE(a.DiaHorario)
 	  AND a.tipo = 'horario'
       AND c.Situacao != "Cancelado";
+      
 END $$
 
 CREATE PROCEDURE sp_atividade_recente(vLimite INT)

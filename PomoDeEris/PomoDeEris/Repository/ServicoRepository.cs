@@ -48,7 +48,30 @@ namespace PomoDeEris.Repository
 
         public List<Servico> ObterTodosServicos()
         {
-            throw new NotImplementedException();
+            List<Servico> servicos = new List<Servico>();
+
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM tbservico", conexao);
+
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        servicos.Add(new Servico
+                        {
+                            IdServico = Convert.ToInt32(reader["IdServico"]),
+                            NomeServico = (string)reader["Nome"],
+                            DescricaoServico = (string)reader["Descricao"]
+                        });
+                    }
+                }
+                conexao.Close();
+
+            }
+            return servicos;
         }
     }
 }

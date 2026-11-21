@@ -1,15 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PomoDeEris.Libraries.Filtro;
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
 
 namespace PomoDeEris.Areas.Colaborador.Controllers
 {
+    [Area("Colaborador")]
+    [ColaboradorAutorizacaoAttribute]
     public class PacoteController : Controller
     {
         private IPacoteRepository _pacoteRepository;
-        public PacoteController(IPacoteRepository pacoteRepository)
+        private IServicoRepository _servicoRepository;
+        public PacoteController(IPacoteRepository pacoteRepository, IServicoRepository servicoRepository)
         {
             _pacoteRepository = pacoteRepository;
+            _servicoRepository = servicoRepository;
         }
         public IActionResult Index()
         {
@@ -34,6 +39,6 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             {
                 return View(pacote);
             }
-        }])
+        }
     }
 }

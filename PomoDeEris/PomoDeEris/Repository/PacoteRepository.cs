@@ -15,7 +15,7 @@ namespace PomoDeEris.Repository
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
 
         }
-
+        
         public void Cadastrar(Pacote pacote)
         {
             using(var conexao = new MySqlConnection(_conexaoMySQL))
