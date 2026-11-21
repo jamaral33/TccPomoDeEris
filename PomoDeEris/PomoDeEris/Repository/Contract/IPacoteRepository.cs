@@ -7,5 +7,7 @@ namespace PomoDeEris.Repository.Contract
         Pacote ObterPacote(int Id);
 
         IEnumerable<Pacote> ObterTodosPacotes();
+
+        void Cadastrar(Pacote pacote);
     }
 }

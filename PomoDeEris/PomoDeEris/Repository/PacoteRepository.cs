@@ -15,6 +15,33 @@ namespace PomoDeEris.Repository
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
 
         }
+
+        public void Cadastrar(Pacote pacote)
+        {
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_pacote(@nome, @descricao, @valor, @Imagem)", conexao);
+                cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = pacote.Nome;
+                cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = pacote.Descricao;
+                cmd.Parameters.Add("@imagem", MySqlDbType.VarChar).Value = pacote.Imagem;
+                cmd.Parameters.Add("@valor", MySqlDbType.Decimal).Value = pacote.Valor;
+                cmd.ExecuteNonQuery();
+
+                MySqlCommand cmdId = new MySqlCommand("SELECT LAST_INSERT_ID()", conexao);
+                int idPacote = Convert.ToInt32(cmdId.ExecuteScalar());
+
+                foreach (var servico in pacote.Servicos)
+                {
+                    MySqlCommand cmdServico = new MySqlCommand("CALL sp_cadastrar_servicosPacote(@idPacote, @idServico)", conexao);
+                    cmdServico.Parameters.Add("@idPacote", MySqlDbType.Int32).Value = idPacote;
+                    cmdServico.Parameters.Add("@idServico", MySqlDbType.Int32).Value = servico.IdServico;
+
+                    cmdServico.ExecuteNonQuery();
+                }
+            }
+        }
+
         public Pacote ObterPacote(int Id)
         {
             using(var conexao = new MySqlConnection(_conexaoMySQL)) 
