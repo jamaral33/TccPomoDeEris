@@ -9,17 +9,17 @@
 
     <title>@ViewData["Title"] - Pomo de Eris</title>
 
-    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="~/css/paginaAdm.css" asp-append-version="true">
 
-    <!-- Vanilla Calendar Pro -->
     <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js" defer></script>
+    <script src="~/js/calendarioAdm.js" asp-append-version="true"></script>
 
 </head>
 
@@ -128,11 +128,11 @@
 
             <div class="sb-user">
 
-                <div class="sb-avatar">AL</div>
+                <div class="sb-avatar"></div>
 
                 <div class="sb-user-info">
-                    <div class="nm">Administrador</div>
-                    <div class="role">Administradora</div>
+                    <div class="nm">@loginFuncionario.GetFuncionario().Nome</div>
+                    <div class="role">@loginFuncionario.GetFuncionario().Cargo</div>
                 </div>
 
                 <button class="sb-logout" title="Sair">
@@ -174,14 +174,8 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js"></script>
-
-    <script src="~/js/calendarioAdm.js"
-            asp-append-version="true"></script>
 
 
-    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>
