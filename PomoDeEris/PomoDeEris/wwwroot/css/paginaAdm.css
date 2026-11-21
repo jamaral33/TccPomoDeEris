@@ -102,7 +102,7 @@ h1,h2,h3,h4,p{margin:0;}
 .tb-notif svg{width:17px; height:17px;}
 .tb-notif-dot{position:absolute; top:7px; right:7px; width:7px; height:7px; border-radius:50%; background:var(--wine); border:1.5px solid var(--blush);}
 
-.page{padding:32px 36px 60px; display:none;}
+.page{padding:32px 36px 60px;}
 .page.active{display:block;}
 
 /* ===================== BUTTONS ===================== */
