@@ -15,6 +15,7 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IPacoteRepository, PacoteRepository>();
 builder.Services.AddScoped<IAtendimentoRepository, AtendimentoRepository>();
 builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+builder.Services.AddScoped<IServicoRepository, ServicoRepository>();
 builder.Services.AddScoped<PomoDeEris.Libraries.Sessao.Sessao>();
 builder.Services.AddScoped<LoginCliente>();
 builder.Services.AddScoped<LoginFuncionario>();
