@@ -2,6 +2,7 @@
 using PomoDeEris.Libraries.Filtro;
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
+using PomoDeEris.Libraries.Arquivos;
 
 namespace PomoDeEris.Areas.Colaborador.Controllers
 {
@@ -28,8 +29,25 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar([FromForm] Pacote pacote)
+        public IActionResult Cadastrar([FromForm] Pacote pacote, List<int> ServicosIds, IFormFile arquivo)
         {
+            var Caminho = GerenciaArquivos.CadastrarImagemProduto(arquivo);
+            pacote.Imagem = Caminho;
+
+            ModelState.Remove(nameof(Pacote.Imagem));
+            ModelState.Remove(nameof(Pacote.Servicos));
+            ModelState.Remove(nameof(ServicosIds));
+
+            pacote.Servicos = new List<Servico>();
+            foreach (var id in ServicosIds)
+            {
+                Servico servico = new Servico()
+                {
+                    IdServico = id
+                };
+                pacote.Servicos.Add(servico);
+            }
+
             if (ModelState.IsValid)
             {
                 _pacoteRepository.Cadastrar(pacote);
