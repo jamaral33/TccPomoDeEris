@@ -5,14 +5,14 @@
     ViewData["PageTitle"] = "Dashboard";
 }
 
-<div class="page active" id="page-dashboard">
+<div class="pagina ativo" id="paginaPainel">
 
     <!-- INDICADORES -->
-    <div class="kpi-grid">
+    <div class="grade-indicadores">
 
-        <div class="kpi">
-            <div class="kpi-top">
-                <div class="kpi-icon gold">
+        <div class="indicador">
+            <div class="topo-indicador">
+                <div class="icone-indicador dourado">
                     <svg viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="1.7">
                         <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -26,9 +26,9 @@
         </div>
 
 
-        <div class="kpi">
-            <div class="kpi-top">
-                <div class="kpi-icon wine">
+        <div class="indicador">
+            <div class="topo-indicador">
+                <div class="icone-indicador vinho">
                     <svg viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="1.7">
                         <line x1="12" y1="1" x2="12" y2="23" />
@@ -42,9 +42,9 @@
         </div>
 
 
-        <div class="kpi">
-            <div class="kpi-top">
-                <div class="kpi-icon wine">
+        <div class="indicador">
+            <div class="topo-indicador">
+                <div class="icone-indicador vinho">
                     <svg viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="1.7">
                         <line x1="12" y1="1" x2="12" y2="23" />
@@ -58,9 +58,9 @@
         </div>
 
 
-        <div class="kpi">
-            <div class="kpi-top">
-                <div class="kpi-icon green">
+        <div class="indicador">
+            <div class="topo-indicador">
+                <div class="icone-indicador verde">
                     <svg viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="1.7">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -79,15 +79,15 @@
 
 
     <!-- DASHBOARD -->
-    <div class="dash-grid">
+    <div class="grade-painel">
 
         <!-- COLUNA ESQUERDA -->
         <div>
 
             <!-- AGENDAMENTOS -->
-            <div class="card" style="margin-bottom:20px;">
+            <div class="cartao" style="margin-bottom:20px;">
 
-                <div class="card-head">
+                <div class="cabecalho-cartao">
                     <h3>
                         Agendamentos de @Convert.ToDateTime(ViewBag.DataSelecionada).ToString("dd/MM")
              </h3>
@@ -95,14 +95,14 @@
                     <a asp-area="Colaborador"
                        asp-controller="Agenda"
                        asp-action="Index"
-                       class="btn btn-ghost btn-sm">
+                       class="botao botao-secundario botao-pequeno">
                         Ver todos
                     </a>
                 </div>
 
-                <div class="card-body" style="padding:0;">
+                <div class="corpo-cartao" style="padding:0;">
 
-                    <table class="mini-table">
+                    <table class="tabela-resumo">
 
                         <thead>
                             <tr>
@@ -118,7 +118,7 @@
                             @for (int i = 0; i < Math.Min(5, Model.atendimentos.Count); i++) // Exibe no máximo 6 atendimentos
                             {
                                 <tr>
-                                    <td class="fw600">
+                                    <td class="negrito">
                                         @Model.atendimentos[i].dataHora.ToString("HH:mm")
                                     </td>
 
@@ -136,7 +136,7 @@
                                     </td>
 
                                     <td>
-                                        <span class="status-pill confirmed">
+                                        <span class="etiqueta-situacao confirmado">
                                             @Model.atendimentos[i].situacao
                                         </span>
                                     </td>
@@ -155,15 +155,15 @@
 
 
             <!-- PACOTES MAIS AGENDADOS -->
-            <div class="card">
+            <div class="cartao">
 
-                <div class="card-head">
+                <div class="cabecalho-cartao">
                     <h3>Pacotes mais agendados</h3>
                 </div>
 
-                <div class="card-body" style="padding:0;">
+                <div class="corpo-cartao" style="padding:0;">
 
-                    <table class="mini-table">
+                    <table class="tabela-resumo">
 
                         <thead>
                             <tr>
@@ -179,7 +179,7 @@
                                 @foreach (var pacote in Model.vendasPacote)
                                 {
                                     <tr>
-                                        <td class="fw600">
+                                        <td class="negrito">
                                             @pacote.NomePacote
                                         </td>
 
@@ -187,7 +187,7 @@
                                             @pacote.Vendas
                                         </td>
 
-                                        <td class="color-green fw600">
+                                        <td class="cor-verde negrito">
                                             R$ @pacote.Receita
                                         </td>
                                     </tr>
@@ -209,13 +209,13 @@
         <div>
 
             <!-- CALENDÁRIO -->
-            <div class="card" style="margin-bottom:20px;">
+            <div class="cartao" style="margin-bottom:20px;">
 
-                <div class="card-head">
+                <div class="cabecalho-cartao">
                     <h3>Calendário</h3>
                 </div>
 
-                <div class="card-body">
+                <div class="corpo-cartao">
 
                     <input type="hidden"
                            id="dataSelecionada"
@@ -228,23 +228,23 @@
 
 
             <!-- ATIVIDADES RECENTES -->
-            <div class="card">
+            <div class="cartao">
 
-                <div class="card-head">
+                <div class="cabecalho-cartao">
                     <h3>Atividade recente</h3>
                 </div>
 
-                <div class="card-body" style="padding:14px 20px;">
+                <div class="corpo-cartao" style="padding:14px 20px;">
 
-                    <div class="activity-list">
+                    <div class="lista-atividades">
 
                             @foreach (var atividade in Model.atividadesRecentes)
                             {
-                                <div class="activity-item">
+                                <div class="item-atividade">
 
-                                    <span class="activity-dot gold"></span>
+                                    <span class="marcador-atividade dourado"></span>
 
-                                    <div class="activity-text">
+                                    <div class="texto-atividade">
 
                                         @if (atividade.Tipo == "novoAtendimento")
                                         {
@@ -260,7 +260,7 @@
                                             </text>
                                         }
 
-                                        <span class="time">
+                                        <span class="horario">
 
                                             @{
                                                 var diferenca = DateTime.Now - atividade.DataEvento;

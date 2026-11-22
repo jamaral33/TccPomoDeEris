@@ -27,7 +27,7 @@
             <div class="lado-esquerdo-conteudo">
                 <div class="marca">
                     <h1 class="marca-nome">Pomo de Eris - Colaborador</h1>
-                    <img id="logo" src="~/images/logoPomoTransparente.png" alt="" class="marca-logo">
+                    <img id="logoMarca" src="~/images/logoPomoTransparente.png" alt="" class="marca-logo">
 
                 </div>
 
@@ -55,7 +55,7 @@
                 <h2 class="formulario-titulo">Bem-vinda de volta</h2>
                 <p class="formulario-subtitulo">Entre para gerenciar seus tratamentos e agendamentos.</p>
 
-                <form id="login-form" method="post" asp-area="Colaborador" asp-controller="Funcionario" asp-action="Login">
+                <form id="formularioLogin" method="post" asp-area="Colaborador" asp-controller="Funcionario" asp-action="Login">
                     <p>@ViewData["MSG_E"]</p>  <!--estilizar dps-->
                     <div class="grupo-campo">
                         <label asp-for="Email"></label>
@@ -83,13 +83,13 @@
 
                     <div class="linha-opcoes">
                         <label class="lembrar-senha">
-                            <input type="checkbox" id="remember" name="remember">
+                            <input type="checkbox" id="lembrarDeMim" name="remember">
                             <span>Lembrar de mim</span>
                         </label>
-                        <a href="#" class="link-discreto" id="forgot-link">Esqueceu a senha?</a>
+                        <a href="#" class="link-discreto" id="linkEsqueciSenha">Esqueceu a senha?</a>
                     </div>
 
-                    <button type="submit" class="btn btn-principal" id="submit-btn">Entrar</button>
+                    <button type="submit" class="botao botao-principal" id="botaoEntrar">Entrar</button>
 
           
 
