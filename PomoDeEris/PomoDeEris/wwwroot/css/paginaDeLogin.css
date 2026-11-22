@@ -1,5 +1,4 @@
-/* Obs.: alguns seletores trazem o nome antigo (ex.: .btn) ao lado do novo, caso outra tela use este CSS.
-   Depois de migrar essas telas, os nomes antigos podem ser apagados. */
+
 :root {
   --rosa-claro: #fbe3df;
   --rosa-medio: #f6cec8;
