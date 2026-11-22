@@ -1,3 +1,5 @@
+/* Obs.: alguns seletores trazem o nome antigo (ex.: .btn) ao lado do novo, caso outra tela use este CSS.
+   Depois de migrar essas telas, os nomes antigos podem ser apagados. */
 :root {
   --rosa-claro: #fbe3df;
   --rosa-medio: #f6cec8;
@@ -178,7 +180,7 @@ html, body {
   box-shadow: 0 0 0 3px rgba(223, 162, 58, 0.18);
 }
 
-.caixa-input.has-error {
+.caixa-input.com-erro, .caixa-input.has-error {
   border-color: var(--erro);
 }
 
@@ -196,7 +198,7 @@ html, body {
 }
 
 
-.field__toggle {
+.botao-mostrar-senha, .field__toggle {
   background: none;
   border: none;
   padding: 0;
@@ -204,7 +206,7 @@ html, body {
   color: var(--cinza);
   display: flex;
 }
-.field__toggle:hover { color: var(--texto); }
+.botao-mostrar-senha:hover, .field__toggle:hover { color: var(--texto); }
 
 .erro-campo {
   display: block;
@@ -237,7 +239,7 @@ html, body {
 }
 .link-discreto:hover { text-decoration: underline; }
 
-.btn {
+.botao, .btn {
   width: 100%;
   padding: 13px 16px;
   border-radius: 999px;
@@ -252,29 +254,29 @@ html, body {
   justify-content: center;
   gap: 10px;
 }
-.btn:active { transform: translateY(1px); }
-.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.botao:active, .btn:active { transform: translateY(1px); }
+.botao:disabled, .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-.btn-principal {
+.botao-principal, .btn-principal {
   background: linear-gradient(180deg, #eab04a, var(--dourado-escuro));
   color: #3a2a10;
 }
-.btn-principal:hover:not(:disabled) { filter: brightness(1.05); }
+.botao-principal:hover:not(:disabled), .btn-principal:hover:not(:disabled) { filter: brightness(1.05); }
 
-.btn-google {
+.botao-google, .btn-google {
   background: #fff;
   color: var(--texto);
   border: 1px solid var(--linha);
   margin-bottom: 20px;
 }
-.btn-google:hover { background: #faf7f5; }
+.botao-google:hover, .btn-google:hover { background: #faf7f5; }
 
-.btn-secundario {
+.botao-secundario, .btn-secundario {
   background: transparent;
   color: var(--dourado-escuro);
   border: 1px solid var(--dourado);
 }
-.btn-secundario:hover { background: rgba(223, 162, 58, 0.08); }
+.botao-secundario:hover, .btn-secundario:hover { background: rgba(223, 162, 58, 0.08); }
 
 .divisor {
   display: flex;
@@ -310,7 +312,7 @@ html, body {
 .termos a:hover { text-decoration: underline; }
 
 /* notificação visual da tela */
-.toast {
+.aviso, .toast {
   position: fixed;
   bottom: 28px;
   left: 50%;
@@ -325,7 +327,7 @@ html, body {
   transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 20;
 }
-.toast.show {
+.aviso.visivel, .toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
