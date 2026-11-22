@@ -7,9 +7,11 @@ namespace PomoDeEris.Models
         public int IdPacote { get; set; }
 
         [Required]
+        [StringLength(50, ErrorMessage = "O nome do pacote deve ter no máximo 50 caracteres.")]
         public string Nome { get; set; }
 
         [Required]
+        [StringLength(150, ErrorMessage = "A descrição do pacote deve ter no máximo 150 caracteres.")]
         public string Descricao { get; set; }
 
         [Required]
