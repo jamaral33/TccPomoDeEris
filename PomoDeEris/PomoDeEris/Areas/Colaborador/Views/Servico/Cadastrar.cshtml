@@ -1,32 +1,32 @@
 ﻿@model PomoDeEris.Models.Servico
 
-<div class="page" id="page-packages">
-    <div class="sh">
+<div class="pagina" id="paginaPacotes">
+    <div class="cabecalho-secao">
         <div><h2>Adicionar Servico</h2><p>Preencha os dados do novo tratamento. Ele ficará visível no site assim que for publicado.</p></div>
-        <button class="btn btn-ghost btn-sm" id="resetFormBtn">Limpar formulário</button>
+        <button class="botao botao-secundario botao-pequeno" id="botaoLimparFormulario">Limpar formulário</button>
     </div>
 
-    <div class="pkg-form-grid">
+    <div class="grade-formulario-pacote">
         <form method="post" asp-area="Colaborador" asp-controller="Servico" asp-action="Cadastrar">
-            <div class="form-card">
-                <div class="form-section">
+            <div class="cartao-formulario">
+                <div class="secao-formulario">
                     <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z" /></svg>Informações básicas</h4>
-                    <div class="field">
-                        <label for="pkgName">Nome do Serviço <span class="req">*</span></label>
-                        <input type="text" id="pkgName" placeholder="Ex: Limpeza de Pele Profunda" asp-for="NomeServico">
+                    <div class="campo">
+                        <label for="campoNome">Nome do Serviço <span class="obrigatorio">*</span></label>
+                        <input type="text" id="campoNome" placeholder="Ex: Limpeza de Pele Profunda" asp-for="NomeServico">
                     </div>
-                    <div class="field">
-                        <label for="pkgDesc">Descrição <span class="req">*</span></label>
-                        <textarea id="pkgDesc" rows="3" placeholder="Descreva o tratamento de forma clara e objetiva para as clientes." asp-for="DescricaoServico"></textarea>
-                        <p class="field-hint">Máximo 150 caracteres..</p>
+                    <div class="campo">
+                        <label for="campoDescricao">Descrição <span class="obrigatorio">*</span></label>
+                        <textarea id="campoDescricao" rows="3" placeholder="Descreva o tratamento de forma clara e objetiva para as clientes." asp-for="DescricaoServico"></textarea>
+                        <p class="dica-campo">Máximo 150 caracteres..</p>
                     </div>
                 </div>
         </div>
 
         <div>
-            <p class="text-sm" style="text-align:center; margin-top:12px;">Pré-visualização do card</p>
+            <p class="texto-pequeno" style="text-align:center; margin-top:12px;">Pré-visualização do card</p>
             <div style="margin-top:22px; display:flex; flex-direction:column; gap:10px;">
-                <button type="submit" class="btn btn-gold" id="savePkgBtn">
+                <button type="submit" class="botao botao-dourado" id="botaoPublicar">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>
                     Publicar serviço
                 </button>
