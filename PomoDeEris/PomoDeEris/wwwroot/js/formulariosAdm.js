@@ -1,11 +1,11 @@
 ﻿const botaoAdicionar = document.getElementById("adicionarServico");
-const container = document.getElementById("listaServicosSelecionados");
-const datalist = document.getElementById("listaServicos");
+const areaServicos = document.getElementById("listaServicosSelecionados");
+const listaOpcoes = document.getElementById("listaServicos");
 
 botaoAdicionar.addEventListener("click", adicionarServico);
 
 // Resolve o nome digitado -> IdServico e grava no hidden
-container.addEventListener("input", function (e) {
+areaServicos.addEventListener("input", function (e) {
     if (e.target.classList.contains("servico-input")) {
         resolverId(e.target);
     }
@@ -14,7 +14,7 @@ container.addEventListener("input", function (e) {
 function resolverId(input) {
     const hidden = input.parentElement.querySelector(".servico-id");
 
-    const opcao = Array.from(datalist.options)
+    const opcao = Array.from(listaOpcoes.options)
         .find(o => o.value === input.value);
 
     hidden.value = opcao ? opcao.dataset.id : "";
@@ -25,7 +25,7 @@ function resolverId(input) {
 
 function adicionarServico() {
     const novoCampo = document.createElement("div");
-    novoCampo.classList.add("field", "servico-item");
+    novoCampo.classList.add("campo", "servico-item");
 
     novoCampo.innerHTML = `
         <input type="text"
@@ -37,17 +37,17 @@ function adicionarServico() {
         <input type="hidden" name="ServicosIds" class="servico-id">
 
         <button type="button"
-                class="btn btn-ghost btn-sm remover-servico"
+                class="botao botao-secundario botao-pequeno remover-servico"
                 onclick="removerServico(this)">
             Remover
         </button>
     `;
 
-    container.appendChild(novoCampo);
+    areaServicos.appendChild(novoCampo);
 }
 
 function removerServico(botao) {
-    if (container.children.length > 1) {
+    if (areaServicos.children.length > 1) {
         botao.closest(".servico-item").remove();
     }
 }
