@@ -54,6 +54,7 @@ CREATE TABLE tbPacote
     Nome VARCHAR(50) NOT NULL,
     Descricao VARCHAR(150) NOT NULL,
     Valor DECIMAL(7,2) NOT NULL,
+    Desconto INT DEFAULT 0,
     Imagem varchar(255) NOT NULL
 );
 
@@ -315,11 +316,12 @@ CREATE PROCEDURE sp_cadastrar_pacote(
     vNome VARCHAR(50),
     vDescricao VARCHAR(150),
     vValor DECIMAL(7,2),
-    vImagem varchar(255)
+    vDesconto INT,
+    vImagem VARCHAR(255)
 )
 BEGIN
-    INSERT INTO tbPacote (Nome, Descricao, Valor, Imagem)
-    VALUES (vNome, vDescricao, vValor, vImagem);
+    INSERT INTO tbPacote (Nome, Descricao, Valor, Desconto, Imagem)
+    VALUES (vNome, vDescricao, vValor, vDesconto, vImagem);
 END $$
 
 
@@ -330,6 +332,7 @@ BEGIN
         p.Nome,
         p.Descricao,
         p.Valor,
+        p.Desconto,
         p.Imagem
     FROM tbPacote p
     WHERE p.idPacote = vIdPacote;
@@ -370,8 +373,10 @@ BEGIN
 
         COALESCE(SUM(pc.Quantidade), 0) AS Vendas,
 
-        COALESCE(SUM(pc.Quantidade * p.Valor), 0) AS Receita
-
+		COALESCE(
+			SUM(pc.Quantidade * p.Valor * (1 - p.Desconto / 100)),
+			0
+		) AS Receita
     FROM tbPacote p
 
     LEFT JOIN tbPacoteConsulta pc
@@ -636,6 +641,7 @@ BEGIN
         p.Nome,
         p.Descricao,
         p.Valor,
+        p.Desconto,
         p.Imagem
     FROM tbPacoteConsulta pc
     JOIN tbPacote p
@@ -750,39 +756,50 @@ CALL sp_selecionar_servico(1);
 
 CALL sp_cadastrar_pacote(
     'Pacote Manicure',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit sollicitudin cursus.' ,
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit sollicitudin cursus.',
     250.00,
-    "/images/manicure.png"
+    20,
+    '/images/manicure.png'
 );
+
 CALL sp_cadastrar_pacote(
     'Pacote de pelos faciais',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
     100.00,
-    "/images/pelosFaciais.png"
+    20,
+    '/images/pelosFaciais.png'
 );
+
 CALL sp_cadastrar_pacote(
     'Pacote HidroRelaxamento',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
     250.00,
-    "/images/hidroRelaxamento.png"
+    20,
+    '/images/hidroRelaxamento.png'
 );
+
 CALL sp_cadastrar_pacote(
     'Pacote Massagem Relaxante',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
     250.00,
-    "/images/massagem-relaxante.png"
+    20,
+    '/images/massagem-relaxante.png'
 );
+
 CALL sp_cadastrar_pacote(
     'Pacote Bronzeamento',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
     550.50,
-    "/images/bronzeamento.png"
+    20,
+    '/images/bronzeamento.png'
 );
+
 CALL sp_cadastrar_pacote(
     'Pacote MicroPigmentação',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet' ,
+    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
     550.50,
-    "/images/pigmentacao.png"
+    20,
+    '/images/pigmentacao.png'
 );
 CALL sp_selecionar_pacote(1);
 
@@ -823,7 +840,9 @@ CALL sp_cadastrar_pacote_consulta(
 );
 
 -- 3. Calcular valor total dos pacotes
-SELECT SUM(p.Valor * pc.Quantidade)
+SELECT SUM(
+    p.Valor * (1 - p.Desconto / 100) * pc.Quantidade
+)
 INTO @valorTotal
 FROM tbPacoteConsulta pc
 INNER JOIN tbPacote p
