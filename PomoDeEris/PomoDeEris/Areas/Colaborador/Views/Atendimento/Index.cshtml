@@ -6,7 +6,7 @@
 
 @section Scripts {
     <script src="~/js/calendarioAtendimento.js" asp-append-version="true" defer></script>
-
+    <script src="~/js/atendimentoFiltro.js" asp-append-version="true" defer></script>
 }
 <div class="pagina" id="page-schedule">
     <div class="cabecalho-secao">
@@ -24,7 +24,7 @@
 
                 <input type="hidden"
                        id="dataSelecionada"
-                       value="@ViewBag.DataSelecionadaISO" />
+                       value="@ViewBag.DataSelecionada" />
 
                 <div id="calendario"></div>
 
@@ -36,7 +36,7 @@
 
             <div class="filtros-cronogramas">
                 <div class="campo servico-item">
-                    <input type="text" id="servicoInput" class="servico-input" list="listaPacotes"
+                    <input type="text" id="procedimentoInput" class="servico-input" list="listaPacotes"
                            placeholder="Procedimento" required>
                     <input type="hidden" name="ProcedimentoInputId" class="servico-id">
 
@@ -48,7 +48,7 @@
                     </datalist>
                 </div>
                 <div class="campo servico-item">
-                    <input type="text" id="servicoInput" class="servico-input" list="listaClientes"
+                    <input type="text" id="ClienteInput" class="servico-input" list="listaClientes"
                            placeholder="Cliente" required>
                     <input type="hidden" name="clienteInputId" class="servico-id">
 

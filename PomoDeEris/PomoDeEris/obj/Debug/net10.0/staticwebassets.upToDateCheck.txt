@@ -21,6 +21,7 @@ wwwroot\images\pigmentacao.png
 wwwroot\images\pixIcone.png
 wwwroot\images\pixQr.png
 wwwroot\js\adminPage.js
+wwwroot\js\atendimentoFiltro.js
 wwwroot\js\calendario.js
 wwwroot\js\calendarioAdm.js
 wwwroot\js\calendarioAtendimento.js
@@ -162,3 +163,4 @@ C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEri
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery-validation\dist\jquery.validate.js
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\home.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\calendarioAtendimento.js
+C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\atendimentoFiltro.js

@@ -189,6 +189,14 @@ END $$
 
 DELIMITER $$
 
+
+CREATE PROCEDURE  sp_selecionar_todos_clientes()
+BEGIN
+	SELECT * FROM tbCliente c
+	JOIN tbPessoa p
+	ON p.CPF = c.CPF;
+END $$
+
 CREATE PROCEDURE sp_selecionar_clienteEmail(vEmail varchar(50))
 BEGIN
     SELECT 
@@ -266,6 +274,13 @@ BEGIN
 END $$
 
 
+CREATE PROCEDURE sp_selecionar_todos_funcionarios()
+BEGIN
+	SELECT * FROM tbFuncionario f
+    JOIN tbPessoa p
+		ON f.CPF = p.CPF;
+END $$
+
 -- SERVIÇO
 
 CREATE PROCEDURE sp_cadastrar_servico(
@@ -290,8 +305,8 @@ END $$
 
 CREATE PROCEDURE sp_selecionar_servicos()
 BEGIN
-	SELECT * FROM tbservico
-END
+	SELECT * FROM tbservico;
+END $$
 
 
 -- PACOTE

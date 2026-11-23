@@ -132,8 +132,7 @@ namespace PomoDeEris.Repository
                              Nome = (String)(dateRow["Nome"]),
                              Email = (String)(dateRow["Email"]),
                              Telefone = (String)(dateRow["Telefone"]),
-                             Senha = (String)(dateRow["Senha"]),
-                             Situacao = (String)(dateRow["Situacao"]),
+                             Situacao = (String)(dateRow["Situacao"])
                          });
                 }
             }

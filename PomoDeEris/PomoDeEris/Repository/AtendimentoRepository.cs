@@ -109,7 +109,7 @@ namespace PomoDeEris.Repository
                     atendimento.Cliente.Email = dr["EmailCliente"] != DBNull.Value ? dr["EmailCliente"].ToString() : string.Empty;
                     atendimento.Cliente.Telefone = dr["TelefoneCliente"] != DBNull.Value ? dr["TelefoneCliente"].ToString() : string.Empty;
                     atendimento.Cliente.Situacao = dr["SituacaoCliente"] != DBNull.Value ? dr["SituacaoCliente"].ToString() : string.Empty;
-                    atendimento.Cliente.dataCadastro = Convert.ToDateTime(dr["DataCadastroCliente"]);
+                    atendimento.Cliente.DataCadastro = Convert.ToDateTime(dr["DataCadastroCliente"]);
 
                     if (dr["Matricula"] != DBNull.Value)
                     {
