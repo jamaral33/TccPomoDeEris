@@ -16,33 +16,28 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(DateTime? dia, string? profissional, string? status)
+        public IActionResult Index(DateTime? dia, string? procedimento, string? cliente, string? profissional, string? status)
         {
+            var diaSelecionado = (dia ?? DateTime.Today).Date;
 
-            DateTime dataFiltro;
+            ViewBag.DataSelecionada = diaSelecionado;
+            ViewBag.DataSelecionadaISO = diaSelecionado.ToString("yyyy-MM-dd");
 
-            if(dia == null)
-            {
-                dataFiltro = DateTime.Today;
-            }
-            else
-            {
-                dataFiltro = dia.Value;
-            }
+            List<Atendimento> atendimentos = _atendimentoRepository.ObterAtendimentosDia(diaSelecionado);
 
-            List<Atendimento> atendimentos = _atendimentoRepository.ObterAtendimentosDia(dataFiltro);
+            if (!string.IsNullOrEmpty(procedimento))
+                atendimentos = atendimentos.Where(a => a.PacotesAtendimento.Any(p => p.IdPacote.ToString() == procedimento)).ToList();
 
-            if(profissional != null)
-            {
-                atendimentos = atendimentos.Where(a => a.Funcionario.Nome  == profissional).ToList();
-            }
-            if(status != null)
-            {
-                atendimentos = atendimentos.Where(a => a.Situacao == status).ToList();
-            }
+            if (!string.IsNullOrEmpty(cliente))
+                atendimentos = atendimentos.Where(a => a.Cliente.CPF == cliente).ToList();
 
-            ViewBag.dataSelecionada = dataFiltro.ToString("yyyy-MM-dd");
-            return View(atendimentos);
+            if (!string.IsNullOrEmpty(profissional))
+                atendimentos = atendimentos.Where(a => a.Funcionario.Matricula.ToString() == profissional).ToList();
+
+            if (!string.IsNullOrEmpty(status))
+                atendimentos = atendimentos.Where(a => a.Situacao.ToString() == status).ToList();
+
+            return View(atendimentos.OrderBy(a => a.DataHora).ToList());
         }
     }
 }

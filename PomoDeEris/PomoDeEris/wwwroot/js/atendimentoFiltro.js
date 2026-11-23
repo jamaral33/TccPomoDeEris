@@ -27,8 +27,19 @@ function preencherFuncionarioId() {
     input.setCustomValidity(opcao ? "" : "Selecione um funcionário da lista.");
 }
 
-
-
 document.getElementById("procedimentoInput").addEventListener("input", preencherProcedimentoId);
 document.getElementById("ClienteInput").addEventListener("input", preencherClienteId);
 document.getElementById("funcionarioInput").addEventListener("input", preencherFuncionarioId);
+
+document.getElementById("botaoFiltrar").addEventListener("click", function () {
+    const params = new URLSearchParams({
+        dia: document.getElementById("dataSelecionada").value,
+        procedimento: document.querySelector('input[name="ProcedimentoInputId"]').value,
+        cliente: document.querySelector('input[name="clienteInputId"]').value,
+        profissional: document.querySelector('input[name="funcionarioInputId"]').value,
+        status: document.getElementById("statusInput").value
+    });
+
+    window.location.href = `?${params.toString()}`;
+});
+
