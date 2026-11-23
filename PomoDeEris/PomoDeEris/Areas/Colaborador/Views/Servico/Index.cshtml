@@ -1,0 +1,74 @@
+﻿@model List<PomoDeEris.Models.Servico>
+
+<div class="pagina">
+
+    <div class="cartao">
+
+        <div class="cabecalho-cartao">
+            <h3>
+                Lista de Serviços
+            </h3>
+
+            <a class="botao botao-dourado"
+               id="botaoCadastrar"
+               asp-area="Colaborador"
+               asp-controller="Servico"
+               asp-action="Cadastrar">
+                Cadastrar Novo Serviço
+            </a>
+        </div>
+
+        <div class="corpo-cartao" style="padding:0;">
+
+            <table class="tabela-resumo">
+
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var servico in Model)
+                    {
+                        <tr>
+                            <td class="negrito">
+                                @servico.NomeServico
+                            </td>
+
+                            <td>
+                                @servico.DescricaoServico
+                            </td>
+
+                            <td>
+                                <a asp-area="Colaborador"
+                                   asp-controller="Servico"
+                                   asp-action="Editar"
+                                   asp-route-id="@servico.IdServico"
+                                   class="botao botao-secundario botao-pequeno">
+                                    Editar
+                                </a>
+
+                                <a asp-area="Colaborador"
+                                   asp-controller="Servico"
+                                   asp-action="Excluir"
+                                   asp-route-id="@servico.IdServico"
+                                   class="botao botao-secundario botao-pequeno">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

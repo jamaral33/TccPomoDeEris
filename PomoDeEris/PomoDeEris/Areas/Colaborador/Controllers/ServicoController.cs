@@ -16,7 +16,8 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_servicoRepository.ObterTodosServicos());
+                
         }
 
         [HttpGet]
@@ -31,7 +32,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             if (ModelState.IsValid)
             {
                 _servicoRepository.Cadastrar(servico);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Servico");
 
             }
             else

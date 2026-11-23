@@ -52,7 +52,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             if (ModelState.IsValid)
             {
                 _pacoteRepository.Cadastrar(pacote);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Pacote");
             }
             else
             {
