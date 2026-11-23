@@ -47,6 +47,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29sYWJvcmFkb3JcVmlld3NcU2Vydmljb1xDYWRhc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/gustavo/Documents/escola/TCCPT3/2211/TccPomoDeEris/PomoDeEris/PomoDeEris/Areas/Colaborador/Views/Servico/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29sYWJvcmFkb3JcVmlld3NcU2Vydmljb1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/gustavo/Documents/escola/TCCPT3/2211/TccPomoDeEris/PomoDeEris/PomoDeEris/Areas/Colaborador/Views/Servico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29sYWJvcmFkb3JcVmlld3NcU2Vydmljb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
