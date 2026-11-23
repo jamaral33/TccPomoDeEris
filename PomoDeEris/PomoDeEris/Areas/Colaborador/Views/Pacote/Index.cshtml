@@ -1,0 +1,79 @@
+﻿<div class="pagina">
+
+    <div class="cartao">
+        <div class="cabecalho-cartao">
+            <h3>
+                Lista de Pacotes
+            </h3>
+
+            <a class="botao botao-dourado" id="botaoCadastrar" type="submit" asp-area="Colaborador" asp-controller="Pacote" asp-action="Cadastrar">
+                Cadastrar Novo Pacote
+            </a>
+        </div>
+        <div class="corpo-cartao" style="padding:0;">
+
+            <table class="tabela-resumo">
+
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Desconto</th>
+                        <th>Valor promocional</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var pacote in Model)
+                    {
+                        <tr>
+                            <td class="negrito">
+                                @pacote.Nome
+                            </td>
+
+                            <td>
+                                @pacote.Descricao
+                            </td>
+
+                            <td>
+                                R$ @pacote.Valor.ToString("N2")
+                            </td>
+
+                            <td>
+                                @pacote.Desconto%
+                            </td>
+
+                            <td class="cor-verde negrito">
+                                R$ @((pacote.Valor * (1 - pacote.Desconto / 100.0)).ToString("N2"))
+                            </td>
+
+                            <td>
+                                <a asp-area="Colaborador"
+                                   asp-controller="Pacote"
+                                   asp-action="Editar"
+                                   asp-route-id="@pacote.IdPacote"
+                                   class="botao botao-secundario botao-pequeno">
+                                    Editar
+                                </a>
+
+                                <a asp-area="Colaborador"
+                                   asp-controller="Pacote"
+                                   asp-action="Excluir"
+                                   asp-route-id="@pacote.IdPacote"
+                                   class="botao botao-secundario botao-pequeno">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

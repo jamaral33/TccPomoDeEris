@@ -19,7 +19,8 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            
+            return View(_pacoteRepository.ObterTodosPacotes());
         }
 
         [HttpGet]
