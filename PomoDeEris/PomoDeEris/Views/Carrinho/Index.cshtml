@@ -5,7 +5,7 @@
     Double total = 0;
     foreach(var pacote in Model)
     {
-        total += pacote.Valor * pacote.Quantidade;
+        total += pacote.Valor * (1 - pacote.Desconto / 100.0) * pacote.Quantidade;
     }
     var tempoTotal = Model.Count * 60;
 }
@@ -37,7 +37,7 @@
                          <p class="item-nome">@item.Quantidade</p>
                         </div>
                     <div class="item-preco">
-                        R$ @item.Valor
+                            R$ @(item.Valor * (1 - item.Desconto / 100.0))
                     </div>
                         @using (Html.BeginForm("RemoverPacote", "Carrinho", FormMethod.Post))
                         {

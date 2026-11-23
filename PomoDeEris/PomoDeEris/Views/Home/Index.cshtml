@@ -105,12 +105,6 @@
     </p>
   </div>
 
-  <div class="filtros" id="filters">
-    <button class="btn-filtro active" data-filter="todos">Todos</button>
-    <button class="btn-filtro" data-filter="facial">Facial</button>
-    <button class="btn-filtro" data-filter="corporal">Corporal</button>
-    <button class="btn-filtro" data-filter="relaxamento">Relaxamento</button>
-  </div>
 
   <div class="grade-tratamentos" id="treatment-grid">
        <!-- Gera os pacotes a partir do banco -->
@@ -119,7 +113,7 @@
         <article class="cartao-tratamento" data-id="massagem-relaxante">
                 <div class="cartao-imagem">
                   <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
-                  <span class="cartao-selo">Inverno −20%</span>
+                  <span class="cartao-selo">Inverno −@item.Desconto%</span>
                 </div>
                 <div class="cartao-corpo">
                   <h3 class="cartao-nome">@item.Nome</h3>
@@ -127,10 +121,10 @@
                   <span class="cartao-duracao">⏱ 60 min</span>
                   <div class="cartao-rodape">
                     <div class="cartao-preco-area">
-                      <span class="cartao-preco-rotulo"></span>
+                      <span class="cartao-preco-rotulo">De: R$ @item.Valor</span>
                       <span class="cartao-preco">
-                       R$ @item.Valor
-                      </span>
+                               Por R$ @((item.Valor * (1 - item.Desconto / 100.0)).ToString("N2"))
+                            </span>
                     </div>
                     @using(Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post))
                     {

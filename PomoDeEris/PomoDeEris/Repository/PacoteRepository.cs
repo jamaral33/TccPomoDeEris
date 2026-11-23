@@ -21,11 +21,12 @@ namespace PomoDeEris.Repository
             using(var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_pacote(@nome, @descricao, @valor, @Imagem)", conexao);
+                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_pacote(@nome, @descricao, @valor, @desconto, @Imagem)", conexao);
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = pacote.Nome;
                 cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = pacote.Descricao;
                 cmd.Parameters.Add("@imagem", MySqlDbType.VarChar).Value = pacote.Imagem;
                 cmd.Parameters.Add("@valor", MySqlDbType.Decimal).Value = pacote.Valor;
+                cmd.Parameters.Add("@desconto", MySqlDbType.Decimal).Value = pacote.Desconto;
                 cmd.ExecuteNonQuery();
 
                 MySqlCommand cmdId = new MySqlCommand("SELECT LAST_INSERT_ID()", conexao);
@@ -63,6 +64,7 @@ namespace PomoDeEris.Repository
                     pacote.Descricao = (String)(dr["Descricao"]);
                     pacote.Imagem = (String)(dr["Imagem"]);
                     pacote.Valor = Convert.ToDouble(dr["Valor"]);
+                    pacote.Desconto = Convert.ToInt32(dr["Desconto"]);
 
 
                 }
@@ -92,7 +94,7 @@ namespace PomoDeEris.Repository
                              Descricao = (String)(dr["Descricao"]),
                              Imagem = (String)(dr["Imagem"]),
                              Valor = Convert.ToDouble(dr["Valor"]),
-
+                             Desconto = Convert.ToInt32(dr["Desconto"])
                          });
                 }
                 return Pacotelist;

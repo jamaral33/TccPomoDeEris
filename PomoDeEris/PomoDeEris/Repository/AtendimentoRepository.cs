@@ -147,16 +147,16 @@ namespace PomoDeEris.Repository
                     foreach (DataRow datarow in dt.Rows)
                     {
                         atendimento.PacotesAtendimento.Add(
-                             new Pacote
-                             {
-                                 IdPacote = Convert.ToInt32(datarow["idPacote"]),
-                                 Nome = (string)(datarow["Nome"]),
-                                 Descricao = (string)(datarow["Descricao"]),
-                                 Imagem = (string)(datarow["Imagem"]),
-                                 Valor = Convert.ToDouble(datarow["Valor"]),
-                                 Quantidade = Convert.ToInt32(datarow["Quantidade"])
-
-                             });
+                            new Pacote
+                            {
+                                IdPacote = Convert.ToInt32(datarow["idPacote"]),
+                                Nome = (string)datarow["Nome"],
+                                Descricao = (string)datarow["Descricao"],
+                                Imagem = (string)datarow["Imagem"],
+                                Valor = Convert.ToDouble(datarow["Valor"]),
+                                Desconto = Convert.ToInt32(datarow["Desconto"]),
+                                Quantidade = Convert.ToInt32(datarow["Quantidade"])
+                            });
                     }
                     conexao.Close();
                 }

@@ -59,9 +59,12 @@ namespace PomoDeEris.Controllers
             };
 
             double total = 0;
+
             foreach (var pacote in _carrinhoCookie.Consultar())
             {
-                total += pacote.Valor * pacote.Quantidade;
+                double valorComDesconto = pacote.Valor * (1 - pacote.Desconto / 100.0);
+
+                total += valorComDesconto * pacote.Quantidade;
             }
 
             Pagamento pagamento = new Pagamento()
