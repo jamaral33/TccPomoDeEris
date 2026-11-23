@@ -18,7 +18,22 @@ namespace PomoDeEris.Repository
         }
         public void Atualizar(Servico servico)
         {
-            throw new NotImplementedException();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "UPDATE tbServico SET Nome=@Nome, Descricao=@Descricao WHERE idServico=@IdServico",
+                    conexao
+                );
+
+                cmd.Parameters.Add("@IdServico", MySqlDbType.Int32).Value = servico.IdServico;
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = servico.NomeServico;
+                cmd.Parameters.Add("@Descricao", MySqlDbType.VarChar).Value = servico.DescricaoServico;
+
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
         }
 
         public void Cadastrar(Servico servico)
