@@ -40,5 +40,26 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 return View(servico);
             }
         }
+
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            var servico = _servicoRepository.ObterServico(id);
+            return View(servico);
+        }
+
+        [HttpPost]
+        public IActionResult Editar([FromForm] Servico servico)
+        {
+            if (ModelState.IsValid)
+            {
+                _servicoRepository.Atualizar(servico);
+                return RedirectToAction("Index", "Servico");
+            }
+            else
+            {
+                return View(servico);
+            }
+        }
     }
 }

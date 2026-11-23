@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
+using System.Data;
 
 namespace PomoDeEris.Repository
 {
@@ -43,7 +44,27 @@ namespace PomoDeEris.Repository
 
         public Servico ObterServico(int Id)
         {
-            throw new NotImplementedException();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("select * from tbservico where idservico = @Id", conexao);
+                cmd.Parameters.Add("@Id", MySqlDbType.Int32).Value = Id;
+
+                MySqlDataReader dr;
+
+                Servico servico = new Servico();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    servico.NomeServico = (String)(dr["Nome"]);
+                    servico.IdServico = Id;
+                    servico.DescricaoServico = (String)(dr["Descricao"]);
+
+
+                }
+                return servico;
+            }
         }
 
         public List<Servico> ObterTodosServicos()
@@ -67,7 +88,7 @@ namespace PomoDeEris.Repository
                             DescricaoServico = (string)reader["Descricao"]
                         });
                     }
-                }
+                    }
                 conexao.Close();
 
             }
