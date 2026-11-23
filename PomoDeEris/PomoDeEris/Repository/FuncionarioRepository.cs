@@ -69,5 +69,37 @@ namespace PomoDeEris.Repository
             }
 
         }
+        public List<Funcionario> ObterTodosFuncionarios()
+        {
+            List<Funcionario> funcionarios = new List<Funcionario>();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("call sp_selecionar_todos_funcionarios()", conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+                conexao.Close();
+                foreach (DataRow dateRow in dt.Rows)
+                {
+                    funcionarios.Add(
+                         new Funcionario
+                         {
+                             Matricula = Convert.ToInt32(dateRow["Matricula"]),
+                             Nome = (String)(dateRow["Nome"]),
+                             Email = (String)(dateRow["Email"]),
+                             Cargo = (String)(dateRow["Funcao"]),
+                             Telefone = (String)(dateRow["Telefone"]),
+                             CPF = (String)(dateRow["CPF"]),
+                             Situacao = (String)(dateRow["Situacao"]),
+
+                         });
+                }
+            }
+            return funcionarios;
+        }
     }
 }

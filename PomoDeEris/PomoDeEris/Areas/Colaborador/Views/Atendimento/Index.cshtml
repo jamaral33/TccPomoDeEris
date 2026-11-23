@@ -1,0 +1,151 @@
+﻿@using PomoDeEris.Repository.Contract
+@model List<Atendimento>
+@inject IFuncionarioRepository FuncionarioRepository;
+@inject IClienteRepository ClienteRepository;
+@inject IPacoteRepository PacoteRepository;
+
+@section Scripts {
+    <script src="~/js/calendarioAtendimento.js" asp-append-version="true" defer></script>
+
+}
+<div class="pagina" id="page-schedule">
+    <div class="cabecalho-secao">
+        <div><h2>Cronogramas</h2><p>Visualize, confirme e gerencie todos os agendamentos.</p></div>
+    </div>
+
+    <div class="layout-cronogramas">
+        <div class="cartao" style="margin-bottom:20px;">
+
+            <div class="cabecalho-cartao">
+                <h3>Calendário</h3>
+            </div>
+
+            <div class="corpo-cartao">
+
+                <input type="hidden"
+                       id="dataSelecionada"
+                       value="@ViewBag.DataSelecionadaISO" />
+
+                <div id="calendario"></div>
+
+            </div>
+        </div>
+
+        <div class="coluna-direita-cronogramas">
+            <div class="faixa-dias" id="dayStrip"></div>
+
+            <div class="filtros-cronogramas">
+                <div class="campo servico-item">
+                    <input type="text" id="servicoInput" class="servico-input" list="listaPacotes"
+                           placeholder="Procedimento" required>
+                    <input type="hidden" name="ProcedimentoInputId" class="servico-id">
+
+                    <datalist id="listaPacotes">
+                        @foreach (var pacote in PacoteRepository.ObterTodosPacotes())
+                        {
+                            <option value="@pacote.Nome" data-id="@pacote.IdPacote"></option>
+                        }
+                    </datalist>
+                </div>
+                <div class="campo servico-item">
+                    <input type="text" id="servicoInput" class="servico-input" list="listaClientes"
+                           placeholder="Cliente" required>
+                    <input type="hidden" name="clienteInputId" class="servico-id">
+
+                    <datalist id="listaClientes">
+                        @foreach (var cliente in ClienteRepository.ObterTodosClientes())
+                        {
+                            <option value="@cliente.Nome" data-id="@cliente.CPF"></option>
+                        }
+                    </datalist>
+                </div>
+                    <div class="campo servico-item">
+                    <input type="text" id="funcionarioInput" class="servico-input" list="listaFuncionarios"
+                               placeholder="Funcionario.." required>
+                    <input type="hidden" name="funcionarioInputId" class="servico-id">
+
+                    <datalist id="listaFuncionarios">
+                        @foreach (var funcionario in FuncionarioRepository.ObterTodosFuncionarios())
+                        {
+                            <option value="@funcionario.Nome" data-id="@funcionario.Matricula"></option>
+                        }
+                    </datalist>
+                    </div>
+
+                <select class="seletor-filtro" id="statusInput">
+                    <option value="">Todos os status</option>
+                    <option>Agendado</option>
+                    <option>Pendente</option>
+                    <option>Cancelado</option>
+                    <option>Concluido</option>
+                </select>
+
+                <button class="botao botao-dourado" id="botaoFiltrar" type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>
+                    Filtrar
+                </button>
+            </div>
+
+            <div class="cartao" style="margin-bottom:20px;">
+
+                <div class="cabecalho-cartao">
+                    <h3>
+                        Agendamentos de @Convert.ToDateTime(ViewBag.DataSelecionada).ToString("dd/MM")
+                    </h3>
+                </div>
+
+                <div class="corpo-cartao" style="padding:0;">
+
+                    <table class="tabela-resumo">
+
+                        <thead>
+                            <tr>
+                                <th>Hora</th>
+                                <th>Cliente</th>
+                                <th>Tratamento</th>
+                                <th>Profissional</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach(var atendimento in Model) // Exibe no máximo 6 atendimentos
+                            {
+                                <tr>
+                                    <td class="negrito">
+                                        @atendimento.DataHora.ToString("HH:mm")
+                                    </td>
+
+                                    <td>
+                                        @atendimento.Cliente.Nome
+                                    </td>
+
+                                    <td>
+                                        @atendimento.PacotesAtendimento[0].Nome
+
+                                    </td>
+
+                                    <td>
+                                        @atendimento.Funcionario.Nome
+                                    </td>
+
+                                    <td>
+                                        <span class="etiqueta-situacao confirmado">
+                                            @atendimento.Situacao
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+
+                            
+            
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1549,3 +1549,4 @@ C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEri
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.pdb
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
+C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\0fo55y1mdv-{0}-o52hafzfab-o52hafzfab.gz

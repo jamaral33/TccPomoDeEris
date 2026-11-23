@@ -13,6 +13,7 @@ wwwroot\images\cartaoIcone.svg
 wwwroot\images\fotoDaCliente.png
 wwwroot\images\hidroRelaxamento.png
 wwwroot\images\logoPomoTransparente.png
+wwwroot\images\look-studio-HtXyytr9304-unsplash.jpg
 wwwroot\images\manicure.png
 wwwroot\images\massagem-relaxante.png
 wwwroot\images\pelosFaciais.png
@@ -22,6 +23,7 @@ wwwroot\images\pixQr.png
 wwwroot\js\adminPage.js
 wwwroot\js\calendario.js
 wwwroot\js\calendarioAdm.js
+wwwroot\js\calendarioAtendimento.js
 wwwroot\js\formulariosAdm.js
 wwwroot\js\pagamento.js
 wwwroot\js\site.js
@@ -85,7 +87,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\images\look-studio-HtXyytr9304-unsplash.jpg
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\atendimento.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\carrinhoDeCompra.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\paginaAdm.css
@@ -160,3 +161,4 @@ C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEri
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery-validation\dist\jquery.validate.js
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\home.css
+C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\calendarioAtendimento.js

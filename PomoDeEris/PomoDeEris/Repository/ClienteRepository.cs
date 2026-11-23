@@ -108,9 +108,36 @@ namespace PomoDeEris.Repository
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Cliente> ObterTodosClientes()
+        public List<Cliente> ObterTodosClientes()
         {
-            throw new NotImplementedException();
+            List<Cliente> clientes = new List<Cliente>();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("call sp_selecionar_todos_clientes()", conexao);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+                conexao.Close();
+                foreach (DataRow dateRow in dt.Rows)
+                {
+                    clientes.Add(
+                         new Cliente
+                         {
+                             Id = Convert.ToInt32(dateRow["idCliente"]),
+                             CPF = (String)(dateRow["CPF"]),
+                             DataCadastro = Convert.ToDateTime(dateRow["dataCadastro"]),
+                             Nome = (String)(dateRow["Nome"]),
+                             Email = (String)(dateRow["Email"]),
+                             Telefone = (String)(dateRow["Telefone"]),
+                             Senha = (String)(dateRow["Senha"]),
+                             Situacao = (String)(dateRow["Situacao"]),
+                         });
+                }
+            }
+            return clientes;
         }
     }
 }

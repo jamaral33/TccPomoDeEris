@@ -6,5 +6,7 @@ namespace PomoDeEris.Repository.Contract
     {
         Funcionario Login(string Email, string Senha);
 
+        List<Funcionario> ObterTodosFuncionarios();
+
     }
 }

@@ -4,7 +4,7 @@
     {
         public string? MetodoPagamento { get; set; }
 
-        public DateTime dataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
     }
 }
     

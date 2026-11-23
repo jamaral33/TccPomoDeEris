@@ -5,6 +5,10 @@
     ViewData["PageTitle"] = "Dashboard";
 }
 
+@section Scripts {
+    <script src="~/js/calendarioAdm.js" asp-append-version="true" defer></script>
+}
+
 <div class="pagina ativo" id="paginaPainel">
 
     <!-- INDICADORES -->
@@ -119,25 +123,25 @@
                             {
                                 <tr>
                                     <td class="negrito">
-                                        @Model.atendimentos[i].dataHora.ToString("HH:mm")
+                                        @Model.atendimentos[i].DataHora.ToString("HH:mm")
                                     </td>
 
                                     <td>
-                                        @Model.atendimentos[i].cliente.Nome
+                                        @Model.atendimentos[i].Cliente.Nome
                                     </td>
 
                                     <td>
-                                        @Model.atendimentos[i].pacotesAtendimento[0].Nome
+                                        @Model.atendimentos[i].PacotesAtendimento[0].Nome
 
                                     </td>
 
                                     <td>
-                                        @Model.atendimentos[i].funcionario.Nome
+                                        @Model.atendimentos[i].Funcionario.Nome
                                     </td>
 
                                     <td>
                                         <span class="etiqueta-situacao confirmado">
-                                            @Model.atendimentos[i].situacao
+                                            @Model.atendimentos[i].Situacao
                                         </span>
                                     </td>
                                 </tr>

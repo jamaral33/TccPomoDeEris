@@ -13,11 +13,14 @@ namespace PomoDeEris.Controllers
         private CarrinhoCookie _carrinhoCookie;
         private LoginCliente _loginCliente;
 
-        public AtendimentoController(IAtendimentoRepository atendimentoRepository, CarrinhoCookie carrinhoCookie, LoginCliente loginCliente)
+        private IAgendaRepository _agendaRepository;
+
+        public AtendimentoController(IAtendimentoRepository atendimentoRepository, CarrinhoCookie carrinhoCookie, LoginCliente loginCliente, IAgendaRepository agendaRepository)
         {
             _atendimentoRepository = atendimentoRepository;
             _carrinhoCookie = carrinhoCookie;
             _loginCliente = loginCliente;
+            _agendaRepository = agendaRepository;
         }
 
         public IActionResult Index()
@@ -37,7 +40,7 @@ namespace PomoDeEris.Controllers
                 return RedirectToAction("Index", "Carrinho");
             }
             //VERIFICAR SE O CARRINHO N ESTÁ VAZIO E O USUARIO LOGADO !!!!
-            var dias = _atendimentoRepository.ObterDiasBloqueados();
+            var dias = _agendaRepository.ObterDiasBloqueados();
             return View(dias);
         }
         [HttpPost]
@@ -51,8 +54,8 @@ namespace PomoDeEris.Controllers
             }
             Atendimento atendimento = new Atendimento()
             {
-                dataHora = horario,
-                cliente = _loginCliente.GetCliente()
+                DataHora = horario,
+                Cliente = _loginCliente.GetCliente()
             };
 
             double total = 0;
@@ -82,7 +85,7 @@ namespace PomoDeEris.Controllers
         [HttpGet]
         public IActionResult ObterHorarios(DateTime data)
         {
-            var horarios = _atendimentoRepository.ObterHorariosBloqueados(data);
+            var horarios = _agendaRepository.ObterHorariosBloqueados(data);
 
             return Json(horarios.Select(h => h.ToString("HH:mm")));
         }

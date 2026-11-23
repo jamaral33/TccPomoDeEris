@@ -38,8 +38,8 @@ namespace PomoDeEris.Repository
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_consulta(@IdCliente, @Horario)", conexao); 
 
-                cmd.Parameters.Add("@IdCliente", MySqlDbType.Int32).Value = atendimento.cliente.Id;
-                cmd.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = atendimento.dataHora;
+                cmd.Parameters.Add("@IdCliente", MySqlDbType.Int32).Value = atendimento.Cliente.Id;
+                cmd.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = atendimento.DataHora;
                 cmd.ExecuteNonQuery();
 
                 //pega o id da consulta que acabou de ser inserida
@@ -81,10 +81,10 @@ namespace PomoDeEris.Repository
         {
             Atendimento atendimento = new Atendimento();
 
-            atendimento.cliente = new Cliente();
-            atendimento.funcionario = new Funcionario();
-            atendimento.pagamento = new Pagamento();
-            atendimento.pacotesAtendimento = new List<Pacote>();
+            atendimento.Cliente = new Cliente();
+            atendimento.Funcionario = new Funcionario();
+            atendimento.Pagamento = new Pagamento();
+            atendimento.PacotesAtendimento = new List<Pacote>();
 
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
@@ -98,37 +98,37 @@ namespace PomoDeEris.Repository
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    atendimento.idConsulta = Id;
-                    atendimento.situacao = (string)(dr["SituacaoConsulta"]);
-                    atendimento.dataHora = Convert.ToDateTime((dr["DiaHorario"]));
-                    atendimento.dataCompra = Convert.ToDateTime((dr["DataCadastroConsulta"]));
-                    atendimento.cliente.Id = Convert.ToInt32(dr["idCliente"]);
+                    atendimento.IdConsulta = Id;
+                    atendimento.Situacao = (string)(dr["SituacaoConsulta"]);
+                    atendimento.DataHora = Convert.ToDateTime((dr["DiaHorario"]));
+                    atendimento.DataCompra = Convert.ToDateTime((dr["DataCadastroConsulta"]));
+                    atendimento.Cliente.Id = Convert.ToInt32(dr["idCliente"]);
 
-                    atendimento.cliente.CPF = dr["CPF_Cliente"] != DBNull.Value ? dr["CPF_Cliente"].ToString() : string.Empty;
-                    atendimento.cliente.Nome = dr["NomeCliente"] != DBNull.Value ? dr["NomeCliente"].ToString() : string.Empty;
-                    atendimento.cliente.Email = dr["EmailCliente"] != DBNull.Value ? dr["EmailCliente"].ToString() : string.Empty;
-                    atendimento.cliente.Telefone = dr["TelefoneCliente"] != DBNull.Value ? dr["TelefoneCliente"].ToString() : string.Empty;
-                    atendimento.cliente.Situacao = dr["SituacaoCliente"] != DBNull.Value ? dr["SituacaoCliente"].ToString() : string.Empty;
-                    atendimento.cliente.dataCadastro = Convert.ToDateTime(dr["DataCadastroCliente"]);
+                    atendimento.Cliente.CPF = dr["CPF_Cliente"] != DBNull.Value ? dr["CPF_Cliente"].ToString() : string.Empty;
+                    atendimento.Cliente.Nome = dr["NomeCliente"] != DBNull.Value ? dr["NomeCliente"].ToString() : string.Empty;
+                    atendimento.Cliente.Email = dr["EmailCliente"] != DBNull.Value ? dr["EmailCliente"].ToString() : string.Empty;
+                    atendimento.Cliente.Telefone = dr["TelefoneCliente"] != DBNull.Value ? dr["TelefoneCliente"].ToString() : string.Empty;
+                    atendimento.Cliente.Situacao = dr["SituacaoCliente"] != DBNull.Value ? dr["SituacaoCliente"].ToString() : string.Empty;
+                    atendimento.Cliente.dataCadastro = Convert.ToDateTime(dr["DataCadastroCliente"]);
 
                     if (dr["Matricula"] != DBNull.Value)
                     {
-                        atendimento.funcionario.Matricula = Convert.ToInt32(dr["Matricula"]);
-                        atendimento.funcionario.Cargo = dr["Funcao"] != DBNull.Value ? dr["Funcao"].ToString() : string.Empty;
-                        atendimento.funcionario.CPF = dr["CPF_Funcionario"] != DBNull.Value ? dr["CPF_Funcionario"].ToString() : string.Empty;
-                        atendimento.funcionario.Nome = dr["NomeFuncionario"] != DBNull.Value ? dr["NomeFuncionario"].ToString() : string.Empty;
-                        atendimento.funcionario.Email = dr["EmailFuncionario"] != DBNull.Value ? dr["EmailFuncionario"].ToString() : string.Empty;
-                        atendimento.funcionario.Telefone = dr["TelefoneFuncionario"] != DBNull.Value ? dr["TelefoneFuncionario"].ToString() : string.Empty;
-                        atendimento.funcionario.Situacao = dr["SituacaoFuncionario"] != DBNull.Value ? dr["SituacaoFuncionario"].ToString() : string.Empty;
+                        atendimento.Funcionario.Matricula = Convert.ToInt32(dr["Matricula"]);
+                        atendimento.Funcionario.Cargo = dr["Funcao"] != DBNull.Value ? dr["Funcao"].ToString() : string.Empty;
+                        atendimento.Funcionario.CPF = dr["CPF_Funcionario"] != DBNull.Value ? dr["CPF_Funcionario"].ToString() : string.Empty;
+                        atendimento.Funcionario.Nome = dr["NomeFuncionario"] != DBNull.Value ? dr["NomeFuncionario"].ToString() : string.Empty;
+                        atendimento.Funcionario.Email = dr["EmailFuncionario"] != DBNull.Value ? dr["EmailFuncionario"].ToString() : string.Empty;
+                        atendimento.Funcionario.Telefone = dr["TelefoneFuncionario"] != DBNull.Value ? dr["TelefoneFuncionario"].ToString() : string.Empty;
+                        atendimento.Funcionario.Situacao = dr["SituacaoFuncionario"] != DBNull.Value ? dr["SituacaoFuncionario"].ToString() : string.Empty;
 
                     }
 
                     if (dr["idPagamento"] != DBNull.Value)
                     {
-                        atendimento.pagamento.IdPagamento = Convert.ToInt32(dr["idPagamento"]);
-                        atendimento.pagamento.Valor = dr["ValorPagamento"] != DBNull.Value ? Convert.ToDouble(dr["ValorPagamento"]) : 0.0;
-                        atendimento.pagamento.Metodo = dr["MetodoPagamento"] != DBNull.Value ? dr["MetodoPagamento"].ToString() : string.Empty;
-                        atendimento.pagamento.Status = dr["SituacaoPagamento"] != DBNull.Value ? dr["SituacaoPagamento"].ToString() : string.Empty;
+                        atendimento.Pagamento.IdPagamento = Convert.ToInt32(dr["idPagamento"]);
+                        atendimento.Pagamento.Valor = dr["ValorPagamento"] != DBNull.Value ? Convert.ToDouble(dr["ValorPagamento"]) : 0.0;
+                        atendimento.Pagamento.Metodo = dr["MetodoPagamento"] != DBNull.Value ? dr["MetodoPagamento"].ToString() : string.Empty;
+                        atendimento.Pagamento.Status = dr["SituacaoPagamento"] != DBNull.Value ? dr["SituacaoPagamento"].ToString() : string.Empty;
                     }
 
 
@@ -146,7 +146,7 @@ namespace PomoDeEris.Repository
                     conexao.Close();
                     foreach (DataRow datarow in dt.Rows)
                     {
-                        atendimento.pacotesAtendimento.Add(
+                        atendimento.PacotesAtendimento.Add(
                              new Pacote
                              {
                                  IdPacote = Convert.ToInt32(datarow["idPacote"]),
@@ -165,53 +165,7 @@ namespace PomoDeEris.Repository
             return atendimento;
 
         }
-        public List<DateTime> ObterDiasBloqueados()
-        {
-            List<DateTime> dias = new List<DateTime>();
-
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-                MySqlCommand cmd = new MySqlCommand(@"SELECT DiaHorario
-                                                       FROM tbAgenda
-                                                       WHERE tipo = 'dia'
-                                                       AND DiaHorario >= CURDATE()", conexao);
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                        dias.Add(reader.GetDateTime("DiaHorario"));
-                }
-            }
-
-            return dias;
-        }
-
-        public List<DateTime> ObterHorariosBloqueados(DateTime data)
-        {
-            List<DateTime> horarios = new List<DateTime>();
-
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-
-                MySqlCommand cmd = new MySqlCommand(@"SELECT DiaHorario
-                                                   FROM tbAgenda
-                                                   WHERE tipo = 'horario'
-                                                   AND DATE(DiaHorario) = @Data", conexao);
-
-                cmd.Parameters.Add("@Data", MySqlDbType.Date).Value = data.Date;
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                        horarios.Add(reader.GetDateTime("DiaHorario"));
-                }
-                
-            }
-
-            return horarios;
-        }
+       
 
         public List<Atendimento> ObterTodosAtendimentos()
         {
