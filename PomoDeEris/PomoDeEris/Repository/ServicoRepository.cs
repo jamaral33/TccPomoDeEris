@@ -52,9 +52,19 @@ namespace PomoDeEris.Repository
             }
         }
 
-        public void Excluir(Servico servico)
+        public void Excluir(int Id)
         {
-            throw new NotImplementedException();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("delete from tbservico WHERE IdServico = @Id", conexao);
+                cmd.Parameters.AddWithValue("@Id", Id);
+
+                cmd.ExecuteNonQuery();
+
+                conexao.Close();
+            }
         }
 
         public Servico ObterServico(int Id)

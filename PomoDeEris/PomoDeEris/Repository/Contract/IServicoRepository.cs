@@ -8,7 +8,7 @@ namespace PomoDeEris.Repository.Contract
         void Cadastrar(Servico servico);
         void Atualizar(Servico servico);
 
-        void Excluir(Servico servico);
+        void Excluir(int Id);
 
         Servico ObterServico(int Id);
 

@@ -61,5 +61,12 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 return View(servico);
             }
         }
+
+       [HttpPost]
+       public IActionResult Excluir(int id)
+        {
+            _servicoRepository.Excluir(id);
+            return RedirectToAction("Index", "Servico");
+        }
     }
 }
