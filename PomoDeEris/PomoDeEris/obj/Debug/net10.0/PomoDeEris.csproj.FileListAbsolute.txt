@@ -1461,7 +1461,6 @@ C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEri
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\bundle\PomoDeEris.styles.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\projectbundle\PomoDeEris.bundle.scp.css
-C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-30meprsw2w-30meprsw2w.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-36q5hhuhmu-36q5hhuhmu.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-etnr7xm97n-etnr7xm97n.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-gq1cfw2e5l-gq1cfw2e5l.gz
@@ -1551,3 +1550,5 @@ C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEri
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\0fo55y1mdv-{0}-5rekpxv7i9-5rekpxv7i9.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qj2l63no9d-{0}-5x8gicygeh-5x8gicygeh.gz
+C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-ok3g7y9xq0-ok3g7y9xq0.gz
+C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\8hf92tbof0-{0}-2f1kcvs93y-2f1kcvs93y.gz

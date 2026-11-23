@@ -36,16 +36,13 @@ namespace PomoDeEris.Repository
             {
                 // Insere a consulta
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_consulta(@IdCliente, @Horario)", conexao); 
+                MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_consulta(@IdCliente, @Horario)", conexao);
 
                 cmd.Parameters.Add("@IdCliente", MySqlDbType.Int32).Value = atendimento.Cliente.Id;
                 cmd.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = atendimento.DataHora;
-                cmd.ExecuteNonQuery();
 
-                //pega o id da consulta que acabou de ser inserida
-                MySqlCommand cmdId = new MySqlCommand("SELECT LAST_INSERT_ID()", conexao);
-
-                int idConsulta = Convert.ToInt32(cmdId.ExecuteScalar());
+                // a procedure devolve o idConsulta
+                int idConsulta = Convert.ToInt32(cmd.ExecuteScalar());
 
                 foreach (var pacote in pacotesConsulta)
                 {

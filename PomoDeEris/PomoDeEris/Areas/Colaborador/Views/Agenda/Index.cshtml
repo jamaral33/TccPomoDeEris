@@ -1,0 +1,124 @@
+﻿@model List<DateTime>
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/styles/index.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/atendimento.css" />
+}
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/index.js" defer></script>
+    <script src="~/js/calendarioAgenda.js" defer asp-append-version="true"> </script>
+    <script>
+        const diasBloqueados = @Html.Raw(
+                System.Text.Json.JsonSerializer.Serialize(
+                                (Model ?? new List<DateTime>()).Select(d => d.ToString("yyyy-MM-dd"))
+                    )
+                    );
+        // Transforma em um json as datas bloqueadas para que o javascript possa ler e bloquear no calendário
+    </script>
+}
+
+<section class="agendamento-wrapper">
+
+    <header class="agendamento-titulo">
+        <span class="agendamento-subtitulo">Controle de Agendamento</span>
+        <h1>Selecione a data e o horário</h1>
+        <p>Escolha o dia ou o horario que deseja bloquear ou liberar.</p>
+    </header>
+
+    <form asp-area="Colaborador" asp-controller="Agenda" method="post" id="formularioAgendamento">
+        <input type="hidden" id="horarioCompleto" name="horario" />
+        <input type="hidden" id="dataSelecionada" name="data" value="@ViewBag.Data" />
+
+        <div class="agendamento-conteudo">
+
+            <section class="cartao-calendario">
+                <div id="calendario"></div>
+            </section>
+
+            <section class="cartao-horarios">
+
+                <div class="horarios-cabecalho">
+                    <div class="icone-relogio">&#9719;</div>
+                    <div>
+                        <h2>Horários disponíveis</h2>
+                        <p id="textoData">Selecione uma data no calendário</p>
+                    </div>
+                </div>
+
+                <div class="horarios-grade" id="listaHorarios">
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="09:00" />
+                        <span>09:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="10:00" />
+                        <span>10:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="11:00" />
+                        <span>11:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="12:00" />
+                        <span>12:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="13:00" />
+                        <span>13:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="14:00" />
+                        <span>14:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="15:00" />
+                        <span>15:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="16:00" />
+                        <span>16:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="17:00" />
+                        <span>17:00</span>
+                    </label>
+
+                    <label class="opcao-horario">
+                        <input type="radio" name="HoraSelecionada" value="18:00" />
+                        <span>18:00</span>
+                    </label>
+
+                </div>
+
+                <button type="submit" asp-action="BloquearDia" class="botao-confirmar">
+                    Bloquear dia
+                    <span aria-hidden="true">&#8594;</span>
+                </button>
+                <button type="submit" asp-action="BloquearHorario" class="botao-confirmar">
+                    Bloquear horário
+                    <span aria-hidden="true">&#8594;</span>
+                </button>
+
+                @if (TempData["Erro"] != null)
+                {
+                    <p>@TempData["Erro"]</p>
+                }
+            </section>
+
+        </div>
+    </form>
+
+</section>
+<style>
+
+</style>

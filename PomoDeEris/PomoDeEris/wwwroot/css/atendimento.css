@@ -206,3 +206,14 @@
 .indisponivel span {
     border: solid 1px var(--cor-indisponivel);
 }
+.bloqueado {
+    border: solid 1px #ff0000;
+    border-radius: 10px;
+}
+.dia-bloqueado,
+.dia-bloqueado [data-vc-date-btn],
+.dia-bloqueado button {
+    background: #fdecea !important;
+    color: #c0392b !important;
+    font-weight: 600;
+}
