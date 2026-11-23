@@ -410,6 +410,40 @@ BEGIN
     SELECT @idConsulta AS idConsulta;
 END $$
 
+DELIMITER $$
+
+CREATE PROCEDURE sp_atualizar_consulta(
+    vIdConsulta INT,
+    vSituacao VARCHAR(50),
+    vMatricula INT,
+    vDiaHorario DATETIME,
+    vValor DECIMAL(7,2),
+    vMetodo VARCHAR(20),
+    vSituacaoPagamento VARCHAR(20)
+)
+BEGIN
+    UPDATE tbConsulta
+    SET Situacao = vSituacao,
+        Matricula = NULLIF(vMatricula, 0)   -- 0 = "Não definido"
+    WHERE idConsulta = vIdConsulta;
+
+    UPDATE tbAgenda
+    SET DiaHorario = vDiaHorario
+    WHERE idConsulta = vIdConsulta;
+
+    UPDATE tbPagamento
+    SET Valor = vValor,
+        Metodo = vMetodo,
+        Situacao = vSituacaoPagamento
+    WHERE idConsulta = vIdConsulta;
+
+    DELETE FROM tbPacoteConsulta
+    WHERE idConsulta = vIdConsulta;
+END $$
+
+
+
+
 CREATE PROCEDURE sp_selecionar_quantidade_consultas_hoje()
 BEGIN
     SELECT COUNT(*) AS quantidade 
@@ -501,8 +535,7 @@ BEGIN
     INNER JOIN tbAgenda a
     ON c.idConsulta = a.idConsulta
     WHERE vDia = DATE(a.DiaHorario)
-	  AND a.tipo = 'horario'
-      AND c.Situacao != "Cancelado";
+	  AND a.tipo = 'horario';
       
 END $$
 

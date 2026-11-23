@@ -46,10 +46,13 @@ namespace PomoDeEris.Repository
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand(@"SELECT DiaHorario
-                                                   FROM tbAgenda
-                                                   WHERE tipo = 'horario'
-                                                   AND DATE(DiaHorario) = @Data", conexao);
+                MySqlCommand cmd = new MySqlCommand(@"
+                        SELECT a.DiaHorario
+                        FROM tbAgenda a
+                        LEFT JOIN tbConsulta c ON c.idConsulta = a.idConsulta
+                        WHERE a.tipo = 'horario'
+                          AND DATE(a.DiaHorario) = @Data
+                          AND (a.idConsulta IS NULL OR c.Situacao != 'Cancelado')", conexao);
 
                 cmd.Parameters.Add("@Data", MySqlDbType.Date).Value = data.Date;
 
