@@ -1,0 +1,114 @@
+﻿@model PomoDeEris.Models.Atendimento
+@inject PomoDeEris.Repository.Contract.IFuncionarioRepository FuncionarioRepository;
+@inject PomoDeEris.Repository.Contract.IPacoteRepository PacoteRepository;
+@{
+}
+
+<div class="pagina" id="paginaAtendimentos">
+    <div class="cabecalho-secao">
+        <div><h2>Editar Atendimento</h2><p>Altere a situação, o funcionário, o horário, os pacotes e o pagamento da consulta.</p></div>
+    </div>
+
+    <div class="grade-formulario-pacote">
+        <form method="post" asp-area="Colaborador" asp-controller="Atendimento" asp-action="Atualizar">
+            <input type="hidden" asp-for="IdConsulta" />
+
+            @if (TempData["Erro"] != null)
+            {
+                <p style="color:#c0392b">@TempData["Erro"]</p>
+            }
+
+            <div class="cartao-formulario">
+
+                <div class="secao-formulario">
+                    <h4>Dados da consulta</h4>
+                    <div class="campo">
+                        <label>Cliente</label>
+                        <input type="text" value="@Model.Cliente.Nome" disabled />
+                    </div>
+                    <div class="campo">
+                        <label>Data da compra</label>
+                        <input type="text" value="@Model.DataCompra.ToString("dd/MM/yyyy HH:mm")" disabled />
+                    </div>
+                </div>
+
+                <div class="secao-formulario">
+                    <h4>Situação e responsável</h4>
+                    <div class="campo">
+                        <label for="campoSituacao">Situação <span class="obrigatorio">*</span></label>
+                        <select id="campoSituacao" asp-for="Situacao">
+                            <option value="Agendado">Agendado</option>
+                            <option value="Concluído">Concluído</option>
+                            <option value="Cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="campoFuncionario">Funcionário</label>
+                        <select id="campoFuncionario" name="Funcionario.Matricula">
+                            <option value="0">Não definido</option>
+                            @foreach (var funcionario in FuncionarioRepository.ObterTodosFuncionarios())
+                            {
+                                <option value="@funcionario.Matricula" data-id="@funcionario.Matricula"> @funcionario.Nome</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="secao-formulario">
+                    <h4>Data e horário</h4>
+                    <div class="campo">
+                        <label for="campoDataHora">Data e horário <span class="obrigatorio">*</span></label>
+                        <input type="datetime-local" id="campoDataHora" asp-for="DataHora" />
+                    </div>
+                </div>
+
+                <div class="secao-formulario">
+                    <h4>Pacotes</h4>
+                    @for (var i = 0; i < Model.PacotesAtendimento.Count; i++)
+                    {
+                        <div class="campo">
+                            <input type="hidden" name="PacotesAtendimento[@i].IdPacote" value="@Model.PacotesAtendimento[i].IdPacote" />
+                            <label>@Model.PacotesAtendimento[i].Nome</label>
+                            <input type="number" min="1"
+                                   name="PacotesAtendimento[@i].Quantidade"
+                                   value="@Model.PacotesAtendimento[i].Quantidade" />
+                        </div>
+                    }
+                </div>
+
+                <div class="secao-formulario">
+                    <h4>Pagamento</h4>
+                    <div class="campo">
+                        <label for="campoValor">Valor (R$)</label>
+                        <input type="number" step="0.01" id="campoValor" asp-for="Pagamento.Valor" />
+                    </div>
+                    <div class="campo">
+                        <label for="campoMetodo">Método</label>
+                        <select id="campoMetodo" asp-for="Pagamento.Metodo">
+                            <option value="Pix">Pix</option>
+                            <option value="Cartao de credito">Cartão de crédito</option>
+                            <option value="Cartao de debito">Dinheiro</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="campoStatusPagamento">Situação do pagamento</label>
+                        <select id="campoStatusPagamento" asp-for="Pagamento.Status">
+                            <option value="Pago">Pago</option>
+                            <option value="Pendente">Pendente</option>
+                            <option value="Estornado">Estornado</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="margin-top:22px; display:flex; flex-direction:column; gap:10px;">
+                <button type="submit" class="botao botao-dourado">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>
+                    Salvar atendimento
+                </button>
+                <a asp-area="Colaborador" asp-controller="Atendimento" asp-action="Index" class="botao botao-secundario">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

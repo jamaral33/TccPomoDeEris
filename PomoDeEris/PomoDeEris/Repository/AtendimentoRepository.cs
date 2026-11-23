@@ -24,10 +24,47 @@ namespace PomoDeEris.Repository
             _carrinhoCookie = carrinhoCookie;
         }
 
+
         public void Atualizar(Atendimento atendimento)
         {
-            throw new NotImplementedException();
-        }
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "CALL sp_atualizar_consulta(@IdConsulta, @Situacao, @Matricula, @DiaHorario, @Valor, @Metodo, @SituacaoPagamento)",
+                    conexao
+                );
+
+                cmd.Parameters.Add("@IdConsulta", MySqlDbType.Int32).Value = atendimento.IdConsulta;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = atendimento.Situacao;
+                cmd.Parameters.Add("@Matricula", MySqlDbType.Int32).Value = atendimento.Funcionario.Matricula;
+                cmd.Parameters.Add("@DiaHorario", MySqlDbType.DateTime).Value = atendimento.DataHora;
+                cmd.Parameters.Add("@Valor", MySqlDbType.Decimal).Value = atendimento.Pagamento.Valor;
+                cmd.Parameters.Add("@Metodo", MySqlDbType.VarChar).Value = atendimento.Pagamento.Metodo;
+                cmd.Parameters.Add("@SituacaoPagamento", MySqlDbType.VarChar).Value = atendimento.Pagamento.Status;
+
+                cmd.ExecuteNonQuery();
+
+                // reinsere os pacotes para evitar erros
+                foreach (var pacote in atendimento.PacotesAtendimento)
+                {
+                    MySqlCommand cmd2 = new MySqlCommand(
+                        "CALL sp_cadastrar_pacote_consulta(@IdConsulta, @IdPacote, @Quantidade)",
+                        conexao
+                    );
+
+                    cmd2.Parameters.Add("@IdConsulta", MySqlDbType.Int32).Value = atendimento.IdConsulta;
+                    cmd2.Parameters.Add("@IdPacote", MySqlDbType.Int32).Value = pacote.IdPacote;
+                    cmd2.Parameters.Add("@Quantidade", MySqlDbType.Int16).Value = pacote.Quantidade;
+
+                    cmd2.ExecuteNonQuery();
+                }
+
+                conexao.Close();
+            }
+         }
+        
 
         public void Cadastrar(Atendimento atendimento, Pagamento pagamento)
         {

@@ -104,6 +104,7 @@
                                 <th>Tratamento</th>
                                 <th>Profissional</th>
                                 <th>Status</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
 
@@ -132,6 +133,16 @@
                                         <span class="etiqueta-situacao confirmado">
                                             @atendimento.Situacao
                                         </span>
+                                    </td>
+                                    <td>
+                                        <a asp-area="Colaborador"
+                                           asp-controller="Atendimento"
+                                           asp-action="Atualizar"
+                                           asp-route-id="@atendimento.IdConsulta"
+                                           class="botao botao-secundario botao-pequeno">
+                                            Atualizar
+                                        </a>
+
                                     </td>
                                 </tr>
                             }

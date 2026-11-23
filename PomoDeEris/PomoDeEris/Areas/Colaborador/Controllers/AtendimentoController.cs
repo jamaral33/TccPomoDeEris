@@ -39,5 +39,19 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
 
             return View(atendimentos.OrderBy(a => a.DataHora).ToList());
         }
+
+        [HttpGet]
+        public IActionResult Atualizar(int id)
+        {
+            Atendimento atendimento = _atendimentoRepository.ObterAtendimento(id);
+            return View(atendimento);
+        }
+        [HttpPost]
+        public IActionResult Atualizar(Atendimento atendimento)
+        {
+
+                _atendimentoRepository.Atualizar(atendimento);
+                return RedirectToAction("Index");
+        }
     }
 }
