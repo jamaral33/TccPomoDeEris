@@ -9,5 +9,7 @@
         bool AlternarDiaBloqueio(DateTime data);
 
         bool AlternarHorarioBloqueio(DateTime horario);
+
+        bool VerificarHorarioDisponivel(DateTime horario, int idConsulta);
     }
 }

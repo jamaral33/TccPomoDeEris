@@ -38,7 +38,7 @@
                         <label for="campoSituacao">Situação <span class="obrigatorio">*</span></label>
                         <select id="campoSituacao" asp-for="Situacao">
                             <option value="Agendado">Agendado</option>
-                            <option value="Concluído">Concluído</option>
+                            <option value="Concluido">Concluído</option>
                             <option value="Cancelado">Cancelado</option>
                         </select>
                     </div>
@@ -48,7 +48,7 @@
                             <option value="0">Não definido</option>
                             @foreach (var funcionario in FuncionarioRepository.ObterTodosFuncionarios())
                             {
-                                <option value="@funcionario.Matricula" data-id="@funcionario.Matricula"> @funcionario.Nome</option>
+                                <option value="@funcionario.Matricula" data-id="@funcionario.Matricula" selected="@(funcionario.Matricula == Model.Funcionario.Matricula)"> @funcionario.Nome</option>
                             }
                         </select>
                     </div>

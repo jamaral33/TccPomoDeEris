@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PomoDeEris.Libraries.Filtro;
 using PomoDeEris.Models;
+using PomoDeEris.Repository;
 using PomoDeEris.Repository.Contract;
 
 namespace PomoDeEris.Areas.Colaborador.Controllers
@@ -10,9 +11,11 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
     public class AtendimentoController : Controller
     {
         IAtendimentoRepository _atendimentoRepository;
-        public AtendimentoController(IAtendimentoRepository atendimentoRepository)
+        IAgendaRepository _agendaRepository;
+        public AtendimentoController(IAtendimentoRepository atendimentoRepository, IAgendaRepository agendaRepository)
         {
             _atendimentoRepository = atendimentoRepository;
+            _agendaRepository = agendaRepository;
         }
 
         [HttpGet]
@@ -25,8 +28,8 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
 
             List<Atendimento> atendimentos = _atendimentoRepository.ObterAtendimentosDia(diaSelecionado);
 
-            if (!string.IsNullOrEmpty(procedimento))
-                atendimentos = atendimentos.Where(a => a.PacotesAtendimento.Any(p => p.IdPacote.ToString() == procedimento)).ToList();
+            if (!string.IsNullOrEmpty(procedimento)) //Verifica se o filtro está nulo
+                atendimentos = atendimentos.Where(a => a.PacotesAtendimento.Any(p => p.IdPacote.ToString() == procedimento)).ToList(); //filtra
 
             if (!string.IsNullOrEmpty(cliente))
                 atendimentos = atendimentos.Where(a => a.Cliente.CPF == cliente).ToList();
@@ -49,8 +52,13 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         [HttpPost]
         public IActionResult Atualizar(Atendimento atendimento)
         {
+            if (atendimento.Situacao != "Cancelado" && !_agendaRepository.VerificarHorarioDisponivel(atendimento.DataHora, atendimento.IdConsulta))
+            {
+                TempData["Erro"] = "Esse horário não está disponível.";
+                return RedirectToAction("Atualizar", new { id = atendimento.IdConsulta });
+            }
 
-                _atendimentoRepository.Atualizar(atendimento);
+            _atendimentoRepository.Atualizar(atendimento);
                 return RedirectToAction("Index");
         }
     }

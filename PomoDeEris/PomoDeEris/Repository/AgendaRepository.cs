@@ -76,11 +76,11 @@ namespace PomoDeEris.Repository
 
                 //não deixa bloquear/liberar se tem consulta ativa em qualquer horário do dia
                 var cmdConsulta = new MySqlCommand(@"
-                    SELECT COUNT(*)
-                    FROM tbAgenda a
-                    JOIN tbConsulta c ON c.idConsulta = a.idConsulta
-                    WHERE c.Situacao != 'Cancelado'
-                      AND DATE(a.DiaHorario) = @Data", conexao);
+                                                    SELECT COUNT(*)
+                                                    FROM tbAgenda a
+                                                    JOIN tbConsulta c ON c.idConsulta = a.idConsulta
+                                                    WHERE c.Situacao != 'Cancelado'
+                                                      AND DATE(a.DiaHorario) = @Data", conexao);
 
                 cmdConsulta.Parameters.Add("@Data", MySqlDbType.Date).Value = data.Date;
 
@@ -113,34 +113,51 @@ namespace PomoDeEris.Repository
             {
                 conexao.Open();
 
-                // 1. não deixa bloquear/liberar se tem consulta ativa nesse horário
                 var cmdConsulta = new MySqlCommand(@"
-            SELECT COUNT(*)
-            FROM tbAgenda a
-            JOIN tbConsulta c ON c.idConsulta = a.idConsulta
-            WHERE c.Situacao != 'Cancelado'
-              AND a.DiaHorario = @Horario", conexao);
+                                                SELECT COUNT(*)
+                                                FROM tbAgenda a
+                                                JOIN tbConsulta c ON c.idConsulta = a.idConsulta
+                                                WHERE c.Situacao != 'Cancelado'
+                                                AND a.DiaHorario = @Horario", conexao);
+
                 cmdConsulta.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = horario;
 
                 if (Convert.ToInt32(cmdConsulta.ExecuteScalar()) > 0)
                     return false;
 
-                // 2. tenta liberar (DELETE); se não apagou nada, bloqueia (INSERT)
                 var cmdDelete = new MySqlCommand(@"
-            DELETE FROM tbAgenda
-            WHERE tipo = 'horario' AND idConsulta IS NULL AND DiaHorario = @Horario", conexao);
+                                                DELETE FROM tbAgenda
+                                                WHERE tipo = 'horario' AND idConsulta IS NULL AND DiaHorario = @Horario", conexao);
+
                 cmdDelete.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = horario;
 
                 if (cmdDelete.ExecuteNonQuery() == 0)
                 {
                     var cmdInsert = new MySqlCommand(@"
-                INSERT INTO tbAgenda (DiaHorario, tipo)
-                VALUES (@Horario, 'horario')", conexao);
+                                                    INSERT INTO tbAgenda (DiaHorario, tipo)
+                                                    VALUES (@Horario, 'horario')", conexao);
+
                     cmdInsert.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = horario;
                     cmdInsert.ExecuteNonQuery();
                 }
 
                 return true;
+            }
+        }
+        // true = horário livre para essa consulta
+        public bool VerificarHorarioDisponivel(DateTime horario, int idConsulta)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "CALL sp_verificar_horario_disponivel(@Horario, @IdConsulta)", conexao);
+
+                cmd.Parameters.Add("@Horario", MySqlDbType.DateTime).Value = horario;
+                cmd.Parameters.Add("@IdConsulta", MySqlDbType.Int32).Value = idConsulta;
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) == 0;
             }
         }
     }
