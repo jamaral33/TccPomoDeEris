@@ -18,6 +18,28 @@ namespace PomoDeEris.Repository
             _conf = conf;
         }
 
+        public void Cadastrar(Funcionario funcionario)
+        {
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("call sp_cadastrar_funcionario(@CPF, @Nome, @Email, @Situacao, @Telefone, @Senha, @Funcao)", conexao);
+
+                CriptografiaSenha criptografar = new CriptografiaSenha();
+                string senhaCriptografada = criptografar.hasharSenha(funcionario.Senha);
+
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = funcionario.Nome;
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = funcionario.CPF;
+                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = funcionario.Telefone;
+                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = funcionario.Email;
+                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = senhaCriptografada;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = funcionario.Situacao;
+                cmd.Parameters.Add("@Funcao", MySqlDbType.VarChar).Value = funcionario.Cargo;
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public Funcionario Login(string Email, string Senha)
         {
             CriptografiaSenha criptografar = new CriptografiaSenha();

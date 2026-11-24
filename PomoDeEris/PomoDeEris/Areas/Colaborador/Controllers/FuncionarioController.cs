@@ -44,5 +44,25 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Cadastrar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar([FromForm] Funcionario funcionario)
+        {
+            if (ModelState.IsValid)
+            {
+                _funcionarioRepository.Cadastrar(funcionario);
+                return RedirectToAction("Login", "Funcionario", new { area = "Colaborador" });
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

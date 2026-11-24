@@ -8,5 +8,7 @@ namespace PomoDeEris.Repository.Contract
 
         List<Funcionario> ObterTodosFuncionarios();
 
+        void Cadastrar(Funcionario funcionario);
+
     }
 }
