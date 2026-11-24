@@ -362,7 +362,12 @@ BEGIN
     WHERE idPacote = vIdPacote;
 END $$
 
-
+CREATE PROCEDURE sp_pesquisar_pacotes(vPesquisa VARCHAR(255))
+BEGIN
+    SELECT *
+    FROM tbPacote
+    WHERE nome LIKE CONCAT('%', vPesquisa, '%');
+END $$
 -- SERVIÇOS DO PACOTE
 
 CREATE PROCEDURE sp_cadastrar_servicosPacote(

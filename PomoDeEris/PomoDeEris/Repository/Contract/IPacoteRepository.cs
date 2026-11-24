@@ -13,5 +13,7 @@ namespace PomoDeEris.Repository.Contract
         void Atualizar(Pacote pacote);
 
         void Excluir(int Id);
+
+        List<Pacote> PesquisarPacotes(string pesquisa);
     }
 }

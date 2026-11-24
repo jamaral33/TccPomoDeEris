@@ -1,11 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PomoDeEris.Repository.Contract;
 
 namespace PomoDeEris.Controllers
 {
     public class PacoteController : Controller
     {
-        public IActionResult Index()
+        IPacoteRepository _pacoteRepository;
+        public PacoteController(IPacoteRepository pacoteRepository)
         {
+            _pacoteRepository = pacoteRepository;
+        }
+
+        public IActionResult Index(string? pesquisa)
+        {
+            if(string.IsNullOrEmpty(pesquisa))
+            {
+                pesquisa = "";
+            }
+
             return View();
         }
     }
