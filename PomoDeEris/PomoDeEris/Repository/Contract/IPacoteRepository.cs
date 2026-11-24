@@ -11,5 +11,7 @@ namespace PomoDeEris.Repository.Contract
         void Cadastrar(Pacote pacote);
 
         void Atualizar(Pacote pacote);
+
+        void Excluir(int Id);
     }
 }

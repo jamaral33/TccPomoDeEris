@@ -76,7 +76,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             ModelState.Remove("arquivo");
             ModelState.Remove("servicosIds");
             foreach (var chave in ModelState.Keys.Where(k => k.StartsWith("Servicos[")).ToList())
-                ModelState.Remove(chave);
+                ModelState.Remove(chave); // Remove os erros de validação para os campos de serviços
 
             pacote.Servicos = (servicosIds ?? new List<int>()) // verifica se ta nulo se n cria uma lista
                 .Where(id => id > 0) // id > 0 (valido)
@@ -98,6 +98,12 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             }
 
             return View(pacote);
+        }
+        [HttpPost]
+        public IActionResult Excluir(int id)
+        {
+            _pacoteRepository.Excluir(id);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -163,6 +163,18 @@ namespace PomoDeEris.Repository
                 conexao.Close();
             }
         }
+
+        public void Excluir(int Id)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("delete from tbPacote WHERE IdPacote = @Id", conexao);
+                cmd.Parameters.AddWithValue("@Id", Id);
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
     }
     
 }

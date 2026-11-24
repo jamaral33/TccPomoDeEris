@@ -59,13 +59,19 @@
                                     Editar
                                 </a>
 
-                                <a asp-area="Colaborador"
-                                   asp-controller="Pacote"
-                                   asp-action="Excluir"
-                                   asp-route-id="@pacote.IdPacote"
-                                   class="botao botao-secundario botao-pequeno">
-                                    Excluir
-                                </a>
+                                <form asp-area="Colaborador"
+                                      asp-controller="Pacote"
+                                      asp-action="Excluir"
+                                      asp-route-id="@pacote.IdPacote"
+                                      method="post"
+                                      style="display: inline;"
+                                      onsubmit="return confirm('Tem certeza que deseja excluir este pacote?');">
+
+                                    <button type="submit" class="botao botao-secundario botao-pequeno">
+                                        Excluir
+                                    </button>
+
+                                </form>
                             </td>
                         </tr>
                     }
