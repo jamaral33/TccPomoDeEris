@@ -10,7 +10,7 @@ CREATE TABLE tbPessoa
 (
     CPF CHAR(11) PRIMARY KEY, 
     Nome VARCHAR(100) NOT NULL,
-    Email VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL UNIQUE,
     Telefone CHAR(11) NOT NULL,
     Senha VARCHAR(70) NOT NULL,
     Situacao varchar(70) NOT NULL
@@ -232,7 +232,8 @@ BEGIN
     FROM tbCliente c
     JOIN tbPessoa p
         ON c.CPF = p.CPF
-    WHERE p.Email = vEmail;
+    WHERE p.Email = vEmail
+    AND p.Situacao != "Inativo";
 END $$
 
 CREATE PROCEDURE sp_selecionar_quantidade_clientes_hoje()

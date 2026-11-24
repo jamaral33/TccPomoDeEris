@@ -71,6 +71,27 @@ namespace PomoDeEris.Controllers
         }
 
         [HttpPost]
+        public IActionResult Logout()
+        {
+            _loginCliente.Logout();
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult DesativarConta()
+        {
+            var cliente = _loginCliente.GetCliente();
+
+            if (cliente != null)
+            {
+                cliente.Situacao = "Inativo";
+                _clienteRepository.Atualizar(cliente);
+                _loginCliente.Logout();
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
         public IActionResult Login([FromForm] LoginClienteViewModel cliente)
         {
             Cliente clienteDB = _clienteRepository.Login(cliente.Email, cliente.Senha);

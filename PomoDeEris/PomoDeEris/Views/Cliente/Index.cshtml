@@ -20,14 +20,16 @@
             Minhas informações
         </a>
 
-        <a href="#" class="menu-lateral__sair">Sair da conta</a>
+        <form asp-controller="Cliente" asp-action="Logout" method="post">
+            <button type="submit" class="botao botao--perigo">Sair da Conta</button>
+        </form>
     </aside>
 
     <section class="conteudo">
         <h1 class="conteudo__titulo">Minhas informações</h1>
         <p class="conteudo__subtitulo">Mantenha seus dados atualizados para agendamentos mais rápidos.</p>
 
-        <form class="formulario" asp-controller="Cliente" asp-action="Atualizar">
+        <form class="formulario" asp-controller="Cliente" asp-action="Atualizar" id="form-atualizar">
             <input type="hidden" asp-for="Id"/>
             <!-- Dados pessoais -->
             <div class="cartao">
@@ -67,14 +69,18 @@
                 </div>
             </div>
 
-            <div class="acoes">
-                <button type="button" class="botao botao--perigo">Deletar Conta</button>
-                <div class="acoes__direita">
-                    <a asp-controller="Home" asp-action="Index" class="botao botao--contorno">Cancelar</a>
-                    <button type="submit" class="botao botao--primario">Salvar alterações</button>
-                </div>
-            </div>
+            
         </form>
+        <div class="acoes">
+            <form asp-controller="Cliente" asp-action="DesativarConta" method="post" onsubmit="return confirm('Tem certeza que deseja desativar sua conta?');">
+                <button type="submit" class="botao botao--perigo">Deletar Conta</button>
+            </form>
+
+            <div class="acoes__direita">
+                <a asp-controller="Home" asp-action="Index" class="botao botao--contorno">Cancelar</a>
+                <button type="submit" form="form-atualizar" class="botao botao--primario">Salvar alterações</button>
+            </div>
+        </div>
     </section>
 </section>
 
