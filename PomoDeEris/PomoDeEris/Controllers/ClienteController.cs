@@ -34,6 +34,11 @@ namespace PomoDeEris.Controllers
             return View();
         }
 
+        public IActionResult infoCliente()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Login([FromForm] LoginClienteViewModel cliente)
         {

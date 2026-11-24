@@ -1687,3 +1687,16 @@ C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.p
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kp2oqrvn3a-{0}-ncpsbn4b64-ncpsbn4b64.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\bin\Debug\net10.0\PomoDeEris.runtimeconfig.dev.json
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.lib.module.js
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.BrowserTools.js
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.BrowserTools.Config.js
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\browser-tools-key.public.json
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\browser-tools-key.private.json
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\jsmodules\jsmodules.build.manifest.json
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\scopedcss.cache
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\lusf5tqvhm-{0}-tchfgznwy8-tchfgznwy8.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\ri729fzpev-{0}-4jqeeke5py-4jqeeke5py.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\g69ld43tst-{0}-v1vy2to33n-v1vy2to33n.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\ub7klvk5tt-{0}-ysew0n4kjn-ysew0n4kjn.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-r2apgf5ybn-r2apgf5ybn.gz
