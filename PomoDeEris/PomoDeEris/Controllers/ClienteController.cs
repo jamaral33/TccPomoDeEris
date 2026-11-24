@@ -29,6 +29,11 @@ namespace PomoDeEris.Controllers
             return View();
         }
 
+        public IActionResult Historico()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Login([FromForm] LoginClienteViewModel cliente)
         {

@@ -1,0 +1,180 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Histórico";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomo de Eris — Meu histórico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility/dist/sienna-accessibility.umd.js" async></script>
+    <link rel="stylesheet" href="~/css/historico.css" asp-append-version="true">
+</head>
+
+<body>
+
+    <!-- Faixa do cabeçalho -->
+    <div class="faixa">
+        <div class="faixa-conteudo">
+            <span class="faixa-item">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z" /><circle cx="12" cy="9" r="2.5" /></svg>
+                Unidade Jardins, São Paulo
+            </span>
+            <span class="faixa-item">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+                Terça a Sábado, 9h às 19h
+            </span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <a href="#" class="logo" aria-label="Pomo de Eris - Clínica Estética">
+                <span class="logo-nome">P<small>OMO DE</small> E<small>RIS</small></span>
+                <span class="logo-sub">Clínica Estética</span>
+            </a>
+
+            <nav class="menu" aria-label="Principal">
+                <a href="#">Tratamentos</a>
+                <a href="#">Categorias</a>
+                <a href="#">Promoções</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+
+            <div class="icones">
+                <a href="#" aria-label="Buscar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+                </a>
+                <a href="#" aria-label="Minha conta">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4" /><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" /></svg>
+                </a>
+                <a href="#" aria-label="Carrinho">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdos principais -->
+    <div class="conta">
+
+        <aside class="lateral">
+            <h2 class="lateral-nome"></h2>
+
+            <a href="#" class="lateral-link ativo">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+                Histórico
+            </a>
+            <a href="#" class="lateral-link">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" /></svg>
+                Minhas informações
+            </a>
+
+            <a href="#" class="lateral-sair">Sair da conta</a>
+        </aside>
+
+        <main>
+            <h1 class="titulo">Meu histórico</h1>
+            <p class="subtitulo">Acompanhe seus atendimentos e agende novamente em poucos cliques.</p>
+
+            <div class="resumo">
+                <div class="resumo-card">
+                    <span class="resumo-rotulo">Atendimentos</span>
+                    <span class="resumo-valor"></span>
+                </div>
+                <div class="resumo-card">
+                    <span class="resumo-rotulo">Próximo agendamento</span>
+                    <span class="resumo-valor">R$</span>
+                </div>
+                <div class="resumo-card">
+                    <span class="resumo-rotulo">Total</span>
+                    <span class="resumo-valor">R$</span>
+                </div>
+            </div>
+
+            <div class="filtros">
+                <span class="pill ativo">Todos</span>
+                <span class="pill">Concluídos</span>
+                <span class="pill">Agendados</span>
+                <span class="pill">Cancelados</span>
+            </div>
+
+            <div class="lista">
+
+                <div class="item">
+                    <img class="item-img" src="" alt="">
+                    <div>
+                        <h3 class="item-nome">Pacote Massagem Relaxante</h3>
+                        <p class="item-meta"></p>
+                    </div>
+                    <span class="item-preco">R$</span>
+                </div>
+
+                <div class="item">
+                    <img class="item-img" src="" alt="">
+                    <div>
+                        <h3 class="item-nome">Procedimento, Pacote manicure</h3>
+                        <p class="item-meta"></p>
+                    </div>
+                    <span class="item-preco">R$</span>
+                    <div class="item-acao"></div>
+                </div>
+
+                <div class="item">
+                    <img class="item-img" src="" alt="">
+                    <div>
+                        <h3 class="item-nome">Procedimentos de pelos faciais</h3>
+                        <p class="item-meta"></p>
+                    </div>
+                    <span class="item-preco">R$</span>
+                    <div class="item-acao"></div>
+                </div>
+
+                <div class="item">
+                    <img class="item-img" src="" alt="">
+                    <div>
+                        <h3 class="item-nome">Pacote Relaxamento Hidro</h3>
+                        <p class="item-meta"></p>
+                    </div>
+                    <span class="item-preco">R$</span>
+                    <div class="item-acao"></div>
+                </div>
+
+                <div class="item">
+                    <img class="item-img" src="" alt="">
+                    <div>
+                        <h3 class="item-nome">Pacote Micropigmentação</h3>
+                    </div>
+                    <span class="item-preco">R$</span>
+                    <div class="item-acao"></div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Acessbilidade -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script>
+            window.addEventListener('load', function() {
+                if (window.VLibras) {
+                    new window.VLibras.Widget('https://vlibras.gov.br/app');
+                }
+            });
+    </script>
+
+</body>
+</html>
