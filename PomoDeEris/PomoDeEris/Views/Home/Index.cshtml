@@ -20,9 +20,9 @@
       e agendados em poucos cliques — para a beleza que só pertence a você.
     </p>
 
-    <form class="banner-busca" id="hero-search">
+    <form class="banner-busca" id="hero-search" asp-controller="Pacote" asp-action="Index" method="get">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <input type="text" placeholder="Buscar tratamento — ex: bronzeamento, manicure...">
+      <input type="text" placeholder="Buscar tratamento — ex: bronzeamento, manicure..." name="pesquisa">
       <button type="submit">Buscar</button>
     </form>
 
