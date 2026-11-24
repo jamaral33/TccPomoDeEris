@@ -10,5 +10,7 @@ namespace PomoDeEris.Repository.Contract
 
         void Cadastrar(Funcionario funcionario);
 
+        void Atualizar(Funcionario funcionario);
+
     }
 }

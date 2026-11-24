@@ -72,6 +72,23 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             }
         }
 
-        
+        public IActionResult Atualizar(int id)
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Atualizar([FromForm] Funcionario funcionario)
+        {
+            if (ModelState.IsValid)
+            {
+                _funcionarioRepository.Atualizar(funcionario);
+                return RedirectToAction("Index", "Funcionario", new { area = "Colaborador" });
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }

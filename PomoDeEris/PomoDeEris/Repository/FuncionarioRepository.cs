@@ -18,6 +18,38 @@ namespace PomoDeEris.Repository
             _conf = conf;
         }
 
+        public void Atualizar(Funcionario funcionario)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("CALL sp_atualizar_funcionario(@Matricula, @CPF, @Nome, @Email, @Situacao, @Telefone, @Senha, @Funcao)", conexao);
+
+                cmd.Parameters.Add("@Matricula", MySqlDbType.Int32).Value = funcionario.Matricula;
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = funcionario.Nome;
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = funcionario.CPF;
+                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = funcionario.Telefone;
+                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = funcionario.Email;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = funcionario.Situacao;
+                cmd.Parameters.Add("@Funcao", MySqlDbType.VarChar).Value = funcionario.Cargo;
+
+                if (!string.IsNullOrWhiteSpace(funcionario.Senha))
+                {
+                    CriptografiaSenha criptografar = new CriptografiaSenha();
+                    string senhaCriptografada = criptografar.hasharSenha(funcionario.Senha);
+
+                    cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = senhaCriptografada;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = DBNull.Value; // No banco ele mantem a senha se for nulo
+                }
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void Cadastrar(Funcionario funcionario)
         {
             using(var conexao = new MySqlConnection(_conexaoMySQL))
