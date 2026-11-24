@@ -1,4 +1,4 @@
-wwwroot\css\atendimento.css
+wwwroot\js\calendarioAgenda.js
 wwwroot\css\carrinhoDeCompra.css
 wwwroot\css\home.css
 wwwroot\css\Pagamento.css
@@ -6,7 +6,6 @@ wwwroot\css\paginaAdm.css
 wwwroot\css\paginaDeLogin.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\images\45046971810.png
 wwwroot\images\bronzeamento.png
 wwwroot\images\cartaoIcone.png
 wwwroot\images\cartaoIcone.svg
@@ -21,11 +20,8 @@ wwwroot\images\pigmentacao.png
 wwwroot\images\pixIcone.png
 wwwroot\images\pixQr.png
 wwwroot\js\adminPage.js
-wwwroot\js\atendimentoFiltro.js
 wwwroot\js\calendario.js
 wwwroot\js\calendarioAdm.js
-wwwroot\js\calendarioAgenda.js
-wwwroot\js\calendarioAtendimento.js
 wwwroot\js\formulariosAdm.js
 wwwroot\js\pagamento.js
 wwwroot\js\site.js
@@ -89,6 +85,10 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\images\45046971810.png
+wwwroot\js\atendimentoFiltro.js
+wwwroot\js\calendarioAtendimento.js
+wwwroot\css\atendimento.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\js\calendarioAgenda.js
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\carrinhoDeCompra.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2211\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\paginaAdm.css

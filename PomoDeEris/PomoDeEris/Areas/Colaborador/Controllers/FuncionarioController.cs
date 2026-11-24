@@ -20,9 +20,12 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             _funcionarioRepository = funcionarioRepository;
             _loginFuncionario = loginFuncionario;
         }
+
+        [ColaboradorAutorizacao(FuncionarioCargoConstant.Administrador)]
         public IActionResult Index()
         {
-            return View();
+            var funcionarios = _funcionarioRepository.ObterTodosFuncionarios();
+            return View(funcionarios);
         }
 
         [HttpPost]

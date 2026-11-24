@@ -1,0 +1,107 @@
+﻿@model List<PomoDeEris.Models.Funcionario>
+
+<div class="pagina">
+
+    <div class="cartao">
+
+        <div class="cabecalho-cartao">
+
+            <h3>
+                Lista de Funcionários
+            </h3>
+
+            <a class="botao botao-dourado"
+               id="botaoCadastrar"
+               asp-area="Colaborador"
+               asp-controller="Funcionario"
+               asp-action="Cadastrar">
+                Cadastrar Novo Funcionário
+            </a>
+
+        </div>
+
+        <div class="corpo-cartao" style="padding:0;">
+
+            <table class="tabela-resumo">
+
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
+                        <th>Situação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var funcionario in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @funcionario.Matricula
+                            </td>
+
+                            <td class="negrito">
+                                @funcionario.Nome
+                            </td>
+
+                            <td>
+                                @funcionario.CPF
+                            </td>
+
+                            <td>
+                                @funcionario.Email
+                            </td>
+
+                            <td>
+                                @funcionario.Cargo
+                            </td>
+
+                            <td>
+                                @funcionario.Situacao
+                            </td>
+
+                            <td>
+
+                                <a asp-area="Colaborador"
+                                   asp-controller="Funcionario"
+                                   asp-action="Editar"
+                                   asp-route-id="@funcionario.Matricula"
+                                   class="botao botao-secundario botao-pequeno">
+                                    Editar
+                                </a>
+
+                                <form asp-area="Colaborador"
+                                      asp-controller="Funcionario"
+                                      asp-action="Excluir"
+                                      asp-route-id="@funcionario.Matricula"
+                                      method="post"
+                                      style="display:inline;"
+                                      onsubmit="return confirm('Tem certeza que deseja excluir este funcionário?');">
+
+                                    <button type="submit"
+                                            class="botao botao-secundario botao-pequeno">
+                                        Excluir
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
