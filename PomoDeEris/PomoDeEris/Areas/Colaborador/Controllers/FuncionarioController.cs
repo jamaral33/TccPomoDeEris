@@ -57,7 +57,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             if (ModelState.IsValid)
             {
                 _funcionarioRepository.Cadastrar(funcionario);
-                return RedirectToAction("Login", "Funcionario", new { area = "Colaborador" });
+                return RedirectToAction("Home", "Home", new { area = "Colaborador" });
             }
             else
             {

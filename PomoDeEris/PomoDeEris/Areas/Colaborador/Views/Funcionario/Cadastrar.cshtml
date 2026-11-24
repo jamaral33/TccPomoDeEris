@@ -1,0 +1,137 @@
+﻿@model PomoDeEris.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Cadastrar Funcionário";
+}
+
+<div class="pagina" id="paginaFuncionarios">
+
+    <div class="cabecalho-secao">
+        <div>
+            <h2>Cadastrar Funcionário</h2>
+            <p>Preencha os dados para cadastrar um novo funcionário no sistema.</p>
+        </div>
+    </div>
+
+    <div class="grade-formulario-pacote">
+
+        <form method="post" asp-area="Colaborador" asp-controller="Funcionario" asp-action="Cadastrar">
+
+            @if (TempData["Erro"] != null)
+            {
+                <p style="color:#c0392b">@TempData["Erro"]</p>
+            }
+
+            <div class="cartao-formulario">
+
+                <!-- DADOS PESSOAIS -->
+                <div class="secao-formulario">
+
+                    <h4>Dados pessoais</h4>
+
+                    <div class="campo">
+                        <label asp-for="Nome">
+                            Nome completo <span class="obrigatorio">*</span>
+                        </label>
+                        <input asp-for="Nome" type="text" placeholder="Digite o nome completo" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="CPF">
+                            CPF <span class="obrigatorio">*</span>
+                        </label>
+                        <input asp-for="CPF" type="text" maxlength="11" placeholder="Somente números" />
+                        <span asp-validation-for="CPF" class="text-danger"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="Email">
+                            E-mail <span class="obrigatorio">*</span>
+                        </label>
+                        <input asp-for="Email" type="email" placeholder="exemplo@email.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="Telefone">
+                            Telefone <span class="obrigatorio">*</span>
+                        </label>
+                        <input asp-for="Telefone" type="tel" maxlength="11" placeholder="Somente números" />
+                        <span asp-validation-for="Telefone" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <!-- ACESSO -->
+                <div class="secao-formulario">
+
+                    <h4>Dados de acesso</h4>
+
+                    <div class="campo">
+                        <label asp-for="Senha">
+                            Senha <span class="obrigatorio">*</span>
+                        </label>
+                        <input asp-for="Senha" type="password" placeholder="Digite uma senha" />
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <!-- CARGO E SITUAÇÃO -->
+                <div class="secao-formulario">
+
+                    <h4>Cargo e situação</h4>
+
+                    <div class="campo">
+                        <label asp-for="Cargo">
+                            Cargo <span class="obrigatorio">*</span>
+                        </label>
+
+                        <select asp-for="Cargo">
+                            <option value="Comum">Comum</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+
+                        <span asp-validation-for="Cargo" class="text-danger"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="Situacao">Situação</label>
+
+                        <select asp-for="Situacao">
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                        </select>
+
+                        <span asp-validation-for="Situacao" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div style="margin-top:22px; display:flex; flex-direction:column; gap:10px;">
+
+                <button type="submit" class="botao botao-dourado">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2">
+                        <path d="M5 12l5 5L20 7" />
+                    </svg>
+                    Cadastrar funcionário
+                </button>
+
+                <a asp-area="Colaborador"
+                   asp-controller="Funcionario"
+                   asp-action="Index"
+                   class="botao botao-secundario">
+                    Voltar
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
