@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PomoDeEris.Areas.Colaborador.Models;
+using PomoDeEris.Libraries.Filtro;
 using PomoDeEris.Libraries.Login;
 using PomoDeEris.Models;
+using PomoDeEris.Models.Constants;
 using PomoDeEris.Repository;
 using PomoDeEris.Repository.Contract;
 
@@ -45,12 +47,14 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             return View();
         }
 
+        [ColaboradorAutorizacao(FuncionarioCargoConstant.Administrador)]
         [HttpGet]
         public IActionResult Cadastrar()
         {
             return View();
         }
 
+        [ColaboradorAutorizacao(FuncionarioCargoConstant.Administrador)]
         [HttpPost]
         public IActionResult Cadastrar([FromForm] Funcionario funcionario)
         {
@@ -64,5 +68,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
                 return View();
             }
         }
+
+        
     }
 }
