@@ -58,6 +58,46 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             {
                 return View(pacote);
             }
+
+
+        }
+        [HttpGet]
+        public IActionResult Atualizar(int id)
+        {
+            Pacote pacote = _pacoteRepository.ObterPacote(id);
+            return View(pacote);
+        }
+
+        [HttpPost]
+        public IActionResult Atualizar(Pacote pacote, List<int> servicosIds, IFormFile arquivo)
+        {
+            ModelState.Remove("Imagem");
+            ModelState.Remove("Servicos");
+            ModelState.Remove("arquivo");
+            ModelState.Remove("servicosIds");
+            foreach (var chave in ModelState.Keys.Where(k => k.StartsWith("Servicos[")).ToList())
+                ModelState.Remove(chave);
+
+            pacote.Servicos = (servicosIds ?? new List<int>()) // verifica se ta nulo se n cria uma lista
+                .Where(id => id > 0) // id > 0 (valido)
+                .Distinct() // distito
+                .Select(id => new Servico { IdServico = id }) // transforma em servico
+                .ToList();
+
+            if (ModelState.IsValid)
+            {
+                if (arquivo != null && arquivo.Length > 0)
+                {
+                    // salve o arquivo do mesmo jeito que você faz no Cadastrar
+                    pacote.Imagem = GerenciaArquivos.CadastrarImagemProduto(arquivo);
+                }
+                // sem arquivo novo, Imagem fica vazia e a procedure mantém a atual
+
+                _pacoteRepository.Atualizar(pacote);
+                return RedirectToAction("Index");
+            }
+
+            return View(pacote);
         }
     }
 }

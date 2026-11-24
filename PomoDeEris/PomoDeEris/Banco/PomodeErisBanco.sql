@@ -337,6 +337,30 @@ BEGIN
     FROM tbPacote p
     WHERE p.idPacote = vIdPacote;
 END $$
+CREATE PROCEDURE sp_atualizar_pacote(
+    vIdPacote INT,
+    vNome VARCHAR(50),
+    vDescricao VARCHAR(150),
+    vValor DECIMAL(7,2),
+    vDesconto INT,
+    vImagem VARCHAR(255)
+)
+BEGIN
+    UPDATE tbPacote
+    SET Nome = vNome,
+        Descricao = vDescricao,
+        Valor = vValor,
+        Desconto = vDesconto,
+        -- se não veio imagem nova, mantém a que já estava
+        Imagem = COALESCE(NULLIF(vImagem, ''), Imagem)
+    WHERE idPacote = vIdPacote;
+END $$
+
+CREATE PROCEDURE sp_remover_servicos_pacote(vIdPacote INT)
+BEGIN
+    DELETE FROM tbServicosPacote
+    WHERE idPacote = vIdPacote;
+END $$
 
 
 -- SERVIÇOS DO PACOTE
@@ -716,6 +740,21 @@ BEGIN
     WHERE DAY(c.dataCadastro) = DAY(CURRENT_DATE()) AND
 	   MONTH(c.dataCadastro) = MONTH(CURRENT_DATE())
       AND YEAR(c.dataCadastro) = YEAR(CURRENT_DATE());
+END $$
+
+
+CREATE PROCEDURE sp_verificar_horario_disponivel(
+    vHorario DATETIME,
+    vIdConsulta INT
+)
+BEGIN
+    SELECT COUNT(*) AS Ocupados
+    FROM tbAgenda a
+    LEFT JOIN tbConsulta c ON c.idConsulta = a.idConsulta
+    WHERE (a.DiaHorario = vHorario
+           OR (a.tipo = 'dia' AND DATE(a.DiaHorario) = DATE(vHorario)))
+      AND (c.Situacao IS NULL OR c.Situacao != 'Cancelado')
+      AND (a.idConsulta IS NULL OR a.idConsulta != vIdConsulta);
 END $$
 
 DELIMITER ;

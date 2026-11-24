@@ -14,7 +14,7 @@ namespace PomoDeEris.Libraries.Carrinho
         public CarrinhoCookie(Cookie.Cookie cookie)
         {
             _cookie = cookie;
-        }
+            }
 
         public void Salvar(List<Pacote> Lista)
         {
