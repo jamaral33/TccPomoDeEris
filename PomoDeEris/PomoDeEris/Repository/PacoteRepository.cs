@@ -15,10 +15,10 @@ namespace PomoDeEris.Repository
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
 
         }
-        
+
         public void Cadastrar(Pacote pacote)
         {
-            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand("CALL sp_cadastrar_pacote(@nome, @descricao, @valor, @desconto, @Imagem)", conexao);
@@ -45,7 +45,7 @@ namespace PomoDeEris.Repository
 
         public Pacote ObterPacote(int Id)
         {
-            using(var conexao = new MySqlConnection(_conexaoMySQL)) 
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
 
@@ -56,7 +56,7 @@ namespace PomoDeEris.Repository
                 Pacote pacote = new Pacote();
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
-                    while(dr.Read())
+                    while (dr.Read())
                     {
                         pacote.Nome = dr["Nome"].ToString();
                         pacote.IdPacote = Convert.ToInt32(dr["idPacote"]);
@@ -65,8 +65,8 @@ namespace PomoDeEris.Repository
                         pacote.Valor = Convert.ToDouble(dr["Valor"]);
                         pacote.Desconto = Convert.ToInt32(dr["Desconto"]);
                     }
-                } 
-            
+                }
+
 
                 MySqlCommand cmdServicos = new MySqlCommand("CALL sp_selecionar_servicos_pacote(@idPacote)", conexao);
                 cmdServicos.Parameters.Add("@idPacote", MySqlDbType.Int32).Value = Id;
@@ -175,6 +175,39 @@ namespace PomoDeEris.Repository
                 conexao.Close();
             }
         }
+
+        public List<Pacote> PesquisarPacotes(string pesquisa)
+        {
+            List<Pacote> pacotes = new List<Pacote>();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("call sp_pesquisar_pacotes(@pesquisa)", conexao);
+                cmd.Parameters.Add("@pesquisa", MySqlDbType.VarChar).Value = pesquisa;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    pacotes.Add(
+                        new Pacote
+                        {
+                            IdPacote = Convert.ToInt32(dataRow["idPacote"]),
+                            Nome = (string)(dataRow["Nome"]),
+                            Descricao = (string)(dataRow["Descricao"]),
+                            Valor = Convert.ToDouble(dataRow["Valor"]),
+                            Desconto = Convert.ToInt32(dataRow["Desconto"]),
+                            Imagem = (string)(dataRow["Imagem"])
+
+                        });
+
+                }
+
+                return pacotes;
+            }
+        }
     }
-    
 }
