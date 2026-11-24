@@ -72,9 +72,11 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             }
         }
 
+        [HttpGet]
         public IActionResult Atualizar(int id)
         {
-            return View();
+            var funcionario = _funcionarioRepository.ObterFuncionario(id);
+            return View(funcionario);
         }
         [HttpPost]
         public IActionResult Atualizar([FromForm] Funcionario funcionario)
@@ -86,7 +88,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             }
             else
             {
-                return View();
+                return View(funcionario);
             }
         }
 

@@ -70,26 +70,13 @@
 
                                 <a asp-area="Colaborador"
                                    asp-controller="Funcionario"
-                                   asp-action="Editar"
+                                   asp-action="Atualizar"
                                    asp-route-id="@funcionario.Matricula"
                                    class="botao botao-secundario botao-pequeno">
                                     Editar
                                 </a>
 
-                                <form asp-area="Colaborador"
-                                      asp-controller="Funcionario"
-                                      asp-action="Excluir"
-                                      asp-route-id="@funcionario.Matricula"
-                                      method="post"
-                                      style="display:inline;"
-                                      onsubmit="return confirm('Tem certeza que deseja excluir este funcionário?');">
-
-                                    <button type="submit"
-                                            class="botao botao-secundario botao-pequeno">
-                                        Excluir
-                                    </button>
-
-                                </form>
+                              
 
                             </td>
 

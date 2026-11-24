@@ -63,7 +63,7 @@
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="M2 6l10 7 10-7" />
                 </svg>
-                <input asp-for="Email" type="email" placeholder="voce@email.com" autocomplete="email" class="input-campo" />
+                <input asp-for="Email" type="email" placeholder="voce@email.com" autocomplete="email" class="input-campo" required />
             </div>
             <span asp-validation-for="Email" class="erro-campo"></span>
         </div>
@@ -75,7 +75,7 @@
                     <rect x="3" y="11" width="18" height="10" rx="2" />
                     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
-                <input asp-for="Senha" placeholder="Digite sua senha" autocomplete="new-password" class="input-campo" type="password"/>
+                <input asp-for="Senha" placeholder="Digite sua senha" autocomplete="new-password" class="input-campo" type="password" required />
             </div>
             <span asp-validation-for="Senha" class="erro-campo"></span>
         </div>

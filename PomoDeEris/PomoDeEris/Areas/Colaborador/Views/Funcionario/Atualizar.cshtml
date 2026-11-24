@@ -1,0 +1,140 @@
+﻿@model PomoDeEris.Models.Funcionario
+
+<div class="pagina" id="paginaFuncionarios">
+
+    <div class="cabecalho-secao">
+        <div>
+            <h2>Atualizar Funcionário</h2>
+            <p>Altere os dados pessoais, informações de acesso, cargo e situação do funcionário.</p>
+        </div>
+
+        <button class="botao botao-secundario botao-pequeno" type="button" id="botaoLimparFormulario">
+            Limpar formulário
+        </button>
+    </div>
+
+    <div class="grade-formulario-pacote">
+
+        <form method="post" asp-area="Colaborador" asp-controller="Funcionario" asp-action="Atualizar">
+
+            @if (TempData["Erro"] != null)
+            {
+                <p style="color:#c0392b">@TempData["Erro"]</p>
+            }
+
+            <div class="cartao-formulario">
+
+                <div class="secao-formulario">
+
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        Dados pessoais
+                    </h4>
+
+                    <div class="campo">
+                        <label>Matrícula</label>
+                        <input type="text" value="@Model.Matricula" disabled asp-for="Matricula" />
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="Nome">Nome completo <span class="obrigatorio">*</span></label>
+                        <input asp-for="Nome" type="text" placeholder="Digite o nome completo" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="CPF">CPF <span class="obrigatorio">*</span></label>
+                        <input asp-for="CPF" type="text" maxlength="11" placeholder="Somente números" />
+                        <span asp-validation-for="CPF" class="text-danger"></span>
+                    </div>
+
+                    <div class="linha-campos">
+
+                        <div class="campo">
+                            <label asp-for="Email">E-mail <span class="obrigatorio">*</span></label>
+                            <input asp-for="Email" type="email" placeholder="exemplo@email.com" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="campo">
+                            <label asp-for="Telefone">Telefone <span class="obrigatorio">*</span></label>
+                            <input asp-for="Telefone" type="tel" maxlength="11" placeholder="Somente números" />
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="secao-formulario">
+
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        Dados de acesso
+                    </h4>
+
+                    <div class="campo">
+                        <label asp-for="Senha">Nova senha</label>
+                        <input asp-for="Senha" type="password" placeholder="Deixe vazio para manter a senha atual" value="" />
+                        <p class="dica-campo">Preencha somente se desejar alterar a senha atual.</p>
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="secao-formulario">
+
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="M8 2v4M16 2v4M3 10h18" />
+                        </svg>
+                        Cargo e situação
+                    </h4>
+
+                    <div class="campo">
+                        <label asp-for="Cargo">Cargo <span class="obrigatorio">*</span></label>
+                        <select asp-for="Cargo">
+                            <option value="Comum">Comum</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                        <span asp-validation-for="Cargo" class="text-danger"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label asp-for="Situacao">Situação</label>
+                        <select asp-for="Situacao">
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                        </select>
+                        <span asp-validation-for="Situacao" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div style="margin-top:22px; display:flex; flex-direction:column; gap:10px;">
+
+                <button class="botao botao-dourado" type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12l5 5L20 7" />
+                    </svg>
+                    Atualizar funcionário
+                </button>
+
+                <a asp-area="Colaborador" asp-controller="Funcionario" asp-action="Index" class="botao botao-secundario">Voltar</a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

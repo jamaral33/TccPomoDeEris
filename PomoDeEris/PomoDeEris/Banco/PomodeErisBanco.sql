@@ -267,13 +267,43 @@ BEGIN
         p.Nome,
         p.Email,
         p.Telefone,
-        p.Senha
+        p.Senha,
+        p.Situacao
+        
     FROM tbFuncionario f
     JOIN tbPessoa p
         ON f.CPF = p.CPF
     WHERE f.Matricula = vMatricula;
 END $$
 
+CREATE PROCEDURE sp_atualizar_funcionario(
+    vMatricula INT,
+    vCPF CHAR(11),
+    vNome VARCHAR(100),
+    vEmail VARCHAR(50),
+    vSituacao VARCHAR(70),
+    vTelefone CHAR(11),
+    vSenha VARCHAR(70),
+    vFuncao VARCHAR(50)
+)
+BEGIN
+
+    UPDATE tbPessoa
+    SET
+        Nome = vNome,
+        Email = vEmail,
+        Situacao = vSituacao,
+        Telefone = vTelefone,
+        Senha = COALESCE(NULLIF(vSenha, ''), Senha)
+    WHERE CPF = vCPF;
+
+    UPDATE tbFuncionario
+    SET
+        Funcao = vFuncao
+    WHERE Matricula = vMatricula
+    AND CPF = vCPF;
+
+END $$
 
 CREATE PROCEDURE sp_selecionar_todos_funcionarios()
 BEGIN
@@ -930,3 +960,13 @@ CALL sp_selecionar_pacote_consulta(@idConsulta);
 
 SELECT * FROM tbPagamento
 WHERE idConsulta = @idConsulta;
+
+CALL sp_cadastrar_funcionario(
+    '67676789898',
+    'Senhor Duriguim',
+    'durigam@teste.com',
+    'Ativo',
+    '11123456789',
+    'xGkOwYEGPjRUvorrECuAZA==.cUQVMXi1MJKIEWZUnacXnVUvLO4saXq/jQ0t0F9Zrtw=',
+    'Administrador'
+);

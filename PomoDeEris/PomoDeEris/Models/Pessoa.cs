@@ -26,7 +26,6 @@ namespace PomoDeEris.Models
 
         [Display(Name = "Senha")]
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "O senha é obrigatório")]
         public string? Senha { get; set; }
 
         [Display(Name = "Telefone")]

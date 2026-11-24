@@ -88,6 +88,7 @@
                 </svg>
                 Cronogramas
             </a>
+
             <a asp-area="Colaborador"
                asp-controller="Agenda"
                asp-action="Index"
@@ -112,7 +113,20 @@
                 Histórico de clientes
             </a>
 
-
+            @if (loginFuncionario.GetFuncionario().Cargo == "Administrador")
+            {
+                <a asp-area="Colaborador"
+                   asp-controller="Funcionario"
+                   asp-action="Index"
+                   class="item-menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Gerenciar funcionários
+                </a>
+            }
+            
 
             <span class="titulo-secao-menu">Configurações</span>
 
