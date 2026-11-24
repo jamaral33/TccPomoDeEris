@@ -24,8 +24,7 @@ namespace PomoDeEris.Libraries.Filtro
             }
             else
             {
-                if (_tipoColaboradorAutorizado == FuncionarioCargoConstant.Administrador &&
-                    colaborador.Cargo != FuncionarioCargoConstant.Administrador)
+                if (_tipoColaboradorAutorizado == FuncionarioCargoConstant.Administrador && colaborador.Cargo != FuncionarioCargoConstant.Administrador)
                 {
                     context.Result = new StatusCodeResult(403);
                     return;

@@ -21,5 +21,10 @@ namespace PomoDeEris.Controllers
 
             return View(pacotes);
         }
+        public IActionResult Promocoes()
+        {
+            var pacotes = _pacoteRepository.ObterTodosPacotes().Where(p => p.Desconto > 0).ToList();
+            return View(pacotes);
+        }
     }
 }
