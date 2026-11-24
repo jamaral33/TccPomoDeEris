@@ -19,8 +19,7 @@
         "runtime": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.6.2.46322",
-            "localPath": "BouncyCastle.Cryptography.dll"
+            "fileVersion": "2.6.2.46322"
           }
         }
       },
@@ -28,8 +27,7 @@
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
             "assemblyVersion": "3.35.0.0",
-            "fileVersion": "3.35.0.0",
-            "localPath": "Google.Protobuf.dll"
+            "fileVersion": "3.35.0.0"
           }
         }
       },
@@ -37,8 +35,7 @@
         "runtime": {
           "lib/net6.0/K4os.Compression.LZ4.dll": {
             "assemblyVersion": "1.3.8.0",
-            "fileVersion": "1.3.8.0",
-            "localPath": "K4os.Compression.LZ4.dll"
+            "fileVersion": "1.3.8.0"
           }
         }
       },
@@ -50,8 +47,7 @@
         "runtime": {
           "lib/net6.0/K4os.Compression.LZ4.Streams.dll": {
             "assemblyVersion": "1.3.8.0",
-            "fileVersion": "1.3.8.0",
-            "localPath": "K4os.Compression.LZ4.Streams.dll"
+            "fileVersion": "1.3.8.0"
           }
         }
       },
@@ -59,8 +55,7 @@
         "runtime": {
           "lib/net6.0/K4os.Hash.xxHash.dll": {
             "assemblyVersion": "1.0.8.0",
-            "fileVersion": "1.0.8.0",
-            "localPath": "K4os.Hash.xxHash.dll"
+            "fileVersion": "1.0.8.0"
           }
         }
       },
@@ -76,40 +71,34 @@
         "runtime": {
           "lib/net10.0/MySql.Data.dll": {
             "assemblyVersion": "26.7.0.0",
-            "fileVersion": "26.7.0.0",
-            "localPath": "MySql.Data.dll"
+            "fileVersion": "26.7.0.0"
           }
         },
         "runtimeTargets": {
           "runtimes/win-x64/native/comerr64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.3.0.1",
-            "localPath": "runtimes/win-x64/native/comerr64.dll"
+            "fileVersion": "4.3.0.1"
           },
           "runtimes/win-x64/native/gssapi64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.3.0.1",
-            "localPath": "runtimes/win-x64/native/gssapi64.dll"
+            "fileVersion": "4.3.0.1"
           },
           "runtimes/win-x64/native/k5sprt64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.3.0.1",
-            "localPath": "runtimes/win-x64/native/k5sprt64.dll"
+            "fileVersion": "4.3.0.1"
           },
           "runtimes/win-x64/native/krb5_64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.3.0.1",
-            "localPath": "runtimes/win-x64/native/krb5_64.dll"
+            "fileVersion": "4.3.0.1"
           },
           "runtimes/win-x64/native/krbcc64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.3.0.1",
-            "localPath": "runtimes/win-x64/native/krbcc64.dll"
+            "fileVersion": "4.3.0.1"
           }
         }
       },
@@ -117,8 +106,7 @@
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.4.30916",
-            "localPath": "Newtonsoft.Json.dll"
+            "fileVersion": "13.0.4.30916"
           }
         }
       },
@@ -129,8 +117,7 @@
         "runtime": {
           "lib/net10.0/System.Configuration.ConfigurationManager.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.826.23019",
-            "localPath": "System.Configuration.ConfigurationManager.dll"
+            "fileVersion": "10.0.826.23019"
           }
         }
       },
@@ -138,8 +125,7 @@
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.ProtectedData.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.826.23019",
-            "localPath": "System.Security.Cryptography.ProtectedData.dll"
+            "fileVersion": "10.0.826.23019"
           }
         }
       },
@@ -150,8 +136,7 @@
         "runtime": {
           "lib/net10.0/System.Security.Permissions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.826.23019",
-            "localPath": "System.Security.Permissions.dll"
+            "fileVersion": "10.0.826.23019"
           }
         }
       },
@@ -159,8 +144,7 @@
         "runtime": {
           "lib/net10.0/System.Windows.Extensions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.826.23019",
-            "localPath": "System.Windows.Extensions.dll"
+            "fileVersion": "10.0.826.23019"
           }
         },
         "runtimeTargets": {
@@ -168,8 +152,7 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.826.23019",
-            "localPath": "runtimes/win/lib/net10.0/System.Windows.Extensions.dll"
+            "fileVersion": "10.0.826.23019"
           }
         }
       },
@@ -177,8 +160,7 @@
         "runtime": {
           "lib/net9.0/ZstdSharp.dll": {
             "assemblyVersion": "0.8.8.0",
-            "fileVersion": "0.8.8.0",
-            "localPath": "ZstdSharp.dll"
+            "fileVersion": "0.8.8.0"
           }
         }
       }

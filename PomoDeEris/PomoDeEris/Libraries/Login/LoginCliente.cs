@@ -32,11 +32,20 @@ namespace PomoDeEris.Libraries.Login
             }
         }
         //Remove a sessão e desloga o CLiente
+
         public void Logout()
         {
             _sessao.RemoverTodos();
         }
 
+        public void Atualizar(Cliente cliente)
+        {
+            if (_sessao.Existe(Key))
+            {
+                string clienteJSONString = JsonConvert.SerializeObject(cliente);
+                _sessao.Cadastrar(Key, clienteJSONString);
+            }
+        }
 
     }
 }

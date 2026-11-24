@@ -22,7 +22,21 @@ namespace PomoDeEris.Repository
 
         public void Atualizar(Cliente cliente)
         {
-            throw new NotImplementedException();
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("CALL sp_atualizar_cliente(@idCliente, @CPF, @Nome, @Email, @Situacao, @Telefone, @Senha)", conexao);
+                cmd.Parameters.Add("@idCliente", MySqlDbType.Int32).Value = cliente.Id;
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cliente.CPF;
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
+                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
+                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
+                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = cliente.Situacao;
+
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
         }
 
         public void Cadastrar(Cliente cliente)

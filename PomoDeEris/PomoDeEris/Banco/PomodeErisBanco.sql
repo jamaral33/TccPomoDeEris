@@ -188,7 +188,28 @@ BEGIN
     WHERE c.idCliente = vIdCliente;
 END $$
 
-DELIMITER $$
+CREATE PROCEDURE sp_atualizar_cliente(
+	vIdCliente int,
+    vCPF CHAR(11),
+    vNome VARCHAR(100),
+    vEmail VARCHAR(50),
+    vSituacao VARCHAR(70),
+    vTelefone CHAR(11),
+    vSenha VARCHAR(70)
+    
+)
+BEGIN
+
+    UPDATE tbPessoa
+    SET
+        Nome = vNome,
+        Email = vEmail,
+        Situacao = vSituacao,
+        Telefone = vTelefone,
+        Senha = COALESCE(NULLIF(vSenha, ''), Senha)
+    WHERE CPF = vCPF;
+
+END $$
 
 
 CREATE PROCEDURE  sp_selecionar_todos_clientes()

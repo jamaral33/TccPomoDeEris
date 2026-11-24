@@ -1,7 +1,81 @@
-﻿@inject PomoDeEris.Libraries.Login.LoginCliente LoginCliente
+﻿@model PomoDeEris.Models.Cliente
+@{
+    ViewData["Title"] = "Minhas informações - Pomo de Eris";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/infoCliente.css" asp-append-version="true" />
+}
+<section class="pagina">
+    <!-- Menu lateral -->
+    <aside class="menu-lateral">
+        <h2 class="menu-lateral__nome">@Model.Nome</h2>
+        <p class="menu-lateral__desde">Desde @Model.DataCadastro.ToString("dd/MM/yyyy")</p>
 
-@LoginCliente.GetCliente().Nome
-@LoginCliente.GetCliente().CPF
-@LoginCliente.GetCliente().Email
-@LoginCliente.GetCliente().Telefone
-@LoginCliente.GetCliente().Senha
+        <a href="#" class="menu-lateral__item">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+            Histórico
+        </a>
+        <a href="#" class="menu-lateral__item menu-lateral__item--ativo">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z" /></svg>
+            Minhas informações
+        </a>
+
+        <a href="#" class="menu-lateral__sair">Sair da conta</a>
+    </aside>
+
+    <section class="conteudo">
+        <h1 class="conteudo__titulo">Minhas informações</h1>
+        <p class="conteudo__subtitulo">Mantenha seus dados atualizados para agendamentos mais rápidos.</p>
+
+        <form class="formulario" asp-controller="Cliente" asp-action="Atualizar">
+            <input type="hidden" asp-for="Id"/>
+            <!-- Dados pessoais -->
+            <div class="cartao">
+                <h3 class="cartao__titulo">Dados pessoais</h3>
+                <p class="cartao__texto">Usamos essas informações para confirmar seus atendimentos.</p>
+
+                <div class="grade">
+                    <div class="campo">
+                        <label for="cpf">Cpf</label>
+                        <input id="cpf" type="text" asp-for="CPF" readonly />
+                    </div>
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" asp-for="Nome"/>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" asp-for="Email" />
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone / WhatsApp</label>
+                        <input id="telefone" type="text" asp-for="Telefone" />
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="cartao">
+                <h3 class="cartao__titulo">Segurança</h3>
+                <p class="cartao__texto">Escolha uma senha forte com letras, números e símbolos.</p>
+
+                <div class="grade">
+                    <div class="campo">
+                        <label for="senha">Nova senha</label>
+                        <input id="senha" type="password" asp-for="Senha" placeholder="Deixe vazio para manter a atual" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="acoes">
+                <button type="button" class="botao botao--perigo">Deletar Conta</button>
+                <div class="acoes__direita">
+                    <a asp-controller="Home" asp-action="Index" class="botao botao--contorno">Cancelar</a>
+                    <button type="submit" class="botao botao--primario">Salvar alterações</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>
+
+    

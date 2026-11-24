@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PomoDeEris.Libraries.Criptografia;
 using PomoDeEris.Libraries.Login;
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
@@ -10,6 +11,7 @@ namespace PomoDeEris.Controllers
         private readonly ILogger<ClienteController> _logger;
         private IClienteRepository _clienteRepository;
         private LoginCliente _loginCliente;
+        private CriptografiaSenha criptografia = new CriptografiaSenha();
 
 
         public ClienteController(ILogger<ClienteController> logger, IClienteRepository clienteRepository, LoginCliente loginCliente)
@@ -19,11 +21,40 @@ namespace PomoDeEris.Controllers
             _loginCliente = loginCliente;
         }
 
+
         public IActionResult Index()
         {
-            return View();
+            var cliente = _loginCliente.GetCliente();
+            if(cliente == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                return View(cliente);
+            }
         }
 
+        [HttpPost]
+        public IActionResult Atualizar([FromForm] Cliente cliente)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return View("Index", cliente);
+            }
+            if(cliente.Senha != null)
+            {
+                cliente.Senha = criptografia.hasharSenha(cliente.Senha);
+            }
+
+            cliente.Situacao = "Ativo";
+
+           _clienteRepository.Atualizar(cliente);
+            _loginCliente.Atualizar(cliente);
+
+
+            return RedirectToAction("Index");
+        }
         public IActionResult Login()
         {
             return View();
