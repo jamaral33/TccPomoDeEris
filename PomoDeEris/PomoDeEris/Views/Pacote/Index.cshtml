@@ -1,0 +1,45 @@
+﻿@model List<Pacote>
+
+<section class="tratamentos" id="tratamentos">
+    <div class="secao-topo">
+        <h2>Tratamentos em destaque</h2>
+        <p class="secao-subtitulo">Cuidados que falam por si</p>
+        <p class="secao-descricao">
+            Selecionados pela nossa equipe clínica, com preços transparentes e agendamento em poucos cliques.
+        </p>
+    </div>
+
+
+    <div class="grade-tratamentos" id="treatment-grid">
+        <!-- Gera os pacotes a partir do banco -->
+        @foreach (var item in Model)
+        {
+            <article class="cartao-tratamento" data-id="massagem-relaxante">
+                <div class="cartao-imagem">
+                    <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
+                    <span class="cartao-selo">Inverno −@item.Desconto%</span>
+                </div>
+                <div class="cartao-corpo">
+                    <h3 class="cartao-nome">@item.Nome</h3>
+                    <p class="cartao-descricao">@item.Descricao</p>
+                    <span class="cartao-duracao">⏱ 60 min</span>
+                    <div class="cartao-rodape">
+                        <div class="cartao-preco-area">
+                            <span class="cartao-preco-rotulo">De: R$ @item.Valor</span>
+                            <span class="cartao-preco">
+                                Por R$ @((item.Valor * (1 - item.Desconto / 100.0)).ToString("N2"))
+                            </span>
+                        </div>
+                        @using (Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post))
+                        {
+
+                            <input type="hidden" name="id" value=@item.IdPacote />
+                            <button class="btn-agendar" type="submit">+ Agendar</button>
+
+                        }
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</section>

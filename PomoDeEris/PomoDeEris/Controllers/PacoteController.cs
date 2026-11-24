@@ -17,8 +17,9 @@ namespace PomoDeEris.Controllers
             {
                 pesquisa = "";
             }
+            var pacotes = _pacoteRepository.PesquisarPacotes(pesquisa);
 
-            return View();
+            return View(pacotes);
         }
     }
 }
