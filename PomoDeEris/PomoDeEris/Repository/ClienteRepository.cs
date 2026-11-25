@@ -96,6 +96,7 @@ namespace PomoDeEris.Repository
                     cliente.Email = Convert.ToString(dr["Email"]);
                     cliente.Senha = Convert.ToString(dr["Senha"]);
                     cliente.Situacao = Convert.ToString(dr["Situacao"]);
+                    cliente.DataCadastro = Convert.ToDateTime(dr["DataCadastro"]);
 
                 }
                 if (cliente.CPF == null)

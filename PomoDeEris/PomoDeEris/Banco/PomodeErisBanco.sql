@@ -162,6 +162,7 @@ BEGIN
     SELECT 
         c.idCliente,
         c.CPF,
+        c.dataCadastro,
         p.Nome,
         p.Email,
         p.Telefone,
@@ -224,6 +225,7 @@ BEGIN
     SELECT 
         c.idCliente,
         c.CPF,
+        c.dataCadastro,
         p.Nome,
         p.Email,
         p.Telefone,
