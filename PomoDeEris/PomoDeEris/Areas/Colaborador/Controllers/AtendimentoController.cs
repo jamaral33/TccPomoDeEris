@@ -59,7 +59,14 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             }
 
             _atendimentoRepository.Atualizar(atendimento);
-                return RedirectToAction("Index");
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ListarAtendimentosCliente(int idCliente)
+        {
+            List<Atendimento> atendimentos = _atendimentoRepository.ObterTodosAtendimentosCliente(idCliente);
+            return View(atendimentos);
         }
     }
 }

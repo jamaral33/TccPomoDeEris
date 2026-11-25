@@ -1,0 +1,77 @@
+﻿@model List<Atendimento>
+<div class="pagina" id="page-schedule">
+        <div class="cabecalho-secao">
+            <div><h2>Cronogramas</h2><p>Visualize, confirme e gerencie todos os agendamentos.</p></div>
+        </div>
+        <div class="cartao" style="margin-bottom:20px;">
+
+        <div class="cabecalho-cartao">
+            <h3>
+                Agendamentos de @Convert.ToDateTime(ViewBag.DataSelecionada).ToString("dd/MM")
+            </h3>
+        </div>
+
+        <div class="corpo-cartao" style="padding:0;">
+
+            <table class="tabela-resumo">
+
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Cliente</th>
+                        <th>Tratamento</th>
+                        <th>Profissional</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var atendimento in Model) // Exibe no máximo 6 atendimentos
+                    {
+                        <tr>
+                            <td class="negrito">
+                                @atendimento.DataHora.ToString("HH:mm")
+                            </td>
+
+                            <td>
+                                @atendimento.Cliente.Nome
+                            </td>
+
+                            <td>
+                                @atendimento.PacotesAtendimento[0].Nome
+
+                            </td>
+
+                            <td>
+                                @atendimento.Funcionario.Nome
+                            </td>
+
+                            <td>
+                                <span class="etiqueta-situacao confirmado">
+                                    @atendimento.Situacao
+                                </span>
+                            </td>
+                            <td>
+                                <a asp-area="Colaborador"
+                                   asp-controller="Atendimento"
+                                   asp-action="Atualizar"
+                                   asp-route-id="@atendimento.IdConsulta"
+                                   class="botao botao-secundario botao-pequeno">
+                                    Atualizar
+                                </a>
+
+                            </td>
+                        </tr>
+                    }
+
+                            
+            
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

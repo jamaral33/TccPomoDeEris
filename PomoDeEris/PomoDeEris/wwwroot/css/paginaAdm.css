@@ -366,13 +366,28 @@ h1,h2,h3,h4,p{margin:0;}
 .margem-topo-8{margin-top:8px;}
 .espaco-8{gap:8px;}
 .flex-centralizado{display:flex; align-items:center;}
-
+#formClienteFiltroIndex{
+    display:flex;
+    flex-direction: row;
+    gap: 100px;
+}
 /* ===================== RESPONSIVIDADE ===================== */
-@media(max-width:1200px){
-  .grade-indicadores{grid-template-columns:repeat(2,1fr);}
-  .grade-painel{grid-template-columns:1fr;}
-  .grade-formulario-pacote{grid-template-columns:1fr;}
-  .layout-cronogramas{grid-template-columns:1fr;}
+@media(max-width:1200px) {
+    .grade-indicadores {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .grade-painel {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-formulario-pacote {
+        grid-template-columns: 1fr;
+    }
+
+    .layout-cronogramas {
+        grid-template-columns: 1fr;
+    }
 }
 @media(max-width:860px){
   :root{--largura-menu:0px;}

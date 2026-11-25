@@ -1,4 +1,4 @@
-﻿@model List<Cliente>
+﻿@model List<ClienteHistoricoViewModel>
 
 <div class="pagina" id="page-clients">
     <div class="cabecalho-secao">
@@ -6,17 +6,20 @@
             <h2>Histórico de clientes</h2>
             <p>Consulte o perfil e histórico completo de cada cliente.</p>
         </div>
-        <button class="botao botao-dourado botao-pequeno" id="exportClientsBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
-            Exportar
-        </button>
     </div>
 
     <div class="barra-ferramentas-clientes">
-        <div class="caixa-busca">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-            <input type="text" id="clientSearch" placeholder="Buscar por nome, e-mail ou telefone...">
-        </div>
+        <form asp-controller="Cliente" asp-action="Index" method="get" id="formClienteFiltroIndex">
+            <div class="caixa-busca">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+                <input type="text" id="clientSearch" placeholder="Buscar por nome" name="clientePesquisa" />
+            </div>
+
+            <button class="botao botao-dourado" id="botaoFiltrar" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>
+                Filtrar
+            </button>
+        </form>
     </div>
 
     <table class="tabela-clientes" id="clientTable">
@@ -32,16 +35,16 @@
             </tr>
         </thead>
         <tbody id="clientTbody">
-            @foreach(var cliente in Model)
+            @foreach (var historico in Model)
             {
                 <tr>
-                    <td>@cliente.Nome</td>
-                    <td>@cliente.Telefone</td>
-                    <td>@ViewBag.UltimoAtendimento</td>
-                    <td>@ViewBag.Total.ToString("N2")</td>
-                    <td>@ViewBag.Sessoes</td>
-                    <td>@cliente.Situacao</td>
-                    <td><a asp-area="Colaborador" asp-controller="Atendimento" asp-action="Index" asp-route-cliente="@cliente.CPF"></a></td>
+                    <td>@historico.Cliente.Nome</td>
+                    <td>@historico.Cliente.Telefone</td>
+                    <td>@historico.UltimoAtendimento</td>
+                    <td>R$ @historico.TotalGasto.ToString("N2")</td>
+                    <td>@historico.Sessoes</td>
+                    <td>@historico.Cliente.Situacao</td>
+                    <td><a asp-area="Colaborador" asp-controller="Atendimento" asp-action="ListarAtendimentosCliente" asp-route-idCliente="@historico.Cliente.Id">Ver consultas</a></td>
                 </tr>
             }
         </tbody>
