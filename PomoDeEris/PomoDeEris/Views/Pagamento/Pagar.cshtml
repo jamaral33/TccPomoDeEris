@@ -80,7 +80,8 @@
 
                     <div class="campo">
                         <label for="numeroCartao">Número do cartão:</label>
-                        <input type="text" id="numeroCartao" name="numeroCartao" placeholder="0000 0000 0000 0000">
+                        <input type="text" id="numeroCartao" name="numeroCartao" inputmode="numeric" autocomplete="cc-number"
+                               maxlength="19" placeholder="0000 0000 0000 0000" placeholder="0000 0000 0000 0000">
                     </div>
 
                     <div class="campo">
@@ -92,12 +93,14 @@
 
                         <div class="campo">
                             <label for="validade">Validade:</label>
-                            <input type="text" id="validade" name="validade" placeholder="MM/AA">
+                            <input type="text" id="validade" name="validade" inputmode="numeric" autocomplete="cc-exp"
+                                   maxlength="5" placeholder="MM/AA">
                         </div>
 
                         <div class="campo">
                             <label for="cvv">Código de segurança:</label>
-                            <input type="password" id="cvv"name="cvv" placeholder="CVV">
+                            <input type="password" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
+                                   maxlength="4" placeholder="CVV">
                         </div>
 
                     </div>
@@ -143,7 +146,8 @@
 
                             <button type="button"
                                     class="botao-copiar"
-                                    id="botaoCopiar">
+                                    id="botaoCopiar"
+                                    data-codigo="00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Fulano de Tal6008BRASILIA62070503***63041D3D">
                                  Copiar código Pix
                             </button>
 
@@ -158,7 +162,8 @@
 
                     <div class="campo">
                         <label for="numeroDebito">Número do cartão:</label>
-                        <input type="text" id="numeroDebito" placeholder="0000 0000 0000 0000">
+                        <input type="text" id="numeroDebito" inputmode="numeric" autocomplete="cc-number"
+                               maxlength="19" placeholder="0000 0000 0000 0000" placeholder="0000 0000 0000 0000">
                     </div>
 
                     <div class="campo">
@@ -169,12 +174,14 @@
                     <div class="campos-duplos">
                         <div class="campo">
                             <label for="validadeDebito">Validade:</label>
-                            <input type="text" id="validadeDebito" placeholder="MM/AA">
+                            <input type="text" id="validadeDebito" inputmode="numeric" autocomplete="cc-exp"
+                                   maxlength="5" placeholder="MM/AA">
                         </div>
 
                         <div class="campo">
                             <label for="cvvDebito">Código de segurança:</label>
-                            <input type="password" id="cvvDebito" placeholder="CVV">
+                            <input type="password" id="cvvDebito" inputmode="numeric" autocomplete="cc-csc"
+                                   maxlength="4" placeholder="CVV">
                         </div>
                     </div>
 

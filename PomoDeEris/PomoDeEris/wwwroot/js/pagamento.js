@@ -6,6 +6,17 @@ const painelPix = document.getElementById("painelPix");
 const painelCartao = document.getElementById("painelCartao");
 const painelDebito = document.getElementById("painelDebito");
 
+const campoCartao = document.getElementById('numeroCartao');
+const campoDebito = document.getElementById('numeroDebito');
+
+const campoValidade = document.getElementById('validade');
+const debitoValidade = document.getElementById('validadeDebito');
+const campoCvv = document.getElementById('cvv');
+const debitoCvv = document.getElementById('cvvDebito');
+
+const botaoCopiar = document.getElementById('botaoCopiar');
+const textoOriginal = botaoCopiar.textContent;
+
 botaoPix.addEventListener("click", () => {
     botaoPix.classList.add("ativo");
     botaoCredito.classList.remove("ativo");
@@ -35,3 +46,74 @@ botaoDebito.addEventListener("click", () => {
     painelCartao.classList.add("oculto");
     painelDebito.classList.remove("oculto");
 });
+
+campoCartao.addEventListener('input', () => {
+    const digitos = campoCartao.value.replace(/\D/g, '').slice(0, 16);
+    campoCartao.value = digitos.replace(/(.{4})/g, '$1 ').trim();
+});
+campoDebito.addEventListener('input', () => {
+    const digitos = campoDebito.value.replace(/\D/g, '').slice(0, 16);
+    campoDebito.value = digitos.replace(/(.{4})/g, '$1 ').trim();
+});
+
+campoValidade.addEventListener('input', () => {
+    let digitos = campoValidade.value.replace(/\D/g, '').slice(0, 4);
+
+    
+    if (digitos.length === 1 && digitos > '1') {
+        digitos = '0' + digitos;
+    }
+    
+    if (digitos.length >= 2 && parseInt(digitos.slice(0, 2), 10) > 12) {
+        digitos = '12' + digitos.slice(2);
+    }
+
+    campoValidade.value = digitos.length > 2
+        ? digitos.slice(0, 2) + '/' + digitos.slice(2)
+        : digitos;
+});
+
+debitoValidade.addEventListener('input', () => {
+    let digitos = debitoValidade.value.replace(/\D/g, '').slice(0, 4);
+
+    
+    if (digitos.length === 1 && digitos > '1') {
+        digitos = '0' + digitos;
+    }
+    
+    if (digitos.length >= 2 && parseInt(digitos.slice(0, 2), 10) > 12) {
+        digitos = '12' + digitos.slice(2);
+    }
+
+    debitoValidade.value = digitos.length > 2
+        ? digitos.slice(0, 2) + '/' + digitos.slice(2)
+        : digitos;
+});
+
+campoCvv.addEventListener('input', () => {
+    campoCvv.value = campoCvv.value.replace(/\D/g, '').slice(0, 4);
+});
+
+debitoCvv.addEventListener('input', () => {
+    debitoCvv.value = debitoCvv.value.replace(/\D/g, '').slice(0, 4);
+});
+
+    botaoCopiar.addEventListener('click', async () => {
+        const codigo = botaoCopiar.dataset.codigo;
+
+        try {
+            await navigator.clipboard.writeText(codigo);
+        } catch (erro) {
+            // Plano B para páginas sem HTTPS ou navegadores antigos
+            const temp = document.createElement('textarea');
+            temp.value = codigo;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+        }
+
+        
+        botaoCopiar.textContent = 'Código copiado!';
+        setTimeout(() => { botaoCopiar.textContent = textoOriginal; }, 2000);
+    });
