@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Cliente
+
+@{
     ViewData["Title"] = "Histórico";
 }
 @section Styles{
@@ -6,24 +8,28 @@
 
 }
 
+<section class="pagina">
 
     <!-- Conteúdos principais -->
     <div class="conta">
 
-        <aside class="lateral">
-            <h2 class="lateral-nome"></h2>
+    <aside class="menu-lateral">
+        <h2 class="menu-lateral__nome">@Model.Nome</h2>
+        <p class="menu-lateral__desde">Desde @Model.DataCadastro.ToString("dd/MM/yyyy")</p>
 
-            <a href="#" class="lateral-link ativo">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
-                Histórico
-            </a>
-            <a href="#" class="lateral-link">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" /></svg>
-                Minhas informações
-            </a>
+        <a asp-controller="Cliente" asp-action="Historico" class="menu-lateral__item">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+            Histórico
+        </a>
+        <a asp-controller="Cliente" asp-action="Index" class="menu-lateral__item menu-lateral__item--ativo">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z" /></svg>
+            Minhas informações
+        </a>
 
-            <a href="#" class="lateral-sair">Sair da conta</a>
-        </aside>
+        <form asp-controller="Cliente" asp-action="Logout" method="post">
+            <button type="submit" class="botao botao--perigo">Sair da Conta</button>
+        </form>
+    </aside>
 
         <main>
             <h1 class="titulo">Meu histórico</h1>
@@ -105,4 +111,4 @@
         </main>
     </div>
 
-   
+   </section>

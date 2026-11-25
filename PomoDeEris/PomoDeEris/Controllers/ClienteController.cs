@@ -62,7 +62,16 @@ namespace PomoDeEris.Controllers
 
         public IActionResult Historico()
         {
-            return View();
+            var cliente = _loginCliente.GetCliente();
+
+            if (cliente == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                return View(cliente);
+            }
         }
 
         public IActionResult infoCliente()

@@ -19,10 +19,13 @@
         <!-- Gera os pacotes a partir do banco -->
         @foreach (var item in Model)
         {
-            <article class="cartao-tratamento" data-id="massagem-relaxante">
+            <article class="cartao-tratamento" >
                 <div class="cartao-imagem">
                     <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
-                    <span class="cartao-selo">Inverno −@item.Desconto%</span>
+                    @if (item.Desconto > 0)
+                    {
+                        <span class="cartao-selo">Inverno −@item.Desconto%</span>
+                    }
                 </div>
                 <div class="cartao-corpo">
                     <h3 class="cartao-nome">@item.Nome</h3>

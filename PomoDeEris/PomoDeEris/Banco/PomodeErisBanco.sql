@@ -15,7 +15,7 @@ CREATE TABLE tbPessoa
     Senha VARCHAR(70) NOT NULL,
     Situacao varchar(70) NOT NULL
 );
-
+    
 CREATE TABLE tbCliente
 (
     idCliente INT PRIMARY KEY AUTO_INCREMENT,

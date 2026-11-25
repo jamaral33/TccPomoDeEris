@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\pacote\\promocoes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\pacote\\promocoes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\pacote\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\pacote\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\cliente\\historico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\cliente\\historico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\wwwroot\\css\\historico.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\wwwroot\\css\\historico.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\banco\\pomodeerisbanco.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\banco\\pomodeerisbanco.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\repository\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\repository\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\cliente\\historico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\cliente\\historico.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\libraries\\carrinho\\carrinhocookie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\libraries\\sessao\\sessao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\libraries\\sessao\\sessao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\repository\\funcionariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -99,10 +115,6 @@
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\controllers\\pagamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\wwwroot\\css\\historico.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\wwwroot\\css\\historico.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -123,20 +135,8 @@
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\pacote\\promocoes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\pacote\\promocoes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\pacote\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\pacote\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|solutionrelative:pomodeeris\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7D866B1-8850-43E0-9A25-E986F50155A4}|PomoDeEris\\PomoDeEris.csproj|c:\\users\\gustavo\\documents\\escola\\tccpt3\\2411\\tccpomodeeris\\pomodeeris\\pomodeeris\\areas\\colaborador\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -366,11 +366,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 6,
               "Title": "historico.css",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\wwwroot\\css\\historico.css",
               "RelativeDocumentMoniker": "PomoDeEris\\wwwroot\\css\\historico.css",
@@ -379,36 +379,89 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-11-24T18:24:12.856Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClienteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\ClienteRepository.cs",
-              "RelativeDocumentMoniker": "PomoDeEris\\Repository\\ClienteRepository.cs",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\ClienteRepository.cs",
-              "RelativeToolTip": "PomoDeEris\\Repository\\ClienteRepository.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T10:18:18.372Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Sessao.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
-              "RelativeDocumentMoniker": "PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
-              "RelativeToolTip": "PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T03:49:40.201Z"
+              "DocumentIndex": 4,
+              "Title": "Historico.cshtml",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Cliente\\Historico.cshtml",
+              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Cliente\\Historico.cshtml",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Cliente\\Historico.cshtml",
+              "RelativeToolTip": "PomoDeEris\\Views\\Cliente\\Historico.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-24T22:18:03.03Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "PomoDeEris\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAvwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T12:21:34.174Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FuncionarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\FuncionarioRepository.cs",
+              "RelativeDocumentMoniker": "PomoDeEris\\Repository\\FuncionarioRepository.cs",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\FuncionarioRepository.cs",
+              "RelativeToolTip": "PomoDeEris\\Repository\\FuncionarioRepository.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAYwDAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T10:18:15.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PomodeErisBanco.sql ",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Banco\\PomodeErisBanco.sql",
+              "RelativeDocumentMoniker": "PomoDeEris\\Banco\\PomodeErisBanco.sql",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Banco\\PomodeErisBanco.sql",
+              "RelativeToolTip": "PomoDeEris\\Banco\\PomodeErisBanco.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-11-12T10:26:40.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PacoteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\PacoteRepository.cs",
+              "RelativeDocumentMoniker": "PomoDeEris\\Repository\\PacoteRepository.cs",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\PacoteRepository.cs",
+              "RelativeToolTip": "PomoDeEris\\Repository\\PacoteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T14:33:24.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "PomoDeEris\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAtwHAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-13T10:23:27.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "LoginCliente.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Login\\LoginCliente.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Libraries\\Login\\LoginCliente.cs",
@@ -420,19 +473,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "PomoDeEris\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-24T20:47:16.718Z"
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Index.cshtml",
+              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Pacote\\Index.cshtml",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Index.cshtml",
+              "RelativeToolTip": "PomoDeEris\\Views\\Pacote\\Index.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAtwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-24T04:03:00.188Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Promocoes.cshtml",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
+              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
+              "RelativeToolTip": "PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAtwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-11-24T08:09:20.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CarrinhoCookie.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Carrinho\\CarrinhoCookie.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Libraries\\Carrinho\\CarrinhoCookie.cs",
@@ -445,80 +512,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "FuncionarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\FuncionarioRepository.cs",
-              "RelativeDocumentMoniker": "PomoDeEris\\Repository\\FuncionarioRepository.cs",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\FuncionarioRepository.cs",
-              "RelativeToolTip": "PomoDeEris\\Repository\\FuncionarioRepository.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAYwDAAAAAQAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "PomoDeEris\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T10:18:15.139Z"
+              "WhenOpened": "2026-11-24T20:47:16.718Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PomodeErisBanco.sql ",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Banco\\PomodeErisBanco.sql",
-              "RelativeDocumentMoniker": "PomoDeEris\\Banco\\PomodeErisBanco.sql",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Banco\\PomodeErisBanco.sql",
-              "RelativeToolTip": "PomoDeEris\\Banco\\PomodeErisBanco.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-11-12T10:26:40.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Historico.cshtml",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Cliente\\Historico.cshtml",
-              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Cliente\\Historico.cshtml",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Cliente\\Historico.cshtml",
-              "RelativeToolTip": "PomoDeEris\\Views\\Cliente\\Historico.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-24T22:18:03.03Z",
-              "EditorCaption": ""
+              "DocumentIndex": 13,
+              "Title": "Sessao.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
+              "RelativeDocumentMoniker": "PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
+              "RelativeToolTip": "PomoDeEris\\Libraries\\Sessao\\Sessao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T03:49:40.201Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "PacoteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\PacoteRepository.cs",
-              "RelativeDocumentMoniker": "PomoDeEris\\Repository\\PacoteRepository.cs",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\PacoteRepository.cs",
-              "RelativeToolTip": "PomoDeEris\\Repository\\PacoteRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-18T14:33:24.662Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Cliente\\Index.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\Cliente\\Index.cshtml",
               "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Cliente\\Index.cshtml",
               "RelativeToolTip": "PomoDeEris\\Views\\Cliente\\Index.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB8AAABjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-24T20:36:09.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "PomoDeEris\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAawFsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T12:21:34.174Z",
+              "WhenOpened": "2026-11-24T20:36:09.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
+              "Title": "ClienteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\ClienteRepository.cs",
+              "RelativeDocumentMoniker": "PomoDeEris\\Repository\\ClienteRepository.cs",
+              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\ClienteRepository.cs",
+              "RelativeToolTip": "PomoDeEris\\Repository\\ClienteRepository.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T10:18:18.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "CarrinhoController.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\CarrinhoController.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\CarrinhoController.cs",
@@ -530,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "LoginColaborador.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Login\\LoginColaborador.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Libraries\\Login\\LoginColaborador.cs",
@@ -542,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "IClienteRepository.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\Contract\\IClienteRepository.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Repository\\Contract\\IClienteRepository.cs",
@@ -554,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "IPacoteRepository.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\Contract\\IPacoteRepository.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Repository\\Contract\\IPacoteRepository.cs",
@@ -566,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "CriptografiaSenha.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Libraries\\Criptografia\\CriptografiaSenha.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Libraries\\Criptografia\\CriptografiaSenha.cs",
@@ -578,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\_ViewStart.cshtml",
@@ -590,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\Shared\\_Layout.cshtml",
@@ -602,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "AtendimentoRepository.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\AtendimentoRepository.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Repository\\AtendimentoRepository.cs",
@@ -614,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "AgendaRepository.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\AgendaRepository.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Repository\\AgendaRepository.cs",
@@ -626,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "PacoteController.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\PacoteController.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\PacoteController.cs",
@@ -638,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "infoCliente.css",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\wwwroot\\css\\infoCliente.css",
               "RelativeDocumentMoniker": "PomoDeEris\\wwwroot\\css\\infoCliente.css",
@@ -650,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "ServicoRepository.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Repository\\ServicoRepository.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Repository\\ServicoRepository.cs",
@@ -662,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "PagamentoController.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Controllers\\PagamentoController.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Controllers\\PagamentoController.cs",
@@ -674,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Program.cs",
               "RelativeDocumentMoniker": "PomoDeEris\\Program.cs",
@@ -686,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\appsettings.json",
               "RelativeDocumentMoniker": "PomoDeEris\\appsettings.json",
@@ -698,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\_ViewImports.cshtml",
@@ -710,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\Shared\\Error.cshtml",
@@ -722,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -734,31 +776,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Promocoes.cshtml",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
-              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
-              "RelativeToolTip": "PomoDeEris\\Views\\Pacote\\Promocoes.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-24T08:09:20.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Index.cshtml",
-              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Pacote\\Index.cshtml",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Pacote\\Index.cshtml",
-              "RelativeToolTip": "PomoDeEris\\Views\\Pacote\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-24T04:03:00.188Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "PomoDeEris\\Views\\Home\\Privacy.cshtml",
@@ -767,18 +785,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-11-11T11:40:02.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "PomoDeEris\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\gustavo\\Documents\\escola\\TCCPT3\\2411\\TccPomoDeEris\\PomoDeEris\\PomoDeEris\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "PomoDeEris\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-13T10:23:27.361Z"
             },
             {
               "$type": "Document",
