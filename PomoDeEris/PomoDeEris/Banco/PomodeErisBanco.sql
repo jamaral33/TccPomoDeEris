@@ -864,7 +864,92 @@ CALL sp_selecionar_funcionario(1);
 
 CALL sp_cadastrar_servico(
     'Limpeza de Pele',
-    'Procedimento para limpeza e renovacao da pele'
+    'Procedimento para limpeza e renovação da pele'
+);
+
+CALL sp_cadastrar_servico(
+    'Manicure',
+    'Cutilagem, lixamento e esmaltação das unhas das mãos'
+);
+
+CALL sp_cadastrar_servico(
+    'Pedicure',
+    'Cutilagem, lixamento e esmaltação das unhas dos pés'
+);
+
+CALL sp_cadastrar_servico(
+    'Esfoliação das Mãos',
+    'Esfoliação e hidratação das mãos para remover células mortas e deixar a pele macia'
+);
+
+CALL sp_cadastrar_servico(
+    'Design de Sobrancelhas',
+    'Modelagem das sobrancelhas de acordo com o formato do rosto'
+);
+
+CALL sp_cadastrar_servico(
+    'Depilação Facial com Cera',
+    'Remoção dos pelos do buço, queixo e laterais do rosto com cera'
+);
+
+CALL sp_cadastrar_servico(
+    'Hidratação Facial',
+    'Aplicação de máscara hidratante para repor a água e os nutrientes da pele do rosto'
+);
+
+CALL sp_cadastrar_servico(
+    'Banho de Ofurô',
+    'Imersão em água morna com sais e óleos essenciais para relaxar o corpo e a mente'
+);
+
+CALL sp_cadastrar_servico(
+    'Esfoliação Corporal',
+    'Remoção das células mortas do corpo, preparando a pele para hidratação ou bronzeamento'
+);
+
+CALL sp_cadastrar_servico(
+    'Hidratação Corporal',
+    'Aplicação de cremes e óleos hidratantes por todo o corpo'
+);
+
+CALL sp_cadastrar_servico(
+    'Massagem Relaxante',
+    'Massagem com movimentos suaves para aliviar o estresse e as tensões musculares'
+);
+
+CALL sp_cadastrar_servico(
+    'Massagem com Pedras Quentes',
+    'Massagem com pedras vulcânicas aquecidas que soltam a musculatura e melhoram a circulação'
+);
+
+CALL sp_cadastrar_servico(
+    'Aromaterapia',
+    'Uso de óleos essenciais durante o atendimento para trazer sensação de bem-estar'
+);
+
+CALL sp_cadastrar_servico(
+    'Bronzeamento Natural',
+    'Bronzeamento ao sol com produtos que aceleram e uniformizam a cor da pele'
+);
+
+CALL sp_cadastrar_servico(
+    'Bronzeamento a Jato',
+    'Aplicação de bronzeador em spray para uma cor dourada e uniforme sem exposição ao sol'
+);
+
+CALL sp_cadastrar_servico(
+    'Micropigmentação de Sobrancelhas',
+    'Técnica fio a fio que preenche falhas e define o desenho das sobrancelhas'
+);
+
+CALL sp_cadastrar_servico(
+    'Micropigmentação Labial',
+    'Pigmentação dos lábios para realçar o contorno e deixar a cor mais viva'
+);
+
+CALL sp_cadastrar_servico(
+    'Retoque de Micropigmentação',
+    'Sessão de retoque feita cerca de 30 dias depois para fixar e corrigir o pigmento'
 );
 
 CALL sp_selecionar_servico(1);
@@ -874,7 +959,7 @@ CALL sp_selecionar_servico(1);
 
 CALL sp_cadastrar_pacote(
     'Pacote Manicure',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit sollicitudin cursus.',
+    'Cuidado completo para mãos e pés: manicure, pedicure e esfoliação das mãos para unhas bem feitas e pele macia.',
     250.00,
     20,
     '/images/manicure.png'
@@ -882,7 +967,7 @@ CALL sp_cadastrar_pacote(
 
 CALL sp_cadastrar_pacote(
     'Pacote de pelos faciais',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
+    'Design de sobrancelhas, depilação facial com cera, limpeza de pele e hidratação para um rosto limpo e bem cuidado.',
     100.00,
     20,
     '/images/pelosFaciais.png'
@@ -890,7 +975,7 @@ CALL sp_cadastrar_pacote(
 
 CALL sp_cadastrar_pacote(
     'Pacote HidroRelaxamento',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
+    'Banho de ofurô com aromaterapia, esfoliação e hidratação corporal para relaxar e renovar a pele do corpo todo.',
     250.00,
     20,
     '/images/hidroRelaxamento.png'
@@ -898,7 +983,7 @@ CALL sp_cadastrar_pacote(
 
 CALL sp_cadastrar_pacote(
     'Pacote Massagem Relaxante',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
+    'Massagem relaxante e com pedras quentes, acompanhadas de aromaterapia, para aliviar o estresse e as tensões do dia a dia.',
     250.00,
     20,
     '/images/massagem-relaxante.png'
@@ -906,7 +991,7 @@ CALL sp_cadastrar_pacote(
 
 CALL sp_cadastrar_pacote(
     'Pacote Bronzeamento',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
+    'Esfoliação, bronzeamento natural e a jato e hidratação corporal para uma cor dourada, uniforme e duradoura.',
     550.50,
     20,
     '/images/bronzeamento.png'
@@ -914,7 +999,7 @@ CALL sp_cadastrar_pacote(
 
 CALL sp_cadastrar_pacote(
     'Pacote MicroPigmentação',
-    'Pacote completo de testes testes testes e mais testes lorem ipsum sit dolot amet',
+    'Micropigmentação de sobrancelhas e lábios com sessão de retoque inclusa para um resultado natural e duradouro.',
     550.50,
     20,
     '/images/pigmentacao.png'
@@ -924,10 +1009,38 @@ CALL sp_selecionar_pacote(1);
 
 -- SERVIÇOS DO PACOTE
 
-CALL sp_cadastrar_servicosPacote(
-    1,
-    1
-);
+-- Pacote Manicure: manicure, pedicure e esfoliação das mãos
+CALL sp_cadastrar_servicosPacote(1, 2);
+CALL sp_cadastrar_servicosPacote(1, 3);
+CALL sp_cadastrar_servicosPacote(1, 4);
+
+-- Pacote de pelos faciais: sobrancelhas, depilação facial, limpeza e hidratação facial
+CALL sp_cadastrar_servicosPacote(2, 5);
+CALL sp_cadastrar_servicosPacote(2, 6);
+CALL sp_cadastrar_servicosPacote(2, 1);
+CALL sp_cadastrar_servicosPacote(2, 7);
+
+-- Pacote HidroRelaxamento: ofurô, esfoliação, hidratação corporal e aromaterapia
+CALL sp_cadastrar_servicosPacote(3, 8);
+CALL sp_cadastrar_servicosPacote(3, 9);
+CALL sp_cadastrar_servicosPacote(3, 10);
+CALL sp_cadastrar_servicosPacote(3, 13);
+
+-- Pacote Massagem Relaxante: massagem relaxante, pedras quentes e aromaterapia
+CALL sp_cadastrar_servicosPacote(4, 11);
+CALL sp_cadastrar_servicosPacote(4, 12);
+CALL sp_cadastrar_servicosPacote(4, 13);
+
+-- Pacote Bronzeamento: esfoliação, bronzeamento natural, a jato e hidratação corporal
+CALL sp_cadastrar_servicosPacote(5, 9);
+CALL sp_cadastrar_servicosPacote(5, 14);
+CALL sp_cadastrar_servicosPacote(5, 15);
+CALL sp_cadastrar_servicosPacote(5, 10);
+
+-- Pacote MicroPigmentação: sobrancelhas, lábios e retoque
+CALL sp_cadastrar_servicosPacote(6, 16);
+CALL sp_cadastrar_servicosPacote(6, 17);
+CALL sp_cadastrar_servicosPacote(6, 18);
 
 CALL sp_selecionar_servicos_pacote(1);
 

@@ -106,20 +106,22 @@ namespace PomoDeEris.Repository
                 DataTable dt = new DataTable();
 
                 sd.Fill(dt);
-                conexao.Close();
                 foreach (DataRow dr in dt.Rows)
                 {
+                    int idPacote = Convert.ToInt32(dr["idPacote"]);
                     Pacotelist.Add(
                          new Pacote
                          {
-                             IdPacote = Convert.ToInt32(dr["idPacote"]),
+                             IdPacote = idPacote,
                              Nome = (String)(dr["Nome"]),
                              Descricao = (String)(dr["Descricao"]),
                              Imagem = (String)(dr["Imagem"]),
                              Valor = Convert.ToDouble(dr["Valor"]),
-                             Desconto = Convert.ToInt32(dr["Desconto"])
+                             Desconto = Convert.ToInt32(dr["Desconto"]),
+                             Servicos = ObterServicosDoPacote(conexao, idPacote)
                          });
                 }
+                conexao.Close();
                 return Pacotelist;
             }
         }
@@ -192,22 +194,47 @@ namespace PomoDeEris.Repository
 
                 foreach (DataRow dataRow in dt.Rows)
                 {
+                    int idPacote = Convert.ToInt32(dataRow["idPacote"]);
                     pacotes.Add(
                         new Pacote
                         {
-                            IdPacote = Convert.ToInt32(dataRow["idPacote"]),
+                            IdPacote = idPacote,
                             Nome = (string)(dataRow["Nome"]),
                             Descricao = (string)(dataRow["Descricao"]),
                             Valor = Convert.ToDouble(dataRow["Valor"]),
                             Desconto = Convert.ToInt32(dataRow["Desconto"]),
-                            Imagem = (string)(dataRow["Imagem"])
-
+                            Imagem = (string)(dataRow["Imagem"]),
+                            Servicos = ObterServicosDoPacote(conexao, idPacote)
                         });
 
                 }
 
                 return pacotes;
             }
+        }
+
+        // Busca os serviços de um pacote usando a conexão que já está aberta
+        private List<Servico> ObterServicosDoPacote(MySqlConnection conexao, int idPacote)
+        {
+            MySqlCommand cmd = new MySqlCommand("CALL sp_selecionar_servicos_pacote(@idPacote)", conexao);
+            cmd.Parameters.Add("@idPacote", MySqlDbType.Int32).Value = idPacote;
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            List<Servico> servicos = new List<Servico>();
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                servicos.Add(
+                    new Servico
+                    {
+                        IdServico = Convert.ToInt32(dataRow["idServico"]),
+                        NomeServico = (string)(dataRow["Nome"]),
+                        DescricaoServico = (string)(dataRow["Descricao"])
+                    });
+            }
+            return servicos;
         }
     }
 }

@@ -121,6 +121,15 @@
                 <div class="cartao-corpo">
                   <h3 class="cartao-nome">@item.Nome</h3>
                   <p class="cartao-descricao">@item.Descricao</p>
+                  @if (item.Servicos != null && item.Servicos.Any())
+                  {
+                      <ul class="cartao-servicos">
+                          @foreach (var servico in item.Servicos)
+                          {
+                              <li title="@servico.DescricaoServico">@servico.NomeServico</li>
+                          }
+                      </ul>
+                  }
                   <span class="cartao-duracao">⏱ 60 min</span>
                   <div class="cartao-rodape">
                     <div class="cartao-preco-area">
