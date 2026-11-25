@@ -37,7 +37,6 @@ html, body {
 }
 
 
-/* ---------- LADO ESQUERDO ---------- */
 .lado-esquerdo {
   background: linear-gradient(155deg, var(--rosa-claro) 0%, var(--rosa-forte) 100%);
   display: flex;
@@ -93,7 +92,6 @@ html, body {
   color: rgba(92, 36, 56, 0.55);
 }
 
-/* ---------- LADO DIREITO ---------- */
 .lado-direito {
   background: var(--creme);
   display: flex;

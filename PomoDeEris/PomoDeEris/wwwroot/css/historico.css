@@ -41,7 +41,7 @@ a {
     text-decoration: none;
 }
 
-.pagina{
+.pagina {
     min-height: 85vh;
 }
 
@@ -69,10 +69,10 @@ a {
     gap: 6px;
 }
 
-    .faixa-item svg {
-        flex: none;
-        color: #f6d28b;
-    }
+.faixa-item svg {
+    flex: none;
+    color: #f6d28b;
+}
 
 /* Header */
 .cabecalho {
@@ -107,9 +107,9 @@ a {
     color: var(--escuro);
 }
 
-    .logo-nome small {
-        font-size: 18px;
-    }
+.logo-nome small {
+    font-size: 18px;
+}
 
 .logo-sub {
     margin-top: 2px;
@@ -125,15 +125,15 @@ a {
     gap: 32px;
 }
 
-    .menu a {
-        padding-bottom: 3px;
-        border-bottom: 2px solid var(--dourado);
-        font-size: 10.5px;
-        font-weight: 500;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: var(--texto);
-    }
+.menu a {
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--dourado);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--texto);
+}
 
 .icones {
     display: flex;
@@ -141,10 +141,10 @@ a {
     gap: 22px;
 }
 
-    .icones a {
-        display: inline-flex;
-        color: var(--escuro);
-    }
+.icones a {
+    display: inline-flex;
+    color: var(--escuro);
+}
 
 /* ===== Página ===== */
 .conta {
@@ -196,14 +196,14 @@ a {
     text-align: left;
 }
 
-    .lateral-link svg {
-        color: var(--cinza);
-        flex: none;
-    }
+.lateral-link svg {
+    color: var(--cinza);
+    flex: none;
+}
 
-    .lateral-link.ativo {
-        border-color: var(--dourado);
-    }
+.lateral-link.ativo {
+    border-color: var(--dourado);
+}
 
 .lateral-sair {
     display: inline-block;
@@ -285,17 +285,18 @@ a {
     border-radius: 999px;
 }
 
-    .pill.ativo {
-        background: #2a1410;
-        border-color: #2a1410;
-        color: #fff;
-    }
+.pill.ativo {
+    background: #2a1410;
+    border-color: #2a1410;
+    color: #fff;
+}
 
-    .filtros input[type="radio"]:checked + .pill {
-        background: #2a1410;
-        border-color: #2a1410;
-        color: #fff;
-    }
+.filtros input[type="radio"]:checked + .pill {
+    background: #2a1410;
+    border-color: #2a1410;
+    color: #fff;
+}
+
 /* Lista de procedimentos */
 .lista {
     background: #fef9f1;
@@ -313,16 +314,16 @@ a {
     border-bottom: 1px solid #f9f0e4;
 }
 
-    .item:first-child {
-        height: 77px;
-        padding-top: 5px;
-    }
+.item:first-child {
+    height: 77px;
+    padding-top: 5px;
+}
 
-    .item:last-child {
-        border-bottom: 0;
-        height: 77px;
-        padding-bottom: 5px;
-    }
+.item:last-child {
+    border-bottom: 0;
+    height: 77px;
+    padding-bottom: 5px;
+}
 
 .item-img {
     width: 70px;
@@ -357,20 +358,20 @@ a {
     border-radius: 999px;
 }
 
-    .badge.agendado {
-        background: #fdebc3;
-        color: #7a4f00;
-    }
+.badge.agendado {
+    background: #fdebc3;
+    color: #7a4f00;
+}
 
-    .badge.concluido {
-        background: #e8f0df;
-        color: #2f6b34;
-    }
+.badge.concluido {
+    background: #e8f0df;
+    color: #2f6b34;
+}
 
-    .badge.cancelado {
-        background: #f8d4d8;
-        color: #8a1c2c;
-    }
+.badge.cancelado {
+    background: #f8d4d8;
+    color: #8a1c2c;
+}
 
 /* Preço dos procedimentos */
 .item-preco {
@@ -414,11 +415,11 @@ a {
         gap: 6px 13px;
     }
 
-        .item:first-child,
-        .item:last-child {
-            height: auto;
-            padding: 14px 0;
-        }
+    .item:first-child,
+    .item:last-child {
+        height: auto;
+        padding: 14px 0;
+    }
 
     .item-preco {
         grid-column: 2;
@@ -430,6 +431,7 @@ a {
         justify-content: flex-start;
     }
 }
+
 .botao {
     height: 30px;
     padding: 0 18px;

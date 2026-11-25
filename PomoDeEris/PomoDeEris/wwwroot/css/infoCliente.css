@@ -253,9 +253,9 @@ button {
     outline: none;
 }
 
-    .campo input:focus {
+.campo input:focus {
         border-color: var(--dourado);
-    }
+ }
 
 /* Acoes */
 .acoes {
