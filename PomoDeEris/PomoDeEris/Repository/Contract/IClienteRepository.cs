@@ -13,6 +13,8 @@ namespace PomoDeEris.Repository.Contract
 
         Cliente ObterCliente(int Id);
 
+        Cliente ObterClienteEmail(string email);
+
         List<Cliente> ObterTodosClientes();
     }
 }

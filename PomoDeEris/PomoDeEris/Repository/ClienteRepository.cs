@@ -153,5 +153,32 @@ namespace PomoDeEris.Repository
             }
             return clientes;
         }
+
+        public Cliente ObterClienteEmail(string email)
+        {
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("call sp_selecionar_clienteEmail(@email)", conexao);
+                cmd.Parameters.Add(@"email", MySqlDbType.VarChar).Value = email;
+
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.Id = Convert.ToInt32(dr["idCliente"]);
+                    cliente.CPF = (String)(dr["CPF"]);
+                    cliente.DataCadastro = Convert.ToDateTime(dr["dataCadastro"]);
+                    cliente.Nome = (String)(dr["Nome"]);
+                    cliente.Email = (String)(dr["Email"]);
+                    cliente.Telefone = (String)(dr["Telefone"]);
+                    cliente.Situacao = (String)(dr["Situacao"]);
+                }
+                return cliente;
+            }
+        }
     }
 }

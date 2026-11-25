@@ -148,5 +148,20 @@ namespace PomoDeEris.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        [HttpGet]
+        public IActionResult RedefinirSenhaEmail()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult RedefinirSenhaCodigo(string email)
+        {
+            var cliente = _clienteRepository
+            return View();
+        }
+        [HttpGet]
+        public IActionResult RedefinirSenha(Cliente cliente)
+        {
+        }
     }
 }
