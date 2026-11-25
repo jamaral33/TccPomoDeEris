@@ -79,6 +79,7 @@
                         <div class="item-acao">
 
                             <form asp-controller="Atendimento" asp-action="Cancelar" method="post" onsubmit="return confirm('Tem certeza que deseja cancelar este agendamento?')">
+                                <input type="hidden" name="id" value="@atendimento.IdConsulta"/>
                                 <button type="submit" class="btn-cancelar">Cancelar Agendamento</button>
                             </form>
                         </div>

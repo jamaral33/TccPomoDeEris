@@ -92,5 +92,28 @@ namespace PomoDeEris.Controllers
 
             return Json(horarios.Select(h => h.ToString("HH:mm")));
         }
+
+        [HttpPost]
+        public IActionResult Cancelar(int id)
+        {
+            Cliente cliente = _loginCliente.GetCliente();
+
+            if (cliente == null)
+                return RedirectToAction("Login", "Cliente");
+
+            Atendimento atendimento = _atendimentoRepository.ObterAtendimento(id);
+            if(atendimento.Cliente.CPF == cliente.CPF)
+            {
+                atendimento.Situacao = "Cancelado";
+
+                _atendimentoRepository.Atualizar(atendimento);
+            }
+            else
+            {
+                return Unauthorized();
+            }
+
+            return RedirectToAction("Historico", "Cliente");
+        }
     }
 }

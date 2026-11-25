@@ -87,12 +87,6 @@ namespace PomoDeEris.Controllers
             return View(cliente);
             
         }
-
-        public IActionResult infoCliente()
-        {
-            return View();
-        }
-
         [HttpPost]
         public IActionResult Logout()
         {
