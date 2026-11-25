@@ -3,12 +3,18 @@
 @{
     List<Pacote> carrinho = carrinhoCookie.Consultar();
 
-    Double total = 0;
+    double total = 0;
+    double subtotal = 0;
+    double desconto = 0;
+
     foreach (var pacote in carrinho)
     {
-        total += pacote.Valor * pacote.Quantidade;
+        total += pacote.Valor * (1 - pacote.Desconto / 100.0) * pacote.Quantidade;
+        subtotal += pacote.Valor * pacote.Quantidade;
+        desconto += pacote.Valor * (pacote.Desconto / 100.0) * pacote.Quantidade;
     }
     var tempoTotal = carrinho.Count * 60;
+
 }
 @section Styles {
 	<link rel="stylesheet" href="~/css/Pagamento.css" asp-append-version="true">
@@ -208,7 +214,7 @@
                     {
                         <li>
                             <span>@pacote.Nome</span>
-                            <span>R$@pacote.Valor</span>
+                            <span>R$ @((pacote.Valor * (1 - pacote.Desconto / 100.0)).ToString("F2"))</span>
                         </li>
                     }
                 </ul>
@@ -216,13 +222,16 @@
                 <div class="resumo-total">
 
                     <div class="linha-resumo">
-                        <span>Total:</span>
-                        <strong>R$@total</strong>
+                        <span>Subtotal:</span>
+                        <strong>R$ @subtotal.ToString("F2")</strong>
                     </div>
-
                     <div class="linha-resumo">
-                        <span>Duração:</span>
-                        <strong>@tempoTotal min</strong>
+                        <span>Desconto aplicado:</span>
+                        <strong class="desconto">- R$ @desconto.ToString("F2")</strong>
+                    </div>
+                    <div class="linha-resumo">
+                        <span>Total:</span>
+                        <strong>R$ @total.ToString("F2")</strong>
                     </div>
 
                 </div>

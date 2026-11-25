@@ -2,12 +2,20 @@
 
 @{
     ViewData["Title"] = "Seu carrinho";
-    Double total = 0;
-    foreach(var pacote in Model)
+
+    double subtotal = 0;
+    double desconto = 0;
+    double total = 0;
+
+    foreach (var pacote in Model)
     {
-        total += pacote.Valor * (1 - pacote.Desconto / 100.0) * pacote.Quantidade;
+        subtotal += pacote.Valor * pacote.Quantidade;
+        desconto += pacote.Valor * (pacote.Desconto / 100.0) * pacote.Quantidade;
     }
-    var tempoTotal = Model.Count * 60;
+
+    total = subtotal - desconto;
+
+    var tempoTotal = Model.Count() * 60;
 }
 @section Styles {
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +45,8 @@
                          <p class="item-nome">@item.Quantidade</p>
                         </div>
                     <div class="item-preco">
-                            R$ @(item.Valor * (1 - item.Desconto / 100.0))
-                    </div>
+                            R$ @((item.Valor * (1 - item.Desconto / 100.0)).ToString("N2"))
+                        </div>
                         @using (Html.BeginForm("RemoverPacote", "Carrinho", FormMethod.Post))
                         {
                             <input type="hidden" name="id" value=@item.IdPacote />
@@ -59,26 +67,27 @@
     <!-- RESUMO -->
     <aside class="resumo-carrinho">
       <h2>Resumo do pedido</h2>
+            <div class="resumo-linha">
+                <span id="summary-count">@Model.Sum(p => p.Quantidade) tratamentos</span>
+                <span id="summary-subtotal">R$ @subtotal.ToString("F2")</span>
+            </div>
 
-      <div class="resumo-linha">
-        <span id="summary-count">@Model.Count tratamentos</span>
-        <span id="summary-subtotal">R$ @total</span>
-      </div>
-      <div class="resumo-linha resumo-linha-desconto">
-        <span>Descontos</span>
-        <span id="summary-discount">− R$ 0</span>
-      </div>
-      <div class="resumo-linha">
-        <span>Duração total</span>
-        <span id="summary-duration">@tempoTotal min</span>
-      </div>
+            <div class="resumo-linha resumo-linha-desconto">
+                <span>Descontos</span>
+                <span id="summary-discount">− R$ @desconto.ToString("F2")</span>
+            </div>
 
-      <div class="resumo-divisoria"></div>
+            <div class="resumo-linha">
+                <span>Duração total</span>
+                <span id="summary-duration">@tempoTotal min</span>
+            </div>
 
-      <div class="resumo-valor-total">
-        <span>Total</span>
-        <strong id="summary-total">R$ @total</strong>
-      </div>
+            <div class="resumo-divisoria"></div>
+
+            <div class="resumo-valor-total">
+                <span>Total</span>
+                <strong id="summary-total">R$ @total.ToString("F2")</strong>
+            </div>
 
     <a asp-action="ConfirmarHorario" asp-controller="Atendimento" class="btn btn-principal btn-largo" id="confirm-btn">Confirmar agendamento</a>
     </aside>

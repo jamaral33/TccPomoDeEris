@@ -39,6 +39,7 @@ namespace PomoDeEris.Controllers
                     Descricao = pacote.Descricao,
                     Valor = pacote.Valor,
                     Imagem = pacote.Imagem,
+                    Desconto = pacote.Desconto
                 };
                 _carrinhoCookie.Cadastrar(item);
 

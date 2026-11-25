@@ -823,6 +823,15 @@ DELIMITER ;
 
 -- CLIENTE
 
+CALL sp_cadastrar_cliente(
+    '12345678910',
+    'Nilson',
+    'nilson@email.com',
+    '11987654321',
+    '123456',
+    "Ativo"
+);
+
 CALL sp_selecionar_cliente(1);
 
 
@@ -976,7 +985,6 @@ CALL sp_selecionar_pacote_consulta(@idConsulta);
 SELECT * FROM tbPagamento
 WHERE idConsulta = @idConsulta;
 
-
 CALL sp_cadastrar_funcionario(
     '67676789898',
     'Senhor Duriguim',
@@ -987,7 +995,6 @@ CALL sp_cadastrar_funcionario(
     'Administrador'
 );
 
-
 CALL sp_cadastrar_cliente(
     '12345678999',
     'Cliente Teste',
@@ -996,4 +1003,3 @@ CALL sp_cadastrar_cliente(
     'w1cw44vJM/PuEAlSFqkMEQ==.OiGVEq+HyaCHTiGT/j+d9SnJmXh0Yt0zFbmfaUURBIw=',
     'Ativo'
 );
-
