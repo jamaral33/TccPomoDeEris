@@ -14,7 +14,7 @@ namespace PomoDeEris.Repository.Contract
 
         List<Atendimento> ObterTodosAtendimentos();
 
-
+        List<Atendimento> ObterTodosAtendimentosCliente(int idCliente);
 
         List<Atendimento> ObterAtendimentosDia(DateTime data);
 

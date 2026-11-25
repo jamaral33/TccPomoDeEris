@@ -15,6 +15,7 @@ wwwroot\images\cartaoIcone.svg
 wwwroot\images\fotoDaCliente.png
 wwwroot\images\hidroRelaxamento.png
 wwwroot\images\logoPomoTransparente.png
+wwwroot\images\look-studio-HtXyytr9304-unsplash.jpg
 wwwroot\images\manicure.png
 wwwroot\images\massagem-relaxante.png
 wwwroot\images\pelosFaciais.png
@@ -90,7 +91,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\images\look-studio-HtXyytr9304-unsplash.jpg
 C:\Users\gustavo\Documents\escola\TCCPT3\2411\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\css\paginaDeLogin.css
 C:\Users\gustavo\Documents\escola\TCCPT3\2411\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\LICENSE.txt
 C:\Users\gustavo\Documents\escola\TCCPT3\2411\TccPomoDeEris\PomoDeEris\PomoDeEris\wwwroot\lib\jquery\dist\jquery.slim.min.map

@@ -1,7 +1,10 @@
-﻿@model Cliente
+﻿@using PomoDeEris.Libraries.Login
+@model List<Atendimento>
+@inject LoginCliente loginCliente;
 
 @{
     ViewData["Title"] = "Histórico";
+    var cliente = loginCliente.GetCliente();
 }
 @section Styles{
     <link rel="stylesheet" href="~/css/historico.css" asp-append-version="true">
@@ -14,8 +17,8 @@
     <div class="conta">
 
     <aside class="menu-lateral">
-        <h2 class="menu-lateral__nome">@Model.Nome</h2>
-        <p class="menu-lateral__desde">Desde @Model.DataCadastro.ToString("dd/MM/yyyy")</p>
+        <h2 class="menu-lateral__nome">@cliente.Nome</h2>
+        <p class="menu-lateral__desde">Desde @cliente.DataCadastro.ToString("dd/MM/yyyy")</p>
 
         <a asp-controller="Cliente" asp-action="Historico" class="menu-lateral__item">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
@@ -42,7 +45,7 @@
                 </div>
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Próximo agendamento</span>
-                    <span class="resumo-valor">R$</span>
+                    <span class="resumo-valor"></span>
                 </div>
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Total</span>

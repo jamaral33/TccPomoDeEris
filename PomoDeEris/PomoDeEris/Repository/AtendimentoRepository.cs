@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
+using Org.BouncyCastle.Crypto;
 using PomoDeEris.Areas.Colaborador.Models;
 using PomoDeEris.Libraries.Carrinho;
 using PomoDeEris.Libraries.Criptografia;
 using PomoDeEris.Models;
 using PomoDeEris.Repository.Contract;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PomoDeEris.Repository
@@ -199,8 +200,35 @@ namespace PomoDeEris.Repository
             return atendimento;
 
         }
-       
 
+
+        public List<Atendimento> ObterTodosAtendimentosCliente(int idCliente)
+        {
+            List<int> ids = new List<int>();
+            List<Atendimento> atendimentos = new List<Atendimento>();
+
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand("SELECT idConsulta FROM tbConsulta WHERE idCliente = @idCliente", conexao);
+                cmd.Parameters.Add("@idCliente", MySqlDbType.Int32).Value = idCliente;
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                        ids.Add(reader.GetInt32("IdConsulta"));
+                }
+
+            }
+            foreach(var id in ids)
+            {
+                atendimentos.Add(ObterAtendimento(id));
+            }
+
+            return atendimentos;
+
+        }
         public List<Atendimento> ObterTodosAtendimentos()
         {
             throw new NotImplementedException();
