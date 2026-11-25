@@ -27,7 +27,12 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             var funcionarios = _funcionarioRepository.ObterTodosFuncionarios();
             return View(funcionarios);
         }
-
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            _loginFuncionario.Logout();
+            return RedirectToAction("Index", "Home");
+        }
         [HttpPost]
         public IActionResult Login([FromForm] LoginFuncionarioViewModel funcionario)
         {
