@@ -265,6 +265,8 @@ h1, h2, h3 {
 .cartao-corpo { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
 .cartao-nome { font-family: var(--fonte-texto); font-weight: 700; font-size: 1rem; color: var(--escuro); margin-bottom: 6px; }
 .cartao-descricao { font-size: 0.82rem; color: var(--cinza); line-height: 1.5; margin-bottom: 14px; flex: 1; }
+.cartao-servicos { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; }
+.cartao-servicos li { font-size: 0.7rem; color: var(--vinho); background: var(--rosa-claro); border-radius: 999px; padding: 4px 10px; }
 .cartao-duracao { font-size: 0.76rem; color: var(--cinza); display: flex; align-items: center; gap: 6px; margin-bottom: 14px; }
 
 .cartao-rodape { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
