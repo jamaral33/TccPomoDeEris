@@ -23,37 +23,38 @@
 
     <header class="header">
         <div class="header-conteudo">
-              <a asp-controller="Home" asp-action="Index" class="logo">
-            <span class="logo__title">Pomo de Eris</span>
-            <span class="logo__subtitle">Clínica Estética</span>
-        </a>
-        <nav class="nav">
-            <a href="@Url.Action("Index", "Pacote")#tratamentos">Tratamentos</a>
-            <a href="@Url.Action("Promocoes", "Pacote")#promocoes">Promoções</a>
-            <a href="@Url.Action("Index", "Home")#sobre">Sobre</a>
-            <a href="@Url.Action("Index", "Home")#contato">Contato</a>
-        </nav>
-        <div class="header__actions">
-            <button class="icon-btn" id="search-toggle" aria-label="Buscar">
-                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            </button>
-                @if(LoginCliente.GetCliente() == null)
+            <a asp-controller="Home" asp-action="Index" class="logo">
+                <span class="logo__title">Pomo de Eris</span>
+                <span class="logo__subtitle">Clínica Estética</span>
+            </a>
+            <nav class="nav">
+                <a href="@Url.Action("Index", "Pacote")#tratamentos">Tratamentos</a>
+                <a href="@Url.Action("Promocoes", "Pacote")#promocoes">Promoções</a>
+                <a asp-controller="Home" asp-action="Sobre">Sobre</a>
+                <a href="@Url.Action("Index", "Home")#contato">Contato</a>
+            </nav>
+            <div class="header__actions">
+                <button class="icon-btn" id="search-toggle" aria-label="Buscar">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>
+                </button>
+                @if (LoginCliente.GetCliente() == null)
                 {
                     <a asp-controller="Cliente" asp-action="Login" class="icon-btn" aria-label="Minha conta">
                         <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" /></svg>
                     </a>
                 }
-                else{
+                else
+                {
                     <a asp-controller="Cliente" asp-action="Index" class="icon-btn" aria-label="Minha conta">
-                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-                     </a>
+                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" /></svg>
+                    </a>
                 }
 
-            <a asp-controller="Carrinho" asp-action="Index" class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
-                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg>
-                <span class="cart-count" id="cart-count">@CarrinhoCookie.ContarItens()</span>
-            </a>
-        </div>
+                <a asp-controller="Carrinho" asp-action="Index" class="icon-btn cart-btn" id="cart-toggle" aria-label="Carrinho">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.5 3h2l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6" /></svg>
+                    <span class="cart-count" id="cart-count">@CarrinhoCookie.ContarItens()</span>
+                </a>
+            </div>
         </div>
       
     </header>
@@ -63,7 +64,7 @@
     <!-- RODAPÉ -->
     <footer class="footer" id="contato">
         <div class="footer-conteudo">
-             <div class="footer-cima">
+            <div class="footer-cima">
                 <div class="footer__about">
                     <p class="footer__logo">Pomo de Eris</p>
                     <p>Clínica estética voltada a tratamentos faciais, corporais, massagens. Agendamento online simples e equipe clínica certificada.</p>
@@ -80,13 +81,13 @@
                     <p>Rua dos Jardins, 482 — Jardins<br>São Paulo, SP</p>
                     <p>(11) 4002-8922<br>contato@pomodeeris.com.br</p>
                 </div>
-             </div>
-             <div class="footer-baixo">
+            </div>
+            <div class="footer-baixo">
                 <div class="footer__bottom">
                     <span>© 2026 Pomo de Eris. Todos os direitos reservados.</span>
                     <span><a href="#">Termos de uso</a> · <a href="#">Privacidade</a></span>
                 </div>
-             </div>
+            </div>
         </div>
     </footer>
     @await RenderSectionAsync("Scripts", required: false)

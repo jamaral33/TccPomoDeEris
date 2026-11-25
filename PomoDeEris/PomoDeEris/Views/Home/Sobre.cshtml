@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Sobre nós";
+}
+@section Styles {
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/Sobre.css" asp-append-version="true">
+}
+
+<section class="sobre">
+    <div class="sobre__conteudo">
+
+        <!-- História da pomo de éris -->
+        <article class="sobre__historia">
+            <h1 class="sobre__titulo">Nossa História</h1>
+            <p class="sobre__texto">
+                A Pomo de Éris surgiu com a proposta de oferecer procedimentos estéticos de qualidade, valorizando não apenas a beleza, mas também a autoestima e o bem-estar de seus clientes. Desde sua idealização, a clínica busca proporcionar um ambiente acolhedor e seguro, onde cada pessoa possa se sentir confortável e confiante durante seus tratamentos. Com o slogan “Beleza que transforma, cuidado que conquista”, a Pomo de Éris tem como prioridade a segurança, a transparência e a satisfação dos clientes. Sua identidade visual, formada pelas cores rosa pastel, branco e dourado, representa a delicadeza, o cuidado e a elegância que a clínica deseja transmitir. A empresa tem como objetivo crescer e conquistar seu espaço no mercado de estética, buscando se tornar uma referência nacional pela qualidade dos procedimentos e pelo profissionalismo no atendimento. Mais do que oferecer tratamentos estéticos, a Pomo de Éris procura contribuir para que seus clientes se sintam bem consigo mesmos.
+            </p>
+        </article>
+
+        <!-- Parte lateral, os contatos e perguntas -->
+        <aside class="sobre__lateral">
+
+            <div class="contatos">
+                <h2 class="contatos__titulo">Contatos</h2>
+                <p class="contatos__linha">Rua dos Jardins, 482 — Jardins</p>
+                <p class="contatos__linha">contato@pomodeeris.com.br</p>
+                <p class="contatos__linha">(11) 4002-8922</p>
+            </div>
+
+            <div class="perguntas">
+                <h2 class="perguntas__titulo">Perguntas Frequentes</h2>
+
+                <div class="perguntas__item">
+                    <p class="perguntas__pergunta">P: Como posso agendar um tratamento?</p>
+                    <p class="perguntas__resposta">R: Você pode agendar seu atendimento pelo nosso site, escolhendo o procedimento, a data e o horário desejados.</p>
+                </div>
+
+                <div class="perguntas__item">
+                    <p class="perguntas__pergunta">P: Quais procedimentos são oferecidos?</p>
+                    <p class="perguntas__resposta">R: Oferecemos diferentes tratamentos estéticos faciais e corporais, sempre priorizando a segurança e o bem-estar dos clientes.</p>
+                </div>
+
+                <div class="perguntas__item">
+                    <p class="perguntas__pergunta">P: Posso remarcar ou cancelar meu atendimento?</p>
+                    <p class="perguntas__resposta">R: Para solicitar um cancelamento ou reagendamento, entre em contato com nossa equipe.</p>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+</section>

@@ -1599,19 +1599,14 @@ C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\2
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-5s26bftknc-5s26bftknc.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-qj3o1ae89n-qj3o1ae89n.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-see2jscb2k-see2jscb2k.gz
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-u8id153g2s-u8id153g2s.gz
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\rqem8pee8z-{0}-o13jl9dvwz-o13jl9dvwz.gz
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-jn09t221i1-jn09t221i1.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qhhp18mukz-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\74l4qcouax-{0}-crvuvct2ls-crvuvct2ls.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\wpbg0166j9-{0}-in57h28h8f-in57h28h8f.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qj2l63no9d-{0}-5x8gicygeh-5x8gicygeh.gz
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-vsfs0f6wbw-vsfs0f6wbw.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\p6zqr2bi08-{0}-p0zzzn7lcg-p0zzzn7lcg.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\8hf92tbof0-{0}-l05j8lx4qf-l05j8lx4qf.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\0fo55y1mdv-{0}-u50z6iy9n4-u50z6iy9n4.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\efb98v2qh3-{0}-wjwvk5jvhf-wjwvk5jvhf.gz
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\elikpcflif-{0}-f4efn38tt9-f4efn38tt9.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\1a4uoq6s1b-{0}-fr7q2aak1r-fr7q2aak1r.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\2m87tia0w7-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\it69u3ahog-{0}-c2jlpeoesf-c2jlpeoesf.gz
@@ -1686,7 +1681,6 @@ C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\refint\PomoD
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.pdb
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kp2oqrvn3a-{0}-ncpsbn4b64-ncpsbn4b64.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\bin\Debug\net10.0\PomoDeEris.runtimeconfig.dev.json
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.lib.module.js
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\HotReload\Microsoft.NET.Sdk.BlazorWeb.HotReload.BrowserTools.js
@@ -1699,7 +1693,6 @@ C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\l
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\ri729fzpev-{0}-4jqeeke5py-4jqeeke5py.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\g69ld43tst-{0}-v1vy2to33n-v1vy2to33n.gz
 C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\ub7klvk5tt-{0}-ysew0n4kjn-ysew0n4kjn.gz
-C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-r2apgf5ybn-r2apgf5ybn.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\2411\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\gustavo\Documents\escola\TCCPT3\2411\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net10.0\appsettings.json
 C:\Users\gustavo\Documents\escola\TCCPT3\2411\TccPomoDeEris\PomoDeEris\PomoDeEris\bin\Debug\net10.0\PomoDeEris.staticwebassets.runtime.json
@@ -1972,3 +1965,11 @@ C:\Users\gustavo\Documents\escola\TCCPT3\2511\TccPomoDeEris\PomoDeEris\PomoDeEri
 C:\Users\gustavo\Documents\escola\TCCPT3\2511\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\gustavo\Documents\escola\TCCPT3\2511\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
 C:\Users\gustavo\Documents\escola\TCCPT3\2511\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-quj15jdrkh-quj15jdrkh.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kp2oqrvn3a-{0}-g3a1o9lqo0-g3a1o9lqo0.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-qae6r17e9x-qae6r17e9x.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-mkc415cgge-mkc415cgge.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-4quvn43or9-4quvn43or9.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\f8mi2v59df-{0}-k78moecai9-k78moecai9.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\elikpcflif-{0}-1w65ipbvvf-1w65ipbvvf.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\rqem8pee8z-{0}-fs0txgk4gz-fs0txgk4gz.gz
+C:\Users\white\Desktop\Pomo\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\l6abasfg4c-{0}-gk6tup7i4y-gk6tup7i4y.gz
