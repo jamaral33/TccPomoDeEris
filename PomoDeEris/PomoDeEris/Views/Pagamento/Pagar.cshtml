@@ -105,11 +105,11 @@
                     <div class="campo">
                         <label for="parcelamento">Parcelamento:</label>
                         <select id="parcelamento" name="parcelamento">
-                            <option value="1">1x De R$@total</option>
-                            <option value="2">2x De R$@total / 2</option>
-                            <option value="3">3x De R$@total / 3</option>
-                            <option value="6">6x De R$@total / 6</option>
-                            <option value="12">12x De R$@total /12 </option>
+                            <option value="1">1x De R$@total.ToString("N2")</option>
+                            <option value="2">2x De R$@((total / 2).ToString("N2"))</option>
+                            <option value="3">3x De R$@((total / 3).ToString("N2"))</option>
+                            <option value="6">6x De R$@((total / 6).ToString("N2"))</option>
+                            <option value="12">12x De R$@((total / 12).ToString("N2"))</option>
                         </select>
                     </div>
 

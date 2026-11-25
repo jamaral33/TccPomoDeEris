@@ -74,8 +74,8 @@ namespace PomoDeEris.Controllers
             }
             var atendimentosCliente = _atendimentoRepository.ObterTodosAtendimentosCliente(cliente.Id);
 
-            ViewBag.QtdConsultas = atendimentosCliente.Count();
-            ViewBag.ProximaConsulta = atendimentosCliente.Where(a => a.DataHora > DateTime.Now).OrderBy(a => a.DataHora).Select(a => a.DataHora).FirstOrDefault();
+            ViewBag.QtdConsultas = atendimentosCliente.Where(a => a.Situacao != "Cancelado").ToList().Count();
+            ViewBag.ProximaConsulta = atendimentosCliente.Where(a => a.DataHora > DateTime.Now && a.Situacao =="Agendado").OrderBy(a => a.DataHora).Select(a => a.DataHora).FirstOrDefault();
             ViewBag.QuantiaGasta = atendimentosCliente.Where(a => a.Situacao == "Concluido" || a.Situacao == "Agendado").Sum(a => a.Pagamento.Valor);
 
 
