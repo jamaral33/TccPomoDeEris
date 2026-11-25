@@ -88,7 +88,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             {
                 if (arquivo != null && arquivo.Length > 0)
                 {
-                    // salve o arquivo do mesmo jeito que você faz no Cadastrar
+                   
                     pacote.Imagem = GerenciaArquivos.CadastrarImagemProduto(arquivo);
                 }
                 // sem arquivo novo, Imagem fica vazia e a procedure mantém a atual

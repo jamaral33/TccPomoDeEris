@@ -58,7 +58,13 @@
                                     <div class="campo servico-item">
                                         <input type="text" id="servicoInput" class="servico-input" list="listaServicos"
                                                placeholder="Digite para pesquisar ou clique para ver..." value="@servico.NomeServico" data-id="@servico.IdServico" required>
-                                        <input type="hidden" name="ServicosIds" class="servico-id">
+                                        <input type="hidden" name="ServicosIds" class="servico-id" value="@servico.IdServico">
+
+                                        <button type="button"
+                                                class="botao botao-secundario botao-pequeno remover-servico"
+                                                onclick="removerServico(this)">
+                                            Remover
+                                        </button>
                                     </div>
                                     }
                             </div>
