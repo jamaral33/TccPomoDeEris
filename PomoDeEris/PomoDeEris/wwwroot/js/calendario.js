@@ -12,6 +12,7 @@
         selectionDatesMode: 'single',
         disableWeekdays: [0, 1],
         disableDatesPast: true,
+        disableToday: true,
         selectedTheme: 'light',
         disableDates: diasBloqueados,
 

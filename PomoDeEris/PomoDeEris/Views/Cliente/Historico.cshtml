@@ -1,14 +1,18 @@
 ﻿@using PomoDeEris.Libraries.Login
-@model List<Atendimento>
+@model Cliente;
 @inject LoginCliente loginCliente;
 
 @{
     ViewData["Title"] = "Histórico";
-    var cliente = loginCliente.GetCliente();
+    List<Atendimento>  atendimentos = ViewBag.Atendimentos;
+    string filtroSelecionado = ViewBag.FiltroSelecionado;
+    string proximaConsulta = ViewBag.ProximaConsulta.ToString("dd/MM/yyyy");
+    int QtdConsultas = ViewBag.QtdConsultas;
+    double totalGasto = ViewBag.QuantiaGasta;
 }
 @section Styles{
     <link rel="stylesheet" href="~/css/historico.css" asp-append-version="true">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 }
 
 <section class="pagina">
@@ -17,14 +21,14 @@
     <div class="conta">
 
     <aside class="menu-lateral">
-        <h2 class="menu-lateral__nome">@cliente.Nome</h2>
-        <p class="menu-lateral__desde">Desde @cliente.DataCadastro.ToString("dd/MM/yyyy")</p>
+        <h2 class="menu-lateral__nome">@Model.Nome</h2>
+        <p class="menu-lateral__desde">Desde @Model.DataCadastro.ToString("dd/MM/yyyy")</p>
 
-        <a asp-controller="Cliente" asp-action="Historico" class="menu-lateral__item">
+        <a asp-controller="Cliente" asp-action="Historico" class="menu-lateral__item menu-lateral__item--ativo">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
             Histórico
         </a>
-        <a asp-controller="Cliente" asp-action="Index" class="menu-lateral__item menu-lateral__item--ativo">
+        <a asp-controller="Cliente" asp-action="Index" class="menu-lateral__item">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z" /></svg>
             Minhas informações
         </a>
@@ -41,75 +45,45 @@
             <div class="resumo">
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Atendimentos</span>
-                    <span class="resumo-valor"></span>
+                    <span class="resumo-valor">@QtdConsultas</span>
                 </div>
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Próximo agendamento</span>
-                    <span class="resumo-valor"></span>
+                    <span class="resumo-valor">@proximaConsulta</span>
                 </div>
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Total</span>
-                    <span class="resumo-valor">R$</span>
+                    <span class="resumo-valor">R$@totalGasto</span>
                 </div>
             </div>
 
-            <div class="filtros">
-                <span class="pill ativo">Todos</span>
-                <span class="pill">Concluídos</span>
-                <span class="pill">Agendados</span>
-                <span class="pill">Cancelados</span>
-            </div>
+        <div class="filtros">
 
+            <a asp-action="Historico" asp-controller="Cliente" asp-route-filtro="" class="pill @(string.IsNullOrWhiteSpace(filtroSelecionado) ? "ativo" : "")">Todos</a>
+            <a asp-action="Historico" asp-controller="Cliente" asp-route-filtro="Concluido" class="pill @(filtroSelecionado == "Concluido" ? "ativo" : "")">Concluídos</a>
+            <a asp-action="Historico" asp-controller="Cliente" asp-route-filtro="Agendado" class="pill @(filtroSelecionado == "Agendado" ? "ativo" : "")">Agendados</a>
+            <a asp-action="Historico" asp-controller="Cliente" asp-route-filtro="Cancelado" class="pill @(filtroSelecionado == "Cancelado" ? "ativo" : "")">Cancelados</a>
+
+         </div>
             <div class="lista">
 
-                <div class="item">
-                    <img class="item-img" src="" alt="">
-                    <div>
-                        <h3 class="item-nome">Pacote Massagem Relaxante</h3>
-                        <p class="item-meta"></p>
-                    </div>
-                    <span class="item-preco">R$</span>
-                </div>
+                @foreach(Atendimento atendimento in atendimentos)
+                {
+                    <div class="item">
+                        <img class="item-img" src="@atendimento.PacotesAtendimento[0].Imagem" alt="">
+                        <div>
+                            <h3 class="item-nome">@atendimento.PacotesAtendimento[0].Nome ...</h3>
+                            <p class="item-meta">@atendimento.Situacao</p>
+                        </div>
+                        <span class="item-preco">R$@atendimento.Pagamento.Valor</span>
+                        <div class="item-acao">
 
-                <div class="item">
-                    <img class="item-img" src="" alt="">
-                    <div>
-                        <h3 class="item-nome">Procedimento, Pacote manicure</h3>
-                        <p class="item-meta"></p>
+                            <form asp-controller="Atendimento" asp-action="Cancelar" method="post" onsubmit="return confirm('Tem certeza que deseja cancelar este agendamento?')">
+                                <button type="submit" class="btn-cancelar">Cancelar Agendamento</button>
+                            </form>
+                        </div>
                     </div>
-                    <span class="item-preco">R$</span>
-                    <div class="item-acao"></div>
-                </div>
-
-                <div class="item">
-                    <img class="item-img" src="" alt="">
-                    <div>
-                        <h3 class="item-nome">Procedimentos de pelos faciais</h3>
-                        <p class="item-meta"></p>
-                    </div>
-                    <span class="item-preco">R$</span>
-                    <div class="item-acao"></div>
-                </div>
-
-                <div class="item">
-                    <img class="item-img" src="" alt="">
-                    <div>
-                        <h3 class="item-nome">Pacote Relaxamento Hidro</h3>
-                        <p class="item-meta"></p>
-                    </div>
-                    <span class="item-preco">R$</span>
-                    <div class="item-acao"></div>
-                </div>
-
-                <div class="item">
-                    <img class="item-img" src="" alt="">
-                    <div>
-                        <h3 class="item-nome">Pacote Micropigmentação</h3>
-                    </div>
-                    <span class="item-preco">R$</span>
-                    <div class="item-acao"></div>
-                </div>
-
+                }
             </div>
         </main>
     </div>

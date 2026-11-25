@@ -41,6 +41,10 @@ a {
     text-decoration: none;
 }
 
+.pagina{
+    min-height: 85vh;
+}
+
 /* Faixa header de cima */
 .faixa {
     background: var(--escuro);
@@ -287,6 +291,11 @@ a {
         color: #fff;
     }
 
+    .filtros input[type="radio"]:checked + .pill {
+        background: #2a1410;
+        border-color: #2a1410;
+        color: #fff;
+    }
 /* Lista de procedimentos */
 .lista {
     background: #fef9f1;
@@ -420,4 +429,64 @@ a {
         grid-column: 2;
         justify-content: flex-start;
     }
+}
+.botao {
+    height: 30px;
+    padding: 0 18px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.botao--perigo {
+    color: #fff;
+    background: linear-gradient(180deg, #f04a4a, #d93030);
+    box-shadow: 0 6px 12px rgba(224, 58, 58, 0.28);
+}
+
+.menu-lateral {
+    background: var(--creme);
+    border: 1px solid var(--linha);
+    border-radius: var(--raio-m);
+    padding: 28px 14px 22px;
+    text-align: center;
+}
+
+.menu-lateral__nome {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--vinho-escuro);
+}
+
+.menu-lateral__desde {
+    font-size: 10px;
+    color: var(--cinza);
+    margin: 2px 0 20px;
+}
+
+.menu-lateral__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.menu-lateral__item--ativo {
+    border-color: var(--dourado);
+}
+
+.menu-lateral__sair {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 10px;
+    color: var(--dourado-escuro);
+    text-decoration: underline;
 }

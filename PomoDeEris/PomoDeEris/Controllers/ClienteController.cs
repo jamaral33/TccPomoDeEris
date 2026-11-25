@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCoreGeneratedDocument;
+using Microsoft.AspNetCore.Mvc;
 using PomoDeEris.Libraries.Criptografia;
 using PomoDeEris.Libraries.Login;
 using PomoDeEris.Models;
@@ -12,13 +13,15 @@ namespace PomoDeEris.Controllers
         private IClienteRepository _clienteRepository;
         private LoginCliente _loginCliente;
         private CriptografiaSenha criptografia = new CriptografiaSenha();
+        private IAtendimentoRepository _atendimentoRepository;
 
 
-        public ClienteController(ILogger<ClienteController> logger, IClienteRepository clienteRepository, LoginCliente loginCliente)
+        public ClienteController(ILogger<ClienteController> logger, IClienteRepository clienteRepository, LoginCliente loginCliente, IAtendimentoRepository atendimentoRepository)
         {
             _logger = logger;
             _clienteRepository = clienteRepository;
             _loginCliente = loginCliente;
+            _atendimentoRepository = atendimentoRepository;
         }
 
 
@@ -60,18 +63,29 @@ namespace PomoDeEris.Controllers
             return View();
         }
 
-        public IActionResult Historico()
+        public IActionResult Historico(string? filtro)
         {
+
             var cliente = _loginCliente.GetCliente();
 
             if (cliente == null)
             {
                 return RedirectToAction("Login");
             }
-            else
-            {
-                return View(cliente);
-            }
+            var atendimentosCliente = _atendimentoRepository.ObterTodosAtendimentosCliente(cliente.Id);
+
+            ViewBag.QtdConsultas = atendimentosCliente.Count();
+            ViewBag.ProximaConsulta = atendimentosCliente.Where(a => a.DataHora > DateTime.Now).OrderBy(a => a.DataHora).Select(a => a.DataHora).FirstOrDefault();
+            ViewBag.QuantiaGasta = atendimentosCliente.Where(a => a.Situacao == "Concluido" || a.Situacao == "Agendado").Sum(a => a.Pagamento.Valor);
+
+
+            var atendimentosFiltrado = atendimentosCliente = atendimentosCliente.Where(a => string.IsNullOrEmpty(filtro) || a.Situacao == filtro).ToList(); //Se o filtro estiver vazio ele retorna tudo só com um valor ele filtra
+
+
+            ViewBag.Atendimentos = atendimentosFiltrado;
+            ViewBag.FiltroSelecionado = filtro;
+            return View(cliente);
+            
         }
 
         public IActionResult infoCliente()
