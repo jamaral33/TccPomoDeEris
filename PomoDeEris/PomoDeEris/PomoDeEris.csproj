@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\ViewModel\**" />
+    <Content Remove="Models\ViewModel\**" />
+    <EmbeddedResource Remove="Models\ViewModel\**" />
+    <None Remove="Models\ViewModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Colaborador\Data\" />
     <Folder Include="Areas\Colaborador\Models\Pacote\" />
-    <Folder Include="Models\ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>

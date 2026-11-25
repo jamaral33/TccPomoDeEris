@@ -154,14 +154,46 @@ namespace PomoDeEris.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult RedefinirSenhaCodigo(string email)
+        public IActionResult RedefinirSenhaCodigo(string Email)
         {
-            var cliente = _clienteRepository
-            return View();
+            Cliente cliente = _clienteRepository.ObterClienteEmail(Email);
+            if(cliente.Id == 0)
+            {
+                TempData["ErroDefinirSenha"] = "Email não localizado verifique se digitou corretamente";
+                return RedirectToAction("RedefinirSenhaEmail");
+            }
+            LoginClienteViewModel viewModel = new LoginClienteViewModel()
+            {
+                Email = cliente.Email
+            };
+            return View(viewModel);
         }
         [HttpGet]
-        public IActionResult RedefinirSenha(Cliente cliente)
+        public IActionResult RedefinirSenha(string Email)
         {
+            Cliente cliente = _clienteRepository.ObterClienteEmail(Email);
+            if (cliente == null)
+            {
+                TempData["ErroDefinirSenha"] = "Email não localizado verifique se digitou corretamente";
+                return RedirectToAction("RedefinirSenhaEmail");
+            }
+            LoginClienteViewModel viewModel = new LoginClienteViewModel()
+            {
+                Email = cliente.Email
+            };
+            return View(viewModel);
         }
+        [HttpPost]
+        public IActionResult RedefinirSenha(string Email, string Senha)
+        {
+            Cliente cliente = _clienteRepository.ObterClienteEmail(Email);
+
+            cliente.Senha = criptografia.hasharSenha(Senha);
+
+            _clienteRepository.Atualizar(cliente);
+
+            return RedirectToAction("Login", "Cliente");
+        }
+
     }
 }
