@@ -79,6 +79,7 @@ namespace PomoDeEris.Areas.Colaborador.Controllers
             return View(funcionario);
         }
         [HttpPost]
+        [ColaboradorAutorizacao(FuncionarioCargoConstant.Administrador)]
         public IActionResult Atualizar([FromForm] Funcionario funcionario)
         {
             if (ModelState.IsValid)
