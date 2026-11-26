@@ -2117,7 +2117,6 @@ C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\c
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-8u0lexxn4z-8u0lexxn4z.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-qae6r17e9x-qae6r17e9x.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\6wubg7u6r4-{0}-8frhioo2wp-8frhioo2wp.gz
-C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-jpx99hl3g1-jpx99hl3g1.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\rqem8pee8z-{0}-x75yvraov9-x75yvraov9.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\xp0uo5tnql-{0}-6toykq2qqd-6toykq2qqd.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\l6abasfg4c-{0}-gk6tup7i4y-gk6tup7i4y.gz
@@ -2128,4 +2127,5 @@ C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\c
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\0fo55y1mdv-{0}-5rekpxv7i9-5rekpxv7i9.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\efb98v2qh3-{0}-38fyjpishf-38fyjpishf.gz
 C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\elikpcflif-{0}-yh8yxteveb-yh8yxteveb.gz
-C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-zw27o4gyd8-zw27o4gyd8.gz
+C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-o7ifemu8yh-o7ifemu8yh.gz
+C:\Users\3mtec\Documents\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-ysumcqiihq-ysumcqiihq.gz
