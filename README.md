@@ -18,3 +18,29 @@ Trabalho solicitado pela Etec Prof. Basilides de Godoy na 3°série como requisi
 2. Na pasta "Banco" dentro do projeto, copie o código sql
 3.  Execute o código no MysqlWorkBench
 4.  Caso ainda não execute, acesse o arquivo "appsettings.json" e mude a string do conexão conforme suas credenciais locais do MySql
+
+# Credenciais padrões
+Cliente:
+<table>
+  <tr>
+    <td>Email</td>
+    <td>Senha</td>
+  </tr>
+  <tr>
+    <td>testecliente@teste.com</td>
+    <td>teste123</td>
+  </tr>
+</table>
+
+Funcionário:
+<table>
+  <tr>
+    <td>Email</td>
+    <td>Senha</td>
+  </tr>
+  <tr>
+    <td>testeadm@teste.com</td>
+    <td>teste123</td>
+  </tr>
+</table>
+
