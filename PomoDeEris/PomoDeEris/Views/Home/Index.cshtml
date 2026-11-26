@@ -28,7 +28,6 @@
 
     <div class="banner-botoes">
       <a href="#tratamentos" class="btn btn-principal">Ver tratamentos</a>
-      <a href="#contato" class="btn btn-contorno">Agendar avaliação</a>
     </div>
 
     <div class="banner-numeros">
@@ -169,35 +168,13 @@
 <section class="chamada-final" id="Sobre">
   <p class="chamada-final-subtitulo">Pronta para começar?</p>
   <h2 class="chamada-final-titulo">O seu veredito de beleza<br>começa com uma conversa.</h2>
-  <a href="#contato" class="btn btn-escuro">Agende agora</a>
+  <a asp-controller="Pacote" asp-action="Index" class="btn btn-escuro">Agende agora</a>
 </section>
 
 
 
 
 
-<!-- PAINEL LATERAL DO CARRINHO -->
-<aside class="painel-carrinho" id="cart-panel">
-  <div class="painel-topo">
-    <h3>Resumo do agendamento</h3>
-    <button id="cart-close" aria-label="Fechar">✕</button>
-  </div>
-  <div class="painel-corpo" id="cart-body">
-    <div class="carrinho-vazio" id="cart-empty">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      <p>Sua agenda está vazia.</p>
-      <span>Escolha um tratamento para começar.</span>
-    </div>
-    <ul class="itens-carrinho" id="cart-items"></ul>
-  </div>
-  <div class="painel-rodape" id="cart-footer" hidden>
-    <div class="carrinho-total">
-      <span>Total</span>
-      <strong id="cart-total-value">R$ 0</strong>
-    </div>
-    <a href="@Url.Action("carrinhoDeCompra", "Home")" class="btn btn-principal" id="go-to-cart">Ir para o carrinho</a>
-  </div>
-</aside>
 <div class="carrinho-fundo" id="cart-overlay"></div>
 
 <div class="toast" id="toast"></div>

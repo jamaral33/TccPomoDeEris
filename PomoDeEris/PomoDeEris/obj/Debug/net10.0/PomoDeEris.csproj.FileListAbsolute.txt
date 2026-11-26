@@ -2172,11 +2172,8 @@ C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\bundle\PomoDeEris.styles.css
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\scopedcss\projectbundle\PomoDeEris.bundle.scp.css
-C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-ok3g7y9xq0-ok3g7y9xq0.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-o7ifemu8yh-o7ifemu8yh.gz
-C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kp2oqrvn3a-{0}-plb3yvdxlo-plb3yvdxlo.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-8u0lexxn4z-8u0lexxn4z.gz
-C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-qae6r17e9x-qae6r17e9x.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\6wubg7u6r4-{0}-8frhioo2wp-8frhioo2wp.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-gq1cfw2e5l-gq1cfw2e5l.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-ysumcqiihq-ysumcqiihq.gz
@@ -2267,3 +2264,6 @@ C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.pdb
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
+C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kp2oqrvn3a-{0}-ti14ya04iu-ti14ya04iu.gz
+C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-tm1w2fyx3t-tm1w2fyx3t.gz
+C:\Users\gustavo\Documents\escola\TCCPT3\FIM\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-7mgwl6gxo5-7mgwl6gxo5.gz

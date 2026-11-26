@@ -28,7 +28,7 @@
 
 body {
     font-family: "Jost", sans-serif;
-    background: var(--cor-fundo-calendario);
+    background: #fff2f3;
     color: var(--texto);
     min-height: 100vh;
 }
@@ -65,69 +65,6 @@ button {
     gap: 6px;
 }
 
-/* Header */
-.header {
-    background: var(--rosa-claro);
-    border-bottom: 1px solid var(--rosa-medio);
-    height: 60px;
-}
-
-.header__interno {
-    max-width: 840px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.logo__titulo {
-    font-family: "Cinzel", serif;
-    font-size: 22px;
-    letter-spacing: 2px;
-    color: var(--escuro);
-}
-
-.logo__subtitulo {
-    font-family: "Jost", sans-serif;
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--dourado);
-    margin-top: 2px;
-}
-
-.nav {
-    display: flex;
-    gap: 28px;
-}
-
-.nav__item {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--texto);
-    padding-bottom: 3px;
-    border-bottom: 2px solid var(--dourado);
-}
-
-.header__icones {
-    display: flex;
-    gap: 18px;
-}
-
-.botao-icone {
-    background: none;
-    border: 0;
-    color: var(--texto);
-    display: inline-flex;
-}
 
 /* Layout */
 .pagina {
@@ -137,6 +74,7 @@ button {
     grid-template-columns: 200px 1fr;
     gap: 20px;
     align-items: start;
+    min-height: 75vh;
 }
 
 .menu-lateral {
@@ -278,6 +216,9 @@ button {
     font-size: 11px;
     font-weight: 600;
     border: 1px solid transparent;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .botao--perigo {

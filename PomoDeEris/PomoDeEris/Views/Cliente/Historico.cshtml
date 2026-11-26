@@ -6,7 +6,7 @@
     ViewData["Title"] = "Histórico";
     List<Atendimento>  atendimentos = ViewBag.Atendimentos;
     string filtroSelecionado = ViewBag.FiltroSelecionado;
-    string proximaConsulta = ViewBag.ProximaConsulta.ToString("dd/MM/yyyy");
+    DateTime proximaConsulta = ViewBag.ProximaConsulta;
     int QtdConsultas = ViewBag.QtdConsultas;
     double totalGasto = ViewBag.QuantiaGasta;
 }
@@ -49,7 +49,7 @@
                 </div>
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Próximo agendamento</span>
-                    <span class="resumo-valor">@proximaConsulta</span>
+                    <span class="resumo-valor">@(proximaConsulta == DateTime.MinValue ? "Nenhuma consulta" : proximaConsulta.ToString("dd/MM/yyyy"))</span>
                 </div>
                 <div class="resumo-card">
                     <span class="resumo-rotulo">Total</span>
