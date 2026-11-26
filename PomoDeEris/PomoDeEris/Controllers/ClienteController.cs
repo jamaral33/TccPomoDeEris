@@ -135,6 +135,18 @@ namespace PomoDeEris.Controllers
             {
                 return View(cliente);
             }
+            var cpfBuscado = _clienteRepository.VerificarCpfCadastrado(cliente.CPF);
+            var emailBuscado = _clienteRepository.VerificarEmailCadastrado(cliente.Email);
+            if (cpfBuscado)
+            {
+                ViewData["MSG_E"] = "Cpf já em uso";
+                return View(cliente);
+            }
+            if (emailBuscado)
+            {
+                ViewData["MSG_E"] = "Email já em uso";
+                return View(cliente);
+            }
 
             _clienteRepository.Cadastrar(cliente);
 
