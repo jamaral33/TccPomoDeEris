@@ -19,6 +19,7 @@ namespace PomoDeEris.Models
 
         [Required]
         public string Imagem { get; set; }
+        
 
         public int Desconto { get; set; }
 
