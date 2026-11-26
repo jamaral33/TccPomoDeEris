@@ -28,9 +28,9 @@ namespace PomoDeEris.Controllers
             return View(pacotes);
         }
 
-        public IActionResult Detalhes(int idPacote)
+        public IActionResult Detalhes(int id)
         {
-            Pacote pacote = _pacoteRepository.ObterPacote(idPacote);
+            Pacote pacote = _pacoteRepository.ObterPacote(id);
             return View(pacote);
         }
     }

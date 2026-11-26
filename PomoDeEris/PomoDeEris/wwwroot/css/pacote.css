@@ -1,0 +1,197 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #ffeef1;
+    --cor-card: #fff9f1;
+    --cor-borda-dourada: #f5c987;
+    --cor-texto: #2b1a14;
+    --cor-texto-suave: #a39a94;
+    --cor-vinho: #7a1d2e;
+    --cor-botao: #2e1a14;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+}
+
+.secao-pacote {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 85px;
+    padding: 16px 20px;
+    min-height: 80vh;
+}
+
+.card-procedimentos {
+    width: 400px;
+    background-color: var(--cor-card);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    padding-bottom: 14px;
+    overflow: hidden;
+}
+
+.titulo-procedimentos {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 24px 10px 14px;
+}
+
+.item-procedimento {
+    border-top: 1px solid #cfc7c0;
+}
+
+
+.cabecalho-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 10px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 15px;
+}
+
+
+.icone-seta {
+    position: relative;
+    width: 11px;
+    height: 11px;
+    border: 1px solid var(--cor-texto);
+    border-radius: 50%;
+    background-color: #fbe9b8;
+    margin-right: 4px;
+}
+
+    .icone-seta::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 3px;
+        height: 3px;
+        border-right: 1px solid var(--cor-texto);
+        border-bottom: 1px solid var(--cor-texto);
+        transform: rotate(45deg);
+        transition: transform 0.2s;
+    }
+
+.item-procedimento[open] .icone-seta::after {
+    top: 3px;
+    transform: rotate(225deg);
+}
+
+.conteudo-item {
+    padding: 12px 10px 14px;
+}
+
+    .conteudo-item h3 {
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .conteudo-item p {
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.6;
+        color: var(--cor-texto-suave);
+    }
+
+.card-pacote {
+    width: 400px;
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda-dourada);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imagem-pacote {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+}
+
+.info-pacote {
+    padding: 12px 16px 8px;
+    border-bottom: 1px solid var(--cor-borda-dourada);
+}
+
+.titulo-pacote {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.descricao-pacote {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+.area-preco {
+    padding: 8px 16px 14px;
+}
+
+.preco-antigo {
+    font-size: 13px;
+    color: #9a7b6e;
+    text-decoration: line-through;
+}
+
+.preco-atual {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--cor-vinho);
+    margin: 4px 0 14px;
+}
+
+.botao-agendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 150px;
+    margin: 0 auto;
+    padding: 7px 0;
+    background-color: var(--cor-botao);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-mais {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.botao-agendar:hover {
+    background-color: var(--cor-vinho);
+}
+
+.botao-agendar:active {
+    transform: scale(0.97);
+}
+
+
+@media (max-width: 640px) {
+    .secao-pacote {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
