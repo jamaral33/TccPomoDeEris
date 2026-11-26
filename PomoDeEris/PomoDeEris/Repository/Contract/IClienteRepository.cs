@@ -16,5 +16,8 @@ namespace PomoDeEris.Repository.Contract
         Cliente ObterClienteEmail(string email);
 
         List<Cliente> ObterTodosClientes();
+
+        bool VerificarEmailCadastrado(string email);
+        bool VerificarCpfCadastrado(string cpf);
     }
 }

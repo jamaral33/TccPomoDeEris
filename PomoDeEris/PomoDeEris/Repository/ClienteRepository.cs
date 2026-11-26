@@ -180,5 +180,32 @@ namespace PomoDeEris.Repository
                 return cliente;
             }
         }
+        public bool VerificarEmailCadastrado(string email)
+        {
+            using(var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT Email FROM tbPessoa WHERE email = @email LIMIT 1", conexao);
+                cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
+
+                string? EmailRetornado = cmd.ExecuteScalar()?.ToString();
+
+                return (!String.IsNullOrEmpty(EmailRetornado));
+            }
+        }
+
+        public bool VerificarCpfCadastrado(string cpf)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT Cpf FROM tbPessoa WHERE Cpf = @cpf LIMIT 1", conexao);
+                cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = cpf;
+
+                string? CpfRetornado = cmd.ExecuteScalar()?.ToString();
+
+                return (!String.IsNullOrEmpty(CpfRetornado));
+            }
+        }
     }
 }
