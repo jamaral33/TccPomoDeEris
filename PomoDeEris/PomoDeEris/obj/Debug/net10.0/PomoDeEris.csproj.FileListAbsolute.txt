@@ -2028,7 +2028,6 @@ C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\Pomo
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\20cpcvhqdu-{0}-ok3g7y9xq0-ok3g7y9xq0.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\qzo2fpwy1v-{0}-36q5hhuhmu-36q5hhuhmu.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kp2oqrvn3a-{0}-plb3yvdxlo-plb3yvdxlo.gz
-C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-1lxsgqkuoc-1lxsgqkuoc.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\kqwjr8m52m-{0}-qae6r17e9x-qae6r17e9x.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\q6ygzzgm2u-{0}-gq1cfw2e5l-gq1cfw2e5l.gz
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\dr2lxjw238-{0}-jpx99hl3g1-jpx99hl3g1.gz
@@ -2120,3 +2119,4 @@ C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\Pomo
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\PomoDeEris.genruntimeconfig.cache
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\ref\PomoDeEris.dll
 C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\6wubg7u6r4-{0}-8frhioo2wp-8frhioo2wp.gz
+C:\Users\gustavo\Documents\escola\TCCPT3\quaseofim\TccPomoDeEris\PomoDeEris\PomoDeEris\obj\Debug\net10.0\compressed\fugpj818ad-{0}-8u0lexxn4z-8u0lexxn4z.gz

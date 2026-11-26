@@ -19,7 +19,7 @@
         <!-- Gera os pacotes a partir do banco -->
         @foreach (var item in Model)
         {
-            <article class="cartao-tratamento" >
+            <a asp-controller="Pacote" asp-action="Detalhes" asp-route-id="@item.IdPacote" class="cartao-tratamento" >
                 <div class="cartao-imagem">
                     <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
                     @if (item.Desconto > 0)
@@ -56,7 +56,7 @@
                         }
                     </div>
                 </div>
-            </article>
+            </a>
         }
     </div>
 </section>

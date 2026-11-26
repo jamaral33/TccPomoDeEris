@@ -110,44 +110,44 @@
        <!-- Gera os pacotes a partir do banco -->
         @foreach(var item in Model)
         {
-        <article class="cartao-tratamento">
+            <a asp-controller="Pacote" asp-action="Detalhes" asp-route-id="@item.IdPacote" class="cartao-tratamento">
                 <div class="cartao-imagem">
-                  <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
-                    @if(item.Desconto > 0)
+                    <img src="@item.Imagem" alt="Pacote Massagem Relaxante">
+                    @if (item.Desconto > 0)
                     {
                         <span class="cartao-selo">Inverno −@item.Desconto%</span>
                     }
                 </div>
                 <div class="cartao-corpo">
-                  <h3 class="cartao-nome">@item.Nome</h3>
-                  <p class="cartao-descricao">@item.Descricao</p>
-                  @if (item.Servicos != null && item.Servicos.Any())
-                  {
-                      <ul class="cartao-servicos">
-                          @foreach (var servico in item.Servicos)
-                          {
-                              <li title="@servico.DescricaoServico">@servico.NomeServico</li>
-                          }
-                      </ul>
-                  }
-                  <span class="cartao-duracao">⏱ 60 min</span>
-                  <div class="cartao-rodape">
-                    <div class="cartao-preco-area">
-                      <span class="cartao-preco-rotulo">De: R$ @item.Valor</span>
-                      <span class="cartao-preco">
-                               Por R$ @((item.Valor * (1 - item.Desconto / 100.0)).ToString("N2"))
-                            </span>
-                    </div>
-                    @using(Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post))
+                    <h3 class="cartao-nome">@item.Nome</h3>
+                    <p class="cartao-descricao">@item.Descricao</p>
+                    @if (item.Servicos != null && item.Servicos.Any())
                     {
-
-                    <input type="hidden" name="id" value=@item.IdPacote />
-                    <button class="btn-agendar" type="submit">+ Agendar</button>
-
+                        <ul class="cartao-servicos">
+                            @foreach (var servico in item.Servicos)
+                            {
+                                <li title="@servico.DescricaoServico">@servico.NomeServico</li>
+                            }
+                        </ul>
                     }
-                  </div>
+                    <span class="cartao-duracao">⏱ 60 min</span>
+                    <div class="cartao-rodape">
+                        <div class="cartao-preco-area">
+                            <span class="cartao-preco-rotulo">De: R$ @item.Valor</span>
+                            <span class="cartao-preco">
+                                Por R$ @((item.Valor * (1 - item.Desconto / 100.0)).ToString("N2"))
+                            </span>
+                        </div>
+                        @using (Html.BeginForm("AdicionarItem", "Carrinho", FormMethod.Post))
+                        {
+
+                            <input type="hidden" name="id" value=@item.IdPacote />
+                            <button class="btn-agendar" type="submit">+ Agendar</button>
+
+                        }
+                    </div>
                 </div>
-            </article>
+            </a>
         }
     </div>
 </section>
