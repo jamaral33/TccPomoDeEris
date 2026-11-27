@@ -17,6 +17,8 @@ const debitoCvv = document.getElementById('cvvDebito');
 const botaoCopiar = document.getElementById('botaoCopiar');
 const textoOriginal = botaoCopiar.textContent;
 
+const HANDY_API_KEY = "PUB-272gYZW1jSTVYu9w7tgzbql0p4GnBZ";
+
 botaoPix.addEventListener("click", () => {
     botaoPix.classList.add("ativo");
     botaoCredito.classList.remove("ativo");
@@ -104,7 +106,7 @@ debitoCvv.addEventListener('input', () => {
         try {
             await navigator.clipboard.writeText(codigo);
         } catch (erro) {
-            // Plano B para páginas sem HTTPS ou navegadores antigos
+            
             const temp = document.createElement('textarea');
             temp.value = codigo;
             document.body.appendChild(temp);
@@ -117,3 +119,67 @@ debitoCvv.addEventListener('input', () => {
         botaoCopiar.textContent = 'Código copiado!';
         setTimeout(() => { botaoCopiar.textContent = textoOriginal; }, 2000);
     });
+
+
+const consultas = {};
+
+
+
+async function consultarBandeira(bin) {
+    if (bin in consultas) return consultas[bin];
+
+    const resposta = await fetch(`https://data.handyapi.com/bin/${bin}`, {
+        headers: { "x-api-key": HANDY_API_KEY }
+    });
+    if (!resposta.ok) return "";
+
+    const dados = await resposta.json();
+    consultas[bin] = dados.Status === "SUCCESS" ? (dados.Scheme || "") : "";
+    return consultas[bin];
+}
+
+function mostrarBandeira(nome, logo, texto) {
+    const procurado = nome.toLowerCase();
+    const bandeira = Object.entries(bandeiras).find(([chave, dados]) =>
+        chave.toLowerCase() === procurado ||
+        dados.alias?.toLowerCase() === procurado
+    );
+
+    if (bandeira) {
+        logo.src = bandeira[1].image;
+        logo.alt = bandeira[0];
+        logo.classList.remove("oculto");
+        texto.textContent = bandeira[0];
+    } else {
+        logo.classList.add("oculto");
+        texto.textContent = nome;
+    }
+}
+
+function configurarCartao(idInput, idLogo, idTexto) {
+    const input = document.getElementById(idInput);
+    const logo = document.getElementById(idLogo);
+    const texto = document.getElementById(idTexto);
+    if (!input || !logo || !texto) return;
+
+    input.addEventListener("input", async () => {
+        const bin = input.value.replace(/\D/g, "").slice(0, 6);
+        let nome = "";
+
+        if (bin.length === 6) {
+            try {
+                nome = await consultarBandeira(bin);
+            } catch (erro) {
+                console.log("Erro na consulta da bandeira", erro);
+            }
+        }
+
+        // ignora resposta antiga se o número mudou durante a consulta
+        if (input.value.replace(/\D/g, "").slice(0, 6) !== bin) return;
+        mostrarBandeira(nome, logo, texto);
+    });
+}
+
+
+configurarCartao("numeroCartao", "logoCredito", "bandeiraCredito");
+configurarCartao("numeroDebito", "logoDebito", "bandeiraDebito");

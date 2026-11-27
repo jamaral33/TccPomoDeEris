@@ -22,6 +22,7 @@
 
 }
 @section Scripts {
+    <script src="~/js/bandeiras-dados.js" asp-append-version="true"></script>
     <script src="~/js/pagamento.js" asp-append-version="true"></script>
 }
 <main class="container">
@@ -86,8 +87,12 @@
 
                     <div class="campo">
                         <label for="numeroCartao">Número do cartão:</label>
-                        <input type="text" id="numeroCartao" name="numeroCartao" inputmode="numeric" autocomplete="cc-number"
-                               maxlength="19" placeholder="0000 0000 0000 0000" placeholder="0000 0000 0000 0000">
+                        <div class="campo-cartao">
+                            <img id="logoCredito" class="oculto" width="34" height="22" alt="">
+                            <input type="text" id="numeroCartao" inputmode="numeric" autocomplete="cc-number"
+                                   maxlength="19" placeholder="0000 0000 0000 0000">
+                            <span id="bandeiraCredito" class="oculto"></span>
+                        </div>
                     </div>
 
                     <div class="campo">
@@ -168,8 +173,12 @@
 
                     <div class="campo">
                         <label for="numeroDebito">Número do cartão:</label>
-                        <input type="text" id="numeroDebito" inputmode="numeric" autocomplete="cc-number"
-                               maxlength="19" placeholder="0000 0000 0000 0000" placeholder="0000 0000 0000 0000">
+                        <div class="campo-cartao">
+                            <img id="logoDebito" class="oculto" width="34" height="22" alt="">
+                            <input type="text" id="numeroDebito" inputmode="numeric" autocomplete="cc-number"
+                                   maxlength="19" placeholder="0000 0000 0000 0000">
+                            <span id="bandeiraDebito" class="oculto"></span>
+                        </div>
                     </div>
 
                     <div class="campo">

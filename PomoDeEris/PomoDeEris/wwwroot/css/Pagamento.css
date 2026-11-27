@@ -303,6 +303,23 @@ button {
     font-weight: 400;
 }
 
+.campo-cartao {
+    position: relative;
+}
+
+.campo-cartao img {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        object-fit: contain;
+        pointer-events: none;
+}
+
+.campo-cartao img:not(.oculto) ~ input {
+     padding-left: 52px;
+}
+
 @media (max-width: 750px) {
     .conteudo-wrapper {
         grid-template-columns: 1fr;
