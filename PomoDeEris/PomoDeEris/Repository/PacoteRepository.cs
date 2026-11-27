@@ -170,7 +170,12 @@ namespace PomoDeEris.Repository
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
+
                 conexao.Open();
+                MySqlCommand cmdServico = new MySqlCommand("DELETE FROM tbServicosPacote WHERE idPacote = @Id", conexao);
+                cmdServico.Parameters.Add("@Id", MySqlDbType.Int32).Value = Id;
+                cmdServico.ExecuteNonQuery();
+
                 MySqlCommand cmd = new MySqlCommand("delete from tbPacote WHERE IdPacote = @Id", conexao);
                 cmd.Parameters.AddWithValue("@Id", Id);
                 cmd.ExecuteNonQuery();
